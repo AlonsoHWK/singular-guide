@@ -1,0 +1,1762 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Guía de Servicio — The Singular</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0D0D0D;
+    --surface: #161616;
+    --surface2: #1E1E1E;
+    --border: #2A2A2A;
+    --gold: #C8A96E;
+    --gold-dim: #8a7248;
+    --text: #F0EDE6;
+    --text-dim: #9A9590;
+    --text-muted: #5C5A57;
+    --accent-soft: rgba(200,169,110,0.08);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.7;
+    min-height: 100vh;
+  }
+
+  /* ── HEADER ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 28px 24px 22px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+    position: sticky;
+    top: 0;
+    background: var(--bg);
+    z-index: 100;
+  }
+  .header-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 300;
+    font-size: clamp(18px, 3vw, 24px);
+    letter-spacing: 0.04em;
+    color: var(--text);
+    line-height: 1.2;
+  }
+  .header-sub {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-top: 4px;
+    font-weight: 400;
+  }
+  .badge {
+    background: var(--gold);
+    color: var(--bg);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    padding: 4px 10px;
+    text-transform: uppercase;
+    flex-shrink: 0;
+  }
+
+  /* ── NAV TABS ── */
+  .nav-scroll {
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+  .nav-scroll::-webkit-scrollbar { display: none; }
+  .nav-tabs {
+    display: flex;
+    white-space: nowrap;
+    padding: 0 16px;
+    min-width: max-content;
+  }
+  .nav-tab {
+    background: none;
+    border: none;
+    color: var(--text-dim);
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 14px 18px;
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    transition: color 0.2s, border-color 0.2s;
+    position: relative;
+  }
+  .nav-tab:hover { color: var(--text); }
+  .nav-tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+
+  /* ── SEARCH ── */
+  .search-wrap {
+    padding: 16px 20px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+  }
+  .search-input {
+    width: 100%;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 10px 16px;
+    outline: none;
+    border-radius: 2px;
+    transition: border-color 0.2s;
+  }
+  .search-input::placeholder { color: var(--text-muted); }
+  .search-input:focus { border-color: var(--gold-dim); }
+
+  /* ── MAIN ── */
+  main { padding: 0; }
+  .section { display: none; padding: 24px 20px 48px; }
+  .section.active { display: block; }
+
+  /* ── SECTION HEADER ── */
+  .section-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(26px, 5vw, 38px);
+    font-weight: 300;
+    color: var(--text);
+    margin-bottom: 4px;
+    line-height: 1.15;
+  }
+  .section-desc {
+    color: var(--text-dim);
+    font-size: 13px;
+    margin-bottom: 28px;
+    line-height: 1.5;
+  }
+
+  /* ── DISH CARD ── */
+  .dish-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .dish-card:hover { border-color: var(--gold-dim); }
+  .dish-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 18px 20px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .dish-header-left { flex: 1; min-width: 0; }
+  .dish-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--text);
+    line-height: 1.3;
+    margin-bottom: 2px;
+  }
+  .dish-name-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.3;
+  }
+  .dish-meta {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+  }
+  .price {
+    font-size: 13px;
+    color: var(--gold);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+  }
+  .tag {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    padding: 2px 7px;
+    text-transform: uppercase;
+    border: 1px solid;
+  }
+  .tag-vegan { color: #6aab7c; border-color: #6aab7c; }
+  .tag-veg { color: #8bc34a; border-color: #8bc34a; }
+  .tag-gf { color: #7eb8d4; border-color: #7eb8d4; }
+  .tag-df { color: #b8a4d4; border-color: #b8a4d4; }
+  .tag-local { color: var(--gold); border-color: var(--gold); }
+  .tag-dos { color: #e8b84b; border-color: #e8b84b; }
+
+  .dish-toggle {
+    color: var(--gold);
+    font-size: 18px;
+    flex-shrink: 0;
+    transition: transform 0.25s;
+    line-height: 1;
+    margin-top: 2px;
+  }
+  .dish-card.open .dish-toggle { transform: rotate(45deg); }
+
+  .dish-body {
+    display: none;
+    padding: 0 20px 20px;
+    border-top: 1px solid var(--border);
+  }
+  .dish-card.open .dish-body { display: block; }
+
+  /* ── TABS INSIDE CARD ── */
+  .inner-tabs {
+    display: flex;
+    gap: 0;
+    border-bottom: 1px solid var(--border);
+    margin: 16px 0 0;
+  }
+  .inner-tab {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    color: var(--text-muted);
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s;
+    position: relative;
+    top: 1px;
+  }
+  .inner-tab:hover { color: var(--text-dim); }
+  .inner-tab.active {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .inner-panel { display: none; padding-top: 14px; }
+  .inner-panel.active { display: block; }
+
+  /* ── CONTENT BLOCKS ── */
+  .block-label {
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+    margin-bottom: 6px;
+  }
+  .block-text {
+    color: var(--text-dim);
+    font-size: 14px;
+    line-height: 1.65;
+    margin-bottom: 16px;
+  }
+  .block-text strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+  .speech-box {
+    background: var(--accent-soft);
+    border-left: 2px solid var(--gold);
+    padding: 12px 16px;
+    margin-bottom: 16px;
+    font-size: 14px;
+    color: var(--text);
+    font-style: italic;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  .speech-box-en {
+    font-size: 13px;
+    color: var(--text-dim);
+    font-style: normal;
+    font-family: 'Inter', sans-serif;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+  }
+  .qa-item {
+    margin-bottom: 14px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--border);
+  }
+  .qa-item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .qa-q {
+    font-size: 13px;
+    color: var(--text);
+    font-weight: 500;
+    margin-bottom: 5px;
+  }
+  .qa-a {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.6;
+  }
+  .qa-a-en {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-top: 4px;
+    font-style: italic;
+    line-height: 1.5;
+  }
+  .wine-pill {
+    display: inline-block;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    font-size: 12px;
+    color: var(--text-dim);
+    padding: 4px 10px;
+    margin: 3px 3px 3px 0;
+    border-radius: 2px;
+  }
+  .wine-pill strong { color: var(--gold); font-weight: 400; }
+  .alert-box {
+    background: rgba(220,80,80,0.06);
+    border: 1px solid rgba(220,80,80,0.25);
+    padding: 10px 14px;
+    font-size: 13px;
+    color: #e08080;
+    line-height: 1.5;
+    margin-bottom: 12px;
+  }
+
+  /* ── GROUP HEADER ── */
+  .group-header {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--gold);
+    margin: 32px 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+    letter-spacing: 0.02em;
+  }
+  .group-header:first-of-type { margin-top: 4px; }
+
+  /* ── WINE CARDS ── */
+  .wine-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 14px 18px;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+    transition: border-color 0.2s;
+  }
+  .wine-card:hover { border-color: var(--gold-dim); }
+  .wine-card.expanded { border-color: var(--gold-dim); }
+  .wine-left { flex: 1; }
+  .wine-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--text);
+    margin-bottom: 2px;
+  }
+  .wine-bodega {
+    font-size: 12px;
+    color: var(--text-dim);
+  }
+  .wine-price {
+    font-size: 14px;
+    color: var(--gold);
+    white-space: nowrap;
+    font-weight: 400;
+  }
+  .wine-detail {
+    display: none;
+    padding-top: 12px;
+    margin-top: 12px;
+    border-top: 1px solid var(--border);
+  }
+  .wine-card.expanded .wine-detail { display: block; }
+
+  /* ── TIPS SECTION ── */
+  .tip-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 18px 20px;
+    margin-bottom: 10px;
+  }
+  .tip-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--text);
+    margin-bottom: 8px;
+  }
+  .tip-body {
+    font-size: 13px;
+    color: var(--text-dim);
+    line-height: 1.7;
+  }
+  .tip-body strong { color: var(--text); font-weight: 500; }
+
+  /* ── NO RESULTS ── */
+  .no-results {
+    text-align: center;
+    padding: 48px 24px;
+    color: var(--text-muted);
+    font-size: 14px;
+    display: none;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 20px;
+    text-align: center;
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.06em;
+  }
+
+  @media (min-width: 640px) {
+    .section { padding: 32px 32px 64px; }
+    .search-wrap { padding: 16px 32px; }
+    header { padding: 28px 32px 22px; }
+    .nav-tabs { padding: 0 32px; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <div class="header-title">Guía de Servicio</div>
+    <div class="header-sub">The Singular Patagonia · Restaurante</div>
+  </div>
+  <div class="badge">★★ Michelin</div>
+</header>
+
+<div class="nav-scroll">
+  <div class="nav-tabs">
+    <button class="nav-tab active" onclick="showSection('entradas')">Entradas</button>
+    <button class="nav-tab" onclick="showSection('fondos')">Fondos</button>
+    <button class="nav-tab" onclick="showSection('postres')">Postres</button>
+    <button class="nav-tab" onclick="showSection('bar')">Bar & Snacks</button>
+    <button class="nav-tab" onclick="showSection('vinos')">Vinos</button>
+    <button class="nav-tab" onclick="showSection('tips')">Protocolo</button>
+  </div>
+</div>
+
+<div class="search-wrap">
+  <input class="search-input" type="text" placeholder="Buscar plato, ingrediente o pregunta…" id="searchInput" oninput="handleSearch()" />
+</div>
+
+<main>
+
+<!-- ═══════════════ ENTRADAS ═══════════════ -->
+<div class="section active" id="section-entradas">
+  <div class="section-title">Entradas</div>
+  <div class="section-desc">Starters — Presente siempre la procedencia del ingrediente principal. La carta es un recorrido por la Patagonia.</div>
+
+  <div class="group-header">Del Mar</div>
+
+  <!-- CENTOLLA -->
+  <div class="dish-card" id="dish-centolla">
+    <div class="dish-header" onclick="toggleDish('centolla')">
+      <div class="dish-header-left">
+        <div class="dish-name">Centolla magallánica, yogur y limón</div>
+        <div class="dish-name-en">Magellanic king crab, yogurt, lemon</div>
+        <div class="dish-meta">
+          <span class="price">$32.800</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'centolla','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'centolla','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'centolla','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="centolla-presentacion">
+        <p class="block-label">Cómo presentarlo en mesa</p>
+        <div class="speech-box">
+          "Les traigo nuestra centolla magallánica, capturada en los fiordos australes. Se sirve fría, con yogur natural y un toque de limón fresco que realza la dulzura natural del marisco. Es uno de los platos más emblemáticos de nuestra carta."
+          <div class="speech-box-en">"This is our Magellanic king crab, sourced from the southern fjords. Served chilled with natural yogurt and fresh lemon to highlight the crab's natural sweetness. One of our signature starters."</div>
+        </div>
+        <p class="block-label">Ingredientes clave</p>
+        <p class="block-text"><strong>Centolla del Estrecho de Magallanes</strong> — considerada la mejor del mundo por su carne firme y sabor delicado. Se presenta fría, con yogur que aporta acidez cremosa y limón para equilibrar.</p>
+        <p class="block-label">Para quién recomendarla</p>
+        <p class="block-text">Para quienes buscan lo más representativo de la Patagonia, amantes del marisco, o cuando el cliente no sabe qué elegir de entrada. Es nuestra carta de presentación.</p>
+      </div>
+      <div class="inner-panel" id="centolla-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La centolla es fresca o congelada?</div>
+          <div class="qa-a">Es centolla fresca de temporada, proveniente directamente del Estrecho de Magallanes, trabajada por el restaurante el mismo día.</div>
+          <div class="qa-a-en">"It's fresh, in-season king crab from the Strait of Magellan, prepared the same day."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Tiene algo más aparte de centolla?</div>
+          <div class="qa-a">La preparación es muy limpia: centolla, yogur natural y limón. Sin salsas complejas, para que el sabor del marisco sea el protagonista.</div>
+          <div class="qa-a-en">"It's a clean preparation — king crab, natural yogurt, and lemon. Simple, so the crab shines."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten o lactosa?</div>
+          <div class="qa-a">No contiene gluten. Sí lleva yogur, por lo tanto contiene lactosa. Lo informamos al chef si el comensal es intolerante.</div>
+          <div class="qa-a-en">"Gluten-free, but it does contain yogurt, so it has dairy. We'll let the kitchen know if needed."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="centolla-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Sauvignon Blanc Terrunyo · C. y Toro</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:12px">Los blancos con acidez fresca y notas minerales complementan la dulzura de la centolla sin opacarla. Evitar tintos o vinos muy estructurados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PULPO -->
+  <div class="dish-card" id="dish-pulpo">
+    <div class="dish-header" onclick="toggleDish('pulpo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pulpo sellado, mayonesa tibia, migas de pimentón ahumado y emulsión de ajo negro</div>
+        <div class="dish-name-en">Seared octopus, warm mayonnaise, smoked paprika crumbs, black garlic emulsion</div>
+        <div class="dish-meta">
+          <span class="price">$21.800</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pulpo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pulpo','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'pulpo','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="pulpo-presentacion">
+        <p class="block-label">Cómo presentarlo en mesa</p>
+        <div class="speech-box">
+          "Este es nuestro pulpo sellado a alta temperatura para lograr esa costra exterior crujiente manteniendo la textura suave interior. Se acompaña de mayonesa tibia, migas de pimentón ahumado que aportan textura y profundidad, y una emulsión de ajo negro fermentado — un ingrediente muy valorado en la cocina contemporánea."
+          <div class="speech-box-en">"Seared octopus with a crisp outer crust while staying tender inside, served with warm mayonnaise, smoked paprika crumbs for texture and depth, and a black garlic emulsion — a prized ingredient in contemporary cuisine."</div>
+        </div>
+        <p class="block-label">Técnica destacada</p>
+        <p class="block-text">El <strong>sellado</strong> a alta temperatura crea una reacción de Maillard que genera la costra. El <strong>ajo negro</strong> es ajo fermentado durante semanas: su sabor es umami, dulce y complejo, sin la intensidad del ajo fresco.</p>
+      </div>
+      <div class="inner-panel" id="pulpo-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El pulpo está tierno o queda duro?</div>
+          <div class="qa-a">El pulpo pasa por una cocción lenta antes de ser sellado, por lo que queda muy tierno por dentro y con una costra leve y crujiente por fuera.</div>
+          <div class="qa-a-en">"The octopus is slow-cooked first, so it's very tender inside with just a light sear on the outside."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el ajo negro?</div>
+          <div class="qa-a">Es ajo fermentado de manera natural durante varias semanas. Tiene un sabor suave, dulce y profundo, muy diferente al ajo fresco. No huele a ajo.</div>
+          <div class="qa-a-en">"It's naturally fermented garlic — mild, sweet, and complex. Nothing like raw garlic in flavor or smell."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="pulpo-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Azur Extra Brut</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:12px">La cremosidad de la mayonesa y la complejidad del ajo negro piden un blanco con cuerpo o un espumante fresco que limpie el paladar.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CEVICHE -->
+  <div class="dish-card" id="dish-ceviche">
+    <div class="dish-header" onclick="toggleDish('ceviche')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ceviche mixto de ostiones, pulpo, centolla y salmón</div>
+        <div class="dish-name-en">Mixed scallop, octopus, king crab and salmon ceviche, leche de tigre, cilantro sauce</div>
+        <div class="dish-meta">
+          <span class="price">$25.800</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'ceviche','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'ceviche','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'ceviche','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="ceviche-presentacion">
+        <div class="speech-box">
+          "Nuestro ceviche mixto reúne cuatro productos del mar patagónico: ostiones de fiordos, pulpo, centolla magallánica y salmón. Se prepara con leche de tigre —el jugo cítrico que cocina el pescado— y una salsa de cilantro fresco. Es un plato muy refrescante y lleno de matices."
+          <div class="speech-box-en">"Our mixed ceviche brings together four Patagonian seafoods — fjord scallops, octopus, king crab, and salmon — in a leche de tigre citrus marinade with fresh cilantro sauce. Very fresh and layered."</div>
+        </div>
+        <p class="block-label">¿Qué es la leche de tigre?</p>
+        <p class="block-text">Es la marinada cítrica —jugo de limón, ají, cebolla, cilantro— que "cocina" el pescado por acción del ácido. En Perú es considerada un plato en sí misma.</p>
+      </div>
+      <div class="inner-panel" id="ceviche-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El pescado está crudo?</div>
+          <div class="qa-a">Técnicamente sí, no pasa por cocción con calor. La leche de tigre lo cocina por acidez, lo que le da esa textura firme característica del ceviche.</div>
+          <div class="qa-a-en">"It's not heat-cooked, but the citrus marinade (leche de tigre) 'cooks' it through acidity, giving it the characteristic texture of ceviche."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Es picante?</div>
+          <div class="qa-a">Tiene un toque de ají en la leche de tigre, pero no es un plato picante. Es más bien cítrico y fresco.</div>
+          <div class="qa-a-en">"There's a touch of chili in the marinade, but it's not spicy — more citrusy and fresh."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="ceviche-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Vetas Blancas · Tabalí</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Estelado Rosé · Miguel Torres</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OSTIONES -->
+  <div class="dish-card" id="dish-ostiones">
+    <div class="dish-header" onclick="toggleDish('ostiones')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ostiones de fiordos australes gratinados, bechamel y Grana Padano</div>
+        <div class="dish-name-en">Southern fjord scallops au gratin, béchamel, Grana Padano</div>
+        <div class="dish-meta">
+          <span class="price">$22.800</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'ostiones','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'ostiones','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'ostiones','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="ostiones-presentacion">
+        <div class="speech-box">
+          "Ostiones frescos de los fiordos australes, gratinados en su concha con bechamel clásica y queso Grana Padano italiano. Un plato muy elegante, cálido, ideal para una noche fría."
+          <div class="speech-box-en">"Fresh fjord scallops gratinéed in their shell with classic béchamel and Italian Grana Padano. Warm, elegant — perfect for a cold Patagonian evening."</div>
+        </div>
+        <p class="block-text"><strong>Grana Padano</strong>: queso italiano DOP, similar al Parmigiano-Reggiano pero más suave. Al gratinarse forma una costra dorada que complementa la cremosidad de la bechamel.</p>
+      </div>
+      <div class="inner-panel" id="ostiones-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Cuántos ostiones trae?</div>
+          <div class="qa-a">El plato incluye ostiones en su concha, presentados gratinados. La cantidad puede variar según el tamaño del día, pero es una porción generosa para entrada.</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene lactosa?</div>
+          <div class="qa-a">Sí, la bechamel lleva mantequilla y leche, y el Grana Padano es un queso. No es apto para intolerantes a la lactosa.</div>
+          <div class="qa-a-en">"Yes, the béchamel contains butter and milk, and the cheese adds more dairy. Not suitable for dairy-free guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="ostiones-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Talinay · Tabalí</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Sparkling Angel Brut · Montes</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CARPACCIO LOCOS -->
+  <div class="dish-card" id="dish-locos">
+    <div class="dish-header" onclick="toggleDish('locos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Carpaccio de locos de Calbuco, crema de palta, ajíes y salsa verde</div>
+        <div class="dish-name-en">Calbuco Chilean abalone carpaccio, avocado cream, assorted chiles, salsa verde</div>
+        <div class="dish-meta">
+          <span class="price">$26.800</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'locos','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'locos','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'locos','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="locos-presentacion">
+        <div class="speech-box">
+          "Los locos son un molusco muy apreciado de las costas chilenas, especialmente los de Calbuco, en el sur. Aquí se presentan en finas láminas estilo carpaccio sobre papa, con crema de palta chilena, una selección de ajíes y salsa verde. Un plato que celebra lo marino y lo local."
+          <div class="speech-box-en">"Locos — Chilean abalone — are a prized shellfish from our southern coast, especially from Calbuco. Thinly sliced carpaccio-style over potato, with avocado cream, assorted chiles, and salsa verde. A celebration of local seafood."</div>
+        </div>
+        <p class="block-text"><strong>Locos:</strong> molusco gasterópodo similar al abalone. De textura firme y sabor marino intenso. Están en veda gran parte del año, lo que hace este plato especialmente valioso.</p>
+      </div>
+      <div class="inner-panel" id="locos-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué son los locos?</div>
+          <div class="qa-a">Son un molusco chileno similar al abalone japonés. De sabor intenso a mar, textura firme. Son muy valorados y tienen vedas estrictas que los hacen escasos y especiales.</div>
+          <div class="qa-a-en">"Locos are a Chilean shellfish similar to Japanese abalone — intense, oceanic flavor with firm texture. They're strictly regulated, making them rare and special."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Es picante?</div>
+          <div class="qa-a">La selección de ajíes aporta algo de picor, pero moderado. Podemos consultarle al chef si prefieren reducirlo.</div>
+          <div class="qa-a-en">"The chiles add mild heat. We can ask the kitchen to adjust if preferred."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="locos-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Kingston CJ's Barrel</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Rosé La Piu Belle · Viña Vik</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">De la tierra</div>
+
+  <!-- TÁRTARO GUANACO -->
+  <div class="dish-card" id="dish-guanaco">
+    <div class="dish-header" onclick="toggleDish('guanaco')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tártaro de guanaco de Tierra del Fuego, frutos rojos y tostadas</div>
+        <div class="dish-name-en">Tierra del Fuego guanaco tartare, red berries, toast</div>
+        <div class="dish-meta">
+          <span class="price">$18.800</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'guanaco','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'guanaco','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'guanaco','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="guanaco-presentacion">
+        <div class="speech-box">
+          "El guanaco es un animal silvestre de Tierra del Fuego, primo del camello, que vive en libertad en la estepa patagónica. Aquí se presenta crudo en tártaro, finamente picado a cuchillo, con frutos rojos que aportan frescura y acidez, acompañado de tostadas. Es una entrada muy auténtica de la región."
+          <div class="speech-box-en">"Guanaco is a wild animal from Tierra del Fuego — a relative of the camel — that roams free in the Patagonian steppe. Presented raw as a knife-cut tartare with red berries for brightness, served with toast. A truly authentic regional dish."</div>
+        </div>
+        <p class="block-label">¿Por qué guanaco?</p>
+        <p class="block-text">El guanaco <strong>salvaje</strong> come pastos nativos toda su vida, lo que le da una carne magra, muy limpia y de sabor delicado. No se cría en granjas — es caza responsable y sustentable.</p>
+      </div>
+      <div class="inner-panel" id="guanaco-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el guanaco?</div>
+          <div class="qa-a">Un mamífero silvestre patagónico, de la familia del camello. Su carne es magra, sin grasa intramuscular, de sabor suave y muy limpio. No es de granja.</div>
+          <div class="qa-a-en">"A wild Patagonian mammal related to the camel. Lean, clean-flavored meat — free-range and sustainably hunted."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Está crudo? ¿Es seguro?</div>
+          <div class="qa-a">Sí, es tártaro —carne cruda procesada a cuchillo. El guanaco salvaje y el manejo cuidadoso de cocina lo hacen completamente seguro. Lo desaconsejamos para embarazadas o personas con sistema inmune comprometido.</div>
+          <div class="qa-a-en">"Yes, it's raw tartare. Wild guanaco, handled with strict kitchen protocols, is completely safe — though we advise against it for pregnant guests or those with compromised immune systems."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿A qué sabe?</div>
+          <div class="qa-a">Más suave que el vacuno, sin el sabor "a caza" intenso de otros animales silvestres. Los frutos rojos le dan un contraste fresco y ligeramente dulce.</div>
+          <div class="qa-a-en">"Milder than beef, without the strong gamey flavor of other wild meats. The red berries add a fresh, slightly sweet contrast."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="guanaco-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Cartagena · Casa Marín</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Rosé Le Rosé · Lapostolle</div>
+        <p class="block-text" style="margin-top:10px">Un Pinot Noir ligero complementa la delicadeza de la carne sin opacarla. El rosé es ideal si el cliente prefiere algo más fresco.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MOLLEJAS -->
+  <div class="dish-card" id="dish-mollejas">
+    <div class="dish-header" onclick="toggleDish('mollejas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Mollejas de cordero laqueadas, puré de papa de apio y salsa demi-glace</div>
+        <div class="dish-name-en">Glazed lamb sweetbreads, celeriac purée, demi-glace</div>
+        <div class="dish-meta">
+          <span class="price">$21.000</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'mollejas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'mollejas','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'mollejas','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="mollejas-presentacion">
+        <div class="speech-box">
+          "Las mollejas son el timo del cordero patagónico —una glándula muy valorada en la cocina de alta gastronomía— aquí laqueadas con una reducción brillante y servidas sobre puré de apio con salsa demi-glace. Un plato para amantes de las vísceras más delicadas."
+          <div class="speech-box-en">"Sweetbreads are the thymus gland of Patagonian lamb — prized in fine dining — glazed here with a rich reduction, served over celeriac purée with demi-glace. A dish for adventurous diners who appreciate delicate offal."</div>
+        </div>
+        <p class="block-label">Para quién recomendarlas</p>
+        <p class="block-text">Para comensales con experiencia gastronómica que aprecian los despojos o achuras de calidad. Si el cliente no conoce las mollejas, describe su textura cremosa y sabor suave antes de recomendarlas.</p>
+      </div>
+      <div class="inner-panel" id="mollejas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué son las mollejas exactamente?</div>
+          <div class="qa-a">Es el timo del cordero, una glándula ubicada en el cuello. Tiene textura cremosa y suave, sabor muy delicado — nada intenso. En alta cocina es un ingrediente muy valorado.</div>
+          <div class="qa-a-en">"The thymus gland of the lamb. Creamy, soft texture with a very mild, delicate flavor — nothing strong. Highly regarded in fine dining."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el puré de papa de apio?</div>
+          <div class="qa-a">Es puré elaborado con apio raíz —también llamado celeriac— no con papa. Tiene un sabor suave a apio con textura más sedosa que la papa tradicional.</div>
+          <div class="qa-a-en">"It's celeriac purée — made from the root of the celery plant. Mild celery flavor with a silkier texture than potato."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="mollejas-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Merlot Cuvée Alexandre · Lapostolle</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Vegetarianas</div>
+
+  <!-- ENSALADA BETARRAGAS -->
+  <div class="dish-card" id="dish-betarragas">
+    <div class="dish-header" onclick="toggleDish('betarragas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada de betarragas asadas, peras caramelizadas, queso de cabra y aderezo de miel y limón</div>
+        <div class="dish-name-en">Roasted beet salad, caramelized pears, goat cheese, honey-lemon dressing</div>
+        <div class="dish-meta">
+          <span class="price">$17.000</span>
+          <span class="tag tag-veg">Vegetariano</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'betarragas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'betarragas','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'betarragas','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="betarragas-presentacion">
+        <div class="speech-box">
+          "Ensalada de betarragas asadas lentamente para concentrar su dulzura, con peras caramelizadas, queso de cabra cremoso y un aderezo de miel y limón. Visualmente muy colorida y en sabor, un equilibrio perfecto entre dulce, ácido y terroso."
+          <div class="speech-box-en">"Slow-roasted beets to concentrate their sweetness, with caramelized pears, creamy goat cheese, and a honey-lemon dressing. Visually vibrant — a perfect balance of sweet, tart, and earthy."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="betarragas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es una ensalada fría?</div>
+          <div class="qa-a">Las betarragas se asan calientes pero se sirven a temperatura ambiente. La pera puede estar tibia. No es una ensalada fría de hoja verde.</div>
+          <div class="qa-a-en">"The beets are roasted but served at room temperature. Warm, composed salad — not a cold leafy salad."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="betarragas-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Rosé Le Rosé · Lapostolle</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Kuda · Kalfu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAMEMBERT -->
+  <div class="dish-card" id="dish-camembert">
+    <div class="dish-header" onclick="toggleDish('camembert')">
+      <div class="dish-header-left">
+        <div class="dish-name">Camembert tibio, manzanas asadas, pistachos, damasco, vinagre de higo y arrope de chañar</div>
+        <div class="dish-name-en">Warm Camembert, roasted apples, toasted pistachios, dried apricot, fig vinegar, chañar syrup</div>
+        <div class="dish-meta">
+          <span class="price">$18.000</span>
+          <span class="tag tag-veg">Vegetariano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'camembert','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'camembert','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'camembert','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="camembert-presentacion">
+        <div class="speech-box">
+          "Un camembert tibio y fundente, acompañado de manzanas asadas patagónicas, pistachos tostados, damasco deshidratado, vinagre de higo para acidez y arrope de chañar, un fruto silvestre del norte chileno. Una entrada muy generosa para compartir o para quienes prefieren comenzar con algo rico y reconfortante."
+          <div class="speech-box-en">"Warm, melting Camembert with roasted Patagonian apples, toasted pistachios, dried apricot, fig vinegar for acidity, and chañar syrup — a Chilean wild-berry reduction. Generous enough to share, perfect for guests who like a rich, comforting start."</div>
+        </div>
+        <p class="block-label">¿Qué es el chañar?</p>
+        <p class="block-text">El <strong>chañar</strong> es un fruto silvestre del desierto y zonas áridas del norte de Chile. El arrope es una reducción dulce y densa de su jugo. Tiene un sabor entre higo, algarroba y caramelo.</p>
+      </div>
+      <div class="inner-panel" id="camembert-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Viene para compartir o es individual?</div>
+          <div class="qa-a">Es una porción individual de queso entero, pero por su tamaño puede compartirse entre dos personas como inicio si están pidiendo varias entradas.</div>
+          <div class="qa-a-en">"Individual portion, but generous enough to share between two as part of a multi-starter spread."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el arrope de chañar?</div>
+          <div class="qa-a">Es una reducción dulce y espesa del jugo de chañar, un fruto autóctono chileno. Sabor parecido al higo con notas de caramelo. Muy característico del norte de Chile.</div>
+          <div class="qa-a-en">"A thick, sweet reduction of chañar juice — a native Chilean berry. Reminiscent of fig with caramel notes. Very characteristic of northern Chile."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="camembert-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Espumante Estelado Rosé · Miguel Torres</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Gewürztraminer Casona · Casa Marín</div>
+        <p class="block-text" style="margin-top:10px">Los espumantes y aromáticos blancos contrastan muy bien con la cremosidad del queso y los sabores dulces del plato.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ FONDOS ═══════════════ -->
+<div class="section" id="section-fondos">
+  <div class="section-title">Fondos</div>
+  <div class="section-desc">Main courses — Nuestros fondos celebran los productos emblemáticos de la Patagonia. Siempre mencione la procedencia.</div>
+
+  <div class="group-header">Carnes de la estepa</div>
+
+  <!-- FILETE GUANACO -->
+  <div class="dish-card" id="dish-fguanaco">
+    <div class="dish-header" onclick="toggleDish('fguanaco')">
+      <div class="dish-header-left">
+        <div class="dish-name">Filete de guanaco de Tierra del Fuego, pebre de mote y hierbabuena</div>
+        <div class="dish-name-en">Tierra del Fuego guanaco tenderloin, wheat berry and mint pebre</div>
+        <div class="dish-meta">
+          <span class="price">$35.000</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'fguanaco','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'fguanaco','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'fguanaco','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="fguanaco-presentacion">
+        <div class="speech-box">
+          "El filete de guanaco es el corte más preciado de este animal silvestre de Tierra del Fuego. Al ser una carne muy magra y delicada, se cocina a punto para preservar su jugosidad y se sirve con pebre de mote —un cereal andino— y hierbabuena fresca. Un plato que no existe en ningún otro restaurante del mundo del mismo modo."
+          <div class="speech-box-en">"The tenderloin is the most prized cut of this wild animal from Tierra del Fuego. Being very lean and delicate, it's cooked to preserve its juiciness, served with wheat berry pebre and fresh mint. A dish you won't find like this anywhere else in the world."</div>
+        </div>
+        <p class="block-label">¿Qué es el mote?</p>
+        <p class="block-text">El <strong>mote</strong> es trigo cocido, un cereal andino y mapuche que se consume desde tiempos precoloniales en Chile. El pebre de mote es una salsa fresca —tipo relish— con este cereal, hierbas y vegetales frescos.</p>
+      </div>
+      <div class="inner-panel" id="fguanaco-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El guanaco sabe a caza?</div>
+          <div class="qa-a">No tiene el sabor fuerte a caza que uno podría esperar. Al comer pastos nativos y vivir en libertad, su carne es limpia, suave y delicada. Más parecida al venado joven que a una carne de caza intensa.</div>
+          <div class="qa-a-en">"Not at all. Because it feeds on native grasses in the wild, the meat is clean, mild, and delicate — closer to young venison than strong game."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Cómo viene el punto de cocción?</div>
+          <div class="qa-a">Por ser carne muy magra, la recomendamos entre a punto (medium) o tres cuartos. Bien cocida puede quedar algo seca dado que no tiene grasa intramuscular.</div>
+          <div class="qa-a-en">"We recommend medium or medium-well. Since it's very lean, well-done can dry it out."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Es sustentable cazar guanacos?</div>
+          <div class="qa-a">Sí. El guanaco es abundante en la Patagonia y la caza se realiza bajo regulación estricta. El restaurante trabaja con proveedores certificados y comprometidos con la sustentabilidad.</div>
+          <div class="qa-a-en">"Yes. Guanaco is abundant in Patagonia and hunted under strict regulation. We work with certified, sustainably-committed suppliers."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="fguanaco-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
+        <div class="wine-pill"><strong>Premium:</strong> Carménère Special Cuvée · Montes</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Vinos con buena acidez y taninos suaves para no aplastar la delicadeza de la carne. Evitar Cabernet muy tánico o Syrah muy especiado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CORDERO GARRÓN -->
+  <div class="dish-card" id="dish-garron">
+    <div class="dish-header" onclick="toggleDish('garron')">
+      <div class="dish-header-left">
+        <div class="dish-name">Garrón de cordero de Puerto Natales asado, arvejas especiadas, menta y salsa demi-glace</div>
+        <div class="dish-name-en">Roasted Puerto Natales lamb shank, spiced peas, mint, demi-glace</div>
+        <div class="dish-meta">
+          <span class="price">$32.000</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'garron','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'garron','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'garron','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="garron-presentacion">
+        <div class="speech-box">
+          "El cordero de Puerto Natales se cría en las estepas australes, a metros de las Torres del Paine. Este garrón —la pierna— se asa lentamente durante horas hasta quedar completamente tierno, desprendiéndose del hueso. Se acompaña de arvejas especiadas con menta fresca y una salsa demi-glace elaborada con los jugos del mismo asado."
+          <div class="speech-box-en">"Puerto Natales lamb is raised on the southern steppes, near Torres del Paine. The shank is slow-roasted for hours until it falls from the bone, served with spiced peas, fresh mint, and a demi-glace made from the roasting juices."</div>
+        </div>
+        <p class="block-label">¿Qué es el demi-glace?</p>
+        <p class="block-text">Una reducción de fondo de carne oscuro — se cocina por horas hasta concentrar todos los sabores del hueso y la carne en una salsa brillante, intensa y aterciopelada. Es la base de las grandes salsas de la cocina clásica francesa.</p>
+      </div>
+      <div class="inner-panel" id="garron-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El cordero tiene sabor fuerte?</div>
+          <div class="qa-a">El cordero patagónico criado en la estepa austral tiene un sabor más suave y limpio que el cordero de otras regiones, gracias a los pastos nativos que consume. No es un sabor fuerte a "lanudo".</div>
+          <div class="qa-a-en">"Patagonian steppe-raised lamb has a milder, cleaner flavor than lamb from other regions, thanks to the native grasses. It doesn't have that strong 'gamey' lamb taste."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Viene con el hueso?</div>
+          <div class="qa-a">Sí, el garrón se presenta entero con el hueso, que es parte de la experiencia visual del plato. La carne está tan tierna que se come cómodamente con tenedor solo.</div>
+          <div class="qa-a-en">"Yes, the shank is served on the bone — part of the visual experience. The meat is so tender it can be eaten with just a fork."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="garron-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Terrunyo · Concha y Toro</div>
+        <div class="wine-pill"><strong>Premium:</strong> Carménère Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHUPE CENTOLLA -->
+  <div class="dish-card" id="dish-chupe">
+    <div class="dish-header" onclick="toggleDish('chupe')">
+      <div class="dish-header-left">
+        <div class="dish-name">Chupe de centolla magallánica</div>
+        <div class="dish-name-en">Magellanic king crab chupe</div>
+        <div class="dish-meta">
+          <span class="price">$45.000</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-dos">★ Estrella</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'chupe','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'chupe','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'chupe','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="chupe-presentacion">
+        <div class="speech-box">
+          "Nuestro chupe de centolla magallánica es uno de los platos más icónicos de la carta. El chupe es una preparación tradicional chilena —una especie de guiso cremoso— aquí elaborado con centolla fresca en abundancia, en una base rica y sabrosa, gratinado al horno. Es el plato más festejado por los comensales que visitan la región."
+          <div class="speech-box-en">"Our Magellanic king crab chupe is one of the most iconic dishes on our menu. Chupe is a traditional Chilean creamy stew, made here with generous amounts of fresh king crab in a rich, oven-gratinéed base. It's the dish guests remember most from their visit."</div>
+        </div>
+        <p class="block-label">Por qué recomendarlo</p>
+        <p class="block-text">Es el plato de mayor precio de la carta y el más pedido. Si un comensal pregunta qué recomienda, el chupe de centolla es la respuesta de fondo por excelencia. Centolla fresca del Estrecho de Magallanes, en su mejor expresión.</p>
+      </div>
+      <div class="inner-panel" id="chupe-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es un chupe?</div>
+          <div class="qa-a">Es una preparación tradicional chilena y peruana, una especie de cazuela o guiso cremoso. En este caso con centolla fresca, base cremosa y gratinado al horno.</div>
+          <div class="qa-a-en">"A traditional Chilean/Peruvian dish — a creamy stew or casserole. Here made with fresh king crab, a rich cream base, and oven-gratinéed."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Es mucha cantidad?</div>
+          <div class="qa-a">Es un fondo abundante. Recomendamos no tomar entrada si se pide el chupe, ya que es muy generoso en cantidad y sabor.</div>
+          <div class="qa-a-en">"It's a generous main. We suggest skipping a starter if ordering it — it's very satisfying on its own."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten o lactosa?</div>
+          <div class="qa-a">La base cremosa lleva lácteos, por lo que contiene lactosa. Dependiendo de la preparación puede contener algo de harina. Confirmamos con cocina ante cualquier duda.</div>
+          <div class="qa-a-en">"The creamy base contains dairy. May contain flour depending on preparation. We'll confirm with the kitchen."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="chupe-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Sol de Sol · Aquitania</div>
+        <div class="wine-pill"><strong>Gran vino:</strong> Chardonnay Las Pizarras · Errázuriz</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un Chardonnay de cuerpo y con algo de madera complementa perfectamente la riqueza del chupe sin opacar la centolla.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PALETILLA DOS PERSONAS -->
+  <div class="dish-card" id="dish-paletilla">
+    <div class="dish-header" onclick="toggleDish('paletilla')">
+      <div class="dish-header-left">
+        <div class="dish-name">Paletilla de cordero, prensado de papa y salsa de morillas — para dos personas</div>
+        <div class="dish-name-en">Lamb shoulder, pressed potato, morel sauce (for two)</div>
+        <div class="dish-meta">
+          <span class="price">$75.000 (x2)</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-dos">Para compartir</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'paletilla','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'paletilla','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'paletilla','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="paletilla-presentacion">
+        <div class="speech-box">
+          "La paletilla de cordero patagónico es nuestro gran plato para dos personas. Se asa lentamente durante horas, resultando en una carne que se desprende sola del hueso. Se acompaña de prensado de papa artesanal y una salsa de morillas — hongos silvestres muy valorados en la cocina de autor — que aportan profundidad y aroma terroso excepcional."
+          <div class="speech-box-en">"Our Patagonian lamb shoulder is the great sharing dish for two. Slow-roasted for hours until it falls apart, served with pressed potato and morel sauce — prized wild mushrooms that add exceptional depth and earthy aroma."</div>
+        </div>
+        <p class="block-label">Las morillas</p>
+        <p class="block-text">Las <strong>morillas</strong> (morels) son uno de los hongos más apreciados en la alta cocina mundial. Tienen una forma en panal característica, sabor terroso e intenso y aroma único. Son de temporada y difíciles de cultivar.</p>
+        <div class="alert-box">⚠️ Este plato es para dos personas. Asegúrese de indicarlo al tomar el pedido y confirmarlo con el comensal.</div>
+      </div>
+      <div class="inner-panel" id="paletilla-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El precio es por persona o por el plato?</div>
+          <div class="qa-a">El precio de $75.000 es por el plato completo para dos personas, lo que equivale a $37.500 por comensal. Es una excelente relación calidad-precio para un fondo de esta categoría.</div>
+          <div class="qa-a-en">"$75,000 covers the full dish for two — that's $37,500 per person. Excellent value for a main of this caliber."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Cuánto tiempo de espera tiene?</div>
+          <div class="qa-a">Al ser un asado largo, el plato ya está listo para el servicio. No tiene una espera adicional significativa más allá de la de cualquier otro fondo.</div>
+          <div class="qa-a-en">"Since it's slow-roasted in advance, there's no significant wait beyond our standard kitchen time."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="paletilla-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Gran vino:</strong> Ensamblaje VIK · $280.000</div>
+        <div class="wine-pill"><strong>Premium:</strong> Malbec Cot · Pérez Cruz</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BACALAO -->
+  <div class="dish-card" id="dish-bacalao">
+    <div class="dish-header" onclick="toggleDish('bacalao')">
+      <div class="dish-header-left">
+        <div class="dish-name">Bacalao de profundidad, langostinos del Atlántico, puré de zanahoria caramelizada y beurre blanc de lemongrass</div>
+        <div class="dish-name-en">Chilean sea bass, Atlantic prawns, caramelized carrot purée, lemongrass beurre blanc</div>
+        <div class="dish-meta">
+          <span class="price">$37.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'bacalao','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'bacalao','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'bacalao','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="bacalao-presentacion">
+        <div class="speech-box">
+          "El bacalao de profundidad es conocido internacionalmente como 'Chilean Sea Bass', uno de los pescados más cotizados de los mares australes. Su carne es blanca, mantecosa y muy sabrosa. Se sirve con langostinos del Atlántico, un puré de zanahoria caramelizada que aporta dulzura, y una beurre blanc —salsa de mantequilla emulsionada— perfumada con lemongrass."
+          <div class="speech-box-en">"Known internationally as Chilean Sea Bass, one of the most prized fish from the southern oceans. Buttery, rich white flesh, served with Atlantic prawns, caramelized carrot purée, and a lemongrass-scented beurre blanc."</div>
+        </div>
+        <p class="block-label">¿Qué es el beurre blanc?</p>
+        <p class="block-text">Salsa de la cocina francesa clásica elaborada con mantequilla emulsionada, vino blanco y vinagre. Suave, sedosa y delicada. Aquí aromatizada con lemongrass (hierba limón asiática) que le da una nota cítrica floral.</p>
+      </div>
+      <div class="inner-panel" id="bacalao-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es el mismo bacalao seco que uno conoce?</div>
+          <div class="qa-a">No. El bacalao de profundidad es otro pez completamente diferente al bacalao atlántico seco. Es fresco, mantecoso y muy diferente en sabor y textura. Mucho más delicado y valorado.</div>
+          <div class="qa-a-en">"Not at all. Chilean Sea Bass is a completely different fish from salt-cod. It's fresh, buttery, and far more delicate and prized."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene lactosa?</div>
+          <div class="qa-a">Sí, el beurre blanc lleva mantequilla. Si hay intolerancia podemos consultarle al chef una modificación.</div>
+          <div class="qa-a-en">"Yes, the beurre blanc contains butter. We can check with the chef for a dairy-free adaptation."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="bacalao-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Sol de Sol · Aquitania</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Opciones vegetarianas y veganas</div>
+
+  <!-- CURRY LENTEJAS -->
+  <div class="dish-card" id="dish-curry">
+    <div class="dish-header" onclick="toggleDish('curry')">
+      <div class="dish-header-left">
+        <div class="dish-name">Curry de lentejas beluga, verduras y aire de coco</div>
+        <div class="dish-name-en">Beluga lentil curry, vegetables, coconut foam</div>
+        <div class="dish-meta">
+          <span class="price">$32.000</span>
+          <span class="tag tag-vegan">Vegano</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'curry','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'curry','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'curry','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="curry-presentacion">
+        <div class="speech-box">
+          "Curry de lentejas beluga —las lentejas negras más pequeñas y delicadas— con verduras de temporada y un aire de coco que se presenta como una espuma ligera en la superficie. Es nuestro fondo vegano principal, con toda la profundidad aromática del curry y una presentación muy contemporánea."
+          <div class="speech-box-en">"Beluga lentil curry — the small, firm black lentils — with seasonal vegetables and a coconut foam on top. Our main vegan dish, with full aromatic depth and a contemporary presentation."</div>
+        </div>
+        <p class="block-label">Para quién recomendarlo</p>
+        <p class="block-text">Comensales veganos, vegetarianos, o quienes buscan una opción más liviana. No es un plato menor — tiene la misma elaboración y precio que los demás fondos. Menciónelo con orgullo.</p>
+      </div>
+      <div class="inner-panel" id="curry-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es picante?</div>
+          <div class="qa-a">El curry tiene especias aromáticas pero la intensidad del picante es moderada. El aire de coco suaviza y equilibra la preparación.</div>
+          <div class="qa-a-en">"The curry is aromatic but mild in heat. The coconut foam softens and balances everything."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Es apto para alérgicos a frutos secos?</div>
+          <div class="qa-a">Confirmamos con cocina en caso de alergias severas. El coco en sí no es fruto seco botánicamente, pero podría haber trazas. Siempre consultamos.</div>
+          <div class="qa-a-en">"We always confirm with the kitchen for severe allergies. Coconut is botanically a fruit, not a nut, but cross-contamination is possible."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="curry-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Gewürztraminer Casona · Casa Marín</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Riesling Corralillo · Matetic</div>
+        <p class="block-text" style="margin-top:10px">Los blancos aromáticos y especiados son perfectos compañeros para un curry. La acidez del Riesling limpia el paladar entre cada bocado.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ POSTRES ═══════════════ -->
+<div class="section" id="section-postres">
+  <div class="section-title">Postres</div>
+  <div class="section-desc">Desserts — Presente los postres con entusiasmo. Ofrézcalos siempre antes de que el comensal los pida.</div>
+
+  <!-- MILHOJAS -->
+  <div class="dish-card" id="dish-milhojas">
+    <div class="dish-header" onclick="toggleDish('milhojas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Milhojas de manjar y crema de vainilla</div>
+        <div class="dish-name-en">Dulce de leche mille-feuille, vanilla cream</div>
+        <div class="dish-meta"><span class="price">$11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'milhojas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'milhojas','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="milhojas-presentacion">
+        <div class="speech-box">
+          "Nuestro milhojas es una versión local de este clásico francés: finas capas de masa hojaldrada alternadas con manjar chileno y crema de vainilla. Crujiente por fuera, cremoso por dentro. Un guiño dulce a nuestra identidad chilena."
+          <div class="speech-box-en">"Our mille-feuille is a Chilean twist on the French classic: thin puff pastry layers with dulce de leche and vanilla cream. Crisp outside, creamy inside. A sweet nod to our Chilean identity."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="milhojas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el manjar?</div>
+          <div class="qa-a">El manjar es la versión chilena del dulce de leche argentino — leche condensada cocida hasta caramelizarse. Sabor profundo, suave y muy dulce. Es el elemento más identitario de la repostería chilena.</div>
+          <div class="qa-a-en">"Manjar is the Chilean version of dulce de leche — condensed milk cooked until caramelized. Deep, smooth, and sweet. The most iconic ingredient in Chilean pastry."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SEMIESFERA FRAMBUESA -->
+  <div class="dish-card" id="dish-semiesfera">
+    <div class="dish-header" onclick="toggleDish('semiesfera')">
+      <div class="dish-header-left">
+        <div class="dish-name">Semiesfera de frambuesa, ruibarbo y yuzu</div>
+        <div class="dish-name-en">Raspberry, rhubarb and yuzu dome</div>
+        <div class="dish-meta"><span class="price">$12.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'semiesfera','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'semiesfera','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="semiesfera-presentacion">
+        <div class="speech-box">
+          "Una semiesfera —postre de alta pastelería con forma de media cúpula— que combina la acidez de la frambuesa y el ruibarbo patagónico con las notas cítricas del yuzu japonés. Visualmente espectacular, con textura mousse en el interior. El postre más contemporáneo de nuestra carta."
+          <div class="speech-box-en">"A half-sphere dessert — refined pastry in dome form — combining the tartness of raspberry and Patagonian rhubarb with the citrus notes of Japanese yuzu. Visually spectacular, with a mousse interior. Our most contemporary dessert."</div>
+        </div>
+        <p class="block-label">¿Qué es el yuzu?</p>
+        <p class="block-text">Cítrico japonés de aroma complejo: entre limón, mandarina y pomelo. Muy perfumado, aporta una nota cítrica floral que eleva cualquier preparación dulce o salada.</p>
+      </div>
+      <div class="inner-panel" id="semiesfera-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es muy ácido?</div>
+          <div class="qa-a">Tiene acidez por la frambuesa y el ruibarbo, pero está muy equilibrado con la dulzura del montaje. Si el comensal prefiere postres más dulces, recomendaríamos el milhojas o la crème brûlée.</div>
+          <div class="qa-a-en">"It has tartness from the raspberry and rhubarb, well-balanced with sweetness. For guests preferring sweeter desserts, we'd suggest the mille-feuille or crème brûlée."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TATIN -->
+  <div class="dish-card" id="dish-tatin">
+    <div class="dish-header" onclick="toggleDish('tatin')">
+      <div class="dish-header-left">
+        <div class="dish-name">Nuestro tatin de manzana con helado de canela</div>
+        <div class="dish-name-en">Our apple tarte Tatin, cinnamon ice cream</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-veg">Vegetariano</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'tatin','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'tatin','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="tatin-presentacion">
+        <div class="speech-box">
+          "La tarte Tatin es un clásico francés que aquí hacemos con manzanas patagónicas caramelizadas, servida tibia con nuestro helado de canela artesanal. La manzana se carameliza desde abajo, concentrando sus azúcares. Es el postre más reconfortante de la carta."
+          <div class="speech-box-en">"Tarte Tatin is a French classic we make with caramelized Patagonian apples, served warm with our house-made cinnamon ice cream. The apple caramelizes from below, concentrating its sugars. Our most comforting dessert."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="tatin-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es la tarte Tatin?</div>
+          <div class="qa-a">Es un pastel de manzana invertido de origen francés — la manzana se carameliza en el molde y la masa va encima, luego se invierte. La fruta queda arriba, dorada y brillante.</div>
+          <div class="qa-a-en">"An upside-down French apple tart — the apple caramelizes in the mold with the pastry on top, then it's flipped. The fruit ends up on top, golden and glossy."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CRÈME BRÛLÉE -->
+  <div class="dish-card" id="dish-creme">
+    <div class="dish-header" onclick="toggleDish('creme')">
+      <div class="dish-header-left">
+        <div class="dish-name">Crème brûlée de vainilla</div>
+        <div class="dish-name-en">Vanilla crème brûlée</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-veg">Vegetariano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'creme','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'creme','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="creme-presentacion">
+        <div class="speech-box">
+          "Nuestra crème brûlée de vainilla natural: una crema suave y sedosa cocida al baño maría, con su costra de azúcar quemado al momento. Al romper la superficie con la cuchara se siente ese crujido característico que todos conocen. Un clásico infalible."
+          <div class="speech-box-en">"Natural vanilla crème brûlée: a smooth, silky custard baked in a bain-marie, with its sugar crust torched to order. The satisfying crack of the spoon through caramelized sugar — a timeless classic."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="creme-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">No, es naturalmente sin gluten. Contiene huevo y crema, por lo que no es apto para veganos ni intolerantes a la lactosa.</div>
+          <div class="qa-a-en">"No gluten. Contains egg and cream — not suitable for vegans or dairy-free guests."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ BAR & SNACKS ═══════════════ -->
+<div class="section" id="section-bar">
+  <div class="section-title">Bar & Snacks</div>
+  <div class="section-desc">Cócteles de autor, clásicos y snacks para el bar o terraza. Precios incluyen IVA.</div>
+
+  <div class="group-header">Cócteles de autor</div>
+
+  <div class="dish-card" id="dish-tsp-sour">
+    <div class="dish-header" onclick="toggleDish('tsp-sour')">
+      <div class="dish-header-left">
+        <div class="dish-name">The Singular Sour</div>
+        <div class="dish-name-en">Smoked chili-infused pisco, green pepper, cilantro, black pepper, lemon, syrup, egg white</div>
+        <div class="dish-meta"><span class="price">$15.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Nuestro cóctel emblema: pisco macerado con cacho de cabra —un ají ahumado muy típico de Chile—, pimentón verde, cilantro y pimienta negra. Se termina con jugo de limón, sirope y albúmina para esa espuma característica del sour. Intenso, herbal y con carácter patagónico."
+        <div class="speech-box-en">"Our signature cocktail: pisco infused with cacho de cabra — a classic smoked Chilean chili — with green pepper, cilantro, and black pepper, finished with lemon, syrup, and egg white for that classic sour foam. Bold, herbal, and unmistakably Patagonian."</div>
+      </div>
+      <p class="block-text"><strong>Cacho de cabra:</strong> ají chileno de forma curva, sabor ahumado y picor moderado. Uno de los ajíes más tradicionales del país.</p>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-ginquen">
+    <div class="dish-header" onclick="toggleDish('ginquen')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ginquen</div>
+        <div class="dish-name-en">Gin, green apple, St-Germain, lemon, Angostura, syrup</div>
+        <div class="dish-meta"><span class="price">$15.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Gin macerado con manzana verde patagónica, el licor floral St-Germain de flores de saúco, jugo de limón, Angostura y sirope. Fresco, elegante y ligeramente floral. Ideal para quienes prefieren cócteles más suaves y aromáticos."
+        <div class="speech-box-en">"Gin infused with Patagonian green apple, elderflower St-Germain, lemon, Angostura, and syrup. Fresh, elegant, and lightly floral. Perfect for guests who prefer softer, aromatic cocktails."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-calafate-c">
+    <div class="dish-header" onclick="toggleDish('calafate-c')">
+      <div class="dish-header-left">
+        <div class="dish-name">El Calafate</div>
+        <div class="dish-name-en">Pisco, calafate berry, lemon, syrup, tonic</div>
+        <div class="dish-meta"><span class="price">$12.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Un cóctel liviano y muy refrescante con pisco chileno, calafate —una baya silvestre patagónica de color azul intenso y sabor entre arándano y mora— limón, sirope y agua tónica. Según la leyenda, quien prueba el calafate siempre vuelve a la Patagonia."
+        <div class="speech-box-en">"A light, refreshing cocktail with pisco, calafate — a wild Patagonian berry, deep blue, tasting between blueberry and blackberry — lemon, syrup, and tonic. Legend says whoever tastes calafate will always return to Patagonia."</div>
+      </div>
+      <p class="block-text"><strong>Cuente la leyenda:</strong> es una excelente forma de crear conexión con el comensal y que recuerden el cóctel. La leyenda es real y muy conocida en la región.</p>
+    </div>
+  </div>
+
+  <div class="group-header">Mocktails</div>
+
+  <div class="dish-card" id="dish-mock1">
+    <div class="dish-header" onclick="toggleDish('mock1')">
+      <div class="dish-header-left">
+        <div class="dish-name">Puerto Bories Mocktail — Dorotea Mocktail</div>
+        <div class="dish-name-en">Two non-alcoholic signatures</div>
+        <div class="dish-meta"><span class="price">$11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <p class="block-text"><strong>Puerto Bories:</strong> frambuesa, jengibre, limón, tónica y sirope. Frutal, picante y refrescante.<br><br><strong>Dorotea:</strong> pepino, apio, jugo de pomelo, tónica, limón y sirope. Vegetal, cítrico y muy refrescante.</p>
+      <div class="speech-box">
+        "Para quienes prefieren no tomar alcohol, tenemos dos mocktails de autor: el Puerto Bories, frutal y con toque de jengibre, y el Dorotea, más vegetal y cítrico con pepino y pomelo. Ambos se preparan con la misma dedicación que nuestros cócteles."
+        <div class="speech-box-en">"For non-drinkers, we have two signature mocktails: Puerto Bories, fruity with a ginger kick, and Dorotea, more vegetal and citrusy with cucumber and grapefruit. Crafted with the same care as our cocktails."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Snacks destacados</div>
+
+  <div class="dish-card" id="dish-tabla">
+    <div class="dish-header" onclick="toggleDish('tabla')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tabla de quesos y charcutería Tierra del Fuego</div>
+        <div class="dish-name-en">Tierra del Fuego cheese and charcuterie board</div>
+        <div class="dish-meta"><span class="price">$24.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Una selección de quesos y embutidos artesanales de Tierra del Fuego para compartir. Ideal para acompañar un vino o una copa de espumante. Tiene todo para una velada larga en el bar."
+        <div class="speech-box-en">"A selection of artisan cheeses and cured meats from Tierra del Fuego, perfect for sharing over wine or sparkling. Great for a long evening at the bar."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-kingcrab-club">
+    <div class="dish-header" onclick="toggleDish('kingcrab-club')">
+      <div class="dish-header-left">
+        <div class="dish-name">Club sándwich de centolla</div>
+        <div class="dish-name-en">King crab club sandwich, hard-boiled egg, bacon, mayonnaise, mustard, mixed greens</div>
+        <div class="dish-meta"><span class="price">$32.000</span><span class="tag tag-dos">Premium</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "El snack más lujoso del bar: nuestro club sándwich con centolla magallánica fresca, huevo duro, tocino crocante, mayonesa, mostaza y hojas verdes. Es el snack más pedido y más comentado. Una experiencia completa en un sándwich."
+        <div class="speech-box-en">"The bar's most luxurious snack: club sandwich with fresh Magellanic king crab, hard-boiled egg, crispy bacon, mayonnaise, mustard, and mixed greens. Our most popular and talked-about bar item."</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ VINOS ═══════════════ -->
+<div class="section" id="section-vinos">
+  <div class="section-title">Vinos</div>
+  <div class="section-desc">Carta completamente chilena, con foco en valles como Colchagua, Maipo, Casablanca y Limarí. Copa disponible desde $12.600.</div>
+
+  <div class="group-header">Blancos — para mariscos y pescados</div>
+
+  <div class="wine-card" id="wine-sauvb" onclick="toggleWine('sauvb')">
+    <div class="wine-left">
+      <div class="wine-name">Sauvignon Blanc Vetas Blancas · Tabalí</div>
+      <div class="wine-bodega">Valle de Limarí — fresco, cítrico, mineral</div>
+    </div>
+    <div class="wine-price">$39.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Sauvignon Blanc del norte de Chile, con notas cítricas y minerales. <strong>Recomendar con:</strong> ceviche, ostiones, locos, pulpo. Fresco y directo.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-chard-cord" onclick="toggleWine('chard-cord')">
+    <div class="wine-left">
+      <div class="wine-name">Chardonnay Cordillera · Miguel Torres</div>
+      <div class="wine-bodega">Valle de Limarí — cremoso, con cuerpo, madera sutil</div>
+    </div>
+    <div class="wine-price">$54.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Chardonnay de carácter, con algo de paso por madera. <strong>Recomendar con:</strong> centolla, bacalao de profundidad, chupe, ostiones gratinados. Uno de los más versátiles de la carta.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-solsol" onclick="toggleWine('solsol')">
+    <div class="wine-left">
+      <div class="wine-name">Sol de Sol · Aquitania</div>
+      <div class="wine-bodega">Valle de Malleco — chardonnay gran reserva</div>
+    </div>
+    <div class="wine-price">$65.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Uno de los chardonnays más reconocidos de Chile. <strong>Recomendar con:</strong> chupe de centolla, bacalao de profundidad. Para ocasiones especiales o comensales que conocen vinos.</p>
+    </div>
+  </div>
+
+  <div class="group-header">Tintos — para carnes y guisos</div>
+
+  <div class="wine-card" id="wine-carmenerecord" onclick="toggleWine('carmenerecord')">
+    <div class="wine-left">
+      <div class="wine-name">Carménère Cordillera · Miguel Torres</div>
+      <div class="wine-bodega">Valle de Peumo — uva emblemática de Chile</div>
+    </div>
+    <div class="wine-price">$54.000</div>
+    <div class="wine-detail">
+      <p class="block-text">El Carménère es la uva símbolo de Chile. Tiene notas a pimiento verde, especias y ciruela. <strong>Recomendar con:</strong> cordero, guanaco, liebre. Muy versátil con carnes rojas de la carta.</p>
+      <p class="block-text" style="margin-top:6px"><em>Para mencionar:</em> "El Carménère era considerado extinto en Europa hasta que se redescubrió en Chile en los años 90. Hoy es nuestra cepa más emblemática."</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-vikensamblaje" onclick="toggleWine('vikensamblaje')">
+    <div class="wine-left">
+      <div class="wine-name">VIK · Viña VIK</div>
+      <div class="wine-bodega">Millahue — gran ensamblaje chileno</div>
+    </div>
+    <div class="wine-price">$280.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Uno de los vinos más icónicos y premiados de Chile. Ensamblaje de múltiples cepas. <strong>Recomendar con:</strong> paletilla de cordero para dos, filete de vacuno. Para la mesa más especial de la noche.</p>
+    </div>
+  </div>
+
+  <div class="group-header">Espumantes — para aperitivo o postre</div>
+
+  <div class="wine-card" id="wine-espumante-ang" onclick="toggleWine('espumante-ang')">
+    <div class="wine-left">
+      <div class="wine-name">Sparkling Angel Brut · Montes</div>
+      <div class="wine-bodega">Zapallar — espumante premium chileno</div>
+    </div>
+    <div class="wine-price">$48.000</div>
+    <div class="wine-detail">
+      <p class="block-text"><strong>Recomendar como:</strong> aperitivo al inicio, con ostiones gratinados, o al finalizar con postres ligeros. Un vino con el que se puede brindar en cualquier momento de la cena.</p>
+    </div>
+  </div>
+
+  <div class="group-header">Grandes vinos — para ocasiones especiales</div>
+
+  <div class="wine-card" id="wine-almaviva" onclick="toggleWine('almaviva')">
+    <div class="wine-left">
+      <div class="wine-name">Almaviva · Viña Almaviva</div>
+      <div class="wine-bodega">Maipo — icono chileno, joint venture Concha y Toro & Baron Philippe de Rothschild</div>
+    </div>
+    <div class="wine-price">$440.000</div>
+    <div class="wine-detail">
+      <p class="block-text">El vino chileno más reconocido en el mundo. Elaborado en sociedad con la familia Rothschild de Burdeos. <strong>Para:</strong> la mesa más especial, aniversarios, celebraciones. Siempre mencionarlo con reverencia.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-champagne-dom" onclick="toggleWine('champagne-dom')">
+    <div class="wine-left">
+      <div class="wine-name">Dom Pérignon / Krug</div>
+      <div class="wine-bodega">Francia — Champagne de prestige</div>
+    </div>
+    <div class="wine-price">$480.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Los champagnes más icónicos del mundo. <strong>Importante:</strong> No están incluidos en el programa C. Experience. Perfectos para celebraciones excepcionales. Siempre ofrecer la copa de espumante de la carta primero, y si el comensal lo desea, mencionar estas opciones.</p>
+    </div>
+  </div>
+
+  <div class="tip-card" style="margin-top:24px; background: var(--accent-soft); border-color: var(--gold-dim);">
+    <div class="tip-title">Copa del día — siempre disponible</div>
+    <p class="tip-body">Blanco, tinto y espumante por copa a <strong>$12.600</strong> c/u. Si el comensal no sabe qué vino elegir con una botella completa, la copa es la mejor introducción. Consulte a cocina o al sommelier el vino del día disponible por copa.</p>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PROTOCOLO ═══════════════ -->
+<div class="section" id="section-tips">
+  <div class="section-title">Protocolo de Servicio</div>
+  <div class="section-desc">Guía rápida para momentos clave durante el servicio en sala.</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Al recibir la mesa</div>
+    <p class="tip-body">Salude con calidez y presente la carta brevemente. <strong>Siempre ofrezca agua</strong> (con o sin gas, Andes Mountain $6.000 o importada $6.900). Pregunte si tienen alguna <strong>restricción alimentaria o alergia</strong> antes de tomar el pedido. Nunca espere a que el cliente lo mencione.</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Presentar un plato</div>
+    <p class="tip-body">Mencione siempre: <strong>(1) el nombre del plato</strong> — <strong>(2) el ingrediente principal y su origen</strong> — <strong>(3) una característica destacada</strong>. Ejemplo: "Les traigo el garrón de cordero de Puerto Natales, asado lentamente por varias horas hasta quedar completamente tierno, con salsa demi-glace y arvejas especiadas."</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Cuando no sabe la respuesta</div>
+    <p class="tip-body">Nunca improvise información que no sabe. La frase correcta: <strong>"Le confirmo con cocina en un momento"</strong> / <em>"Let me check with the kitchen for you."</em> Eso demuestra profesionalismo, no ignorancia.</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Alergias e intolerancias</div>
+    <p class="tip-body">Ante cualquier mención de alergia o intolerancia, <strong>siempre comuníquelo al chef</strong> antes de confirmar el plato. Nunca asuma que un plato es seguro sin confirmación de cocina. Los íconos de la carta son orientativos, no garantías absolutas frente a trazas cruzadas.</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Ofrecer el postre</div>
+    <p class="tip-body">No espere que el cliente pregunte. Al retirar los platos del fondo, pregunte: <strong>"¿Les gustaría ver nuestra selección de postres?"</strong> o bien: <strong>"¿Les ofrezco el menú de postres?"</strong>. En inglés: <em>"May I bring you our dessert menu?"</em></p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Maridaje: la regla simple</div>
+    <p class="tip-body"><strong>Mariscos y pescados → vino blanco.</strong> <strong>Carnes rojas y caza → tinto.</strong> <strong>Aperitivo o celebración → espumante.</strong> Cuando no esté seguro, ofrezca la copa del día ($12.600) y consulte al sommelier del turno para recomendaciones específicas.</p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Frases útiles en inglés</div>
+    <p class="tip-body">
+      <strong>"May I take your order?"</strong> — ¿Puedo tomar su pedido?<br>
+      <strong>"Would you like still or sparkling water?"</strong> — ¿Agua con o sin gas?<br>
+      <strong>"Do you have any dietary restrictions?"</strong> — ¿Tiene alguna restricción alimentaria?<br>
+      <strong>"I'll check with the kitchen."</strong> — Lo confirmo con cocina.<br>
+      <strong>"Is everything to your liking?"</strong> — ¿Todo está a su gusto?<br>
+      <strong>"May I clear your plate?"</strong> — ¿Puedo retirar su plato?<br>
+      <strong>"Would you like to see the dessert menu?"</strong> — ¿Le muestro la carta de postres?<br>
+      <strong>"The bill, of course."</strong> — La cuenta, por supuesto.
+    </p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Los 5 platos que siempre debes poder recomendar</div>
+    <p class="tip-body">
+      <strong>Entrada estrella:</strong> Centolla magallánica, yogur y limón ($32.800)<br>
+      <strong>Entrada accesible:</strong> Tártaro de guanaco ($18.800) — historia del ingrediente<br>
+      <strong>Fondo estrella:</strong> Chupe de centolla magallánica ($45.000)<br>
+      <strong>Para dos personas:</strong> Paletilla de cordero, salsa de morillas ($75.000)<br>
+      <strong>Vegetariano completo:</strong> Curry de lentejas beluga ($32.000)
+    </p>
+  </div>
+
+</div>
+
+</main>
+
+<div class="no-results" id="noResults">No se encontraron resultados para esa búsqueda.</div>
+
+<footer>The Singular Patagonia · Guía de Servicio 2026–27 · Uso interno</footer>
+
+<script>
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  const el = document.getElementById('section-' + id);
+  if (el) el.classList.add('active');
+  event.currentTarget.classList.add('active');
+  document.getElementById('noResults').style.display = 'none';
+  document.getElementById('searchInput').value = '';
+  document.querySelectorAll('.dish-card, .wine-card, .tip-card, .group-header').forEach(c => c.style.display = '');
+}
+
+function toggleDish(id) {
+  const card = document.getElementById('dish-' + id);
+  if (!card) return;
+  const isOpen = card.classList.contains('open');
+  document.querySelectorAll('.dish-card.open').forEach(c => {
+    if (c !== card) c.classList.remove('open');
+  });
+  card.classList.toggle('open', !isOpen);
+}
+
+function toggleWine(id) {
+  const card = document.getElementById('wine-' + id);
+  if (!card) return;
+  card.classList.toggle('expanded');
+}
+
+function switchTab(btn, dishId, panelId) {
+  const card = btn.closest('.dish-card') || btn.closest('.dish-body');
+  const tabs = btn.parentElement.querySelectorAll('.inner-tab');
+  tabs.forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  const panels = btn.closest('.dish-body').querySelectorAll('.inner-panel');
+  panels.forEach(p => p.classList.remove('active'));
+  const target = document.getElementById(dishId + '-' + panelId);
+  if (target) target.classList.add('active');
+}
+
+function handleSearch() {
+  const q = document.getElementById('searchInput').value.toLowerCase().trim();
+  const noRes = document.getElementById('noResults');
+
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+
+  if (!q) {
+    document.getElementById('section-entradas').classList.add('active');
+    document.querySelectorAll('.nav-tab')[0].classList.add('active');
+    document.querySelectorAll('.dish-card, .wine-card, .tip-card, .group-header').forEach(c => c.style.display = '');
+    noRes.style.display = 'none';
+    return;
+  }
+
+  const allSections = document.querySelectorAll('.section');
+  allSections.forEach(s => {
+    s.classList.add('active');
+    s.style.display = '';
+  });
+
+  let found = 0;
+  document.querySelectorAll('.dish-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = text.includes(q);
+    card.style.display = match ? '' : 'none';
+    if (match) found++;
+  });
+  document.querySelectorAll('.wine-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = text.includes(q);
+    card.style.display = match ? '' : 'none';
+    if (match) found++;
+  });
+  document.querySelectorAll('.tip-card').forEach(card => {
+    const text = card.textContent.toLowerCase();
+    const match = text.includes(q);
+    card.style.display = match ? '' : 'none';
+    if (match) found++;
+  });
+  document.querySelectorAll('.group-header').forEach(h => {
+    h.style.display = 'none';
+  });
+
+  noRes.style.display = found === 0 ? 'block' : 'none';
+}
+</script>
+</body>
+</html>
