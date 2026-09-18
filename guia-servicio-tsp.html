@@ -419,6 +419,60 @@
   }
   .tip-body strong { color: var(--text); font-weight: 500; }
 
+  /* ── LQA CHECKLIST ── */
+  .lqa-cat { margin-bottom: 8px; }
+  .lqa-item {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    padding: 12px 16px;
+    margin-bottom: 6px;
+    transition: border-color 0.2s;
+  }
+  .lqa-item:hover { border-color: var(--gold-dim); }
+  .lqa-item.checked { border-color: rgba(106,171,124,0.5); background: rgba(106,171,124,0.05); }
+  .lqa-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    cursor: pointer;
+  }
+  .lqa-check {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    accent-color: var(--gold);
+    cursor: pointer;
+  }
+  .lqa-text {
+    font-size: 13px;
+    color: var(--text);
+    line-height: 1.5;
+  }
+  .lqa-text em { color: var(--text-muted); font-style: italic; font-size: 12px; }
+  .lqa-item.lqa-ei .lqa-text strong { color: var(--gold); }
+  .lqa-detail {
+    display: block;
+    margin-top: 4px;
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .lqa-detail em { color: var(--text-muted); }
+
+  /* ── SOP STEP HIGHLIGHTS ── */
+  .sop-timing {
+    display: inline-block;
+    background: rgba(200,169,110,0.12);
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border: 1px solid var(--gold-dim);
+    margin-bottom: 8px;
+  }
+
   /* ── NO RESULTS ── */
   .no-results {
     text-align: center;
@@ -464,6 +518,8 @@
     <button class="nav-tab" onclick="showSection('bar')">Bar & Snacks</button>
     <button class="nav-tab" onclick="showSection('vinos')">Vinos</button>
     <button class="nav-tab" onclick="showSection('tips')">Protocolo</button>
+    <button class="nav-tab" onclick="showSection('sop')">SOP</button>
+    <button class="nav-tab" onclick="showSection('lqa')">LQA</button>
     <button class="nav-tab" onclick="showSection('glosario')">Glosario</button>
   </div>
 </div>
@@ -1872,6 +1928,361 @@
 
 </div>
 
+<!-- ═══════════════ SOP ═══════════════ -->
+<div class="section" id="section-sop">
+  <div class="section-title">SOP — Secuencia de Servicio</div>
+  <div class="section-desc">Standard Operating Procedure · Temporada 2026/2027 · The Singular Patagonia</div>
+
+  <div class="group-header">1. Reservas · Reservations</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Atender el teléfono · Answering the phone</div>
+    <p class="tip-body"><strong>Tiempo máximo:</strong> 10 segundos / 3 tonos de timbre. · <em>Max time: 10 seconds / 3 rings.</em></p>
+    <div class="speech-box">
+      "Buenas [tardes/noches], restaurante The Singular Patagonia, le habla [nombre], ¿en qué le puedo ayudar?"
+      <div class="speech-box-en">"Good [afternoon/evening], The Singular Patagonia restaurant, this is [name], how may I assist you?"</div>
+    </div>
+    <p class="tip-body">
+      <strong>Datos a confirmar obligatoriamente:</strong><br>
+      ① Número de comensales · <em>Number of guests</em><br>
+      ② Hora de la reserva · <em>Reservation time</em><br>
+      ③ Número de habitación (si es huésped) · <em>Room number (if hotel guest)</em><br>
+      ④ Ocasión especial · <em>Special occasion</em><br>
+      ⑤ Requerimientos o restricciones alimentarias · <em>Dietary requirements or restrictions</em>
+    </p>
+    <div class="alert-box">⚑ Usar el apellido del huésped al menos UNA VEZ durante la llamada. · <em>Use the guest's surname at least ONCE during the call.</em></div>
+  </div>
+
+  <div class="group-header">2. Bienvenida y llegada · Arrival & Seating</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Recepción en sala · Guest arrival</div>
+    <p class="tip-body">
+      <strong>Tiempo máximo:</strong> 1 minuto desde que el huésped llega al restaurante. · <em>Max 1 minute from arrival.</em><br><br>
+      — Saludar con calidez y usar el apellido si se conoce.<br>
+      — Acompañar a la mesa, no solo señalarla.<br>
+      — Si hay espera: pedir disculpas sinceras y ofrecer alternativa.<br>
+      — Retirar el puesto excedente con <strong>guantes blancos y usando bandeja</strong>.<br>
+      <em>— Remove extra place settings with white gloves and a tray.</em>
+    </p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Entrega de carta · Menu presentation</div>
+    <p class="tip-body"><strong>Tiempo máximo:</strong> 5 minutos desde que el comensal se sienta. · <em>Max 5 minutes from seating.</em></p>
+    <div class="speech-box">
+      "Nuestra propuesta culinaria está inspirada en la gastronomía local, reflejando la esencia de la Patagonia a través de ingredientes regionales y técnicas influenciadas por la tradición francesa."
+      <div class="speech-box-en">"Our culinary offering is inspired by local gastronomy, reflecting the essence of Patagonia through regional ingredients and techniques influenced by French tradition."</div>
+    </div>
+  </div>
+
+  <div class="group-header">3. Aperitivo y bebidas · Pre-meal drinks & beverages</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Tiempos de bebidas · Beverage timing</div>
+    <p class="tip-body">
+      <strong>Aperitivo / Pre-meal drink:</strong> dentro de los primeros <strong>3 minutos</strong> de que el comensal se sienta. · <em>Within 3 minutes of seating.</em><br><br>
+      <strong>Bebidas simples / Simple drinks:</strong> máximo <strong>5 minutos</strong>. · <em>Max 5 minutes.</em><br><br>
+      <strong>Coctelería / Cocktails:</strong> máximo <strong>8 minutos</strong>. · <em>Max 8 minutes.</em>
+    </p>
+    <div class="alert-box">⚑ Ofrecer agua siempre — con o sin gas. Andes Mountain $6.000 o agua importada $6.900. · <em>Always offer water — still or sparkling.</em></div>
+  </div>
+
+  <div class="group-header">4. Toma de pedido · Taking the order</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Tiempo y protocolo · Timing & protocol</div>
+    <p class="tip-body">
+      <strong>Tiempo máximo para tomar el pedido:</strong> 10 minutos desde que se entregó la carta. · <em>Max 10 minutes from menu presentation.</em><br><br>
+      — Servir siempre <strong>comenzando por las mujeres</strong>, de izquierda a derecha.<br>
+      — Servir y retirar siempre <strong>por la derecha</strong> del comensal.<br>
+      <em>— Always start with women; serve and clear from the guest's right.</em><br><br>
+      — Máximo <strong>3 platos por garzón</strong> para mantener la calidad y presentación elegante.<br>
+      <em>— Max 3 plates per server to maintain quality and elegant presentation.</em>
+    </p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Ingresar en Symphony · Entering the order in Symphony</div>
+    <p class="tip-body">
+      <strong>Symphony</strong> es el sistema de gestión de pedidos del restaurante. Al tomar la comanda, ingresar:<br>
+      <em>Symphony is the restaurant's POS order management system. When taking the order, enter:</em><br><br>
+      <strong>① Tarifa del huésped / Guest rate:</strong><br>
+      &nbsp;&nbsp;· <strong>FB</strong> = Full Board (pensión completa — desayuno, almuerzo y cena incluidos)<br>
+      &nbsp;&nbsp;· <strong>HF</strong> = Half Board (media pensión — desayuno y cena)<br>
+      &nbsp;&nbsp;· <strong>BB</strong> = Bed &amp; Breakfast (solo desayuno)<br>
+      &nbsp;&nbsp;· <strong>WALK IN</strong> = Comensal externo, no huésped del hotel<br><br>
+      <strong>② Número de habitación</strong> · Room number<br>
+      <strong>③ Número de asiento</strong> · Seat number<br>
+      <strong>④ Punto de cocción</strong> (para carnes) · Cooking temperature (for meats)<br>
+      <strong>⑤ Alergias o restricciones</strong> · Allergies or dietary restrictions
+    </p>
+  </div>
+
+  <div class="group-header">5. El pan · The bread service</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Servicio de pan · Bread service</div>
+    <div class="speech-box">
+      "Les ofrezco nuestro pan de masa madre — tenemos el tradicional y el integral. Se acompaña con mantequilla aireada y cristales de sal de mar."
+      <div class="speech-box-en">"May I offer our sourdough bread — we have the traditional and the whole-grain. Served with whipped butter and sea salt crystals."</div>
+    </div>
+    <p class="tip-body">El pan es masa madre artesanal. La mantequilla es <strong>aireada</strong> (batida para lograr textura ligera) con <strong>cristales de sal de mar</strong>. Retirar el pan y la mantequilla después de los fondos, antes del postre. · <em>Remove bread and butter after the main course, before dessert.</em></p>
+  </div>
+
+  <div class="group-header">6. Tiempos de cocina · Kitchen timing</div>
+
+  <div class="tip-card">
+    <div class="tip-title">⏱ Cheat sheet de tiempos · Timing reference</div>
+    <p class="tip-body" style="line-height:2.1;">
+      <strong>Atender teléfono</strong> → 10 seg &nbsp;·&nbsp; <em>Answer phone → 10 sec</em><br>
+      <strong>Recibir huésped</strong> → 1 min &nbsp;·&nbsp; <em>Greet guest → 1 min</em><br>
+      <strong>Entregar carta</strong> → 5 min &nbsp;·&nbsp; <em>Present menu → 5 min</em><br>
+      <strong>Aperitivo</strong> → 3 min &nbsp;·&nbsp; <em>Pre-meal drink → 3 min</em><br>
+      <strong>Bebida simple</strong> → 5 min &nbsp;·&nbsp; <em>Simple drink → 5 min</em><br>
+      <strong>Coctelería</strong> → 8 min &nbsp;·&nbsp; <em>Cocktail → 8 min</em><br>
+      <strong>Tomar pedido</strong> → 10 min &nbsp;·&nbsp; <em>Take order → 10 min</em><br>
+      <strong>Entrada</strong> → 15 min &nbsp;·&nbsp; <em>Starter → 15 min</em><br>
+      <strong>Fondo (con entrada)</strong> → 20 min &nbsp;·&nbsp; <em>Main (with starter) → 20 min</em><br>
+      <strong>Fondo (sin entrada)</strong> → 30 min &nbsp;·&nbsp; <em>Main (no starter) → 30 min</em><br>
+      <strong>Retiro vajilla</strong> → 5 min &nbsp;·&nbsp; <em>Clear plates → 5 min</em><br>
+      <strong>Postre</strong> → 10 min &nbsp;·&nbsp; <em>Dessert → 10 min</em><br>
+      <strong>Café</strong> → 5 min &nbsp;·&nbsp; <em>Coffee → 5 min</em><br>
+      <strong>Pre-cuenta</strong> → 3 min &nbsp;·&nbsp; <em>Bill → 3 min</em>
+    </p>
+  </div>
+
+  <div class="group-header">7. Servicio de vinos · Wine service</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Protocolo de vinos · Wine protocol</div>
+    <p class="tip-body">
+      ① <strong>Presentar la botella</strong> al anfitrión antes de abrir — mostrar etiqueta, mencionar año y bodega. · <em>Present the bottle to the host before opening — show the label, vintage and winery.</em><br><br>
+      ② <strong>Abrir la botella en la mesa</strong>, frente al comensal — nunca en otro lugar. · <em>Open the bottle at the table, in front of the guest.</em><br><br>
+      ③ <strong>Servir muestra al anfitrión</strong> (~2 cl) para aprobación antes de servir a la mesa. · <em>Pour a small sample for the host to approve before serving the table.</em><br><br>
+      ④ <strong>Tinto a temperatura ambiente · Blanco bien frío.</strong> · <em>Red at room temperature · White well chilled.</em><br><br>
+      ⑤ <strong>Rellenar las copas</strong> regularmente — no esperar a que estén vacías. · <em>Top up glasses regularly — don't wait until empty.</em><br><br>
+      ⑥ <strong>Ofrecer botella adicional</strong> cuando quede poco más del último vaso. · <em>Offer an additional bottle when less than a glass remains.</em><br><br>
+      ⑦ <strong>Verter siempre frente al comensal.</strong> · <em>Always pour in front of the guest.</em>
+    </p>
+  </div>
+
+  <div class="group-header">8. Retiro y transición entre platos · Clearing & transitions</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Protocolo de retiro · Clearing protocol</div>
+    <p class="tip-body">
+      — Retirar vajilla siempre <strong>por la derecha</strong>.<br>
+      — <strong>Retirar miguitas y pan</strong> después de los fondos, antes del postre.<br>
+      — <strong>Servicio coordinado:</strong> todos los comensales de una mesa reciben su plato al mismo tiempo. · <em>Coordinated service: all guests receive their plate simultaneously.</em><br>
+      — Llevar el plato correcto <strong>a cada asiento específico</strong> — sin preguntar "¿quién pidió el cordero?". · <em>Deliver the correct plate to the right seat — without asking "who had the lamb?"</em><br><br>
+      <strong>Máx. 3 platos por garzón</strong> para llegar bien a la mesa. Si son más, coordinarse con el equipo. · <em>Max 3 plates per server. Coordinate with the team for larger tables.</em>
+    </p>
+  </div>
+
+  <div class="group-header">9. Postres y café · Desserts & coffee</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Ofrecer siempre — no esperar · Always offer — don't wait</div>
+    <div class="speech-box">
+      "¿Les gustaría ver nuestra selección de postres?"
+      <div class="speech-box-en">"Would you like to see our dessert selection?"</div>
+    </div>
+    <p class="tip-body">
+      <strong>Café y té:</strong> ofrecer automáticamente después del postre. Presentar la selección de tés de especialidad. · <em>Offer automatically after dessert. Present the specialty tea selection.</em><br><br>
+      <strong>Leche / crema / alternativas sin lactosa</strong> disponibles. Azúcar blanco, moreno y edulcorante. · <em>Milk / cream / dairy-free options available. White sugar, brown sugar and sweetener.</em><br><br>
+      <strong>Vino de postre:</strong> ofrecer cuando el comensal pide postre. · <em>Suggest dessert wine when the guest orders dessert.</em>
+    </p>
+  </div>
+
+  <div class="group-header">10. La cuenta · The bill</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Solicitar y presentar la cuenta · Requesting and presenting the bill</div>
+    <p class="tip-body">
+      <strong>Tiempo:</strong> máximo 3 minutos desde que se solicita la cuenta. · <em>Max 3 minutes from request.</em><br><br>
+      <strong>Si el huésped paga con factura empresarial:</strong> solicitar foto del <strong>E-RUT</strong> y enviarla al email:<br>
+      <strong style="color:var(--gold)">anfitrionapat@thesingular.com</strong><br><br>
+      <strong>Despedida sincera:</strong> acompañar al comensal a la salida si es posible. Usar el apellido una última vez. · <em>Escort the guest to the exit if possible. Use their surname one last time.</em>
+    </p>
+    <div class="speech-box">
+      "Ha sido un placer recibirles esta noche, esperamos volver a verles pronto."
+      <div class="speech-box-en">"It has been a pleasure having you with us tonight. We hope to see you again soon."</div>
+    </div>
+  </div>
+
+  <div class="group-header">11. Situaciones difíciles · Difficult situations</div>
+
+  <div class="tip-card">
+    <div class="tip-title">Plato insatisfactorio · Unsatisfactory dish</div>
+    <p class="tip-body">
+      <strong>Si el comensal es huésped del hotel:</strong> mermar el plato (retirarlo) y ofrecer cambio sin costo. Informar al maître.<br>
+      <em>Remove the dish and offer a replacement at no cost. Inform the maître.</em><br><br>
+      <strong>Si el comensal es pasante (externo):</strong> la decisión la toma el <strong>maître</strong> — no ofrecer cambio sin consultarle primero.<br>
+      <em>The decision is made by the maître — do not offer a replacement without consulting first.</em>
+    </p>
+  </div>
+
+  <div class="tip-card">
+    <div class="tip-title">Frases clave · Key phrases</div>
+    <p class="tip-body">
+      <span style="color:var(--gold)">"Permítame verificar."</span> — Cuando no puede resolver algo en el momento. · <em>"Allow me to verify."</em><br><br>
+      <span style="color:var(--gold)">"Lo que sí podemos ofrecerle es..."</span> — Cuando no hay disponibilidad. · <em>"What we can offer you is..."</em><br><br>
+      <span style="color:var(--gold)">"Con gusto le ayudaré."</span> — Cuando el comensal pide ayuda. · <em>"It would be my pleasure to help you."</em><br><br>
+      <span style="color:var(--gold)">"Le confirmo con cocina en un momento."</span> — Cuando no sabe la respuesta. · <em>"Let me check with the kitchen for you."</em>
+    </p>
+    <div class="alert-box">⚑ Nunca improvise información que no sabe. Nunca diga "no sé" sin ofrecer alternativa. · <em>Never improvise. Never say "I don't know" without offering an alternative.</em></div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ LQA ═══════════════ -->
+<div class="section" id="section-lqa">
+  <div class="section-title">LQA — Auditoría de Calidad</div>
+  <div class="section-desc">Leading Quality Assurance · Restaurante · 81 criterios de auditoría internacional — marca tus avances y estudia cada punto.</div>
+
+  <div style="background:var(--accent-soft);border:1px solid var(--gold-dim);padding:12px 16px;margin-bottom:20px;font-size:13px;color:var(--text-dim);">
+    <strong style="color:var(--gold)">¿Qué es el LQA?</strong> — Leading Quality Assurance es el sistema de auditoría de los Leading Hotels of the World. Un inspector anónimo evalúa 81 puntos del servicio de restaurante. Cada ✓ es un punto. El objetivo es 85% o más.<br>
+    <em style="font-size:12px;">Leading Quality Assurance is the audit system of the Leading Hotels of the World. An anonymous inspector scores 81 service points. Target: 85% or above.</em>
+  </div>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px;align-items:center;">
+    <button onclick="resetChecklist()" style="background:none;border:1px solid var(--border);color:var(--text-dim);font-family:'Inter',sans-serif;font-size:11px;letter-spacing:0.08em;text-transform:uppercase;padding:8px 14px;cursor:pointer;">↺ Reiniciar / Reset</button>
+    <div id="lqa-score" style="background:var(--surface);border:1px solid var(--border);padding:8px 16px;font-size:13px;color:var(--gold);font-weight:400;letter-spacing:0.06em;">Score: 0 / 81 &nbsp;(0%)</div>
+  </div>
+
+  <!-- A. RESERVA -->
+  <div class="group-header">A. Reserva · Reservation <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 6 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Teléfono atendido en máx. 10 seg / 3 tonos <em>· Phone answered within 10 sec / 3 rings</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Apellido del huésped usado al menos una vez <em>· Guest's surname used at least once</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Se obtiene: número de comensales, hora y habitación <em>· Obtain: guest count, time and room number</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Detalles de la reserva repetidos y confirmados <em>· Details repeated and confirmed</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Despedida cálida al finalizar la llamada <em>· Warm closing at end of call</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Se pregunta por ocasión especial y requerimientos <em>· Special occasion and requests asked</em></span></label></div>
+  </div>
+
+  <!-- B. LLEGADA -->
+  <div class="group-header">B. Llegada y asignación de mesa · Arrival & Seating <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 7 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Huésped recibido en máx. 1 minuto <em>· Guest greeted within 1 minute of arrival</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Mesa preparada para el número correcto de comensales <em>· Table set for the correct number of guests</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Si hay espera: disculpa sincera y alternativa ofrecida <em>· If waiting: sincere apology and alternative offered</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Asistencia al sentarse (silla corrida, ayuda con abrigo) <em>· Seating assistance provided</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Carta entregada en máx. 5 minutos <em>· Menu presented within 5 minutes</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Iluminación adecuada para leer la carta <em>· Adequate lighting to read the menu</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Pashmina ofrecida en terraza al aire libre (si aplica) <em>· Pashmina offered for al fresco seating</em></span></label></div>
+  </div>
+
+  <!-- C. SERVICIO -->
+  <div class="group-header">C. Servicio en sala · Table Service <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 30 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Aperitivo ofrecido en primeros 3 min de sentarse <em>· Pre-meal drink offered within 3 min of seating</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Especiales del día y platos no disponibles informados <em>· Specials and unavailable items communicated</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Storytelling: procedencia e historia de ingredientes mencionada <em>· Storytelling and provenance shared</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Agua ofrecida (con o sin gas) <em>· Water offered — still or sparkling</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Pedido tomado en máx. 10 min desde la entrega de carta <em>· Order taken within 10 min of menu presentation</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Preguntas de carta y alergias respondidas correctamente <em>· Menu and allergy questions answered correctly</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Se intenta acomodar pedidos fuera de carta <em>· Off-menu requests accommodated when possible</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Pedido completo con puntos de cocción y preferencias <em>· Order completed with cooking instructions and preferences</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Requerimientos dietéticos reconfirmados al tomar el pedido <em>· Dietary requirements re-confirmed when ordering</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Entradas sugeridas activamente <em>· Starters suggested proactively</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Excelente conocimiento de vinos demostrado <em>· Excellent wine knowledge demonstrated</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Bebidas simples en máx. 5 min <em>· Simple drinks within 5 min</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Coctelería en máx. 8 min <em>· Cocktails within 8 min</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Entrada en máx. 15 min desde la comanda <em>· Starter within 15 min of order</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Fondo en máx. 20 min desde retiro de entrada <em>· Main within 20 min from starter removal</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Fondo (sin entrada) en máx. 30 min desde comanda <em>· Main (no starter) within 30 min from order</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Servicio coordinado — todos reciben su plato al mismo tiempo <em>· Coordinated service — all guests served simultaneously</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Plato correcto a cada comensal sin preguntar <em>· Correct dish to correct guest without asking</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Condimentos presentados apropiadamente <em>· Condiments served appropriately</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Vajilla retirada en máx. 5 min de que el comensal termina <em>· Plates cleared within 5 min of guest finishing</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Pan, mantequilla y miguitas retirados después de fondos <em>· Bread, butter and crumbs cleared after main course</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Postre ofrecido automáticamente <em>· Dessert offered automatically</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Postre en máx. 10 min desde que se pide <em>· Dessert within 10 min of order</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Café ofrecido automáticamente después del postre <em>· Coffee offered automatically after dessert</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Café en máx. 5 min <em>· Coffee within 5 min</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Leche/crema/alternativa vegetal + selección completa de azúcares <em>· Milk/cream/non-dairy + full sugar selection provided</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Vino de postre sugerido <em>· Dessert wine suggested</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Visita de control a la mesa para verificar satisfacción <em>· Table visit to check satisfaction</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Cuenta presentada en máx. 3 min desde que se pide <em>· Bill presented within 3 min of request</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Despedida sincera al final <em>· Sincere farewell at departure</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">[30° criterio reservado — confirmar con maître en auditoría] <em>· [30th criterion — confirm with maître at audit]</em></span></label></div>
+  </div>
+
+  <!-- D. VINOS -->
+  <div class="group-header">D. Servicio de vinos · Wine Service <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 7 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Botella presentada y abierta en la mesa <em>· Bottle presented and opened at the table</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Muestra servida al anfitrión para aprobación <em>· Sample poured for host approval</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Tinto a temperatura ambiente, blanco bien frío <em>· Red at room temperature, white well chilled</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Copas rellenadas regularmente <em>· Glasses topped up regularly</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Botella adicional ofrecida al quedar poco <em>· Additional bottle offered when running low</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Vino servido frente al comensal <em>· Wine poured in front of the guest</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Bebida adicional ofrecida dentro de 2 min de copa vacía <em>· Additional drink offered within 2 min of empty glass</em></span></label></div>
+  </div>
+
+  <!-- E. MENÚ Y COMIDA -->
+  <div class="group-header">E. Menú y comida · Menu & Food <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 9 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Carta limpia, en buen estado y correcta <em>· Menu clean, well-maintained and accurate</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Opciones sustentables disponibles (vegano, sin gluten, sin lactosa) <em>· Sustainability options available</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Comida coincide con la descripción de la carta <em>· Food matches the menu description</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Comida fresca y de sabor excelente <em>· Food fresh and of excellent flavour</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Textura correcta y apropiada <em>· Correct and appropriate texture</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Carne cocinada según el punto solicitado <em>· Meat cooked as requested</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Procedencia local del pescado indicada <em>· Locally sourced fish stated</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Alimento de origen local disponible en la carta <em>· Locally sourced food available on the menu</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Tés de especialidad y cafés disponibles <em>· Specialty teas and coffees available</em></span></label></div>
+  </div>
+
+  <!-- F. MESA -->
+  <div class="group-header">F. Montaje de mesa · Table Layout <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 8 puntos</span></div>
+  <div class="lqa-cat">
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Mesa cómoda y bien dispuesta para el comensal <em>· Table comfortable and well arranged</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Mesa re-montada en máx. 5 min entre comensales <em>· Table cleared and re-laid within 5 min</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Mantel limpio y bien planchado <em>· Tablecloth clean and well pressed</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Cubiertos y vajilla correctos para cada plato <em>· Correct cutlery and crockery for each course</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Sin plásticos de un solo uso en la mesa <em>· No single-use plastics on the table</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Agua en vasos / contenedores eco (no botellas plástico) <em>· Water in glass or eco containers</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Mantequilla fresca y bien presentada <em>· Butter fresh and well presented</em></span></label></div>
+    <div class="lqa-item"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text">Sal y pimienta limpias y llenas <em>· Salt and pepper clean and full</em></span></label></div>
+  </div>
+
+  <!-- G. EI BEHAVIOURAL -->
+  <div class="group-header">G. Comportamiento EI · Emotional Intelligence Behavioural <span style="font-size:13px;color:var(--text-muted);font-weight:300;font-family:'Inter',sans-serif"> — 13 puntos</span></div>
+
+  <div style="background:rgba(200,169,110,0.05);border:1px solid var(--gold-dim);padding:12px 16px;margin-bottom:14px;font-size:12px;color:var(--text-dim);">
+    <strong style="color:var(--gold)">Sección EI Behavioural</strong> — 13 criterios de inteligencia emocional que el auditor evalúa en tu comportamiento personal. No son procedimentales — son sobre <em>cómo eres</em> con el huésped.<br>
+    <em>These 13 emotional intelligence criteria assess your personal behaviour — not just procedure, but how you are with the guest.</em>
+  </div>
+
+  <div class="lqa-cat">
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>FIRST IMPRESSION</strong> — Primera impresión<span class="lqa-detail">Uniforme impecable, bien cuidado/a, identificación visible. <em>Impeccable uniform, well-groomed, visible name badge.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>CLARITY</strong> — Claridad en la comunicación<span class="lqa-detail">Habla con claridad, inglés suficiente para el servicio. <em>Clear speech, adequate English for the service context.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>ENGAGEMENT</strong> — Trato natural y genuino<span class="lqa-detail">Servicio natural, no de guión ni robótico. Amable y real. <em>Natural, non-scripted, genuinely friendly interaction.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>GUEST'S NAME</strong> — Uso del nombre del huésped<span class="lqa-detail">Usa el apellido de manera natural y discreta — nunca en exceso. <em>Uses the guest's name naturally and discreetly — not excessively.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>CONFIDENCE</strong> — Seguridad y conocimiento<span class="lqa-detail">Demuestra conocimiento del menú y del hotel. Si no sabe, ofrece averiguar — nunca inventa. <em>Knowledgeable, offers to find out — never invents answers.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>ANTICIPATE</strong> — Anticipar necesidades<span class="lqa-detail">Piensa un paso por delante — recarga el agua antes de que la pidan, cambia cubiertos sin que lo soliciten. <em>Thinks ahead — refills water before asked, changes cutlery without prompting.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>ADAPTATION</strong> — Paciencia y adaptación<span class="lqa-detail">Paciente con comensales distraídos. Mantiene contacto visual apropiado. <em>Patient with distracted guests, maintains appropriate eye contact.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>EFFORT</strong> — Esfuerzo genuino<span class="lqa-detail">Hace todo el esfuerzo posible. Cuando no puede, ofrece alternativa real. <em>Makes every effort for the guest. When unable, offers a genuine alternative.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>PERSONALIZATION</strong> — Trato individual<span class="lqa-detail">Trata a cada comensal como individuo único. Recuerda sus preferencias durante el servicio. <em>Engages each guest as an individual — remembers preferences during the meal.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>COLLABORATION</strong> — Trabajo en equipo<span class="lqa-detail">El equipo trabaja de manera integrada y sin interrupciones innecesarias al comensal. <em>Seamless team service — not intrusive to the guest experience.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>ACTIVE LISTENING</strong> — Escucha activa<span class="lqa-detail">Atención completa cuando el comensal habla — nunca hay que repetir dos veces. <em>Undivided attention — the guest never needs to repeat themselves.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>ALERTNESS</strong> — Alerta y postura profesional<span class="lqa-detail">Postura profesional y alerta en todo momento. Educado y pulido — nunca relajado en exceso. <em>Polite, professional and alert posture at all times.</em></span></span></label></div>
+    <div class="lqa-item lqa-ei"><label class="lqa-label"><input type="checkbox" class="lqa-check" onchange="updateScore()"><span class="lqa-text"><strong>EMPATHY</strong> — Empatía ante situaciones difíciles<span class="lqa-detail">Control propio en situaciones de queja o tensión. Ofrece resolución real — nunca se pone a la defensiva. <em>Self-control in challenging situations — offers resolution, never defensive.</em></span></span></label></div>
+  </div>
+
+  <!-- RESULT -->
+  <div class="tip-card" style="margin-top:28px;background:var(--accent-soft);border-color:var(--gold-dim);">
+    <div class="tip-title" style="color:var(--gold)">Tu resultado · Your score</div>
+    <div id="lqa-result-detail" style="font-size:14px;color:var(--text-dim);line-height:1.8;margin-top:6px;">
+      Marca los criterios de arriba para ver tu resultado. · <em>Check the criteria above to see your result.</em>
+    </div>
+  </div>
+
+</div>
+
 </main>
 
 <div class="no-results" id="noResults">No se encontraron resultados para esa búsqueda.</div>
@@ -1965,6 +2376,35 @@ function handleSearch() {
   });
 
   noRes.style.display = found === 0 ? 'block' : 'none';
+}
+
+function updateScore() {
+  const checks = document.querySelectorAll('#section-lqa .lqa-check');
+  let score = 0;
+  checks.forEach(cb => {
+    const item = cb.closest('.lqa-item');
+    if (cb.checked) { score++; item.classList.add('checked'); }
+    else { item.classList.remove('checked'); }
+  });
+  const total = checks.length;
+  const pct = total > 0 ? Math.round((score / total) * 100) : 0;
+  document.getElementById('lqa-score').textContent = 'Score: ' + score + ' / ' + total + '  (' + pct + '%)';
+  const detail = document.getElementById('lqa-result-detail');
+  if (score === 0) {
+    detail.innerHTML = 'Marca los criterios de arriba para ver tu resultado. · <em>Check the criteria above to see your result.</em>';
+  } else if (pct >= 85) {
+    detail.innerHTML = '<strong style="color:#6aab7c">✓ ' + pct + '% — ¡Excelente! Sobre el umbral LQA (85%).</strong><br><em>Excellent! Above the LQA threshold.</em>';
+  } else {
+    detail.innerHTML = '<strong style="color:#e08080">✗ ' + pct + '% — Bajo el umbral LQA (85%). Faltan ' + (total - score) + ' criterios.</strong><br><em>Below LQA threshold. ' + (total - score) + ' criteria remaining.</em>';
+  }
+}
+
+function resetChecklist() {
+  document.querySelectorAll('#section-lqa .lqa-check').forEach(cb => { cb.checked = false; });
+  document.querySelectorAll('#section-lqa .lqa-item').forEach(item => item.classList.remove('checked'));
+  const total = document.querySelectorAll('#section-lqa .lqa-check').length;
+  document.getElementById('lqa-score').textContent = 'Score: 0 / ' + total + '  (0%)';
+  document.getElementById('lqa-result-detail').innerHTML = 'Marca los criterios de arriba para ver tu resultado. · <em>Check the criteria above to see your result.</em>';
 }
 </script>
 </body>
