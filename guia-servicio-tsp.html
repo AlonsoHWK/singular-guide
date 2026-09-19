@@ -513,8 +513,11 @@
 <div class="nav-scroll">
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showSection('entradas')">Entradas</button>
+    <button class="nav-tab" onclick="showSection('sopas')">Sopas</button>
     <button class="nav-tab" onclick="showSection('fondos')">Fondos</button>
+    <button class="nav-tab" onclick="showSection('grill')">Carta Grill</button>
     <button class="nav-tab" onclick="showSection('postres')">Postres</button>
+    <button class="nav-tab" onclick="showSection('veganos')">Veganos</button>
     <button class="nav-tab" onclick="showSection('bar')">Bar & Snacks</button>
     <button class="nav-tab" onclick="showSection('vinos')">Vinos</button>
     <button class="nav-tab" onclick="showSection('tips')">Protocolo</button>
@@ -786,6 +789,53 @@
     </div>
   </div>
 
+  <!-- ESCABECHE DE LIEBRE -->
+  <div class="dish-card" id="dish-liebre-entrada">
+    <div class="dish-header" onclick="toggleDish('liebre-entrada')">
+      <div class="dish-header-left">
+        <div class="dish-name">Escabeche de liebre salvaje, mayonesa de hierbas, verduras encurtidas y vinagreta de casis</div>
+        <div class="dish-name-en">Wild hare escabeche, herb mayonnaise, pickled vegetables, blackcurrant vinaigrette</div>
+        <div class="dish-meta">
+          <span class="price">$17.000</span>
+          <span class="tag tag-local">Local</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'liebre-entrada','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'liebre-entrada','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'liebre-entrada','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="liebre-entrada-presentacion">
+        <div class="speech-box">"Un escabeche de liebre salvaje patagónica — carne de caza de sabor profundo, marinada en vinagre y especias. Se sirve fría con mayonesa de hierbas, verduras encurtidas y vinagreta de casis que aporta acidez y un toque frutal."
+          <div class="speech-box-en">"Wild Patagonian hare escabeche — rich game meat marinated in vinegar and spices. Served cold with herb mayonnaise, pickled vegetables and a blackcurrant vinaigrette for brightness."</div>
+        </div>
+        <p class="block-label">¿Qué es el escabeche?</p>
+        <p class="block-text">Técnica en la que la carne se marina y cura en líquido ácido (vinagre, limón) con especias. El resultado es una carne tierna, de sabor concentrado, con perfil ácido y aromático.</p>
+      </div>
+      <div class="inner-panel" id="liebre-entrada-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La liebre es de caza?</div>
+          <div class="qa-a">Sí, liebre salvaje de la Patagonia. Sabor más intenso y concentrado que el conejo. Proteína local y sostenible.</div>
+          <div class="qa-a-en">"Yes, wild Patagonian hare — richer and more intense than rabbit. A local, sustainable protein."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Se sirve frío o caliente?</div>
+          <div class="qa-a">Se sirve frío, como todo escabeche tradicional. Entrada fresca y de sabores complejos.</div>
+          <div class="qa-a-en">"Served cold, as a traditional escabeche."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="liebre-entrada-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir rosado — fresco y frutal</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Sauvignon Blanc con acidez pronunciada</div>
+      </div>
+    </div>
+  </div>
+
   <div class="group-header">De la tierra</div>
 
   <!-- TÁRTARO GUANACO -->
@@ -979,6 +1029,146 @@
     </div>
   </div>
 
+  <!-- REPOLLO ASADO -->
+  <div class="dish-card" id="dish-repollo">
+    <div class="dish-header" onclick="toggleDish('repollo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Repollo asado, puré de palta, frutas encurtidas y vinagreta de apio</div>
+        <div class="dish-name-en">Roasted cabbage, avocado purée, pickled fruit, celery vinaigrette</div>
+        <div class="dish-meta">
+          <span class="price">$16.500</span>
+          <span class="tag tag-vegan">Vegano</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'repollo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'repollo','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="repollo-presentacion">
+        <div class="speech-box">"Repollo asado lentamente hasta caramelizarse, con puré de palta cremoso, frutas encurtidas para acidez y vinagreta de apio. Una entrada vegana sorprendente que demuestra que las verduras pueden ser el centro del plato."
+          <div class="speech-box-en">"Slow-roasted cabbage caramelized to perfection, with creamy avocado purée, pickled fruit for acidity, and celery vinaigrette. A surprising vegan starter that shows vegetables can take centre stage."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="repollo-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es apto para alérgicos a los lácteos?</div>
+          <div class="qa-a">Sí, es vegano — no contiene lácteos, gluten ni proteína animal.</div>
+          <div class="qa-a-en">"Yes, it's fully vegan — no dairy, gluten or animal protein."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARTALETA DE CHAMPIÑONES -->
+  <div class="dish-card" id="dish-tartaleta">
+    <div class="dish-header" onclick="toggleDish('tartaleta')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tartaleta de champiñones en texturas</div>
+        <div class="dish-name-en">Mushroom tartlet, mushroom textures</div>
+        <div class="dish-meta">
+          <span class="price">$16.500</span>
+          <span class="tag tag-veg">Vegetariano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'tartaleta','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'tartaleta','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'tartaleta','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="tartaleta-presentacion">
+        <div class="speech-box">"Una tartaleta crujiente rellena de champiñones en distintas texturas — salteados, en crema, deshidratados — que explora toda la profundidad y sabor umami del champiñón en un solo bocado."
+          <div class="speech-box-en">"A crispy tartlet filled with mushrooms in multiple textures — sautéed, creamed, dehydrated — exploring the full depth and umami flavour of mushroom in a single bite."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="tartaleta-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es vegetariana?</div>
+          <div class="qa-a">Sí, es 100% vegetariana. Ideal para quienes buscan una entrada sin carne pero con mucho sabor.</div>
+          <div class="qa-a-en">"Yes, fully vegetarian. Great for guests wanting a meatless starter with a lot of depth."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="tartaleta-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay con paso por barrica — complementa el umami</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Pinot Noir liviano</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ SOPAS ═══════════════ -->
+<div class="section" id="section-sopas">
+  <div class="section-title">Sopas</div>
+  <div class="section-desc">Soups — Opciones reconfortantes, ideales para el clima patagónico. Disponibles como entrada o plato liviano.</div>
+
+  <div class="dish-card" id="dish-gazpacho">
+    <div class="dish-header" onclick="toggleDish('gazpacho')">
+      <div class="dish-header-left">
+        <div class="dish-name">Gazpacho de tomate, pimiento y frambuesa</div>
+        <div class="dish-name-en">Tomato, bell pepper and raspberry gazpacho</div>
+        <div class="dish-meta"><span class="price">$15.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-panel active"><div class="speech-box">"Un gazpacho frío de tomate y pimiento con un toque inesperado de frambuesa que aporta acidez frutal. Vegano, sin gluten, refrescante."
+        <div class="speech-box-en">"A chilled tomato and bell pepper gazpacho with an unexpected touch of raspberry for fruity acidity. Vegan, gluten-free, refreshing."</div></div></div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-sopa-huerto">
+    <div class="dish-header" onclick="toggleDish('sopa-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sopa del huerto</div>
+        <div class="dish-name-en">Garden vegetable soup</div>
+        <div class="dish-meta"><span class="price">$15.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-panel active"><div class="speech-box">"Sopa del día con vegetales frescos del huerto del hotel. Cambia según la temporada — siempre de origen local y sustentable."
+        <div class="speech-box-en">"Daily soup made with fresh vegetables from the hotel's garden. Rotates seasonally — always local and sustainable."</div></div></div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-cazuela">
+    <div class="dish-header" onclick="toggleDish('cazuela')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cazuela de cordero, cochayuyo y luche</div>
+        <div class="dish-name-en">Lamb cazuela, cochayuyo and luche seaweed</div>
+        <div class="dish-meta"><span class="price">$18.000</span><span class="tag tag-local">Local</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cazuela','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cazuela','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="cazuela-presentacion">
+        <div class="speech-box">"Cazuela tradicional chilena con cordero de Puerto Natales, cochayuyo y luche — dos algas marinas propias de la Patagonia. Un plato profundamente local que conecta con la tradición culinaria de la región."
+          <div class="speech-box-en">"Traditional Chilean cazuela with Puerto Natales lamb, cochayuyo and luche — two seaweeds native to Patagonia. A deeply local dish rooted in the region's culinary tradition."</div>
+        </div>
+        <p class="block-label">¿Qué son el cochayuyo y el luche?</p>
+        <p class="block-text"><strong>Cochayuyo</strong> (Durvillaea antarctica): alga parda de las costas del sur de Chile. Textura firme, sabor marino suave. <strong>Luche</strong>: alga verde más delicada, sabor más fresco. Ambas son ingredientes tradicionales de la cocina chilena costera.</p>
+      </div>
+      <div class="inner-panel" id="cazuela-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué son cochayuyo y luche?</div>
+          <div class="qa-a">Son algas marinas autóctonas del sur de Chile. El cochayuyo es pardo y de textura firme; el luche es verde y más delicado. Ambas son ingredientes tradicionales chilenos.</div>
+          <div class="qa-a-en">"Native Chilean seaweeds. Cochayuyo is brown and firm; luche is green and more delicate. Both are traditional Chilean ingredients."</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ═══════════════ FONDOS ═══════════════ -->
@@ -1247,6 +1437,286 @@
     </div>
   </div>
 
+  <!-- LÁMINAS DE CERDO -->
+  <div class="dish-card" id="dish-cerdo">
+    <div class="dish-header" onclick="toggleDish('cerdo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Láminas de cerdo de Chillán, ensalada tibia de repollo morado y manzana, salsa de mostaza antigua</div>
+        <div class="dish-name-en">Chillán pork, warm red cabbage and apple salad, whole-grain mustard sauce</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cerdo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cerdo','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="cerdo-presentacion">
+        <div class="speech-box">"Láminas finas de cerdo de Chillán — reconocido por su calidad — con una ensalada tibia de repollo morado y manzana que aporta dulzor y acidez, y una salsa de mostaza antigua que redondea el plato."
+          <div class="speech-box-en">"Thinly sliced Chillán pork — renowned for its quality — with a warm red cabbage and apple salad for sweetness and acidity, finished with a whole-grain mustard sauce."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="cerdo-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir — la mostaza y el repollo piden un tinto liviano</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay con cuerpo</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILETE DE LIEBRE -->
+  <div class="dish-card" id="dish-liebre-fondo">
+    <div class="dish-header" onclick="toggleDish('liebre-fondo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Filete de liebre salvaje, puré de zapallo butternut con toques de vainilla, pera al azafrán y salsa de vino tinto</div>
+        <div class="dish-name-en">Wild hare tenderloin, vanilla-scented butternut squash purée, saffron pear, red wine sauce</div>
+        <div class="dish-meta"><span class="price">$35.000</span><span class="tag tag-local">Local</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'liebre-fondo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'liebre-fondo','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'liebre-fondo','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="liebre-fondo-presentacion">
+        <div class="speech-box">"Filete de liebre salvaje patagónica — carne de caza, magra e intensa — con un puré de zapallo butternut perfumado con vainilla, pera al azafrán y una salsa de vino tinto. Un plato sofisticado que celebra la caza local."
+          <div class="speech-box-en">"Wild Patagonian hare tenderloin — lean, intensely flavoured game — with vanilla-scented butternut squash purée, saffron-poached pear, and a red wine sauce. A sophisticated dish celebrating local game."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="liebre-fondo-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La liebre es similar al conejo?</div>
+          <div class="qa-a">Son similares pero la liebre tiene un sabor más intenso, más oscuro y salvaje. Es carne de caza local — más magra que el vacuno pero con mucho carácter.</div>
+          <div class="qa-a-en">"Similar but wilder — darker, more intense flavour than rabbit. Lean game meat with great character."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="liebre-fondo-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Cabernet Sauvignon o Malbec con cuerpo</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carmenère — sus notas especiadas complementan la caza</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUADRIL DE CORDERO -->
+  <div class="dish-card" id="dish-cuadril">
+    <div class="dish-header" onclick="toggleDish('cuadril')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cuadril de cordero de Puerto Natales a la parrilla, puré de coliflor trufado, papa con aroma a tomillo y salsa demi-glace</div>
+        <div class="dish-name-en">Grilled Puerto Natales lamb rump, truffled cauliflower purée, thyme potato, demi-glace</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-local">Local</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cuadril','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cuadril','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="cuadril-presentacion">
+        <div class="speech-box">"Cuadril de cordero de Puerto Natales hecho a la parrilla — un corte más firme y sabroso que el garrón. Se acompaña de un puré de coliflor trufado, papa al tomillo y salsa demi-glace."
+          <div class="speech-box-en">"Grilled lamb rump from Puerto Natales — a firmer, more flavourful cut than the shank. Served with truffled cauliflower purée, thyme potato and demi-glace."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="cuadril-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Malbec o Cabernet Franc con cuerpo</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carmenère — complementa el cordero y la trufa</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERLUZA AUSTRAL -->
+  <div class="dish-card" id="dish-merluza">
+    <div class="dish-header" onclick="toggleDish('merluza')">
+      <div class="dish-header-left">
+        <div class="dish-name">Merluza austral, langostinos cola amarilla, perlas de verduras y crema de hierbas</div>
+        <div class="dish-name-en">Southern hake, yellowtail prawns, vegetable pearls, herb cream</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-local">Local</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'merluza','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'merluza','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="merluza-presentacion">
+        <div class="speech-box">"Merluza austral — pescado blanco de las aguas del sur de Chile, de sabor delicado — con langostinos cola amarilla, perlas de verduras hechas con técnica de esferificación y una crema de hierbas frescas."
+          <div class="speech-box-en">"Southern hake — a delicate white fish from Chile's southern waters — with yellowtail prawns, vegetable pearls made using spherification, and a fresh herb cream."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="merluza-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc — fresco, con acidez</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay sin barrica</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONGRIO SELLADO -->
+  <div class="dish-card" id="dish-congrio">
+    <div class="dish-header" onclick="toggleDish('congrio')">
+      <div class="dish-header-left">
+        <div class="dish-name">Congrio sellado, calamar antártico, risotto al nero di sepia, tomate y limón</div>
+        <div class="dish-name-en">Seared Chilean cusk-eel, Antarctic squid, squid ink risotto, tomato, lemon</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-local">Local</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'congrio','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="congrio-presentacion">
+        <div class="speech-box">"Congrio dorado sellado — uno de los pescados más valorados de Chile — con calamar antártico y un risotto teñido de negro con tinta de sepia. El tomate y el limón aportan frescor a un plato visualmente impactante."
+          <div class="speech-box-en">"Seared golden cusk-eel — one of Chile's most prized fish — with Antarctic squid and a dramatically black squid ink risotto. Tomato and lemon add brightness to a visually striking dish."</div>
+        </div>
+        <p class="block-label">¿Qué es el nero di sepia?</p>
+        <p class="block-text">Es la tinta de calamar usada para teñir el risotto de negro. Aporta un sabor marino suave y una presentación muy llamativa. No cambia el sabor drásticamente — es más visual que gustativo.</p>
+      </div>
+      <div class="inner-panel" id="congrio-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El risotto negro tiene sabor fuerte a calamar?</div>
+          <div class="qa-a">No, es sutil. La tinta aporta un leve sabor marino pero el protagonismo lo tiene el congrio. Es más un elemento visual que un sabor dominante.</div>
+          <div class="qa-a-en">"No, it's subtle. The ink adds a mild oceanic note but the cusk-eel is the star. More visual than dominant in flavour."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="congrio-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay con cuerpo o Viognier</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Rosé seco — complementa el mar y el tomate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPPARDELLE DE PATO -->
+  <div class="dish-card" id="dish-pappardelle">
+    <div class="dish-header" onclick="toggleDish('pappardelle')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pappardelle relleno de pato confitado, camote anisado, mantequilla de avellana y salsa demi-glace a la naranja</div>
+        <div class="dish-name-en">Confit duck-filled pappardelle, anise-scented sweet potato, hazelnut butter, orange demi-glace</div>
+        <div class="dish-meta"><span class="price">$31.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pappardelle','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pappardelle','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="pappardelle-presentacion">
+        <div class="speech-box">"Pasta pappardelle rellena de pato confitado — cocinado a baja temperatura hasta quedar muy tierno — con camote perfumado con anís, mantequilla de avellana y un demi-glace con naranja que da una nota cítrica y dulce. Un plato de mucho carácter y elegancia."
+          <div class="speech-box-en">"Pappardelle filled with slow-cooked confit duck — tender and rich — with anise-scented sweet potato, hazelnut butter, and an orange-accented demi-glace for a citrusy, elegant finish."</div>
+        </div>
+        <p class="block-label">¿Qué es el confitado?</p>
+        <p class="block-text">El confit es una técnica francesa donde la carne se cocina lentamente sumergida en su propia grasa a baja temperatura. El resultado es una carne extremadamente tierna y sabrosa.</p>
+      </div>
+      <div class="inner-panel" id="pappardelle-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir — clásico con el pato</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Merlot suave con notas frutales</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILETE DE VACUNO -->
+  <div class="dish-card" id="dish-vacuno">
+    <div class="dish-header" onclick="toggleDish('vacuno')">
+      <div class="dish-header-left">
+        <div class="dish-name">Filete de vacuno sellado, ñoquis con queso azul, champiñones y salsa demi-glace trufada</div>
+        <div class="dish-name-en">Seared beef tenderloin, blue cheese gnocchi, mushrooms, truffled demi-glace</div>
+        <div class="dish-meta"><span class="price">$35.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'vacuno','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'vacuno','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'vacuno','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="vacuno-presentacion">
+        <div class="speech-box">"Filete de vacuno sellado a fuego alto para un exterior dorado y un interior jugoso, con ñoquis de papa al queso azul, champiñones salteados y un demi-glace perfumado con trufa. Intenso, untuoso y muy satisfactorio."
+          <div class="speech-box-en">"Seared beef tenderloin with a golden crust and juicy interior, served with blue cheese gnocchi, sautéed mushrooms, and a truffle-scented demi-glace. Intense, velvety, deeply satisfying."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="vacuno-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El queso azul es muy fuerte?</div>
+          <div class="qa-a">Está integrado en los ñoquis, así que el sabor es presente pero equilibrado. No domina — complementa la carne y la trufa. Para quienes les gustan los sabores intensos, es ideal.</div>
+          <div class="qa-a-en">"It's incorporated into the gnocchi, so the flavour is present but balanced — it complements the beef and truffle rather than overpowering. Perfect for guests who enjoy bold flavours."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="vacuno-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Cabernet Sauvignon con cuerpo — clásico con el vacuno</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Malbec de Mendoza con notas especiadas</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FETTUCCINE DE MARISCOS -->
+  <div class="dish-card" id="dish-fettuccine">
+    <div class="dish-header" onclick="toggleDish('fettuccine')">
+      <div class="dish-header-left">
+        <div class="dish-name">Fettuccine, selección de mariscos, perejil y limón</div>
+        <div class="dish-name-en">Fettuccine, seafood selection, parsley, lemon</div>
+        <div class="dish-meta"><span class="price">$31.000</span><span class="tag tag-local">Local</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'fettuccine','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'fettuccine','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="fettuccine-presentacion">
+        <div class="speech-box">"Fettuccine con una selección de mariscos frescos de la Patagonia — que varía según disponibilidad — con perejil fresco y limón para realzar el sabor del mar. Sencillo, fresco y muy elegante."
+          <div class="speech-box-en">"Fettuccine with a selection of fresh Patagonian seafood — varies by availability — with fresh parsley and lemon to highlight the sea. Simple, fresh and elegantly presented."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="fettuccine-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc fresco — clásico con mariscos</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante brut — festivo y refrescante</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERENJENA CROCANTE -->
+  <div class="dish-card" id="dish-berenjena">
+    <div class="dish-header" onclick="toggleDish('berenjena')">
+      <div class="dish-header-left">
+        <div class="dish-name">Berenjena crocante, puré de tomate confitado, verduras encurtidas</div>
+        <div class="dish-name-en">Crispy eggplant, confit tomato purée, pickled vegetables</div>
+        <div class="dish-meta"><span class="price">$32.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'berenjena','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'berenjena','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="berenjena-presentacion">
+        <div class="speech-box">"Berenjena con cobertura crocante, puré de tomate confitado — concentrado y dulce — y verduras encurtidas que aportan acidez y textura. Una opción vegana con mucho carácter y contraste de texturas."
+          <div class="speech-box-en">"Crispy-coated eggplant with confit tomato purée — sweet and concentrated — and pickled vegetables for acidity and texture. A bold vegan option with contrasting textures."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="berenjena-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sangiovese o tinto italiano — la berenjena y el tomate piden acidez</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carmenère chileno</div>
+      </div>
+    </div>
+  </div>
+
   <div class="group-header">Opciones vegetarianas y veganas</div>
 
   <!-- CURRY LENTEJAS -->
@@ -1432,30 +1902,550 @@
     </div>
   </div>
 
+  <!-- ESFERA CHOCOLATE -->
+  <div class="dish-card" id="dish-esfera">
+    <div class="dish-header" onclick="toggleDish('esfera')">
+      <div class="dish-header-left">
+        <div class="dish-name">Esfera de chocolate, pistacho y naranja</div>
+        <div class="dish-name-en">Chocolate sphere, pistachio, orange</div>
+        <div class="dish-meta"><span class="price">$12.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'esfera','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'esfera','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="esfera-presentacion">
+        <div class="speech-box">
+          "Una esfera de chocolate oscuro con interior cremoso de chocolate, pistacho tostado y notas de naranja. Es el postre de alta pastelería de la carta — visualmente espectacular y de sabores muy complejos. El chocolate es la nota principal, con el pistacho aportando textura y la naranja equilibrando con acidez."
+          <div class="speech-box-en">"A dark chocolate sphere with a creamy chocolate, toasted pistachio, and orange interior. The most refined pastry on the menu — visually spectacular with complex layered flavors. Chocolate leads, pistachio adds texture, orange brightens."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="esfera-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Para quién es ideal este postre?</div>
+          <div class="qa-a">Para amantes del chocolate intenso y postres sofisticados. Si el comensal busca algo más suave, el milhojas o la crème brûlée son mejores opciones.</div>
+          <div class="qa-a-en">"Perfect for dark chocolate lovers who enjoy sophisticated desserts. For guests preferring something milder, the mille-feuille or crème brûlée are great alternatives."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TORTA LUCUMA -->
+  <div class="dish-card" id="dish-lucuma">
+    <div class="dish-header" onclick="toggleDish('lucuma')">
+      <div class="dish-header-left">
+        <div class="dish-name">Torta de lúcuma y almendras tostadas, chocolate Dulcey y helado de caramelo</div>
+        <div class="dish-name-en">Lucuma and toasted almond cake, Dulcey chocolate, caramel ice cream</div>
+        <div class="dish-meta"><span class="price">$11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'lucuma','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'lucuma','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="lucuma-presentacion">
+        <div class="speech-box">
+          "Torta de lúcuma —el fruto chileno más icónico de la repostería— con almendras tostadas, chocolate Dulcey de Valrhona y helado de caramelo artesanal. La lúcuma tiene un sabor suave entre maple y batata dulce, muy característico. Una celebración de los sabores chilenos en un postre de alta confitería."
+          <div class="speech-box-en">"Lucuma cake — Chile's most iconic pastry fruit — with toasted almonds, Valrhona Dulcey chocolate, and artisan caramel ice cream. Lucuma has a gentle flavor between maple and sweet potato, distinctly Chilean. A celebration of Chilean flavors in a refined dessert."</div>
+        </div>
+        <p class="block-label">¿Qué es la lúcuma?</p>
+        <p class="block-text">Fruto andino de color amarillo intenso, sabor suave y dulce que recuerda al maple y la batata. Es el sabor de helado favorito de Chile y uno de los frutos más representativos de la repostería nacional.</p>
+      </div>
+      <div class="inner-panel" id="lucuma-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el chocolate Dulcey?</div>
+          <div class="qa-a">El Dulcey es un chocolate blanco tostado de Valrhona —la casa francesa de chocolates de élite— que tiene notas a galleta, caramelo y vainilla. Mucho más complejo que el chocolate blanco tradicional.</div>
+          <div class="qa-a-en">"Dulcey is a toasted white chocolate by Valrhona — the elite French chocolate house — with notes of shortbread, caramel, and vanilla. Far more complex than ordinary white chocolate."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHEESECAKE -->
+  <div class="dish-card" id="dish-cheesecake">
+    <div class="dish-header" onclick="toggleDish('cheesecake')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cheesecake de frutos rojos, crocante de quinoa y helado de yogur</div>
+        <div class="dish-name-en">Red berry cheesecake, quinoa crisp, yogurt ice cream</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cheesecake','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cheesecake','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="cheesecake-presentacion">
+        <div class="speech-box">
+          "Cheesecake cremoso con coulis de frutos rojos patagónicos, una base crocante de quinoa tostada —sin gluten— y helado de yogur artesanal. Equilibrio perfecto entre dulce y ácido. La quinoa aporta textura crujiente y un toque andino muy especial."
+          <div class="speech-box-en">"Creamy cheesecake with Patagonian red berry coulis, a crunchy gluten-free quinoa base, and house-made yogurt ice cream. Perfect balance of sweet and tart. The quinoa adds crunch and a distinctive Andean touch."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="cheesecake-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es sin gluten?</div>
+          <div class="qa-a">Sí, la base es de quinoa tostada, no lleva harina de trigo. Es una excelente opción para comensales celíacos o con sensibilidad al gluten. Contiene lácteos.</div>
+          <div class="qa-a-en">"Yes, the base is toasted quinoa — no wheat flour. A great option for gluten-free guests. Does contain dairy."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAVLOVA -->
+  <div class="dish-card" id="dish-pavlova">
+    <div class="dish-header" onclick="toggleDish('pavlova')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pavlova de chirimoya y naranja</div>
+        <div class="dish-name-en">Cherimoya and orange pavlova</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pavlova','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pavlova','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="pavlova-presentacion">
+        <div class="speech-box">
+          "Pavlova: merengue crujiente por fuera y cremoso por dentro, coronado con chirimoya —la fruta más exótica y aromática de Chile— y naranja fresca. Ligera, sin gluten, con esa textura única del merengue horneado. Ideal para quienes prefieren postres frescos y no muy densos."
+          <div class="speech-box-en">"Pavlova: meringue crisp outside, marshmallow-soft inside, crowned with cherimoya — Chile's most exotic and aromatic fruit — and fresh orange. Light, gluten-free, with that unique baked meringue texture. Perfect for guests who prefer fresh, light desserts."</div>
+        </div>
+        <p class="block-label">¿Qué es la chirimoya?</p>
+        <p class="block-text">Fruto tropical de origen andino, con sabor entre la vainilla, la piña y el plátano. Aroma intenso y textura suave. Mark Twain la describió como "el postre más delicioso que la naturaleza pudo crear".</p>
+      </div>
+      <div class="inner-panel" id="pavlova-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es la pavlova?</div>
+          <div class="qa-a">Es un postre de origen australiano/neozelandés hecho de merengue horneado: crujiente por fuera, suave y cremoso por dentro. Se sirve frío con frutas y crema. Sin gluten de forma natural, muy ligero.</div>
+          <div class="qa-a-en">"A dessert from Australia/New Zealand made from baked meringue: crisp outside, soft and creamy inside. Served cold with fruit and cream. Naturally gluten-free and very light."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARTA FLAN -->
+  <div class="dish-card" id="dish-tartaflan">
+    <div class="dish-header" onclick="toggleDish('tartaflan')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tarta flan de avellana y chocolate</div>
+        <div class="dish-name-en">Hazelnut and chocolate flan tart</div>
+        <div class="dish-meta"><span class="price">$12.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'tartaflan','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'tartaflan','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="tartaflan-presentacion">
+        <div class="speech-box">
+          "Una tarta que combina dos técnicas: la base crujiente de una tarta clásica y el interior cremoso de un flan, todo con avellana tostada y chocolate. Intenso, decadente y muy satisfactorio. Para los amantes del chocolate y los postres contundentes."
+          <div class="speech-box-en">"A tart combining two techniques: the crisp shell of a classic tart and the creamy interior of a flan, layered with toasted hazelnut and chocolate. Intense, decadent, and deeply satisfying. For chocolate lovers who enjoy a serious dessert."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="tartaflan-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué diferencia tiene con la esfera de chocolate?</div>
+          <div class="qa-a">La tarta flan tiene una textura más densa y terrosa gracias a la avellana, mientras que la esfera es más aireada y elegante. Ambas son de chocolate, pero perfiles muy distintos. La tarta es el más contundente de los dos.</div>
+          <div class="qa-a-en">"The flan tart is denser and earthier thanks to the hazelnut, while the chocolate sphere is more airy and refined. Both feature chocolate but with very different profiles. The tart is the more indulgent of the two."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELADOS -->
+  <div class="dish-card" id="dish-helados">
+    <div class="dish-header" onclick="toggleDish('helados')">
+      <div class="dish-header-left">
+        <div class="dish-name">Helados y sorbetes de la casa</div>
+        <div class="dish-name-en">House-made ice creams and sorbets</div>
+        <div class="dish-meta"><span class="price">$10.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'helados','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'helados','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="helados-presentacion">
+        <div class="speech-box">
+          "Nuestros helados y sorbetes son de elaboración propia, con ingredientes patagónicos y sabores de temporada. Consulte al mesero los sabores disponibles del día. El sorbete es apto para veganos. Una opción ligera para cerrar la cena."
+          <div class="speech-box-en">"Our ice creams and sorbets are house-made with Patagonian ingredients and seasonal flavors. Ask your server for today's available flavors. Sorbet is vegan. A light option to close your meal."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="helados-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Son veganos?</div>
+          <div class="qa-a">Los sorbetes son veganos y sin lácteos. Los helados de crema contienen leche y huevo. Consulte al momento por los sabores disponibles — cambian según la temporada y el día.</div>
+          <div class="qa-a-en">"Sorbets are vegan and dairy-free. Cream ice creams contain milk and egg. Ask about today's flavors — they change by season and day."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENSALADA FRUTAS -->
+  <div class="dish-card" id="dish-ensaladafrutas">
+    <div class="dish-header" onclick="toggleDish('ensaladafrutas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada de frutas de estación</div>
+        <div class="dish-name-en">Seasonal fruit salad</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'ensaladafrutas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'ensaladafrutas','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="ensaladafrutas-presentacion">
+        <div class="speech-box">
+          "Frutas frescas de la temporada patagónica, seleccionadas diariamente. Liviana, sin azúcar añadida, apta para veganos y celíacos. Ideal para quienes prefieren cerrar la cena con algo fresco y natural. Pregunte qué frutas tenemos hoy."
+          <div class="speech-box-en">"Fresh seasonal Patagonian fruits, selected daily. Light, no added sugar, suitable for vegans and coeliacs. Perfect for guests who prefer a fresh, natural finish to their meal. Ask your server what's available today."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="ensaladafrutas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Tiene azúcar añadida?</div>
+          <div class="qa-a">No, es solo fruta natural de temporada. Apta para diabéticos, veganos y celíacos. La opción más ligera y sana de los postres.</div>
+          <div class="qa-a-en">"No added sugar — just natural seasonal fruit. Suitable for diabetics, vegans, and coeliacs. The lightest and healthiest dessert option."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ CARTA GRILL ═══════════════ -->
+<div class="section" id="section-grill">
+  <div class="section-title">Carta Grill</div>
+  <div class="section-desc">From the Grill — Cortes y proteínas a la parrilla. Sin gluten y sin lactosa. Se sugiere acompañar con un vino tinto o rosé.</div>
+
+  <div class="tip-card" style="background: var(--accent-soft); border-color: var(--gold-dim); margin-bottom: 16px;">
+    <div class="tip-title">Todos los platos grill son Sin Gluten · Sin Lactosa</div>
+    <p class="tip-body">Los platos de la Carta Grill no incluyen acompañamiento. Ofrezca siempre los acompañamientos de la sección Platos Veganos para completar la experiencia.</p>
+  </div>
+
+  <div class="dish-card" id="dish-g-lomo-vetado">
+    <div class="dish-header" onclick="toggleDish('g-lomo-vetado')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lomo vetado</div>
+        <div class="dish-name-en">Ribeye</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "El lomo vetado es el corte más marmoleado de la vaca — con vetas de grasa intramuscular que se derriten al asarlo, dándole sabor y jugosidad excepcionales. A la parrilla, con sal y fuego. El corte de mayor personalidad en la Carta Grill."
+        <div class="speech-box-en">"Ribeye is the most marbled cut — intramuscular fat veins melt on the grill, delivering exceptional flavor and juiciness. Grilled with salt and fire. The most characterful cut on the Grill menu."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-chuleta">
+    <div class="dish-header" onclick="toggleDish('g-chuleta')">
+      <div class="dish-header-left">
+        <div class="dish-name">Chuleta de cordero</div>
+        <div class="dish-name-en">Lamb chop</div>
+        <div class="dish-meta"><span class="price">$33.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Chuleta de cordero de Puerto Natales a la parrilla — el corte más sabio para disfrutar el cordero patagónico en su forma más directa. Costra exterior dorada, interior rosado y jugoso. El sabor del cordero magallánico criado en libertad, sin más que sal y fuego."
+        <div class="speech-box-en">"Puerto Natales lamb chop grilled — the most direct way to enjoy Patagonian lamb. Golden exterior crust, pink and juicy inside. The flavor of free-range Magellanic lamb with nothing but salt and fire."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-lomo-cordero">
+    <div class="dish-header" onclick="toggleDish('g-lomo-cordero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lomo de cordero</div>
+        <div class="dish-name-en">Lamb loin</div>
+        <div class="dish-meta"><span class="price">$29.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "El lomo de cordero es el corte más magro y fino del animal — más suave que la chuleta, con sabor más delicado. A la parrilla, término medio. Una introducción elegante al cordero patagónico para quienes lo prueban por primera vez."
+        <div class="speech-box-en">"Lamb loin is the leanest and most refined cut — milder than the chop, more delicate in flavor. Grilled to medium. An elegant introduction to Patagonian lamb for first-timers."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-pavo">
+    <div class="dish-header" onclick="toggleDish('g-pavo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pechuga de pavo</div>
+        <div class="dish-name-en">Turkey breast</div>
+        <div class="dish-meta"><span class="price">$28.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Pechuga de pavo a la parrilla — la opción más magra y ligera de la Carta Grill. Sabor suave, textura tierna, perfecta para quienes buscan una proteína más liviana o baja en grasas. Recomendamos acompañar con ensalada del huerto o verduras."
+        <div class="speech-box-en">"Grilled turkey breast — the lightest and leanest option on the Grill menu. Mild flavor, tender texture. Perfect for guests seeking a lighter, lower-fat protein. We recommend pairing with garden salad or grilled vegetables."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-merluza">
+    <div class="dish-header" onclick="toggleDish('g-merluza')">
+      <div class="dish-header-left">
+        <div class="dish-name">Merluza austral</div>
+        <div class="dish-name-en">Southern hake</div>
+        <div class="dish-meta"><span class="price">$29.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Merluza austral a la parrilla — el pescado blanco más representativo de los mares patagónicos. Carne firme, sabor limpio y delicado. Al grill adquiere una costra dorada exterior que contrasta con el interior blanco y jugoso. La opción ideal para pescados a la parrilla."
+        <div class="speech-box-en">"Southern hake grilled — the most representative white fish of Patagonian waters. Firm flesh, clean and delicate flavor. The grill gives it a golden crust contrasting with its white, juicy interior. The ideal grilled fish option."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-congrio">
+    <div class="dish-header" onclick="toggleDish('g-congrio')">
+      <div class="dish-header-left">
+        <div class="dish-name">Congrio dorado</div>
+        <div class="dish-name-en">Chilean cusk-eel</div>
+        <div class="dish-meta"><span class="price">$29.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Congrio dorado a la parrilla — uno de los pescados más nobles y versátiles de Chile. Carne blanca, sabor suave con un toque oceánico, muy buena textura al grill. El congrio es el protagonista de la famosa oda de Pablo Neruda: 'Oda al caldillo de congrio'."
+        <div class="speech-box-en">"Grilled Chilean cusk-eel — one of Chile's most noble and versatile fish. White flesh, mild flavor with an oceanic note, excellent texture from the grill. The cusk-eel is the star of Pablo Neruda's famous ode: 'Ode to Caldillo de Congrio'."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-g-salmon">
+    <div class="dish-header" onclick="toggleDish('g-salmon')">
+      <div class="dish-header-left">
+        <div class="dish-name">Salmón</div>
+        <div class="dish-name-en">Salmon</div>
+        <div class="dish-meta"><span class="price">$29.000</span><span class="tag tag-gf">Sin gluten</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Salmón a la parrilla — la proteína más pedida de Chile. Carne rosada, grasa natural omega-3, sabor rico y familiar. Al grill desarrolla costra dorada con interior jugoso. La opción más accesible y reconocible de la Carta Grill, perfecta para quienes no quieren arriesgar."
+        <div class="speech-box-en">"Grilled salmon — Chile's most-ordered protein. Pink flesh, natural omega-3 fats, rich and familiar flavor. The grill gives a golden crust with a juicy interior. The most accessible and recognizable option on the Grill menu, perfect for guests who prefer a safe choice."</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ PLATOS VEGANOS ═══════════════ -->
+<div class="section" id="section-veganos">
+  <div class="section-title">Platos Veganos y Acompañamientos</div>
+  <div class="section-desc">Vegan Dishes & Sides — Opciones 100% vegetales y acompañamientos para complementar cualquier plato principal.</div>
+
+  <div class="group-header">Platos Veganos</div>
+
+  <div class="dish-card" id="dish-hummus">
+    <div class="dish-header" onclick="toggleDish('hummus')">
+      <div class="dish-header-left">
+        <div class="dish-name">Hummus de garbanzos, verduras a la parrilla</div>
+        <div class="dish-name-en">Chickpea hummus, grilled vegetables</div>
+        <div class="dish-meta"><span class="price">$16.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Hummus cremoso de garbanzos con verduras de temporada a la parrilla. Plato vegano, sin gluten, lleno de proteína vegetal. Ideal como entrada liviana o plato principal para comensales veganos o vegetarianos."
+        <div class="speech-box-en">"Creamy chickpea hummus with seasonal grilled vegetables. Vegan, gluten-free, rich in plant protein. Great as a light starter or main for vegan and vegetarian guests."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-lentejas-vino">
+    <div class="dish-header" onclick="toggleDish('lentejas-vino')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lentejas al vino tinto, acelga y champiñones</div>
+        <div class="dish-name-en">Red wine lentils, Swiss chard, mushrooms</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Lentejas estofadas al vino tinto con acelga y champiñones. Un plato reconfortante y lleno de sabor, inspirado en la tradición culinaria andina adaptada con técnica francesa. Vegano, sin gluten, alto en proteína vegetal y hierro."
+        <div class="speech-box-en">"Lentils braised in red wine with Swiss chard and mushrooms. A comforting, flavor-rich dish inspired by Andean culinary tradition with French technique. Vegan, gluten-free, high in plant protein and iron."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-charquican">
+    <div class="dish-header" onclick="toggleDish('charquican')">
+      <div class="dish-header-left">
+        <div class="dish-name">Charquicán de verduras</div>
+        <div class="dish-name-en">Vegetable charquicán</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "El charquicán es uno de los guisos más tradicionales de Chile — originalmente con carne seca, aquí en versión 100% vegana con zapallo, papas y verduras de temporada. Reconfortante, austral y profundamente chileno."
+        <div class="speech-box-en">"Charquicán is one of Chile's most traditional stews — originally with dried meat, here in a fully vegan version with squash, potatoes, and seasonal vegetables. Comforting, southern, and deeply Chilean."</div>
+      </div>
+      <p class="block-label">¿Qué es el charquicán?</p>
+      <p class="block-text">Guiso chileno ancestral de origen mapuche y colonial. El nombre viene de "charqui" (carne seca) y "quian" (verduras). En su versión vegana es un puré rústico de zapallo, papa y verduras.</p>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-ensalada-huerto">
+    <div class="dish-header" onclick="toggleDish('ensalada-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada del huerto</div>
+        <div class="dish-name-en">Garden salad</div>
+        <div class="dish-meta"><span class="price">$16.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Ensalada fresca de vegetales del huerto local, cosechados de temporada. Vegana y sin gluten. Ideal como acompañamiento de cualquier plato principal o como entrada fresca para comenzar la cena."
+        <div class="speech-box-en">"Fresh salad of seasonal local garden vegetables. Vegan and gluten-free. Ideal as a side with any main course or as a fresh starter to begin the meal."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-porotos">
+    <div class="dish-header" onclick="toggleDish('porotos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Porotos granados</div>
+        <div class="dish-name-en">Chilean cranberry bean stew</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Los porotos granados son una preparación chilena de verano por excelencia: porotos frescos —no secos— cocidos con choclo, zapallo y albahaca. Un plato que huele a campo y a casa. 100% vegano, sin gluten, lleno de la identidad culinaria chilena."
+        <div class="speech-box-en">"Porotos granados is quintessential Chilean summer cooking: fresh —not dried— cranberry beans cooked with corn, squash, and basil. A dish that smells of countryside and home. 100% vegan, gluten-free, full of Chilean culinary identity."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-verduras-huerto">
+    <div class="dish-header" onclick="toggleDish('verduras-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Verduras del huerto</div>
+        <div class="dish-name-en">Garden vegetables</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Selección de verduras de temporada del huerto local, preparadas al momento. Veganas, sin gluten, acompañamiento liviano y saludable para cualquier proteína de la carta. Pregunte qué verduras tenemos disponibles hoy."
+        <div class="speech-box-en">"Selection of seasonal local garden vegetables, prepared fresh. Vegan, gluten-free, a light and healthy side for any protein on the menu. Ask your server what vegetables are available today."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Acompañamientos</div>
+
+  <div class="dish-card" id="dish-papas-bravas">
+    <div class="dish-header" onclick="toggleDish('papas-bravas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas bravas, merquén</div>
+        <div class="dish-name-en">Patatas bravas, merquén</div>
+        <div class="dish-meta"><span class="price">$9.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Papas crujientes con merquén —el ají ahumado mapuche— y alioli de la casa. La versión patagónica de las papas bravas españolas. Picante moderado, muy adictivas."
+        <div class="speech-box-en">"Crispy potatoes with merquén — the Mapuche smoked chili — and house-made aioli. The Patagonian take on Spanish patatas bravas. Moderately spicy, highly addictive."</div>
+      </div>
+      <p class="block-label">Merquén</p>
+      <p class="block-text">Condimento mapuche elaborado con ají cacho de cabra ahumado y secado al sol, semillas de cilantro y sal. Es el condimento más característico de la gastronomía chilena del sur.</p>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-papas-fritas">
+    <div class="dish-header" onclick="toggleDish('papas-fritas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas fritas</div>
+        <div class="dish-name-en">French fries</div>
+        <div class="dish-meta"><span class="price">$9.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Papas fritas clásicas — crujientes, doradas, perfectas. El acompañamiento más universal. Veganas y sin gluten."
+        <div class="speech-box-en">"Classic French fries — crispy, golden, perfect. The most universal side. Vegan and gluten-free."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-papas-mortero">
+    <div class="dish-header" onclick="toggleDish('papas-mortero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas al mortero</div>
+        <div class="dish-name-en">Smashed potatoes</div>
+        <div class="dish-meta"><span class="price">$9.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Papas cocidas y luego aplastadas al mortero para obtener una textura crujiente por fuera y suave por dentro. Condimentadas con hierbas y aceite de oliva. La versión más rústica y sabrosa de la papa."
+        <div class="speech-box-en">"Potatoes boiled then smashed for a crispy exterior and soft interior. Seasoned with herbs and olive oil. The most rustic and flavorful potato preparation."</div>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ═══════════════ BAR & SNACKS ═══════════════ -->
 <div class="section" id="section-bar">
   <div class="section-title">Bar & Snacks</div>
-  <div class="section-desc">Cócteles de autor, clásicos y snacks para el bar o terraza. Precios incluyen IVA.</div>
+  <div class="section-desc">Cócteles de autor, clásicos, destilados, bebidas y snacks. Todos los precios incluyen IVA. Las bebidas no están incluidas en el programa C. Experience.</div>
 
-  <div class="group-header">Cócteles de autor</div>
+  <div class="group-header">Cócteles de autor — Signature Cocktails</div>
 
   <div class="dish-card" id="dish-tsp-sour">
     <div class="dish-header" onclick="toggleDish('tsp-sour')">
       <div class="dish-header-left">
         <div class="dish-name">The Singular Sour</div>
-        <div class="dish-name-en">Smoked chili-infused pisco, green pepper, cilantro, black pepper, lemon, syrup, egg white</div>
+        <div class="dish-name-en">Pisco macerado con cacho de cabra, pimentón verde, cilantro, pimienta negra, limón, sirope y albúmina</div>
         <div class="dish-meta"><span class="price">$15.000</span></div>
       </div>
       <div class="dish-toggle">+</div>
     </div>
     <div class="dish-body">
       <div class="speech-box">
-        "Nuestro cóctel emblema: pisco macerado con cacho de cabra —un ají ahumado muy típico de Chile—, pimentón verde, cilantro y pimienta negra. Se termina con jugo de limón, sirope y albúmina para esa espuma característica del sour. Intenso, herbal y con carácter patagónico."
-        <div class="speech-box-en">"Our signature cocktail: pisco infused with cacho de cabra — a classic smoked Chilean chili — with green pepper, cilantro, and black pepper, finished with lemon, syrup, and egg white for that classic sour foam. Bold, herbal, and unmistakably Patagonian."</div>
+        "Nuestro cóctel emblema: pisco macerado con cacho de cabra —ají ahumado chileno—, pimentón verde, cilantro y pimienta negra, terminado con limón, sirope y albúmina para esa espuma característica. Intenso, herbal y con carácter patagónico."
+        <div class="speech-box-en">"Our signature: pisco infused with cacho de cabra — smoked Chilean chili — with green pepper, cilantro, and black pepper, finished with lemon, syrup, and egg white. Bold, herbal, unmistakably Patagonian."</div>
       </div>
-      <p class="block-text"><strong>Cacho de cabra:</strong> ají chileno de forma curva, sabor ahumado y picor moderado. Uno de los ajíes más tradicionales del país.</p>
+      <p class="block-text"><strong>Cacho de cabra:</strong> ají chileno ahumado, sabor intenso y picor moderado. Uno de los más tradicionales del país.</p>
     </div>
   </div>
 
@@ -1463,15 +2453,83 @@
     <div class="dish-header" onclick="toggleDish('ginquen')">
       <div class="dish-header-left">
         <div class="dish-name">Ginquen</div>
-        <div class="dish-name-en">Gin, green apple, St-Germain, lemon, Angostura, syrup</div>
+        <div class="dish-name-en">Gin macerado con manzana verde, St-Germain, limón, Angostura y sirope</div>
         <div class="dish-meta"><span class="price">$15.000</span></div>
       </div>
       <div class="dish-toggle">+</div>
     </div>
     <div class="dish-body">
       <div class="speech-box">
-        "Gin macerado con manzana verde patagónica, el licor floral St-Germain de flores de saúco, jugo de limón, Angostura y sirope. Fresco, elegante y ligeramente floral. Ideal para quienes prefieren cócteles más suaves y aromáticos."
-        <div class="speech-box-en">"Gin infused with Patagonian green apple, elderflower St-Germain, lemon, Angostura, and syrup. Fresh, elegant, and lightly floral. Perfect for guests who prefer softer, aromatic cocktails."</div>
+        "Gin macerado con manzana verde patagónica, St-Germain de flor de saúco, limón, Angostura y sirope. Fresco, elegante y ligeramente floral. Para quienes prefieren cócteles suaves y aromáticos."
+        <div class="speech-box-en">"Gin infused with Patagonian green apple, elderflower St-Germain, lemon, Angostura, and syrup. Fresh, elegant, lightly floral. For guests who prefer softer, aromatic cocktails."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-engine-house">
+    <div class="dish-header" onclick="toggleDish('engine-house')">
+      <div class="dish-header-left">
+        <div class="dish-name">Engine House</div>
+        <div class="dish-name-en">Pisco Black Heron, Vermouth Cocchi di Torino, Angostura, ahumado de tierra cítrica</div>
+        <div class="dish-meta"><span class="price">$15.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Pisco Black Heron con Vermouth Cocchi di Torino —uno de los vermouths italianos más reconocidos—, Angostura y un ahumado de tierra cítrica que aporta complejidad. Un cóctel oscuro, profundo y elegante. Perfecto para quienes disfrutan de los negroni o los Manhattan."
+        <div class="speech-box-en">"Black Heron Pisco with Cocchi di Torino vermouth — one of Italy's most recognized — Angostura, and a smoked citrus earth finish that adds depth. A dark, complex, elegant cocktail. Perfect for guests who enjoy negronis or Manhattans."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-lady-florence">
+    <div class="dish-header" onclick="toggleDish('lady-florence')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lady Florence</div>
+        <div class="dish-name-en">Jerez Fino Quinta, sirope de frutilla, limón y licor de naranja</div>
+        <div class="dish-meta"><span class="price">$15.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Jerez Fino con sirope de frutilla patagónica, jugo de limón y licor de naranja. Frutal, elegante y con la complejidad del jerez como base. Un cóctel femenino y sofisticado, ideal para quienes buscan algo diferente y con personalidad."
+        <div class="speech-box-en">"Fino Sherry with Patagonian strawberry syrup, lemon juice, and orange liqueur. Fruity, elegant, with the complexity of sherry as a base. A sophisticated cocktail, perfect for guests seeking something distinctive."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-guacolda">
+    <div class="dish-header" onclick="toggleDish('guacolda')">
+      <div class="dish-header-left">
+        <div class="dish-name">La Guacolda</div>
+        <div class="dish-name-en">Gin Bombay, jengibre, sirope de miel y romero, limón</div>
+        <div class="dish-meta"><span class="price">$12.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Gin Bombay con jengibre fresco, sirope de miel y romero, y jugo de limón. Fresco, herbal y ligeramente picante por el jengibre. Muy refrescante para el verano o el aperitivo. Inspirado en Guacolda, la heroína mapuche inmortalizada por Alonso de Ercilla."
+        <div class="speech-box-en">"Bombay Gin with fresh ginger, honey and rosemary syrup, and lemon juice. Fresh, herbal, lightly spiced. Very refreshing as an aperitif. Inspired by Guacolda, the Mapuche heroine immortalized by Alonso de Ercilla."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-estancia">
+    <div class="dish-header" onclick="toggleDish('estancia')">
+      <div class="dish-header-left">
+        <div class="dish-name">Estancia</div>
+        <div class="dish-name-en">Tequila Silver, kombucha, maracuyá, jengibre y limón</div>
+        <div class="dish-meta"><span class="price">$14.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Tequila Silver con kombucha artesanal, maracuyá, jengibre y limón. Cóctel moderno, tropical y probiótico. La kombucha aporta complejidad fermentada y burbujas naturales. Ideal para quienes buscan algo contemporáneo y refrescante."
+        <div class="speech-box-en">"Silver tequila with artisan kombucha, passion fruit, ginger, and lime. A modern, tropical, probiotic cocktail. The kombucha adds fermented complexity and natural bubbles. Perfect for guests seeking something contemporary and refreshing."</div>
       </div>
     </div>
   </div>
@@ -1480,41 +2538,335 @@
     <div class="dish-header" onclick="toggleDish('calafate-c')">
       <div class="dish-header-left">
         <div class="dish-name">El Calafate</div>
-        <div class="dish-name-en">Pisco, calafate berry, lemon, syrup, tonic</div>
+        <div class="dish-name-en">Pisco, calafate, limón, sirope y tónica</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Pisco chileno con calafate —baya silvestre patagónica de color azul intenso, sabor entre arándano y mora—, limón, sirope y agua tónica. Liviano y refrescante. Según la leyenda, quien prueba el calafate siempre vuelve a la Patagonia."
+        <div class="speech-box-en">"Chilean pisco with calafate — wild Patagonian berry, deep blue, between blueberry and blackberry — lemon, syrup, and tonic. Light and refreshing. Legend says whoever tastes calafate will always return to Patagonia."</div>
+      </div>
+      <p class="block-text"><strong>Cuente la leyenda:</strong> crea conexión con el comensal y hace que recuerden el cóctel. La leyenda es real y muy conocida en la región.</p>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-extranjero">
+    <div class="dish-header" onclick="toggleDish('extranjero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Extranjero</div>
+        <div class="dish-name-en">Piña, whisky ahumado, merquén y notas cítricas</div>
         <div class="dish-meta"><span class="price">$12.000</span></div>
       </div>
       <div class="dish-toggle">+</div>
     </div>
     <div class="dish-body">
       <div class="speech-box">
-        "Un cóctel liviano y muy refrescante con pisco chileno, calafate —una baya silvestre patagónica de color azul intenso y sabor entre arándano y mora— limón, sirope y agua tónica. Según la leyenda, quien prueba el calafate siempre vuelve a la Patagonia."
-        <div class="speech-box-en">"A light, refreshing cocktail with pisco, calafate — a wild Patagonian berry, deep blue, tasting between blueberry and blackberry — lemon, syrup, and tonic. Legend says whoever tastes calafate will always return to Patagonia."</div>
+        "Piña fresca con whisky ahumado, merquén —ají mapuche ahumado— y notas cítricas. El contraste entre la dulzura de la piña y el ahumado del whisky con el toque picante del merquén es completamente único. Atrevido, tropical y muy patagónico."
+        <div class="speech-box-en">"Fresh pineapple with smoked whisky, merquén — smoked Mapuche chili — and citrus notes. The contrast between pineapple sweetness, smoky whisky, and merquén's heat is completely unique. Bold, tropical, unmistakably Patagonian."</div>
       </div>
-      <p class="block-text"><strong>Cuente la leyenda:</strong> es una excelente forma de crear conexión con el comensal y que recuerden el cóctel. La leyenda es real y muy conocida en la región.</p>
     </div>
   </div>
 
-  <div class="group-header">Mocktails</div>
+  <div class="group-header">Mocktails — Sin Alcohol</div>
 
-  <div class="dish-card" id="dish-mock1">
-    <div class="dish-header" onclick="toggleDish('mock1')">
+  <div class="dish-card" id="dish-puerto-bories">
+    <div class="dish-header" onclick="toggleDish('puerto-bories')">
       <div class="dish-header-left">
-        <div class="dish-name">Puerto Bories Mocktail — Dorotea Mocktail</div>
-        <div class="dish-name-en">Two non-alcoholic signatures</div>
-        <div class="dish-meta"><span class="price">$11.000</span></div>
+        <div class="dish-name">Puerto Bories Mocktail</div>
+        <div class="dish-name-en">Frambuesa, jengibre, limón, tónica y sirope</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-gf">Sin gluten</span></div>
       </div>
       <div class="dish-toggle">+</div>
     </div>
     <div class="dish-body">
-      <p class="block-text"><strong>Puerto Bories:</strong> frambuesa, jengibre, limón, tónica y sirope. Frutal, picante y refrescante.<br><br><strong>Dorotea:</strong> pepino, apio, jugo de pomelo, tónica, limón y sirope. Vegetal, cítrico y muy refrescante.</p>
       <div class="speech-box">
-        "Para quienes prefieren no tomar alcohol, tenemos dos mocktails de autor: el Puerto Bories, frutal y con toque de jengibre, y el Dorotea, más vegetal y cítrico con pepino y pomelo. Ambos se preparan con la misma dedicación que nuestros cócteles."
-        <div class="speech-box-en">"For non-drinkers, we have two signature mocktails: Puerto Bories, fruity with a ginger kick, and Dorotea, more vegetal and citrusy with cucumber and grapefruit. Crafted with the same care as our cocktails."</div>
+        "Frambuesa patagónica, jengibre fresco, limón, tónica y sirope. Frutal, con toque picante del jengibre y muy refrescante. La opción sin alcohol más pedida del bar."
+        <div class="speech-box-en">"Patagonian raspberry, fresh ginger, lemon, tonic, and syrup. Fruity, with a ginger kick, very refreshing. Our most popular non-alcoholic option."</div>
       </div>
     </div>
   </div>
 
-  <div class="group-header">Snacks destacados</div>
+  <div class="dish-card" id="dish-dorotea">
+    <div class="dish-header" onclick="toggleDish('dorotea')">
+      <div class="dish-header-left">
+        <div class="dish-name">Dorotea Mocktail</div>
+        <div class="dish-name-en">Pepino, apio, jugo de pomelo, tónica, limón y sirope</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Pepino, apio, pomelo, tónica, limón y sirope. Vegetal, cítrico y muy refrescante. Para quienes prefieren sabores frescos y no dulces. Nombrado en honor al Monte Dorotea, uno de los miradores más icónicos de Puerto Natales."
+        <div class="speech-box-en">"Cucumber, celery, grapefruit, tonic, lemon, and syrup. Vegetal, citrusy, very refreshing. For guests who prefer fresh, non-sweet flavors. Named after Monte Dorotea, one of Puerto Natales' most iconic viewpoints."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Cócteles Clásicos — Classic Cocktails</div>
+
+  <div class="dish-card" id="dish-clasicos">
+    <div class="dish-header" onclick="toggleDish('clasicos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Clásicos internacionales</div>
+        <div class="dish-name-en">18 classic cocktails available</div>
+        <div class="dish-meta"><span class="price">desde $11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <p class="block-label">Cócteles disponibles</p>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:6px 24px; margin-top:8px; font-size:13px;">
+        <div><strong>Bloody Mary</strong> $13.000</div>
+        <div><strong>Moscow Mule</strong> $12.000</div>
+        <div><strong>Caipirinha</strong> $12.000</div>
+        <div><strong>Negroni</strong> $13.000</div>
+        <div><strong>Cosmopolitan</strong> $13.000</div>
+        <div><strong>Old Fashioned</strong> $13.000</div>
+        <div><strong>Daiquiri</strong> $11.000</div>
+        <div><strong>Piña Colada</strong> $12.000</div>
+        <div><strong>Dry Martini</strong> $12.000</div>
+        <div><strong>Ruso Blanco</strong> $13.000</div>
+        <div><strong>Kir Royale</strong> $11.000</div>
+        <div><strong>Ruso Negro</strong> $13.000</div>
+        <div><strong>Manhattan</strong> $13.000</div>
+        <div><strong>Rusty Nail</strong> $15.000</div>
+        <div><strong>Margarita</strong> $14.000</div>
+        <div><strong>Tom Collins</strong> $13.500</div>
+        <div><strong>Mojito</strong> $12.000</div>
+        <div><strong>Paloma</strong> $14.000</div>
+      </div>
+      <div class="speech-box" style="margin-top:12px">
+        "Tenemos toda la carta de clásicos internacionales. ¿Tiene alguno favorito o prefiere que le recomiende algo según su gusto?"
+        <div class="speech-box-en">"We have the full list of international classics. Do you have a favorite, or would you like a recommendation based on your preferences?"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Spritz</div>
+
+  <div class="dish-card" id="dish-spritz">
+    <div class="dish-header" onclick="toggleDish('spritz')">
+      <div class="dish-header-left">
+        <div class="dish-name">Spritz — 5 variedades</div>
+        <div class="dish-name-en">Aperol · Calafate · Ramazzotti · St-Germain · Chambord</div>
+        <div class="dish-meta"><span class="price">$14.300</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 24px; margin-bottom:10px; font-size:13px;">
+        <div><strong>Aperol Spritz</strong> $14.300</div>
+        <div><strong>St-Germain Spritz</strong> $14.300</div>
+        <div><strong>Calafate Spritz</strong> $14.300</div>
+        <div><strong>Chambord Spritz</strong> $14.300</div>
+        <div><strong>Ramazzotti Spritz</strong> $14.300</div>
+      </div>
+      <div class="speech-box">
+        "Nuestros spritz son ideales como aperitivo antes de la cena o para una tarde larga en la terraza. El Calafate Spritz es especial — el sabor de la Patagonia en formato spritz. El Aperol Spritz es el clásico. El Chambord aporta notas de frambuesa muy elegantes."
+        <div class="speech-box-en">"Our spritz are perfect as aperitifs before dinner or for a long afternoon on the terrace. The Calafate Spritz is special — the flavor of Patagonia in spritz form. Aperol is the classic. Chambord adds elegant raspberry notes."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Sour</div>
+
+  <div class="dish-card" id="dish-sours">
+    <div class="dish-header" onclick="toggleDish('sours')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sour — 3 variedades</div>
+        <div class="dish-name-en">Sour tradicional · Calafate Sour · Perfect Sour</div>
+        <div class="dish-meta"><span class="price">desde $11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="font-size:13px; margin-bottom:10px;">
+        <div style="margin-bottom:6px"><strong>Sour tradicional</strong> — Pisco, limón, sirope, albúmina · $11.000</div>
+        <div style="margin-bottom:6px"><strong>Calafate Sour</strong> — Pisco, calafate, limón, albúmina · $12.000 <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Perfect Sour</strong> — Pisco premium, limón, sirope artesanal, albúmina · $14.000 <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+      </div>
+      <div class="speech-box">
+        "El sour es el cóctel nacional de Chile. Nuestro Perfect Sour usa pisco de primera categoría y sirope artesanal — la versión de alta gama. El Calafate Sour añade la baya patagónica con un color azul vibrante y sabor único."
+        <div class="speech-box-en">"The sour is Chile's national cocktail. Our Perfect Sour uses top-tier pisco and artisan syrup — the premium version. The Calafate Sour adds the Patagonian berry for a vibrant blue color and unique flavor."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Destilados y Licores — Spirits & Liqueurs</div>
+
+  <div class="dish-card" id="dish-destilados">
+    <div class="dish-header" onclick="toggleDish('destilados')">
+      <div class="dish-header-left">
+        <div class="dish-name">Destilados estándar</div>
+        <div class="dish-name-en">Standard spirits — full list</div>
+        <div class="dish-meta"><span class="price">desde $9.700</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 16px; font-size:12px; margin-bottom:4px;">
+        <div>Amaretto Disaronno — $14.900</div>
+        <div>Jägermeister — $9.700</div>
+        <div>Araucano — $9.700</div>
+        <div>Jerez Tío Pepe — $12.600</div>
+        <div>Baileys — $13.800</div>
+        <div>Pisco Black Heron — $14.900</div>
+        <div>Bourbon Bulleit — $13.800</div>
+        <div>Pisco Waqar — $14.300</div>
+        <div>Bourbon Maker's Mark — $17.200</div>
+        <div>Ron Havana 7 años — $13.800</div>
+        <div>Brandy Miguel Torres 10 años — $18.400</div>
+        <div>St-Germain — $14.900</div>
+        <div>Drambuie — $14.900</div>
+        <div>Tequila J. Cuervo Esp. Rep./Silver — $12.600</div>
+        <div>Fernet — $9.700</div>
+        <div>Tequila El Jimador Reposado — $13.800</div>
+        <div>Frangelico — $14.900</div>
+        <div>Vermouth Noilly Prat — $12.600</div>
+        <div>Gin Hendrick's — $14.900</div>
+        <div>Vodka Grey Goose — $17.200</div>
+        <div>Gin Last Hope — $14.900</div>
+        <div>Vodka Cîroc — $18.400</div>
+        <div>Gin Tanqueray — $13.800</div>
+        <div>Whiskey Jack Daniel's N°7 — $18.400</div>
+        <div style="grid-column:1/-1">Whisky Johnnie Walker Black Label — $18.400</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-destilados-premium">
+    <div class="dish-header" onclick="toggleDish('destilados-premium')">
+      <div class="dish-header-left">
+        <div class="dish-name">Destilados Premium</div>
+        <div class="dish-name-en">Premium spirits — full list</div>
+        <div class="dish-meta"><span class="price">desde $19.500</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:4px 16px; font-size:12px; margin-bottom:4px;">
+        <div>Cognac Grand Marnier — $20.700</div>
+        <div>Gin The London No. 1 — $24.100</div>
+        <div>Cognac Hennessy V.S. — $21.800</div>
+        <div>Gin Tepaluma — $28.700</div>
+        <div>Cognac Rémy Martin V.S.O.P. — $37.300</div>
+        <div>Gin Goodwinds — $20.000</div>
+        <div>Cognac Hennessy XO — $78.200</div>
+        <div>Piquete Ziña Mezcal Espadín — $21.800</div>
+        <div>Gin Tanqueray 10 — $20.700</div>
+        <div>Ron Zacapa Solera 23 años — $34.500</div>
+        <div>Tequila Patrón Silver — $20.700</div>
+        <div>Vodka Belvedere Pure — $20.700</div>
+        <div>Tequila Don Julio Reposado — $24.100</div>
+        <div>Vodka Crystal Head — $36.800</div>
+        <div>Whisky Glenfiddich 12 años — $19.500</div>
+        <div>Whisky The Macallan 12 años — $38.000</div>
+        <div>Whisky Glenmorangie The Quinta Ruban — $26.400</div>
+        <div>Whisky Glenlivet 18 años — $35.600</div>
+        <div style="grid-column:1/-1">Whisky Chivas Regal 25 años — $80.000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Cervezas — Beers</div>
+
+  <div class="dish-card" id="dish-cervezas">
+    <div class="dish-header" onclick="toggleDish('cervezas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Selección de cervezas</div>
+        <div class="dish-name-en">Beer selection — 6 options</div>
+        <div class="dish-meta"><span class="price">desde $7.600</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="font-size:13px; line-height:2;">
+        <div><strong>Austral</strong> (Calafate, Lager, Patagonia, Yagán) — $7.600 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Austral Torres del Paine</strong> — $8.500 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Cuello Negro</strong> Stout / Ámbar — $8.500 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Cerveza sin alcohol</strong> / Non-Alcoholic Beer — $7.500 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Cerveza Perro Ovejero</strong> IPA / Red — $9.000 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Cerveza sin gluten</strong> / Gluten-free Beer — $8.000</div>
+      </div>
+      <div class="speech-box" style="margin-top:12px">
+        "Tenemos la línea completa de Austral — la cerveza artesanal patagónica — y otras opciones. La Austral Torres del Paine es la más especial, elaborada con agua de glaciar. ¿Prefiere algo suave, amargo o sin gluten?"
+        <div class="speech-box-en">"We carry the full Austral range — the Patagonian craft beer — plus other options. The Torres del Paine is the most special, brewed with glacier water. Would you prefer something light, hoppy, or gluten-free?"</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Bebidas sin Alcohol — Non-Alcoholic Beverages</div>
+
+  <div class="dish-card" id="dish-bebidas-na">
+    <div class="dish-header" onclick="toggleDish('bebidas-na')">
+      <div class="dish-header-left">
+        <div class="dish-name">Bebidas sin alcohol</div>
+        <div class="dish-name-en">Waters, juices, soft drinks, tonics and lemonades</div>
+        <div class="dish-meta"><span class="price">desde $5.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="font-size:13px; line-height:2;">
+        <div><strong>Agua Andes Mountain</strong> con o sin gas — $6.000 · <span class="tag tag-gf" style="font-size:10px">Sin gluten</span></div>
+        <div><strong>Agua mineral importada</strong> con o sin gas — $6.900</div>
+        <div><strong>Bebidas gaseosas</strong> / Soft drinks — $5.000</div>
+        <div><strong>Jugos naturales</strong> / Fresh juices — $7.000</div>
+        <div><strong>Tónica Thomas Henry</strong> — $8.500</div>
+        <div><strong>Limonadas</strong> / Lemonades — $6.500</div>
+        <div><strong>Limonada Última Esperanza</strong> (sirope de té flor de mariposa, limón y Peta Zetas) — $7.500</div>
+      </div>
+      <div class="speech-box" style="margin-top:12px">
+        "La Limonada Última Esperanza es especial: cambia de color de azul a rosado al agregar el limón, gracias al té de flor de mariposa. Una experiencia visual única, muy popular para fotografiar."
+        <div class="speech-box-en">"The Última Esperanza Lemonade is special: it changes color from blue to pink when lemon is added, thanks to butterfly pea flower tea. A unique visual experience, very popular for photos."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Café y Té — Coffee & Tea</div>
+
+  <div class="dish-card" id="dish-cafe">
+    <div class="dish-header" onclick="toggleDish('cafe')">
+      <div class="dish-header-left">
+        <div class="dish-name">Café y Té</div>
+        <div class="dish-name-en">Coffee and tea selection</div>
+        <div class="dish-meta"><span class="price">desde $4.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div style="font-size:13px; line-height:2;">
+        <div><strong>Cappuccino, latte, cortado, macchiato</strong> — $5.000</div>
+        <div><strong>Espresso, americano, ristretto, descafeinado</strong> — $4.500</div>
+        <div><strong>Espresso doble</strong> / Double espresso — $5.000</div>
+        <div><strong>Chocolate caliente</strong> / Hot Chocolate — $5.500</div>
+        <div><strong>Infusiones</strong> / Herbal infusions — $4.000</div>
+        <div><strong>Selección de tés</strong> / Tea selection — $5.000</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="group-header">Snacks</div>
+
+  <div class="dish-card" id="dish-sopa-barra">
+    <div class="dish-header" onclick="toggleDish('sopa-barra')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sopa del huerto</div>
+        <div class="dish-name-en">Garden vegetable soup</div>
+        <div class="dish-meta"><span class="price">$15.000</span><span class="tag tag-veg">Vegetariano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Sopa del huerto disponible en el bar — perfecta para una noche fría en Puerto Natales. Reconfortante, vegana y sin gluten. Mismo plato que en el restaurante, disponible en el bar para quienes buscan algo caliente y ligero."
+        <div class="speech-box-en">"Garden vegetable soup available at the bar — perfect for a cold Puerto Natales evening. Comforting, vegan, gluten-free. The same dish as in the restaurant, available at the bar for those seeking something warm and light."</div>
+      </div>
+    </div>
+  </div>
 
   <div class="dish-card" id="dish-tabla">
     <div class="dish-header" onclick="toggleDish('tabla')">
@@ -1527,8 +2879,93 @@
     </div>
     <div class="dish-body">
       <div class="speech-box">
-        "Una selección de quesos y embutidos artesanales de Tierra del Fuego para compartir. Ideal para acompañar un vino o una copa de espumante. Tiene todo para una velada larga en el bar."
-        <div class="speech-box-en">"A selection of artisan cheeses and cured meats from Tierra del Fuego, perfect for sharing over wine or sparkling. Great for a long evening at the bar."</div>
+        "Selección de quesos y embutidos artesanales de Tierra del Fuego para compartir. Ideal para acompañar un vino o una copa de espumante. El snack más completo para una velada larga en el bar."
+        <div class="speech-box-en">"A selection of artisan cheeses and cured meats from Tierra del Fuego, perfect for sharing over wine or sparkling. The most complete bar snack for a long evening."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-cesar-salmon">
+    <div class="dish-header" onclick="toggleDish('cesar-salmon')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada César de salmón ahumado en casa</div>
+        <div class="dish-name-en">House-smoked salmon Caesar salad</div>
+        <div class="dish-meta"><span class="price">$22.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Ensalada César con salmón ahumado en casa —nuestro propio proceso de ahumado en el hotel—, lechuga romana, aderezo César y crutones. Fresca, proteica y de sabor muy limpio."
+        <div class="speech-box-en">"Caesar salad with house-smoked salmon — our own in-hotel smoking process — with romaine lettuce, Caesar dressing, and croutons. Fresh, protein-rich, and very clean in flavor."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-cesar-pavo">
+    <div class="dish-header" onclick="toggleDish('cesar-pavo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada César de pavo</div>
+        <div class="dish-name-en">Turkey Caesar salad</div>
+        <div class="dish-meta"><span class="price">$22.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Ensalada César con pavo —proteína magra y muy tierna—, lechuga romana, aderezo César y crutones. La versión más ligera de nuestra ensalada César. Ideal para quienes prefieren algo liviano pero completo."
+        <div class="speech-box-en">"Caesar salad with turkey — lean, tender protein — romaine lettuce, Caesar dressing, and croutons. Our lightest Caesar. Perfect for guests who want something light but complete."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-sandwich-salmon">
+    <div class="dish-header" onclick="toggleDish('sandwich-salmon')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sándwich de salmón ahumado, queso crema, alcaparras y hojas verdes</div>
+        <div class="dish-name-en">Smoked salmon sandwich, cream cheese, capers, mixed greens</div>
+        <div class="dish-meta"><span class="price">$19.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Salmón ahumado en casa con queso crema, alcaparras y hojas verdes en pan artesanal. Clásico escandinavo adaptado con salmón patagónico. Elegante, fresco y muy sabroso."
+        <div class="speech-box-en">"House-smoked salmon with cream cheese, capers, and mixed greens on artisan bread. A Scandinavian classic adapted with Patagonian salmon. Elegant, fresh, and very flavorful."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-sandwich-veg">
+    <div class="dish-header" onclick="toggleDish('sandwich-veg')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sándwich vegetariano: láminas de vegetales, hummus, pasta de aceituna y hojas verdes</div>
+        <div class="dish-name-en">Vegetarian sandwich: sliced vegetables, hummus, olive tapenade, mixed greens</div>
+        <div class="dish-meta"><span class="price">$17.000</span><span class="tag tag-veg">Vegetariano</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Sándwich vegetariano con láminas de vegetales frescos, hummus de garbanzo, pasta de aceituna y hojas verdes. La opción más saludable y plant-based del bar."
+        <div class="speech-box-en">"Vegetarian sandwich with fresh sliced vegetables, chickpea hummus, olive tapenade, and mixed greens. The healthiest and most plant-based bar option."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-sandwich-serrano">
+    <div class="dish-header" onclick="toggleDish('sandwich-serrano')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sándwich de jamón serrano, queso de cabra, tomate, pasta de aceituna y hojas verdes</div>
+        <div class="dish-name-en">Serrano ham sandwich, goat cheese, tomato, olive tapenade, mixed greens</div>
+        <div class="dish-meta"><span class="price">$19.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Jamón serrano español con queso de cabra local, tomate fresco, pasta de aceituna y hojas verdes en pan artesanal. Sabores mediterráneos con ingredientes patagónicos. Muy sabroso y equilibrado."
+        <div class="speech-box-en">"Spanish serrano ham with local goat cheese, fresh tomato, olive tapenade, and mixed greens on artisan bread. Mediterranean flavors with Patagonian ingredients. Very flavorful and balanced."</div>
       </div>
     </div>
   </div>
@@ -1536,16 +2973,152 @@
   <div class="dish-card" id="dish-kingcrab-club">
     <div class="dish-header" onclick="toggleDish('kingcrab-club')">
       <div class="dish-header-left">
-        <div class="dish-name">Club sándwich de centolla</div>
+        <div class="dish-name">Club sándwich de centolla, huevo duro, tocino, mayonesa, mostaza y hojas verdes</div>
         <div class="dish-name-en">King crab club sandwich, hard-boiled egg, bacon, mayonnaise, mustard, mixed greens</div>
-        <div class="dish-meta"><span class="price">$32.000</span><span class="tag tag-dos">Premium</span></div>
+        <div class="dish-meta"><span class="price">$32.000</span><span class="tag tag-gf">Sin gluten</span></div>
       </div>
       <div class="dish-toggle">+</div>
     </div>
     <div class="dish-body">
       <div class="speech-box">
-        "El snack más lujoso del bar: nuestro club sándwich con centolla magallánica fresca, huevo duro, tocino crocante, mayonesa, mostaza y hojas verdes. Es el snack más pedido y más comentado. Una experiencia completa en un sándwich."
-        <div class="speech-box-en">"The bar's most luxurious snack: club sandwich with fresh Magellanic king crab, hard-boiled egg, crispy bacon, mayonnaise, mustard, and mixed greens. Our most popular and talked-about bar item."</div>
+        "El snack más lujoso del bar: centolla magallánica fresca con huevo duro, tocino crocante, mayonesa, mostaza y hojas verdes. El más pedido y comentado. Una experiencia completa en un sándwich."
+        <div class="speech-box-en">"The bar's most luxurious snack: fresh Magellanic king crab with hard-boiled egg, crispy bacon, mayonnaise, mustard, and mixed greens. Our most popular and talked-about bar item."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-club-pavo">
+    <div class="dish-header" onclick="toggleDish('club-pavo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Club sándwich de pavo, huevo duro, tocino, mayonesa, mostaza y hojas verdes</div>
+        <div class="dish-name-en">Turkey club sandwich, hard-boiled egg, bacon, mayonnaise, mustard, mixed greens</div>
+        <div class="dish-meta"><span class="price">$19.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Club sándwich clásico con pavo, huevo duro, tocino, mayonesa y mostaza. La versión más accesible del club — clásico, reconfortante y muy completo. Ideal para quienes buscan algo sustancioso en el bar."
+        <div class="speech-box-en">"Classic club sandwich with turkey, hard-boiled egg, bacon, mayonnaise, and mustard. The most accessible club version — classic, comforting, and complete. Perfect for guests who want something substantial at the bar."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-milanesa-guanaco">
+    <div class="dish-header" onclick="toggleDish('milanesa-guanaco')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sándwich de mini milanesa de guanaco, mayonesa de menta, hojas verdes y tomate</div>
+        <div class="dish-name-en">Mini guanaco Milanese sandwich, mint mayonnaise, mixed greens, tomato</div>
+        <div class="dish-meta"><span class="price">$20.000</span><span class="tag tag-df">Sin lactosa</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Mini milanesa de guanaco patagónico —el animal más icónico de la Patagonia— con mayonesa de menta fresca, hojas verdes y tomate. Un sándwich completamente único. Crujiente por fuera, jugoso por dentro, con ese sabor silvestre y limpio del guanaco."
+        <div class="speech-box-en">"Mini guanaco Milanese — the most iconic Patagonian animal — with fresh mint mayonnaise, mixed greens, and tomato. A completely unique sandwich. Crispy outside, juicy inside, with that clean, wild guanaco flavor."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-tabule">
+    <div class="dish-header" onclick="toggleDish('tabule')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tabulé de quinoa</div>
+        <div class="dish-name-en">Quinoa tabbouleh</div>
+        <div class="dish-meta"><span class="price">$18.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Tabulé de quinoa andina con hierbas frescas, tomate y limón. La versión andina del clásico libanés — con quinoa en lugar de bulgur — vegana, sin gluten y muy saludable. Fresco, herbáceo y muy refrescante."
+        <div class="speech-box-en">"Andean quinoa tabbouleh with fresh herbs, tomato, and lemon. The Andean version of the Lebanese classic — with quinoa instead of bulgur — vegan, gluten-free, and very healthy. Fresh, herbaceous, very refreshing."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-laminas-salmon">
+    <div class="dish-header" onclick="toggleDish('laminas-salmon')">
+      <div class="dish-header-left">
+        <div class="dish-name">Láminas de salmón ahumado, tostadas y crema ácida</div>
+        <div class="dish-name-en">Smoked salmon, toast, sour cream</div>
+        <div class="dish-meta"><span class="price">$21.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Láminas finas de salmón ahumado en casa, servidas con tostadas artesanales y crema ácida. Elegante, ligero y perfecto para compartir como aperitivo en el bar. El salmón es de nuestro propio proceso de ahumado."
+        <div class="speech-box-en">"Thin slices of house-smoked salmon served with artisan toast and sour cream. Elegant, light, and perfect for sharing as a bar aperitif. Salmon smoked in our own in-house process."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-tarta-ruibarbo">
+    <div class="dish-header" onclick="toggleDish('tarta-ruibarbo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tarta de ruibarbo y frambuesa</div>
+        <div class="dish-name-en">Rhubarb and raspberry tart</div>
+        <div class="dish-meta"><span class="price">$12.000</span><span class="tag tag-veg">Vegetariano</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Tarta de ruibarbo patagónico y frambuesa — dos ingredientes muy locales que combinan perfectamente: el ruibarbo aporta acidez y el frambuesa dulzura frutal. Perfecta para una tarde en el bar con una copa de espumante o una infusión."
+        <div class="speech-box-en">"Patagonian rhubarb and raspberry tart — two very local ingredients that pair perfectly: rhubarb brings tartness and raspberry brings fruity sweetness. Perfect for a bar afternoon with a sparkling wine or herbal infusion."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-dulce-dia">
+    <div class="dish-header" onclick="toggleDish('dulce-dia')">
+      <div class="dish-header-left">
+        <div class="dish-name">Dulce del día</div>
+        <div class="dish-name-en">Daily sweet</div>
+        <div class="dish-meta"><span class="price">$7.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Una pequeña preparación dulce elaborada diariamente por nuestra pastelería. Cambia cada día. Pregunte al mesero qué preparó hoy la cocina. La opción más económica y sorpresiva del bar."
+        <div class="speech-box-en">"A small sweet prepared daily by our pastry kitchen. Changes every day. Ask your server what the kitchen made today. The most affordable and surprising bar option."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-ensalada-frutas-bar">
+    <div class="dish-header" onclick="toggleDish('ensalada-frutas-bar')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada de frutas</div>
+        <div class="dish-name-en">Fruit salad</div>
+        <div class="dish-meta"><span class="price">$11.000</span><span class="tag tag-vegan">Vegano</span><span class="tag tag-gf">Sin gluten</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Frutas frescas de temporada, seleccionadas diariamente. Vegana, sin gluten, sin azúcar añadida. Perfecta para quienes buscan algo fresco y saludable en el bar."
+        <div class="speech-box-en">"Fresh seasonal fruit, selected daily. Vegan, gluten-free, no added sugar. Perfect for guests who want something fresh and healthy at the bar."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dish-card" id="dish-tarta-dia">
+    <div class="dish-header" onclick="toggleDish('tarta-dia')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tarta del día</div>
+        <div class="dish-name-en">Tart of the day</div>
+        <div class="dish-meta"><span class="price">$11.000</span></div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="speech-box">
+        "Tarta elaborada diariamente por nuestra pastelería — salada o dulce según el día. Pregunte al mesero qué preparamos hoy. Siempre con ingredientes locales y de temporada."
+        <div class="speech-box-en">"Tart made daily by our pastry kitchen — savory or sweet depending on the day. Ask your server what we prepared today. Always with local, seasonal ingredients."</div>
       </div>
     </div>
   </div>
@@ -1555,13 +3128,14 @@
 <!-- ═══════════════ VINOS ═══════════════ -->
 <div class="section" id="section-vinos">
   <div class="section-title">Vinos</div>
-  <div class="section-desc">Carta completamente chilena, con foco en valles como Colchagua, Maipo, Casablanca y Limarí. Copa disponible desde $12.600.</div>
+  <div class="section-desc">Carta completamente chilena, con foco en valles como Colchagua, Maipo, Casablanca y Limarí. Copa disponible desde $12.600. Las bebidas con ★ <strong>no están incluidas</strong> en el programa Complete Experience.</div>
 
-  <div class="group-header">Blancos — para mariscos y pescados</div>
+  <!-- SAUVIGNON BLANC -->
+  <div class="group-header">Sauvignon Blanc</div>
 
-  <div class="wine-card" id="wine-sauvb" onclick="toggleWine('sauvb')">
+  <div class="wine-card" id="wine-sb-vetas" onclick="toggleWine('sb-vetas')">
     <div class="wine-left">
-      <div class="wine-name">Sauvignon Blanc Vetas Blancas · Tabalí</div>
+      <div class="wine-name">Vetas Blancas · Viña Tabalí</div>
       <div class="wine-bodega">Valle de Limarí — fresco, cítrico, mineral</div>
     </div>
     <div class="wine-price">$39.000</div>
@@ -1570,88 +3144,832 @@
     </div>
   </div>
 
-  <div class="wine-card" id="wine-chard-cord" onclick="toggleWine('chard-cord')">
+  <div class="wine-card" id="wine-sb-kingston" onclick="toggleWine('sb-kingston')">
     <div class="wine-left">
-      <div class="wine-name">Chardonnay Cordillera · Miguel Torres</div>
+      <div class="wine-name">Kingston CJ's Barrel · Viña Kingston</div>
+      <div class="wine-bodega">Casablanca — fermentado en barrica, complejo</div>
+    </div>
+    <div class="wine-price">$45.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Sauvignon Blanc de Casablanca con paso por madera. Más complejo y voluminoso que el estilo fresco. <strong>Recomendar con:</strong> ostiones gratinados, ceviche de locos, pescados a la plancha.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-sb-terrunyo" onclick="toggleWine('sb-terrunyo')">
+    <div class="wine-left">
+      <div class="wine-name">Terrunyo · Viña Concha y Toro</div>
+      <div class="wine-bodega">Casablanca — premium, expresión de terroir</div>
+    </div>
+    <div class="wine-price">$50.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Sauvignon Blanc de alta gama de Casablanca. Fresco y elegante. <strong>Recomendar con:</strong> mariscos finos, centolla, pulpo a la plancha.</p>
+    </div>
+  </div>
+
+  <!-- CHARDONNAY -->
+  <div class="group-header">Chardonnay</div>
+
+  <div class="wine-card" id="wine-ch-kuda" onclick="toggleWine('ch-kuda')">
+    <div class="wine-left">
+      <div class="wine-name">Kuda · Viña Kalfu</div>
+      <div class="wine-bodega">Valle de Leyda — fresco, sin madera</div>
+    </div>
+    <div class="wine-price">$35.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Chardonnay ligero y fresco del Valle de Leyda. Accesible y versátil. <strong>Recomendar con:</strong> pescados blancos, mariscos sencillos, empanadas de mariscos.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ch-floresta" onclick="toggleWine('ch-floresta')">
+    <div class="wine-left">
+      <div class="wine-name">Floresta · Viña Santa Rita</div>
+      <div class="wine-bodega">Valle de Limarí — orgánico, mineral</div>
+    </div>
+    <div class="wine-price">$42.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Chardonnay orgánico con notas minerales de Limarí. <strong>Recomendar con:</strong> centolla, chupe, pescados a la mantequilla.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ch-talinay" onclick="toggleWine('ch-talinay')">
+    <div class="wine-left">
+      <div class="wine-name">Talinay · Viña Tabalí</div>
+      <div class="wine-bodega">Valle de Limarí — elegante, con carácter</div>
+    </div>
+    <div class="wine-price">$46.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Chardonnay premium de Limarí con buena estructura. <strong>Recomendar con:</strong> bacalao de profundidad, chupe de centolla, congrio en salsa.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ch-cordillera" onclick="toggleWine('ch-cordillera')">
+    <div class="wine-left">
+      <div class="wine-name">Cordillera · Viña Miguel Torres</div>
       <div class="wine-bodega">Valle de Limarí — cremoso, con cuerpo, madera sutil</div>
     </div>
     <div class="wine-price">$54.000</div>
     <div class="wine-detail">
-      <p class="block-text">Chardonnay de carácter, con algo de paso por madera. <strong>Recomendar con:</strong> centolla, bacalao de profundidad, chupe, ostiones gratinados. Uno de los más versátiles de la carta.</p>
+      <p class="block-text">Chardonnay de carácter, con paso por madera. <strong>Recomendar con:</strong> centolla, bacalao de profundidad, chupe, ostiones gratinados. Uno de los más versátiles de la carta.</p>
     </div>
   </div>
 
-  <div class="wine-card" id="wine-solsol" onclick="toggleWine('solsol')">
+  <div class="wine-card" id="wine-ch-solsol" onclick="toggleWine('ch-solsol')">
     <div class="wine-left">
-      <div class="wine-name">Sol de Sol · Aquitania</div>
-      <div class="wine-bodega">Valle de Malleco — chardonnay gran reserva</div>
+      <div class="wine-name">Sol de Sol · Viña Aquitania</div>
+      <div class="wine-bodega">Valle de Malleco — gran reserva, icónico</div>
     </div>
     <div class="wine-price">$65.000</div>
     <div class="wine-detail">
-      <p class="block-text">Uno de los chardonnays más reconocidos de Chile. <strong>Recomendar con:</strong> chupe de centolla, bacalao de profundidad. Para ocasiones especiales o comensales que conocen vinos.</p>
+      <p class="block-text">Uno de los chardonnays más reconocidos de Chile, del valle más austral. <strong>Recomendar con:</strong> chupe de centolla, bacalao de profundidad. Para ocasiones especiales.</p>
     </div>
   </div>
 
-  <div class="group-header">Tintos — para carnes y guisos</div>
+  <!-- ROSÉ -->
+  <div class="group-header">Rosé</div>
 
-  <div class="wine-card" id="wine-carmenerecord" onclick="toggleWine('carmenerecord')">
+  <div class="wine-card" id="wine-rose-lerose" onclick="toggleWine('rose-lerose')">
     <div class="wine-left">
-      <div class="wine-name">Carménère Cordillera · Miguel Torres</div>
-      <div class="wine-bodega">Valle de Peumo — uva emblemática de Chile</div>
+      <div class="wine-name">Le Rosé · Viña Lapostolle</div>
+      <div class="wine-bodega">Colchagua — fresco, frutal, liviano</div>
     </div>
-    <div class="wine-price">$54.000</div>
+    <div class="wine-price">$30.000</div>
     <div class="wine-detail">
-      <p class="block-text">El Carménère es la uva símbolo de Chile. Tiene notas a pimiento verde, especias y ciruela. <strong>Recomendar con:</strong> cordero, guanaco, liebre. Muy versátil con carnes rojas de la carta.</p>
-      <p class="block-text" style="margin-top:6px"><em>Para mencionar:</em> "El Carménère era considerado extinto en Europa hasta que se redescubrió en Chile en los años 90. Hoy es nuestra cepa más emblemática."</p>
+      <p class="block-text">Rosé de entrada accesible y frutal. <strong>Recomendar con:</strong> ensaladas, carpaccios, quesos frescos. Ideal para aperitivo o para comensales que no quieren blanco ni tinto.</p>
     </div>
   </div>
 
-  <div class="wine-card" id="wine-vikensamblaje" onclick="toggleWine('vikensamblaje')">
+  <div class="wine-card" id="wine-rose-piubelle" onclick="toggleWine('rose-piubelle')">
     <div class="wine-left">
-      <div class="wine-name">VIK · Viña VIK</div>
-      <div class="wine-bodega">Millahue — gran ensamblaje chileno</div>
+      <div class="wine-name">La Piu Belle · Viña VIK</div>
+      <div class="wine-bodega">Cachapoal — premium, elegante</div>
     </div>
-    <div class="wine-price">$280.000</div>
+    <div class="wine-price">$47.000</div>
     <div class="wine-detail">
-      <p class="block-text">Uno de los vinos más icónicos y premiados de Chile. Ensamblaje de múltiples cepas. <strong>Recomendar con:</strong> paletilla de cordero para dos, filete de vacuno. Para la mesa más especial de la noche.</p>
+      <p class="block-text">Rosé premium de la bodega VIK. Más complejo y elegante. <strong>Recomendar con:</strong> ostiones, ceviche, tabla de quesos, platos livianos de pescado.</p>
     </div>
   </div>
 
-  <div class="group-header">Espumantes — para aperitivo o postre</div>
+  <!-- ESPUMANTE -->
+  <div class="group-header">Espumante — Sparkling Wine</div>
 
-  <div class="wine-card" id="wine-espumante-ang" onclick="toggleWine('espumante-ang')">
+  <div class="wine-card" id="wine-esp-estelado" onclick="toggleWine('esp-estelado')">
     <div class="wine-left">
-      <div class="wine-name">Sparkling Angel Brut · Montes</div>
+      <div class="wine-name">Estelado Rosé Brut · Viña Miguel Torres</div>
+      <div class="wine-bodega">Maule — País, rosé, burbuja fina</div>
+    </div>
+    <div class="wine-price">$35.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Espumante rosé elaborado con uva País, cepa histórica chilena. Frutal y fresco. <strong>Recomendar como:</strong> aperitivo, con postres de frutos rojos.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-esp-azur" onclick="toggleWine('esp-azur')">
+    <div class="wine-left">
+      <div class="wine-name">Azur Extra Brut · Viña Emiliana</div>
+      <div class="wine-bodega">Limarí — orgánico, seco y elegante</div>
+    </div>
+    <div class="wine-price">$46.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Espumante orgánico de Limarí, seco y mineral. <strong>Recomendar como:</strong> aperitivo o con ostiones y mariscos finos.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-esp-tatie" onclick="toggleWine('esp-tatie')">
+    <div class="wine-left">
+      <div class="wine-name">Tatié Brut · Viña Tabalí</div>
+      <div class="wine-bodega">Limarí — fresco, burbuja persistente</div>
+    </div>
+    <div class="wine-price">$47.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Espumante fresco y frutal de Limarí. <strong>Recomendar como:</strong> aperitivo, con ceviche, o a lo largo de toda una comida liviana.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-esp-angel" onclick="toggleWine('esp-angel')">
+    <div class="wine-left">
+      <div class="wine-name">Sparkling Angel Brut · Viña Montes</div>
       <div class="wine-bodega">Zapallar — espumante premium chileno</div>
     </div>
     <div class="wine-price">$48.000</div>
     <div class="wine-detail">
-      <p class="block-text"><strong>Recomendar como:</strong> aperitivo al inicio, con ostiones gratinados, o al finalizar con postres ligeros. Un vino con el que se puede brindar en cualquier momento de la cena.</p>
+      <p class="block-text">Uno de los espumantes de mayor calidad de Chile. <strong>Recomendar como:</strong> aperitivo al inicio, con ostiones gratinados, o al cerrar con postres ligeros. Perfecto para brindar en cualquier momento de la cena.</p>
     </div>
   </div>
 
-  <div class="group-header">Grandes vinos — para ocasiones especiales</div>
+  <div class="wine-card" id="wine-esp-cordi" onclick="toggleWine('esp-cordi')">
+    <div class="wine-left">
+      <div class="wine-name">Cordillera Extra Brut · Viña Miguel Torres</div>
+      <div class="wine-bodega">Empedrado — seco, complejo, burbuja fina</div>
+    </div>
+    <div class="wine-price">$54.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Extra Brut de alta gama: seco y mineral. <strong>Recomendar con:</strong> ostiones, centolla, mariscos finos. Para el comensal que prefiere espumantes secos y sofisticados.</p>
+    </div>
+  </div>
 
-  <div class="wine-card" id="wine-almaviva" onclick="toggleWine('almaviva')">
+  <!-- OTROS BLANCOS -->
+  <div class="group-header">Otros Blancos — Other White Wines</div>
+
+  <div class="wine-card" id="wine-ob-casona" onclick="toggleWine('ob-casona')">
+    <div class="wine-left">
+      <div class="wine-name">Casona (Gewürztraminer) · Viña Casa Marín</div>
+      <div class="wine-bodega">San Antonio — aromático, floral, especiado</div>
+    </div>
+    <div class="wine-price">$35.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Gewürztraminer aromático con notas florales y especiadas. <strong>Recomendar con:</strong> platos con especias, salmón, quesos. Para comensales que buscan algo diferente.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ob-corralillo" onclick="toggleWine('ob-corralillo')">
+    <div class="wine-left">
+      <div class="wine-name">Corralillo (Riesling) · Viña Matetic</div>
+      <div class="wine-bodega">Itata — fresco, ácido, mineral</div>
+    </div>
+    <div class="wine-price">$35.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Riesling de Itata, poco común en Chile. Fresco y mineral con buena acidez. <strong>Recomendar con:</strong> ceviche, mariscos, trucha.</p>
+    </div>
+  </div>
+
+  <!-- PINOT NOIR -->
+  <div class="group-header">Pinot Noir</div>
+
+  <div class="wine-card" id="wine-pn-duette" onclick="toggleWine('pn-duette')">
+    <div class="wine-left">
+      <div class="wine-name">Duette · Viña Indómita</div>
+      <div class="wine-bodega">Casablanca — ligero, frutal, suave</div>
+    </div>
+    <div class="wine-price">$30.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Pinot Noir accesible y frutal del frío Valle de Casablanca. <strong>Recomendar con:</strong> salmón, trucha, carne de ave, platos de hongos.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-pn-cartagena" onclick="toggleWine('pn-cartagena')">
+    <div class="wine-left">
+      <div class="wine-name">Cartagena · Viña Casa Marín</div>
+      <div class="wine-bodega">San Antonio — elegante, mineral</div>
+    </div>
+    <div class="wine-price">$35.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Pinot Noir de costa, elegante y con buena acidez. <strong>Recomendar con:</strong> salmón, pato, cordero suave.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-pn-montes" onclick="toggleWine('pn-montes')">
+    <div class="wine-left">
+      <div class="wine-name">Montes Alpha · Viña Montes</div>
+      <div class="wine-bodega">Aconcagua Costa — premium, complejo</div>
+    </div>
+    <div class="wine-price">$44.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Pinot Noir premium con estructura y elegancia. <strong>Recomendar con:</strong> cordero, salmón a la parrilla, pichón, guisos de caza menor.</p>
+    </div>
+  </div>
+
+  <!-- CARMÈNERE -->
+  <div class="group-header">Carménère</div>
+
+  <div class="wine-card" id="wine-cmr-montes" onclick="toggleWine('cmr-montes')">
+    <div class="wine-left">
+      <div class="wine-name">Montes Alpha · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — la cepa símbolo de Chile</div>
+    </div>
+    <div class="wine-price">$41.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Carménère clásico con notas a pimiento rojo, especias y ciruela. <strong>Recomendar con:</strong> cordero, guanaco, liebre estofada. <em>Dato:</em> El Carménère fue "redescubierto" en Chile en los 90; era considerado extinto en Europa.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cmr-floresta" onclick="toggleWine('cmr-floresta')">
+    <div class="wine-left">
+      <div class="wine-name">Floresta · Viña Santa Rita</div>
+      <div class="wine-bodega">Apalta — orgánico, profundo, especiado</div>
+    </div>
+    <div class="wine-price">$45.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Carménère orgánico de Apalta, con carácter especiado y frutas oscuras. <strong>Recomendar con:</strong> garrón de cordero, paletilla, caza.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cmr-terrunyo" onclick="toggleWine('cmr-terrunyo')">
+    <div class="wine-left">
+      <div class="wine-name">Terrunyo · Viña Concha y Toro</div>
+      <div class="wine-bodega">Peumo — expresión premium de terroir</div>
+    </div>
+    <div class="wine-price">$50.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Carménère premium del histórico Valle de Peumo, origen del mejor Carménère de Chile. <strong>Recomendar con:</strong> cordero, caza, guisos de legumbres con carne.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cmr-cordillera" onclick="toggleWine('cmr-cordillera')">
+    <div class="wine-left">
+      <div class="wine-name">Cordillera · Viña Miguel Torres</div>
+      <div class="wine-bodega">Peumo — elegante, equilibrado</div>
+    </div>
+    <div class="wine-price">$54.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Carménère de alta gama con notas de especias, pimiento y frutas oscuras. El Carménère es la uva símbolo de Chile. <strong>Recomendar con:</strong> cordero, guanaco, liebre.</p>
+    </div>
+  </div>
+
+  <!-- CABERNET SAUVIGNON -->
+  <div class="group-header">Cabernet Sauvignon</div>
+
+  <div class="wine-card" id="wine-cs-grey" onclick="toggleWine('cs-grey')">
+    <div class="wine-left">
+      <div class="wine-name">Grey · Viña Ventisquero</div>
+      <div class="wine-bodega">Maipo — accesible, frutal, amigable</div>
+    </div>
+    <div class="wine-price">$38.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet Sauvignon de entrada, frutal y bien estructurado. <strong>Recomendar con:</strong> asados, lomo vetado, carnes a la parrilla.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cs-cota500" onclick="toggleWine('cs-cota500')">
+    <div class="wine-left">
+      <div class="wine-name">Cota 500 · Viña Andes Plateau</div>
+      <div class="wine-bodega">Maipo Alto — de altura, expresivo</div>
+    </div>
+    <div class="wine-price">$40.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet Sauvignon de altura del Maipo, con más concentración y acidez. <strong>Recomendar con:</strong> carnes rojas a la parrilla, cordero, guanaco.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cs-montesalpha" onclick="toggleWine('cs-montesalpha')">
+    <div class="wine-left">
+      <div class="wine-name">Montes Alpha · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — clásico chileno, amplia distribución</div>
+    </div>
+    <div class="wine-price">$41.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Uno de los Cabernet más vendidos y reconocidos de Chile. Confiable y siempre bien recibido. <strong>Recomendar con:</strong> lomo vetado, asado de cordero, chuleta de guanaco.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cs-cuvee" onclick="toggleWine('cs-cuvee')">
+    <div class="wine-left">
+      <div class="wine-name">Cuvée Alexandre · Viña Lapostolle</div>
+      <div class="wine-bodega">Colchagua — estilo francés, complejo</div>
+    </div>
+    <div class="wine-price">$48.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet de estilo bordelés elaborado por bodega de origen francés. <strong>Recomendar con:</strong> carnes rojas finas, cordero, fondos de caza.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cs-terrunyo" onclick="toggleWine('cs-terrunyo')">
+    <div class="wine-left">
+      <div class="wine-name">Terrunyo · Viña Concha y Toro</div>
+      <div class="wine-bodega">Maipo — premium, expresión de terroir</div>
+    </div>
+    <div class="wine-price">$50.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet premium de parcela única del Alto Maipo. <strong>Recomendar con:</strong> lomo vetado, chuleta de cordero, guanaco asado.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-cs-cordillera" onclick="toggleWine('cs-cordillera')">
+    <div class="wine-left">
+      <div class="wine-name">Cordillera · Viña Miguel Torres</div>
+      <div class="wine-bodega">Maipo — alta gama, equilibrado</div>
+    </div>
+    <div class="wine-price">$54.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet Sauvignon de alta gama del Alto Maipo. Taninos finos y larga persistencia. <strong>Recomendar con:</strong> carnes rojas finas, cordero patagónico.</p>
+    </div>
+  </div>
+
+  <!-- MERLOT -->
+  <div class="group-header">Merlot</div>
+
+  <div class="wine-card" id="wine-me-montes" onclick="toggleWine('me-montes')">
+    <div class="wine-left">
+      <div class="wine-name">Montes Alpha · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — suave, terciopelado</div>
+    </div>
+    <div class="wine-price">$41.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Merlot clásico con taninos suaves y notas de ciruela y chocolate. <strong>Recomendar con:</strong> pastas, risottos, carnes de ave, cordero joven.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-me-cuvee" onclick="toggleWine('me-cuvee')">
+    <div class="wine-left">
+      <div class="wine-name">Cuvée Alexandre · Viña Lapostolle</div>
+      <div class="wine-bodega">Colchagua — estilo francés, Premium</div>
+    </div>
+    <div class="wine-price">$48.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Merlot premium elaborado con asesoría bordelesa. Suave y complejo. <strong>Recomendar con:</strong> carnes de ave, cerdo, cordero, platos con salsas ricas.</p>
+    </div>
+  </div>
+
+  <!-- SYRAH -->
+  <div class="group-header">Syrah</div>
+
+  <div class="wine-card" id="wine-sy-polkura" onclick="toggleWine('sy-polkura')">
+    <div class="wine-left">
+      <div class="wine-name">Polkura · Viña Polkura</div>
+      <div class="wine-bodega">Colchagua — granito, especiado, potente</div>
+    </div>
+    <div class="wine-price">$45.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Syrah de suelos graníticos, con pimienta negra y frutas oscuras. <strong>Recomendar con:</strong> cordero a la parrilla, guanaco, caza mayor.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-sy-marginado" onclick="toggleWine('sy-marginado')">
+    <div class="wine-left">
+      <div class="wine-name">Marginado · Viña Calyptra</div>
+      <div class="wine-bodega">Cachapoal — elegante, mineral</div>
+    </div>
+    <div class="wine-price">$50.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Syrah premium con notas de violetas, pimienta y especias. <strong>Recomendar con:</strong> caza, cordero, guanaco braseado.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-sy-tara" onclick="toggleWine('sy-tara')">
+    <div class="wine-left">
+      <div class="wine-name">Tara · Viña Ventisquero</div>
+      <div class="wine-bodega">Atacama — desierto, concentrado, único</div>
+    </div>
+    <div class="wine-price">$69.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Syrah de uno de los valles más al norte de Chile, en el desierto de Atacama. Concentrado y expresivo. <strong>Recomendar con:</strong> carnes de caza, cordero asado lentamente, guisos intensos.</p>
+    </div>
+  </div>
+
+  <!-- MALBEC -->
+  <div class="group-header">Malbec</div>
+
+  <div class="wine-card" id="wine-ma-montes" onclick="toggleWine('ma-montes')">
+    <div class="wine-left">
+      <div class="wine-name">Montes Alpha · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — frutal, terciopelado</div>
+    </div>
+    <div class="wine-price">$43.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Malbec chileno con notas de ciruelas, violetas y chocolate. <strong>Recomendar con:</strong> asados, carnes a la parrilla, cordero.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ma-cot" onclick="toggleWine('ma-cot')">
+    <div class="wine-left">
+      <div class="wine-name">Cot · Viña Pérez Cruz</div>
+      <div class="wine-bodega">Maipo — potente, taninos firmes</div>
+    </div>
+    <div class="wine-price">$50.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Malbec premium del Maipo con carácter y estructura. "Cot" es el nombre original francés del Malbec. <strong>Recomendar con:</strong> carnes rojas a la parrilla, guanaco, cordero.</p>
+    </div>
+  </div>
+
+  <!-- OTROS TINTOS -->
+  <div class="group-header">Otros Tintos — Other Red Wines</div>
+
+  <div class="wine-card" id="wine-ot-maquis" onclick="toggleWine('ot-maquis')">
+    <div class="wine-left">
+      <div class="wine-name">Maquis (Cab. Franc) · Viña Maquis</div>
+      <div class="wine-bodega">Colchagua — elegante, floral, herbáceo</div>
+    </div>
+    <div class="wine-price">$38.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cabernet Franc, uva menos común, con notas florales y herbáceas. <strong>Recomendar con:</strong> cordero, aves de caza, hongos silvestres.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ot-imaginador" onclick="toggleWine('ot-imaginador')">
+    <div class="wine-left">
+      <div class="wine-name">Imaginador (Cinsault) · Viña Pedro Parra</div>
+      <div class="wine-bodega">Itata — ancestral, suave, salvaje</div>
+    </div>
+    <div class="wine-price">$60.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Cinsault de viñas viejas de Itata, una cepa histórica de Chile. Ligero y complejo. <strong>Recomendar con:</strong> platos de ave, cerdo, salmón. Para comensales curiosos que buscan algo diferente.</p>
+    </div>
+  </div>
+
+  <div class="wine-card" id="wine-ot-millacala" onclick="toggleWine('ot-millacala')">
+    <div class="wine-left">
+      <div class="wine-name">Milla Cala (Ensamblaje) · Viña VIK</div>
+      <div class="wine-bodega">Millahue — segunda etiqueta de VIK</div>
+    </div>
+    <div class="wine-price">$115.000</div>
+    <div class="wine-detail">
+      <p class="block-text">Ensamblaje premium de la bodega VIK. Puerta de entrada al universo VIK. <strong>Recomendar con:</strong> carnes rojas finas, cordero, caza.</p>
+    </div>
+  </div>
+
+  <!-- GRANDES VINOS TINTOS -->
+  <div class="group-header" style="background: linear-gradient(90deg, rgba(200,169,110,0.15), transparent);">★ Grandes Vinos — Tintos <span style="font-size:10px; color:var(--gold-dim); margin-left:8px">No incluidos en Complete Experience</span></div>
+
+  <div class="wine-card" id="wine-gv-specialcuvee" onclick="toggleWine('gv-specialcuvee')">
+    <div class="wine-left">
+      <div class="wine-name">Special Cuvée (Carménère) · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — grande vino de Montes</div>
+    </div>
+    <div class="wine-price">$72.000</div>
+    <div class="wine-detail"><p class="block-text"><strong>Grandes Vinos:</strong> No incluido en el programa Complete Experience. Carménère de alta expresión de la bodega Montes. Para mesas que buscan una experiencia vinícola superior.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-incidente" onclick="toggleWine('gv-incidente')">
+    <div class="wine-left">
+      <div class="wine-name">Incidente (Cabernet) · Viña Viu Manent</div>
+      <div class="wine-bodega">Colchagua — concentrado, elegante</div>
+    </div>
+    <div class="wine-price">$90.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Cabernet de alta gama de Viu Manent.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-chaski" onclick="toggleWine('gv-chaski')">
+    <div class="wine-left">
+      <div class="wine-name">Chaski (País Viejo) · Viña Pérez Cruz</div>
+      <div class="wine-bodega">Maipo — cepa ancestral chilena</div>
+    </div>
+    <div class="wine-price">$95.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Elaborado con la uva País, la primera cepa plantada en Chile por los colonizadores españoles.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-tococo" onclick="toggleWine('gv-tococo')">
+    <div class="wine-left">
+      <div class="wine-name">Tococo (Syrah) · Viñedos de Alcohuaz</div>
+      <div class="wine-bodega">Elqui — extremo norte, único en Chile</div>
+    </div>
+    <div class="wine-price">$100.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Syrah de uno de los proyectos vitivinícolas más singulares de Chile, en el desierto de Elqui.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-manso" onclick="toggleWine('gv-manso')">
+    <div class="wine-left">
+      <div class="wine-name">Manso de Velasco (Cab. Sauv.) · Viña Miguel Torres</div>
+      <div class="wine-bodega">Maipo — viñas antiguas, icónico</div>
+    </div>
+    <div class="wine-price">$120.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Elaborado de viñas con más de 100 años de antigüedad en el Maipo. Uno de los íconos de la viticultura chilena.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-payen" onclick="toggleWine('gv-payen')">
+    <div class="wine-left">
+      <div class="wine-name">Payen (Syrah) · Viña Tabalí</div>
+      <div class="wine-bodega">Limarí — granito, pimienta, profundo</div>
+    </div>
+    <div class="wine-price">$120.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Syrah de suelos graníticos de Limarí. Notas de pimienta negra, violetas y frutos oscuros.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-wings" onclick="toggleWine('gv-wings')">
+    <div class="wine-left">
+      <div class="wine-name">Wings (Carménère) · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — alta expresión, elegante</div>
+    </div>
+    <div class="wine-price">$150.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Carménère de alta expresión de Montes, con estructura y elegancia excepcionales.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-ocio" onclick="toggleWine('gv-ocio')">
+    <div class="wine-left">
+      <div class="wine-name">Ocio (Pinot Noir) · Viña Cono Sur</div>
+      <div class="wine-bodega">Casablanca — icónico Pinot chileno</div>
+    </div>
+    <div class="wine-price">$150.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El Pinot Noir más reconocido de Chile, ganador de múltiples premios internacionales.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-viola" onclick="toggleWine('gv-viola')">
+    <div class="wine-left">
+      <div class="wine-name">Viola (Carménère) · Viña Maquis</div>
+      <div class="wine-bodega">Cachapoal — floral, profundo</div>
+    </div>
+    <div class="wine-price">$180.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Carménère de alta expresión con notas florales y profundas.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-rocamadre" onclick="toggleWine('gv-rocamadre')">
+    <div class="wine-left">
+      <div class="wine-name">Roca Madre (Malbec) · Viña Tabalí</div>
+      <div class="wine-bodega">Río Hurtado — granito, norte chico</div>
+    </div>
+    <div class="wine-price">$190.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Malbec de suelos graníticos en el norte de Chile. Elegante y expresivo.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-kosten" onclick="toggleWine('gv-kosten')">
+    <div class="wine-left">
+      <div class="wine-name">Kosten (Pinot Noir) · Viña Ventisquero</div>
+      <div class="wine-bodega">Chile Chico, Patagonia — el más austral</div>
+    </div>
+    <div class="wine-price">$250.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Elaborado en la Patagonia chilena, uno de los viñedos más australes del mundo. Historia extraordinaria para contar a la mesa.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-carmin" onclick="toggleWine('gv-carmin')">
+    <div class="wine-left">
+      <div class="wine-name">Carmín de Peumo (Carménère) · Viña Concha y Toro</div>
+      <div class="wine-bodega">Peumo — el mejor Carménère de Chile</div>
+    </div>
+    <div class="wine-price">$260.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Considerado el Carménère más icónico de Chile, del Valle de Peumo donde la uva alcanza su máxima expresión.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-donmelchor" onclick="toggleWine('gv-donmelchor')">
+    <div class="wine-left">
+      <div class="wine-name">Don Melchor (Cab. Sauv.) · Viña Concha y Toro</div>
+      <div class="wine-bodega">Maipo Alto — ícono chileno desde 1987</div>
+    </div>
+    <div class="wine-price">$280.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Don Melchor fue el primer vino premium chileno en conquistar el mercado internacional. Un ícono.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-purpleangel" onclick="toggleWine('gv-purpleangel')">
+    <div class="wine-left">
+      <div class="wine-name">Purple Angel (Carménère) · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — el Carménère más celebrado</div>
+    </div>
+    <div class="wine-price">$300.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El Carménère más premiado de Chile. Concentrado, elegante y memorable.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-folly" onclick="toggleWine('gv-folly')">
+    <div class="wine-left">
+      <div class="wine-name">Folly (Syrah) · Viña Montes</div>
+      <div class="wine-bodega">Colchagua — gran Syrah chileno</div>
+    </div>
+    <div class="wine-price">$300.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El mejor Syrah de Montes, elaborado de viñas de granito en las laderas de Apalta.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-domusaurea" onclick="toggleWine('gv-domusaurea')">
+    <div class="wine-left">
+      <div class="wine-name">Domus Aurea (Cab. Sauv.) · Viña Quebrada de Macul</div>
+      <div class="wine-bodega">Maipo — clásico histórico de Chile</div>
+    </div>
+    <div class="wine-price">$300.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Elaborado de viñas centenarias en el piedemonte del Maipo. Un clásico absoluto de la viticultura chilena.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gv-chadwick" onclick="toggleWine('gv-chadwick')">
+    <div class="wine-left">
+      <div class="wine-name">Chadwick (Cab. Sauv.) · Viña Chadwick</div>
+      <div class="wine-bodega">Maipo Alto — el vino más exclusivo de la carta</div>
+    </div>
+    <div class="wine-price">$665.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El vino más caro y exclusivo de la carta. Elaborado en Santiago mismo, en terrenos históricos de polo. Siempre mencionarlo con la máxima reverencia y solo cuando sea apropiado.</p></div>
+  </div>
+
+  <!-- GRANDES VINOS BLANCOS -->
+  <div class="group-header" style="background: linear-gradient(90deg, rgba(200,169,110,0.15), transparent);">★ Grandes Vinos — Blancos <span style="font-size:10px; color:var(--gold-dim); margin-left:8px">No incluidos en Complete Experience</span></div>
+
+  <div class="wine-card" id="wine-gvb-grancalyptra" onclick="toggleWine('gvb-grancalyptra')">
+    <div class="wine-left">
+      <div class="wine-name">Gran Calyptra (Sauv. Blanc) · Viña Calyptra</div>
+      <div class="wine-bodega">Cachapoal — gran expresión de terroir</div>
+    </div>
+    <div class="wine-price">$60.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Sauvignon Blanc de alta gama con complejidad y profundidad.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gvb-amelia" onclick="toggleWine('gvb-amelia')">
+    <div class="wine-left">
+      <div class="wine-name">Amelia (Chardonnay) · Viña Concha y Toro</div>
+      <div class="wine-bodega">Limarí — gran Chardonnay chileno</div>
+    </div>
+    <div class="wine-price">$80.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Chardonnay de alta gama de Limarí. Cremoso, con paso por madera de calidad.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gvb-tara" onclick="toggleWine('gvb-tara')">
+    <div class="wine-left">
+      <div class="wine-name">Tara (Chardonnay) · Viña Ventisquero</div>
+      <div class="wine-bodega">Atacama — desierto, mineral, único</div>
+    </div>
+    <div class="wine-price">$90.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Chardonnay de Atacama, del lugar más inusual para hacer vino blanco fino. Historia extraordinaria para contar.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gvb-pizarras" onclick="toggleWine('gvb-pizarras')">
+    <div class="wine-left">
+      <div class="wine-name">Las Pizarras (Chardonnay) · Viña Errázuriz</div>
+      <div class="wine-bodega">Aconcagua Costa — referencia internacional</div>
+    </div>
+    <div class="wine-price">$100.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Chardonnay de suelos de pizarra en la costa de Aconcagua. Referencia de la viticultura chilena en el mercado internacional.</p></div>
+  </div>
+
+  <!-- GRANDES VINOS ENSAMBLAJE -->
+  <div class="group-header" style="background: linear-gradient(90deg, rgba(200,169,110,0.15), transparent);">★ Grandes Vinos — Ensamblaje <span style="font-size:10px; color:var(--gold-dim); margin-left:8px">No incluidos en Complete Experience</span></div>
+
+  <div class="wine-card" id="wine-gve-acrobata" onclick="toggleWine('gve-acrobata')">
+    <div class="wine-left">
+      <div class="wine-name">Acróbata · Viña Acróbata</div>
+      <div class="wine-bodega">Entre Cordilleras — proyecto boutique</div>
+    </div>
+    <div class="wine-price">$75.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje de pequeño productor. Singular y artesanal.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-altazor" onclick="toggleWine('gve-altazor')">
+    <div class="wine-left">
+      <div class="wine-name">Altazor · Viña Undurraga</div>
+      <div class="wine-bodega">Maipo — ensamblaje de alta expresión</div>
+    </div>
+    <div class="wine-price">$100.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje premium de la histórica bodega Undurraga.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-lahuen" onclick="toggleWine('gve-lahuen')">
+    <div class="wine-left">
+      <div class="wine-name">Lahuen · Viña Terranoble</div>
+      <div class="wine-bodega">Maule — ensamblaje de terroir</div>
+    </div>
+    <div class="wine-price">$100.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje del Valle del Maule.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-neyen" onclick="toggleWine('gve-neyen')">
+    <div class="wine-left">
+      <div class="wine-name">Neyen Espíritu de Apalta · Viña Neyen</div>
+      <div class="wine-bodega">Apalta — viñas antiguas, excepcional</div>
+    </div>
+    <div class="wine-price">$140.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje de viñas viejas de Apalta. Uno de los ensamblajes más expresivos y únicos de Chile.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-ge" onclick="toggleWine('gve-ge')">
+    <div class="wine-left">
+      <div class="wine-name">Gê · Viña Emiliana</div>
+      <div class="wine-bodega">Colchagua — biodinámico, único en Chile</div>
+    </div>
+    <div class="wine-price">$200.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje biodinámico de Emiliana. Gê (abreviatura de Gaia, la Tierra) es una declaración filosófica sobre el vino natural.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-donmax" onclick="toggleWine('gve-donmax')">
+    <div class="wine-left">
+      <div class="wine-name">Don Maximiano · Viña Errázuriz</div>
+      <div class="wine-bodega">Aconcagua — ícono histórico</div>
+    </div>
+    <div class="wine-price">$250.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El emblemático ensamblaje de Errázuriz. Don Maximiano fue uno de los primeros grandes vinos de Chile.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-viu1" onclick="toggleWine('gve-viu1')">
+    <div class="wine-left">
+      <div class="wine-name">Viu 1 · Viña Viu Manent</div>
+      <div class="wine-bodega">Colchagua — ensamblaje de parcela única</div>
+    </div>
+    <div class="wine-price">$250.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Ensamblaje premium de Viu Manent, uno de los más elegantes de Colchagua.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-vik" onclick="toggleWine('gve-vik')">
+    <div class="wine-left">
+      <div class="wine-name">VIK · Viña VIK</div>
+      <div class="wine-bodega">Millahue — gran ensamblaje chileno, premiado mundialmente</div>
+    </div>
+    <div class="wine-price">$280.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Uno de los vinos más icónicos y premiados de Chile. Ensamblaje de múltiples cepas. <strong>Recomendar con:</strong> paletilla de cordero para dos, lomo de vacuno. Para la mesa más especial de la noche.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-closapalta" onclick="toggleWine('gve-closapalta')">
+    <div class="wine-left">
+      <div class="wine-name">Clos Apalta · Viña Clos Apalta</div>
+      <div class="wine-bodega">Apalta — 100 puntos Parker, referencia mundial</div>
+    </div>
+    <div class="wine-price">$400.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Clos Apalta obtuvo 100 puntos Parker, siendo el primer vino chileno en lograrlo. Historia excepcional para compartir en mesa.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-sena" onclick="toggleWine('gve-sena')">
+    <div class="wine-left">
+      <div class="wine-name">Seña · Viña Seña</div>
+      <div class="wine-bodega">Aconcagua — joint venture Errázuriz & Mondavi</div>
+    </div>
+    <div class="wine-price">$430.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Elaborado originalmente en alianza con Robert Mondavi de Napa Valley. Un hito en la historia del vino chileno.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-gve-almaviva" onclick="toggleWine('gve-almaviva')">
     <div class="wine-left">
       <div class="wine-name">Almaviva · Viña Almaviva</div>
-      <div class="wine-bodega">Maipo — icono chileno, joint venture Concha y Toro & Baron Philippe de Rothschild</div>
+      <div class="wine-bodega">Maipo — joint venture Concha y Toro & Baron Philippe de Rothschild</div>
     </div>
     <div class="wine-price">$440.000</div>
-    <div class="wine-detail">
-      <p class="block-text">El vino chileno más reconocido en el mundo. Elaborado en sociedad con la familia Rothschild de Burdeos. <strong>Para:</strong> la mesa más especial, aniversarios, celebraciones. Siempre mencionarlo con reverencia.</p>
-    </div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El vino chileno más reconocido en el mundo. Elaborado en sociedad con la familia Rothschild de Burdeos. <strong>Para:</strong> la mesa más especial, aniversarios, celebraciones. Siempre mencionarlo con reverencia.</p></div>
   </div>
 
-  <div class="wine-card" id="wine-champagne-dom" onclick="toggleWine('champagne-dom')">
+  <!-- GRANDES VINOS CHAMPAGNE -->
+  <div class="group-header" style="background: linear-gradient(90deg, rgba(200,169,110,0.15), transparent);">★ Grandes Vinos — Champagne <span style="font-size:10px; color:var(--gold-dim); margin-left:8px">No incluidos en Complete Experience · Francia</span></div>
+
+  <div class="wine-card" id="wine-champ-pommery" onclick="toggleWine('champ-pommery')">
     <div class="wine-left">
-      <div class="wine-name">Dom Pérignon / Krug</div>
-      <div class="wine-bodega">Francia — Champagne de prestige</div>
+      <div class="wine-name">Pommery Brut Royal · Francia</div>
+      <div class="wine-bodega">Reims, Champagne — elegante y fresco</div>
+    </div>
+    <div class="wine-price">$150.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Champagne accesible y elegante. Ideal para aperitivo o celebración sin llegar al nivel de prestige.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-champ-polroger" onclick="toggleWine('champ-polroger')">
+    <div class="wine-left">
+      <div class="wine-name">Pol Roger Brut Reserve · Francia</div>
+      <div class="wine-bodega">Épernay, Champagne — favorito de Winston Churchill</div>
+    </div>
+    <div class="wine-price">$180.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Pol Roger fue el champagne favorito de Winston Churchill, quien lo bebía a diario. Historia interesante para compartir en mesa.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-champ-moet" onclick="toggleWine('champ-moet')">
+    <div class="wine-left">
+      <div class="wine-name">Moët & Chandon Brut Imperial · Francia</div>
+      <div class="wine-bodega">Épernay — el champagne más reconocido del mundo</div>
+    </div>
+    <div class="wine-price">$200.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El champagne más vendido y conocido mundialmente. El nombre "Imperial" es en honor a Napoleón Bonaparte.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-champ-veuve" onclick="toggleWine('champ-veuve')">
+    <div class="wine-left">
+      <div class="wine-name">Veuve Clicquot Brut · Francia</div>
+      <div class="wine-bodega">Reims — la "viuda" que revolucionó el Champagne</div>
+    </div>
+    <div class="wine-price">$250.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Fundado por la Veuve (Viuda) Barbe-Nicole Clicquot, quien en el siglo XIX revolucionó la técnica del champagne. La etiqueta amarilla, reconocida en todo el mundo.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-champ-dom" onclick="toggleWine('champ-dom')">
+    <div class="wine-left">
+      <div class="wine-name">Dom Pérignon Blanc de Blancs · Francia</div>
+      <div class="wine-bodega">Hautvillers — champagne de prestige, icónico</div>
     </div>
     <div class="wine-price">$480.000</div>
-    <div class="wine-detail">
-      <p class="block-text">Los champagnes más icónicos del mundo. <strong>Importante:</strong> No están incluidos en el programa C. Experience. Perfectos para celebraciones excepcionales. Siempre ofrecer la copa de espumante de la carta primero, y si el comensal lo desea, mencionar estas opciones.</p>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. El champagne de prestige más icónico del mundo. Nombrado en honor al monje que según la leyenda "inventó" el champagne. Solo se produce en las mejores cosechas.</p></div>
+  </div>
+
+  <div class="wine-card" id="wine-champ-krug" onclick="toggleWine('champ-krug')">
+    <div class="wine-left">
+      <div class="wine-name">Krug Brut · Francia</div>
+      <div class="wine-bodega">Reims — considerado el mejor champagne del mundo</div>
     </div>
+    <div class="wine-price">$480.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Para muchos expertos, Krug es el champagne más complejo y excepcional de todos. Elaborado con uvas de múltiples cosechas y añadas. Para la ocasión más especial.</p></div>
+  </div>
+
+  <!-- GRANDES VINOS FORTIFICADO -->
+  <div class="group-header" style="background: linear-gradient(90deg, rgba(200,169,110,0.15), transparent);">★ Grandes Vinos — Fortificado <span style="font-size:10px; color:var(--gold-dim); margin-left:8px">No incluido en Complete Experience</span></div>
+
+  <div class="wine-card" id="wine-fort-fort" onclick="toggleWine('fort-fort')">
+    <div class="wine-left">
+      <div class="wine-name">Fort · Viña Calyptra</div>
+      <div class="wine-bodega">Cachapoal — vino dulce fortificado estilo Porto</div>
+    </div>
+    <div class="wine-price">$60.000</div>
+    <div class="wine-detail"><p class="block-text">★ No incluido en Complete Experience. Vino dulce fortificado, el único de la carta. Ideal para acompañar postres de chocolate, quesos añejos o como digestivo de cierre. Ofrecerlo a comensales que quieran terminar la experiencia con algo especial.</p></div>
   </div>
 
   <div class="tip-card" style="margin-top:24px; background: var(--accent-soft); border-color: var(--gold-dim);">
