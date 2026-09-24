@@ -473,10 +473,14 @@
     margin-bottom: 8px;
   }
 
-  .dish-img-frame {
+  /* ── Mobile: framed with gold border (default) ── */
+  .dish-img-block {
     margin: 20px 20px 0;
+  }
+
+  .dish-img-frame {
     border: 1px solid var(--gold-dim);
-    height: 240px;
+    height: 220px;
     overflow: hidden;
   }
 
@@ -494,8 +498,38 @@
     font-size: 12px;
     color: var(--text-muted);
     text-align: center;
-    padding: 8px 20px 0;
+    padding: 8px 0 0;
     letter-spacing: 0.04em;
+  }
+
+  /* ── Desktop: split layout ── */
+  @media (min-width: 768px) {
+    .dish-has-image .dish-body-wrapper {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      align-items: start;
+    }
+
+    .dish-img-block {
+      margin: 0;
+      position: sticky;
+      top: 0;
+    }
+
+    .dish-img-frame {
+      height: 100%;
+      min-height: 200px;
+      border: none;
+      border-right: 1px solid var(--gold-dim);
+    }
+
+    .dish-img-caption {
+      display: none;
+    }
+
+    .dish-body {
+      border-left: none;
+    }
   }
 
   /* ── NO RESULTS ── */
@@ -1708,7 +1742,7 @@
   </div>
 
   <!-- PAPPARDELLE PATO -->
-  <div class="dish-card" id="dish-pappardelle-pato">
+  <div class="dish-card dish-has-image" id="dish-pappardelle-pato">
     <div class="dish-header" onclick="toggleDish('pappardelle-pato')">
       <div class="dish-header-left">
         <div class="dish-name">Pappardelle relleno de pato confitado, camote anisado, mantequilla de avellana y salsa demi-glace a la naranja</div>
@@ -1726,10 +1760,14 @@
         <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','qa')">Preguntas</button>
         <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','maridaje')">Maridaje</button>
       </div>
-      <div class="dish-img-frame">
-        <img src="images/pappardelle-pato.jpeg" alt="Pappardelle relleno de pato confitado" class="dish-img" onerror="this.closest('.dish-img-frame').style.display='none'">
-      </div>
-      <p class="dish-img-caption">Pappardelle relleno de pato confitado · The Singular Patagonia</p>
+      <div class="dish-body-wrapper">
+        <div class="dish-img-block">
+          <div class="dish-img-frame">
+            <img src="images/pappardelle-pato.jpeg" alt="Pappardelle relleno de pato confitado" class="dish-img" onerror="this.closest('.dish-img-block').style.display='none'">
+          </div>
+          <p class="dish-img-caption">Pappardelle relleno de pato confitado · The Singular Patagonia</p>
+        </div>
+        <div class="dish-body">
       <div class="inner-panel active" id="pappardelle-pato-presentacion">
         <div class="speech-box">
           "Pappardelle artesanal relleno de pato confitado —cocido lentamente en su propia grasa hasta quedar tiernísimo— con camote aromatizado con anís, mantequilla de avellana tostada y una salsa demi-glace a la naranja que aporta acidez cítrica. Una pasta de alta cocina que combina técnica francesa con sabores del sur."
@@ -1755,6 +1793,8 @@
         <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
         <div class="wine-pill"><strong>Alternativa:</strong> Carménère Floresta · Santa Rita</div>
         <p class="block-text" style="margin-top:10px">El pato confit y la naranja son maridaje clásico con Pinot Noir. La acidez del tinto complementa la riqueza de la carne confitada y la salsa cítrica.</p>
+      </div>
+        </div>
       </div>
     </div>
   </div>
