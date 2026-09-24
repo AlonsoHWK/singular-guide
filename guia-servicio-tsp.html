@@ -513,14 +513,17 @@
 <div class="nav-scroll">
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="showSection('entradas')">Entradas</button>
+    <button class="nav-tab" onclick="showSection('sopas')">Sopas</button>
     <button class="nav-tab" onclick="showSection('fondos')">Fondos</button>
+    <button class="nav-tab" onclick="showSection('grill')">Carta Grill</button>
     <button class="nav-tab" onclick="showSection('postres')">Postres</button>
+    <button class="nav-tab" onclick="showSection('veganos')">Veganos</button>
     <button class="nav-tab" onclick="showSection('bar')">Bar & Snacks</button>
     <button class="nav-tab" onclick="showSection('vinos')">Vinos</button>
     <button class="nav-tab" onclick="showSection('tips')">Protocolo</button>
+    <button class="nav-tab" onclick="showSection('glosario')">Glosario</button>
     <button class="nav-tab" onclick="showSection('sop')">SOP</button>
     <button class="nav-tab" onclick="showSection('lqa')">LQA</button>
-    <button class="nav-tab" onclick="showSection('glosario')">Glosario</button>
   </div>
 </div>
 
@@ -979,6 +982,303 @@
     </div>
   </div>
 
+  <!-- ESCABECHE LIEBRE -->
+  <div class="dish-card" id="dish-escabeche-liebre">
+    <div class="dish-header" onclick="toggleDish('escabeche-liebre')">
+      <div class="dish-header-left">
+        <div class="dish-name">Escabeche de liebre salvaje, mayonesa de hierbas, verduras encurtidas y vinagreta de casis</div>
+        <div class="dish-name-en">Wild hare escabeche, herb mayonnaise, pickled vegetables, blackcurrant vinaigrette</div>
+        <div class="dish-meta">
+          <span class="price">$17.000</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'escabeche-liebre','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'escabeche-liebre','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'escabeche-liebre','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="escabeche-liebre-presentacion">
+        <div class="speech-box">
+          "Liebre salvaje patagónica marinada en escabeche —una técnica de conservación en vinagre y especias que concentra los sabores— acompañada de mayonesa de hierbas frescas, verduras encurtidas que aportan acidez y textura, y una vinagreta de casis que equilibra con su dulzura oscura y frutal."
+          <div class="speech-box-en">"Wild Patagonian hare marinated in escabeche — a vinegar-and-spice curing technique that concentrates the flavors — served with fresh herb mayonnaise, pickled vegetables for acidity and texture, and a blackcurrant vinaigrette for fruity balance."</div>
+        </div>
+        <p class="block-label">Técnica: escabeche</p>
+        <p class="block-text">El <strong>escabeche</strong> es una técnica española y latinoamericana que conserva la carne en una mezcla de vinagre, aceite y especias. La acidez penetra la carne, ablandándola y aromatizándola. La liebre salvaje, al ser magra e intensa, es ideal para esta preparación.</p>
+      </div>
+      <div class="inner-panel" id="escabeche-liebre-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es la liebre salvaje?</div>
+          <div class="qa-a">Es un mamífero silvestre de la estepa patagónica, similar al conejo pero más grande y de sabor más pronunciado. Se caza de manera regulada y sustentable en la región.</div>
+          <div class="qa-a-en">"A wild mammal from the Patagonian steppe, similar to rabbit but larger with a richer flavor. Hunted sustainably under regulation."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿El escabeche está frío o caliente?</div>
+          <div class="qa-a">Se sirve frío o a temperatura ambiente. Es una entrada fresca y elegante, ideal para compartir con pan o por sí sola.</div>
+          <div class="qa-a-en">"Served cold or at room temperature — a fresh, elegant starter, great with bread or on its own."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="escabeche-liebre-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Cartagena · Casa Marín</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Rosé Le Rosé · Lapostolle</div>
+        <p class="block-text" style="margin-top:10px">La acidez del escabeche y la vinagreta de casis piden un tinto ligero o un rosé frutal que no compita con los sabores marinados.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- REPOLLO ASADO -->
+  <div class="dish-card" id="dish-repollo-asado">
+    <div class="dish-header" onclick="toggleDish('repollo-asado')">
+      <div class="dish-header-left">
+        <div class="dish-name">Repollo asado, puré de palta, frutas encurtidas y vinagreta de apio</div>
+        <div class="dish-name-en">Roasted cabbage, avocado purée, pickled fruit, celery vinaigrette</div>
+        <div class="dish-meta">
+          <span class="price">$16.500</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'repollo-asado','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'repollo-asado','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'repollo-asado','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="repollo-asado-presentacion">
+        <div class="speech-box">
+          "Un repollo asado lentamente hasta caramelizar sus hojas externas, servido sobre puré cremoso de palta chilena, con frutas de temporada levemente encurtidas que aportan frescura y contraste, y una vinagreta de apio que suma herbáceo y ligereza. Una entrada vegana de cocina contemporánea que sorprende por su profundidad de sabor."
+          <div class="speech-box-en">"Slowly roasted cabbage until the outer leaves caramelize, served over creamy Chilean avocado purée, with lightly pickled seasonal fruit for freshness and contrast, and a celery vinaigrette for herbal brightness. A contemporary vegan starter that surprises with its depth of flavor."</div>
+        </div>
+        <p class="block-label">Por qué recomendarlo</p>
+        <p class="block-text">Para comensales veganos o vegetarianos que buscan una entrada elegante y contemporánea. El repollo asado es un ingrediente humilde elevado a alta cocina — ideal para quienes aprecian la cocina de producto y técnica.</p>
+      </div>
+      <div class="inner-panel" id="repollo-asado-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Solo es repollo asado?</div>
+          <div class="qa-a">El repollo es el protagonista pero la preparación es compleja: asado lento para desarrollar caramelización, puré de palta fresco, frutas encurtidas y vinagreta. Es una entrada de cocina contemporánea.</div>
+          <div class="qa-a-en">"Cabbage is the star but the preparation is complex: slow roasting for caramelization, fresh avocado purée, pickled fruit, and vinaigrette. Contemporary cooking at its best."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="repollo-asado-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Vetas Blancas · Tabalí</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Estelado Rosé · Miguel Torres</div>
+        <p class="block-text" style="margin-top:10px">Un Sauvignon Blanc fresco y herbáceo complementa la vinagreta de apio y la frescura de las frutas encurtidas.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARTALETA CHAMPIÑONES -->
+  <div class="dish-card" id="dish-tartaleta-champinones">
+    <div class="dish-header" onclick="toggleDish('tartaleta-champinones')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tartaleta de champiñones en texturas</div>
+        <div class="dish-name-en">Mushroom tartlet, mushroom textures</div>
+        <div class="dish-meta">
+          <span class="price">$16.500</span>
+          <span class="tag tag-veg">Vegetariano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'tartaleta-champinones','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'tartaleta-champinones','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'tartaleta-champinones','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="tartaleta-champinones-presentacion">
+        <div class="speech-box">
+          "Una tartaleta de masa crujiente rellena con una selección de champiñones trabajados en distintas texturas: confitados, en crema, salteados y deshidratados. Cada textura revela un matiz diferente del hongo — terroso, cremoso, intenso. Una entrada vegetal de gran elaboración técnica."
+          <div class="speech-box-en">"A crisp pastry shell filled with mushrooms in multiple textures — confit, cream, sautéed, and dehydrated. Each texture reveals a different note of the mushroom: earthy, creamy, intense. A technically accomplished vegetable starter."</div>
+        </div>
+        <p class="block-label">¿Qué champiñones se usan?</p>
+        <p class="block-text">La preparación combina distintas variedades y técnicas: champiñones de París, portobello y hongos de temporada, trabajados en crema, confit, salteados y chips deshidratados. La diversidad de texturas es la clave del plato.</p>
+      </div>
+      <div class="inner-panel" id="tartaleta-champinones-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es una porción pequeña al ser tartaleta?</div>
+          <div class="qa-a">Es una porción adecuada para entrada. La riqueza de los champiñones y la masa hacen que sea una entrada muy satisfactoria.</div>
+          <div class="qa-a-en">"The portion is right for a starter. The richness of the mushrooms and pastry makes it very satisfying."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">Sí, la masa de la tartaleta contiene harina de trigo. No es apto para celíacos o intolerantes al gluten.</div>
+          <div class="qa-a-en">"Yes, the pastry shell contains wheat flour. Not suitable for gluten-free guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="tartaleta-champinones-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Pinot Noir Cartagena · Casa Marín</div>
+        <p class="block-text" style="margin-top:10px">Los champiñones tienen afinidad tanto con blancos de cuerpo como con Pinot Noir ligero. Evitar tintos muy tánnicos que aplasten los sabores terrosos del hongo.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ SOPAS ═══════════════ -->
+<div class="section" id="section-sopas">
+  <div class="section-title">Sopas</div>
+  <div class="section-desc">Tres preparaciones de temporada que reflejan el huerto y la tradición patagónica. · Three seasonal preparations reflecting the garden and Patagonian tradition.</div>
+
+  <!-- GAZPACHO -->
+  <div class="dish-card" id="dish-gazpacho">
+    <div class="dish-header" onclick="toggleDish('gazpacho')">
+      <div class="dish-header-left">
+        <div class="dish-name">Gazpacho de tomate, pimiento y frambuesa</div>
+        <div class="dish-name-en">Tomato, bell pepper and raspberry gazpacho</div>
+        <div class="dish-meta">
+          <span class="price">$15.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'gazpacho','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'gazpacho','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'gazpacho','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="gazpacho-presentacion">
+        <div class="speech-box">
+          "Un gazpacho de temporada que combina tomates maduros del huerto con pimiento rojo asado y frambuesas patagónicas. Se sirve frío, con una textura aterciopelada y un equilibrio entre lo dulce, lo ácido y lo vegetal. La frambuesa aporta una nota frutal sorprendente que eleva la preparación clásica."
+          <div class="speech-box-en">"A seasonal gazpacho combining ripe garden tomatoes with roasted red pepper and Patagonian raspberries. Served cold, silky-smooth, balancing sweet, acidic, and vegetal notes. The raspberry adds a surprising fruity lift to the classic preparation."</div>
+        </div>
+        <p class="block-label">¿Qué es el gazpacho?</p>
+        <p class="block-text">El <strong>gazpacho</strong> es una sopa fría de origen español, elaborada con vegetales crudos triturados y aliñados. En esta versión patagónica, la frambuesa local sustituye parte del tomate clásico, aportando acidez frutal y color vibrante.</p>
+      </div>
+      <div class="inner-panel" id="gazpacho-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Se sirve caliente o frío?</div>
+          <div class="qa-a">El gazpacho es una sopa fría, se sirve bien refrigerado. Es ideal en cualquier época del año y especialmente refrescante en temporada de calor.</div>
+          <div class="qa-a-en">"Gazpacho is always served cold, well-chilled. Refreshing any time of year."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Tiene trozos o es todo licuado?</div>
+          <div class="qa-a">Es completamente licuado y colado para lograr una textura aterciopelada. Puede incluir un pequeño garnish de verduras brunoise o aceite de oliva sobre la superficie.</div>
+          <div class="qa-a-en">"Fully blended and strained for a silky texture. May include a small brunoise garnish or olive oil drizzle on top."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="gazpacho-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Vetas Blancas · Tabalí</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Estelado Rosé · Miguel Torres</div>
+        <p class="block-text" style="margin-top:10px">Un Sauvignon Blanc fresco realza la acidez del tomate y la frambuesa. El espumante rosé acompaña el color vibrante del plato.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- SOPA DEL HUERTO -->
+  <div class="dish-card" id="dish-sopa-huerto">
+    <div class="dish-header" onclick="toggleDish('sopa-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Sopa del huerto</div>
+        <div class="dish-name-en">Garden vegetable soup</div>
+        <div class="dish-meta">
+          <span class="price">$15.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'sopa-huerto','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'sopa-huerto','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'sopa-huerto','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="sopa-huerto-presentacion">
+        <div class="speech-box">
+          "La sopa del huerto es nuestra preparación más estacional: una selección de verduras frescas del huerto del hotel, trabajadas con caldo de verduras concentrado. Cambia con la temporada, siempre reflejando lo mejor del jardín patagónico. Reconfortante, honesta y llena de sabor."
+          <div class="speech-box-en">"Our most seasonal preparation: a selection of fresh vegetables from the hotel's garden, cooked in a concentrated vegetable stock. The recipe changes with the season, always reflecting the best of the Patagonian garden. Comforting, honest, full of flavor."</div>
+        </div>
+        <p class="block-label">Para quién recomendarla</p>
+        <p class="block-text">Ideal para comensales que buscan algo reconfortante, liviano y auténtico. También para quienes tienen restricciones alimentarias — es vegana, sin gluten y fácil de adaptar. El garzón debe saber qué verduras componen el plato ese día.</p>
+      </div>
+      <div class="inner-panel" id="sopa-huerto-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿De dónde vienen las verduras?</div>
+          <div class="qa-a">Del huerto propio del hotel o de productores locales de la región. La carta indica qué es de temporada y el chef decide la composición según lo disponible ese día.</div>
+          <div class="qa-a-en">"From the hotel's own garden or local regional producers. The chef selects based on what's freshest that day."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Varía la receta cada día?</div>
+          <div class="qa-a">La base es siempre un caldo de verduras concentrado, pero las verduras principales pueden variar según la temporada y disponibilidad del huerto.</div>
+          <div class="qa-a-en">"The base is always a concentrated vegetable stock, but the main vegetables may vary by season and garden availability."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="sopa-huerto-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Kuda · Kalfu</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Copa de blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un blanco fresco y mineral que no compita con los sabores del huerto. También es perfecta sola, sin maridaje.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAZUELA CORDERO -->
+  <div class="dish-card" id="dish-cazuela-cordero">
+    <div class="dish-header" onclick="toggleDish('cazuela-cordero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cazuela de cordero, cochayuyo y luche</div>
+        <div class="dish-name-en">Lamb cazuela, cochayuyo and luche seaweed</div>
+        <div class="dish-meta">
+          <span class="price">$18.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cazuela-cordero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cazuela-cordero','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'cazuela-cordero','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="cazuela-cordero-presentacion">
+        <div class="speech-box">
+          "Nuestra cazuela reinterpreta el plato más tradicional de la cocina chilena con cordero patagónico de Puerto Natales, incorporando cochayuyo y luche —algas comestibles de las costas australes— en lugar de las verduras clásicas. Un guiño a la fusión entre la estepa y el mar que define la Patagonia."
+          <div class="speech-box-en">"Our cazuela reinterprets Chile's most traditional dish with Patagonian lamb from Puerto Natales, adding cochayuyo and luche — edible seaweeds from the southern coast — in place of classic vegetables. A nod to the fusion of steppe and sea that defines Patagonia."</div>
+        </div>
+        <p class="block-label">¿Qué son el cochayuyo y el luche?</p>
+        <p class="block-text">El <strong>cochayuyo</strong> es un alga parda de las costas chilenas, de textura firme y sabor marino suave. El <strong>luche</strong> es un alga verde más delicada, con sabor más intenso. Ambas son ingredientes ancestrales mapuches que se consumen en Chile desde tiempos precoloniales.</p>
+      </div>
+      <div class="inner-panel" id="cazuela-cordero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es la cazuela?</div>
+          <div class="qa-a">Es el plato de cuchara más popular de Chile: un caldo sustancioso con carne, papas y verduras. Esta versión incorpora cordero patagónico y algas del sur, elevando el clásico a alta gastronomía.</div>
+          <div class="qa-a-en">"Chile's most beloved stew: a hearty broth with meat, potatoes, and vegetables. This version uses Patagonian lamb and southern seaweeds, elevating the classic."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Sabe mucho a mar las algas?</div>
+          <div class="qa-a">El cochayuyo tiene un sabor marino muy suave, casi neutro. El luche es algo más intenso pero en esta preparación aporta textura y profundidad sin dominar el sabor del caldo.</div>
+          <div class="qa-a-en">"Cochayuyo has a very mild, almost neutral oceanic flavor. Luche is slightly more pronounced but contributes texture and depth without overpowering."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="cazuela-cordero-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Terrunyo · Concha y Toro</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
+        <p class="block-text" style="margin-top:10px">El cordero patagónico pide un tinto con cuerpo medio. El Carménère chileno es el maridaje natural para este plato.</p>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 <!-- ═══════════════ FONDOS ═══════════════ -->
@@ -1199,6 +1499,237 @@
     </div>
   </div>
 
+  <!-- LÁMINAS CERDO -->
+  <div class="dish-card" id="dish-laminas-cerdo">
+    <div class="dish-header" onclick="toggleDish('laminas-cerdo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Láminas de cerdo de Chillán, ensalada tibia de repollo morado y manzana, salsa de mostaza antigua</div>
+        <div class="dish-name-en">Chillán pork, warm red cabbage and apple salad, whole-grain mustard sauce</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'laminas-cerdo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'laminas-cerdo','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'laminas-cerdo','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="laminas-cerdo-presentacion">
+        <div class="speech-box">
+          "Cerdo de Chillán, una región conocida por la calidad de su producción porcina, presentado en láminas finas sobre una ensalada tibia de repollo morado caramelizado con manzana patagónica. La salsa de mostaza antigua —en granos— aporta la acidez y el carácter que necesita la carne de cerdo."
+          <div class="speech-box-en">"Chillán pork — from a region renowned for pork quality — presented as thin slices over a warm caramelized red cabbage and Patagonian apple salad. The whole-grain mustard sauce provides the acidity and character that pork demands."</div>
+        </div>
+        <p class="block-label">¿Por qué cerdo de Chillán?</p>
+        <p class="block-text">La zona de <strong>Chillán</strong>, en el sur de Chile, es reconocida por su tradición chacinera y la crianza de cerdo de alta calidad. Su carne tiene más infiltración de grasa que el cerdo industrial, lo que le da sabor y jugosidad superiores.</p>
+      </div>
+      <div class="inner-panel" id="laminas-cerdo-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El cerdo viene rosado o bien cocido?</div>
+          <div class="qa-a">Las láminas de cerdo se cocinan a punto, ligeramente rosadas en el centro, para preservar la jugosidad. Si el comensal prefiere bien cocido, podemos consultarle al chef.</div>
+          <div class="qa-a-en">"The pork is cooked to a slight blush to preserve juiciness. We can ask the kitchen for well-done if preferred."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="laminas-cerdo-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Floresta · Santa Rita</div>
+        <p class="block-text" style="margin-top:10px">El cerdo es versátil: un Pinot Noir ligero funciona bien con la mostaza y el repollo morado. También acepta un blanco con cuerpo si el comensal lo prefiere.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILETE LIEBRE -->
+  <div class="dish-card" id="dish-filete-liebre">
+    <div class="dish-header" onclick="toggleDish('filete-liebre')">
+      <div class="dish-header-left">
+        <div class="dish-name">Filete de liebre salvaje, puré de zapallo butternut con toques de vainilla, pera al azafrán y salsa de vino tinto</div>
+        <div class="dish-name-en">Wild hare tenderloin, vanilla-scented butternut squash purée, saffron pear, red wine sauce</div>
+        <div class="dish-meta">
+          <span class="price">$35.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'filete-liebre','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'filete-liebre','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'filete-liebre','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="filete-liebre-presentacion">
+        <div class="speech-box">
+          "El filete de liebre salvaje patagónica es el corte más delicado de este animal de caza. Se acompaña de un puré de zapallo butternut con vainilla que aporta dulzura y suavidad, una pera pochada al azafrán que suma acidez floral, y una salsa de vino tinto reducida que ata todos los elementos con intensidad y elegancia."
+          <div class="speech-box-en">"Wild Patagonian hare tenderloin — the most delicate cut — served with vanilla-scented butternut squash purée for sweetness and smoothness, saffron-poached pear for floral acidity, and a red wine reduction sauce that ties everything together with intensity and elegance."</div>
+        </div>
+        <p class="block-label">Punto de cocción recomendado</p>
+        <p class="block-text">Al ser una carne magra y delicada, se recomienda servirla a punto —medium— para preservar su jugosidad. Bien cocida puede resultar seca. El sabor es más suave que la liebre europea: limpio, con reminiscencias a cordero joven.</p>
+      </div>
+      <div class="inner-panel" id="filete-liebre-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La liebre sabe muy fuerte a caza?</div>
+          <div class="qa-a">La liebre patagónica, al criarse en libertad comiendo pastos nativos, tiene un sabor más suave que la liebre europea. No es el sabor intenso de "caza fuerte" que muchos temen.</div>
+          <div class="qa-a-en">"Patagonian hare, raised free on native grasses, has a milder flavor than European hare. It doesn't have the intense 'gamey' taste many guests fear."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="filete-liebre-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Premium:</strong> Ensamblaje VIK · $280.000</div>
+        <p class="block-text" style="margin-top:10px">La salsa de vino tinto y la delicadeza de la liebre piden un tinto con taninos sedosos. El Carménère chileno es el maridaje perfecto para carnes de caza suaves.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUADRIL CORDERO -->
+  <div class="dish-card" id="dish-cuadril-cordero">
+    <div class="dish-header" onclick="toggleDish('cuadril-cordero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cuadril de cordero de Puerto Natales a la parrilla, puré de coliflor trufado, papa con aroma a tomillo y salsa demi-glace</div>
+        <div class="dish-name-en">Grilled Puerto Natales lamb rump, truffled cauliflower purée, thyme potato, demi-glace</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cuadril-cordero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cuadril-cordero','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'cuadril-cordero','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="cuadril-cordero-presentacion">
+        <div class="speech-box">
+          "El cuadril es uno de los cortes más sabrosos del cordero, con la grasa justa que le da carácter a la parrilla. Viene del cordero de Puerto Natales, criado a pasos de las Torres del Paine, y se acompaña de puré de coliflor con aceite de trufa, papa al tomillo fresco y una salsa demi-glace brillante y concentrada."
+          <div class="speech-box-en">"The rump is one of the most flavorful cuts of lamb, with just enough fat for perfect grilling character. From Puerto Natales lamb, raised near Torres del Paine, served with truffle-scented cauliflower purée, fresh thyme potato, and a concentrated demi-glace."</div>
+        </div>
+        <p class="block-label">¿Qué es el cuadril?</p>
+        <p class="block-text">El <strong>cuadril</strong> (rump) es el corte ubicado en la parte posterior del animal, entre el lomo y la pierna. Tiene buena infiltración de grasa, lo que lo hace ideal para la parrilla — desarrolla una costra exterior perfecta manteniendo el interior jugoso.</p>
+      </div>
+      <div class="inner-panel" id="cuadril-cordero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Cómo se recomienda el punto de cocción?</div>
+          <div class="qa-a">Para el cuadril de cordero recomendamos a punto (medium). Tiene suficiente grasa para soportar esa cocción sin secarse. Bien cocido puede quedar algo menos jugoso.</div>
+          <div class="qa-a-en">"We recommend medium for the lamb rump. It has enough fat to handle that doneness without drying. Well-done is possible but may be less juicy."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="cuadril-cordero-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Terrunyo · Concha y Toro</div>
+        <div class="wine-pill"><strong>Premium:</strong> Carménère Special Cuvée · Montes</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">El Carménère chileno es el compañero natural del cordero patagónico. Sus notas especiadas complementan el demi-glace y la trufa sin opacar la carne.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FILETE VACUNO -->
+  <div class="dish-card" id="dish-filete-vacuno">
+    <div class="dish-header" onclick="toggleDish('filete-vacuno')">
+      <div class="dish-header-left">
+        <div class="dish-name">Filete de vacuno sellado, ñoquis con queso azul, champiñones y salsa demi-glace trufada</div>
+        <div class="dish-name-en">Seared beef tenderloin, blue cheese gnocchi, mushrooms, truffled demi-glace</div>
+        <div class="dish-meta">
+          <span class="price">$35.000</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'filete-vacuno','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'filete-vacuno','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'filete-vacuno','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="filete-vacuno-presentacion">
+        <div class="speech-box">
+          "El filete de vacuno es el corte más tierno de la res —prácticamente sin grasa intramuscular— sellado a alta temperatura para una costra perfecta. Se acompaña de ñoquis artesanales con queso azul incorporado en la masa, champiñones salteados y una salsa demi-glace con aceite de trufa que convierte este plato en una experiencia de lujo."
+          <div class="speech-box-en">"Beef tenderloin — the most tender cut — seared at high heat for a perfect crust. Served with house-made blue cheese gnocchi, sautéed mushrooms, and a truffled demi-glace that elevates this to a truly luxurious experience."</div>
+        </div>
+        <p class="block-label">Punto de cocción recomendado</p>
+        <p class="block-text">El filete se recomienda entre <strong>a punto sangrante (medium-rare)</strong> y <strong>a punto (medium)</strong>. Al ser una carne muy magra, bien cocida puede quedar seca. Siempre preguntamos el punto al tomar el pedido.</p>
+      </div>
+      <div class="inner-panel" id="filete-vacuno-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el queso azul en los ñoquis?</div>
+          <div class="qa-a">El queso azul —tipo gorgonzola o roquefort— se incorpora en la masa de los ñoquis, dándoles un sabor intenso y cremoso. Si el comensal no es fan del queso azul, es importante informarlo ya que el sabor es pronunciado.</div>
+          <div class="qa-a-en">"Blue cheese — like gorgonzola or roquefort — is mixed into the gnocchi dough. Important to mention to guests who may not enjoy strong cheese, as the flavor is quite pronounced."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">Sí, los ñoquis llevan harina. El filete en sí no contiene gluten, pero la guarnición no es apta para celíacos.</div>
+          <div class="qa-a-en">"Yes, the gnocchi contain flour. The tenderloin itself is gluten-free but the garnish is not suitable for celiac guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="filete-vacuno-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Special Cuvée · Montes</div>
+        <div class="wine-pill"><strong>Premium:</strong> Ensamblaje VIK · $280.000</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un tinto de estructura para sostener el queso azul y el demi-glace trufado. El Carménère con cuerpo es ideal; para una ocasión especial, el VIK es insuperable.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPPARDELLE PATO -->
+  <div class="dish-card" id="dish-pappardelle-pato">
+    <div class="dish-header" onclick="toggleDish('pappardelle-pato')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pappardelle relleno de pato confitado, camote anisado, mantequilla de avellana y salsa demi-glace a la naranja</div>
+        <div class="dish-name-en">Confit duck-filled pappardelle, anise-scented sweet potato, hazelnut butter, orange demi-glace</div>
+        <div class="dish-meta">
+          <span class="price">$31.000</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pappardelle-pato','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="pappardelle-pato-presentacion">
+        <div class="speech-box">
+          "Pappardelle artesanal relleno de pato confitado —cocido lentamente en su propia grasa hasta quedar tiernísimo— con camote aromatizado con anís, mantequilla de avellana tostada y una salsa demi-glace a la naranja que aporta acidez cítrica. Una pasta de alta cocina que combina técnica francesa con sabores del sur."
+          <div class="speech-box-en">"House-made pappardelle filled with confit duck — slow-cooked in its own fat until incredibly tender — with anise-scented sweet potato, toasted hazelnut butter, and an orange demi-glace for citrus acidity. Fine-dining pasta combining French technique with southern flavors."</div>
+        </div>
+        <p class="block-label">¿Qué es el pato confit?</p>
+        <p class="block-text">El <strong>confit de pato</strong> es una técnica francesa clásica: la carne se cura en sal y luego se cocina sumergida en su propia grasa a baja temperatura durante horas. El resultado es una carne extraordinariamente tierna, de sabor profundo e intenso.</p>
+      </div>
+      <div class="inner-panel" id="pappardelle-pato-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es una pasta fresca o seca?</div>
+          <div class="qa-a">Es pasta fresca artesanal elaborada en cocina. Las pappardelle son cintas anchas de pasta fresca, de textura más sedosa y suave que la pasta seca industrial.</div>
+          <div class="qa-a-en">"Fresh house-made pasta. Pappardelle are wide ribbon noodles — silkier and softer than dried pasta."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">Sí, la pasta fresca contiene harina de trigo. No es apto para comensales celíacos o intolerantes al gluten.</div>
+          <div class="qa-a-en">"Yes, fresh pasta contains wheat flour. Not suitable for gluten-free guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="pappardelle-pato-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carménère Floresta · Santa Rita</div>
+        <p class="block-text" style="margin-top:10px">El pato confit y la naranja son maridaje clásico con Pinot Noir. La acidez del tinto complementa la riqueza de la carne confitada y la salsa cítrica.</p>
+      </div>
+    </div>
+  </div>
+
   <!-- BACALAO -->
   <div class="dish-card" id="dish-bacalao">
     <div class="dish-header" onclick="toggleDish('bacalao')">
@@ -1243,6 +1774,144 @@
         <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Sol de Sol · Aquitania</div>
         <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Cordillera · Miguel Torres</div>
         <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERLUZA AUSTRAL -->
+  <div class="dish-card" id="dish-merluza-austral">
+    <div class="dish-header" onclick="toggleDish('merluza-austral')">
+      <div class="dish-header-left">
+        <div class="dish-name">Merluza austral, langostinos cola amarilla, perlas de verduras y crema de hierbas</div>
+        <div class="dish-name-en">Southern hake, yellowtail prawns, vegetable pearls, herb cream</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'merluza-austral','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'merluza-austral','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'merluza-austral','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="merluza-austral-presentacion">
+        <div class="speech-box">
+          "La merluza austral de los mares patagónicos es un pescado blanco de carne firme y sabor delicado, muy diferente a la merluza del norte. Se acompaña de langostinos cola amarilla —uno de los crustáceos más valorados del Atlántico sur— perlas de verduras elaboradas en esferificación y una crema de hierbas frescas."
+          <div class="speech-box-en">"Southern hake from Patagonian waters is a firm white fish with a delicate, clean flavor — very different from northern hake. Served with yellowtail prawns — among the most prized crustaceans of the South Atlantic — vegetable pearls made by spherification, and fresh herb cream."</div>
+        </div>
+        <p class="block-label">¿Qué son las perlas de verduras?</p>
+        <p class="block-text">Las <strong>perlas de verduras</strong> son pequeñas esferas elaboradas mediante la técnica de esferificación —introducida por la cocina de vanguardia española— que encapsulan el jugo concentrado de una verdura en una membrana que explota en el paladar.</p>
+      </div>
+      <div class="inner-panel" id="merluza-austral-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La merluza austral es diferente a la merluza común?</div>
+          <div class="qa-a">Sí, completamente. La merluza austral es un pez de aguas profundas y frías del extremo sur. Tiene carne más firme, blanca y con menos olor a mar que la merluza del norte.</div>
+          <div class="qa-a-en">"Yes, completely different. Southern hake comes from the deep, cold waters of the far south. Firmer, whiter flesh with less oceanic odor than northern hake."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="merluza-austral-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Talinay · Tabalí</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Sauvignon Blanc Kingston CJ's Barrel</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un Chardonnay con cuerpo complementa la crema de hierbas y la riqueza de los langostinos sin opacar la delicadeza del pescado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONGRIO NERO DI SEPIA -->
+  <div class="dish-card" id="dish-congrio-nero">
+    <div class="dish-header" onclick="toggleDish('congrio-nero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Congrio sellado, calamar antártico, risotto al nero di sepia, tomate y limón</div>
+        <div class="dish-name-en">Seared Chilean cusk-eel, Antarctic squid, squid ink risotto, tomato, lemon</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'congrio-nero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio-nero','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio-nero','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="congrio-nero-presentacion">
+        <div class="speech-box">
+          "Congrio sellado a fuego alto sobre un risotto al nero di sepia —teñido y aromatizado con tinta de calamar— acompañado de calamar antártico, tomate confitado y un toque de limón fresco. Un plato visualmente impactante, completamente negro, donde el mar es absoluto protagonista."
+          <div class="speech-box-en">"Seared cusk-eel over squid ink risotto — dyed and flavored with calamar ink — with Antarctic squid, confit tomato, and a squeeze of fresh lemon. A visually striking, all-black dish where the sea is the undisputed protagonist."</div>
+        </div>
+        <p class="block-label">¿Qué es el congrio?</p>
+        <p class="block-text">El <strong>congrio</strong> es un pez largo de las costas chilenas, muy apreciado en la gastronomía local. El congrio dorado tiene carne firme, blanca y de sabor delicado. Es el protagonista del emblemático caldillo de congrio, plato nacional.</p>
+      </div>
+      <div class="inner-panel" id="congrio-nero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El risotto negro tiene mucho sabor a tinta?</div>
+          <div class="qa-a">La tinta de calamar aporta un sabor marino muy suave y umami. No es un sabor dominante — más bien profundiza los sabores del mar. El color es lo más impactante.</div>
+          <div class="qa-a-en">"The squid ink adds a subtle, umami marine flavor. It's not dominant — it deepens the ocean flavors. The dramatic black color is the most striking aspect."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene lactosa?</div>
+          <div class="qa-a">El risotto clásico lleva mantequilla y queso parmesano. Confirmamos con cocina si hay necesidad de adaptación sin lactosa.</div>
+          <div class="qa-a-en">"Classic risotto contains butter and parmesan. We'll confirm with the kitchen for any dairy-free adaptation needed."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="congrio-nero-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Espumante Sparkling Angel Brut · Montes</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un Chardonnay con cuerpo o un espumante brut son el maridaje clásico para el risotto de tinta. La acidez limpia el paladar entre cada bocado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FETTUCCINE MARISCOS -->
+  <div class="dish-card" id="dish-fettuccine-mariscos">
+    <div class="dish-header" onclick="toggleDish('fettuccine-mariscos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Fettuccine, selección de mariscos, perejil y limón</div>
+        <div class="dish-name-en">Fettuccine, seafood selection, parsley, lemon</div>
+        <div class="dish-meta">
+          <span class="price">$31.000</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'fettuccine-mariscos','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'fettuccine-mariscos','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'fettuccine-mariscos','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="fettuccine-mariscos-presentacion">
+        <div class="speech-box">
+          "Fettuccine artesanal con una selección de mariscos patagónicos frescos —ostiones, almejas, langostinos y trozos de centolla según disponibilidad— aliñados con aceite de oliva, perejil fresco y limón. Una pasta de mar clásica, limpia y elegante, que celebra los productos del océano austral."
+          <div class="speech-box-en">"House-made fettuccine with a selection of fresh Patagonian seafood — scallops, clams, prawns, and king crab pieces according to availability — dressed with olive oil, fresh parsley, and lemon. A classic, clean, elegant seafood pasta celebrating the produce of the southern ocean."</div>
+        </div>
+        <p class="block-label">Para quién recomendarlo</p>
+        <p class="block-text">Para amantes de los mariscos que prefieren los sabores limpios sin salsas pesadas. También para comensales que quieren probar varios productos del mar en un solo plato. El perejil y el limón respetan la frescura natural de los mariscos.</p>
+      </div>
+      <div class="inner-panel" id="fettuccine-mariscos-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué mariscos incluye exactamente?</div>
+          <div class="qa-a">Varía según la disponibilidad del día, pero generalmente incluye ostiones, almejas, langostinos y centolla. El garzón debe confirmar la composición exacta del día con cocina.</div>
+          <div class="qa-a-en">"It varies by day's availability but generally includes scallops, clams, prawns, and king crab. Confirm the exact composition with the kitchen for each service."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="fettuccine-mariscos-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Terrunyo · C. y Toro</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Talinay · Tabalí</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">Un Sauvignon Blanc fresco y cítrico es el maridaje clásico para pasta con mariscos. La acidez del vino complementa el limón y realza la frescura de los productos del mar.</p>
       </div>
     </div>
   </div>
@@ -1295,6 +1964,382 @@
         <div class="wine-pill"><strong>Ideal:</strong> Gewürztraminer Casona · Casa Marín</div>
         <div class="wine-pill"><strong>Alternativa:</strong> Riesling Corralillo · Matetic</div>
         <p class="block-text" style="margin-top:10px">Los blancos aromáticos y especiados son perfectos compañeros para un curry. La acidez del Riesling limpia el paladar entre cada bocado.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BERENJENA CROCANTE -->
+  <div class="dish-card" id="dish-berenjena-crocante">
+    <div class="dish-header" onclick="toggleDish('berenjena-crocante')">
+      <div class="dish-header-left">
+        <div class="dish-name">Berenjena crocante, puré de tomate confitado, verduras encurtidas</div>
+        <div class="dish-name-en">Crispy eggplant, confit tomato purée, pickled vegetables</div>
+        <div class="dish-meta">
+          <span class="price">$32.000</span>
+          <span class="tag tag-vegan">Vegano</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'berenjena-crocante','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'berenjena-crocante','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'berenjena-crocante','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="berenjena-crocante-presentacion">
+        <div class="speech-box">
+          "Berenjena rebozada y frita para lograr una textura exterior completamente crocante mientras el interior queda cremoso y suave. Se presenta sobre un puré de tomates confitados lentamente —concentrados y dulces— y se acompaña de verduras encurtidas que aportan acidez y contraste. Un fondo vegano de gran satisfacción."
+          <div class="speech-box-en">"Breaded and fried eggplant with a completely crispy exterior while the inside stays creamy and soft. Served over a purée of slowly confit tomatoes — concentrated and sweet — with pickled vegetables for acidity and contrast. A vegan main course of great satisfaction."</div>
+        </div>
+        <p class="block-label">Para quién recomendarlo</p>
+        <p class="block-text">Para comensales veganos que buscan un fondo con carácter y textura. También para quienes quieran algo diferente a las preparaciones de carne. La berenjena crocante satisface incluso a los comensales más carnívoros.</p>
+      </div>
+      <div class="inner-panel" id="berenjena-crocante-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es vegano si está frito?</div>
+          <div class="qa-a">Sí, el rebozado es a base de harina y agua, sin huevo ni lácteos. El aceite de fritura es vegetal. Es completamente vegano y sin lactosa.</div>
+          <div class="qa-a-en">"Yes, the coating is flour and water — no egg or dairy. Fried in vegetable oil. Fully vegan and dairy-free."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">Sí, el rebozado contiene harina. No es apto para celíacos o intolerantes al gluten.</div>
+          <div class="qa-a-en">"Yes, the coating contains flour. Not suitable for gluten-free guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="berenjena-crocante-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Rosé Le Rosé · Lapostolle</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Kuda · Kalfu</div>
+        <p class="block-text" style="margin-top:10px">Un rosé frutal complementa los tomates confitados y las verduras encurtidas. El Chardonnay fresco también funciona bien con la acidez del plato.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ CARTA GRILL ═══════════════ -->
+<div class="section" id="section-grill">
+  <div class="section-title">Carta Grill</div>
+  <div class="section-desc">Proteínas seleccionadas preparadas a la parrilla. Se acompañan con la elección de un acompañamiento de la sección Veganos y Acompañamientos. · Selected proteins from the grill, served with the guest's choice of one side from the Vegan &amp; Sides section.</div>
+
+  <!-- LOMO VETADO -->
+  <div class="dish-card" id="dish-lomo-vetado">
+    <div class="dish-header" onclick="toggleDish('lomo-vetado')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lomo vetado</div>
+        <div class="dish-name-en">Ribeye</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'lomo-vetado','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'lomo-vetado','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'lomo-vetado','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="lomo-vetado-presentacion">
+        <div class="speech-box">
+          "Lomo vetado a la parrilla — el corte más sabroso del vacuno por su infiltración de grasa intramuscular. Se presenta limpio, con la cocción que el comensal elija, acompañado del lado que prefiera de nuestra sección Veganos. La parrilla es a fuego de leña, lo que aporta un aroma ahumado característico."
+          <div class="speech-box-en">"Ribeye from the grill — the most flavorful beef cut thanks to its marbling. Presented simply, cooked to the guest's preference, with their choice of side from our Vegan &amp; Sides section. Wood-fired grill for a distinctive smoky character."</div>
+        </div>
+        <p class="block-label">Puntos de cocción — preguntar siempre</p>
+        <p class="block-text"><strong>Jugoso (rare):</strong> 52–55°C, centro rojo. <strong>A punto sangrante (medium-rare):</strong> 57–60°C, centro rosado vivo — recomendado para el vetado. <strong>A punto (medium):</strong> 63–65°C, rosado uniforme. <strong>Tres cuartos (medium-well):</strong> 68–70°C, apenas rosado. <strong>Bien cocido (well-done):</strong> +72°C.</p>
+      </div>
+      <div class="inner-panel" id="lomo-vetado-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué punto recomienda el chef?</div>
+          <div class="qa-a">Para el lomo vetado recomendamos a punto sangrante (medium-rare). La grasa intramuscular se funde a esa temperatura, dando una jugosidad y sabor óptimos.</div>
+          <div class="qa-a-en">"We recommend medium-rare for ribeye. The intramuscular fat melts at that temperature, delivering optimal juiciness and flavor."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Incluye acompañamiento?</div>
+          <div class="qa-a">Sí, todos los platos del Grill incluyen la elección de un acompañamiento de la sección Veganos y Acompañamientos. El garzón debe presentar las opciones al tomar el pedido.</div>
+          <div class="qa-a-en">"Yes, all Grill dishes include the guest's choice of one side from the Vegan &amp; Sides section. Present the options when taking the order."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="lomo-vetado-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Special Cuvée · Montes</div>
+        <div class="wine-pill"><strong>Premium:</strong> Ensamblaje VIK · $280.000</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHULETA CORDERO -->
+  <div class="dish-card" id="dish-chuleta-cordero">
+    <div class="dish-header" onclick="toggleDish('chuleta-cordero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Chuleta de cordero</div>
+        <div class="dish-name-en">Lamb chop</div>
+        <div class="dish-meta">
+          <span class="price">$33.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'chuleta-cordero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'chuleta-cordero','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'chuleta-cordero','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="chuleta-cordero-presentacion">
+        <div class="speech-box">
+          "Chuletas de cordero patagónico a la parrilla, del mismo cordero de Puerto Natales que criamos cerca de las Torres del Paine. Se presentan con el hueso, que ayuda a la conducción del calor y aporta sabor durante la cocción. Se recomienda a punto sangrante para preservar la jugosidad."
+          <div class="speech-box-en">"Patagonian lamb chops from the grill — the same Puerto Natales lamb raised near Torres del Paine. Served bone-in, which aids heat conduction and adds flavor during cooking. Recommended medium-rare to preserve juiciness."</div>
+        </div>
+        <p class="block-label">Puntos de cocción</p>
+        <p class="block-text">Para las chuletas de cordero recomendamos <strong>a punto sangrante (medium-rare)</strong> o <strong>a punto (medium)</strong>. Bien cocido puede resultar algo seco. El hueso se puede comer con la mano — indicarlo al comensal si corresponde.</p>
+      </div>
+      <div class="inner-panel" id="chuleta-cordero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Cuántas chuletas trae el plato?</div>
+          <div class="qa-a">El plato incluye varias chuletas individuales — típicamente 3 a 4 según el tamaño del corte del día. Es una porción generosa para un fondo.</div>
+          <div class="qa-a-en">"The dish includes several individual chops — typically 3 to 4 depending on the day's cut size. A generous main course portion."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="chuleta-cordero-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Carménère Terrunyo · Concha y Toro</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carménère Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LOMO CORDERO -->
+  <div class="dish-card" id="dish-lomo-cordero">
+    <div class="dish-header" onclick="toggleDish('lomo-cordero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lomo de cordero</div>
+        <div class="dish-name-en">Lamb loin</div>
+        <div class="dish-meta">
+          <span class="price">$29.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'lomo-cordero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'lomo-cordero','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'lomo-cordero','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="lomo-cordero-presentacion">
+        <div class="speech-box">
+          "El lomo de cordero es el corte más tierno del animal, de fibra muy fina y sabor delicado. Se cocina brevemente a la parrilla para preservar su jugosidad natural. Es el corte ideal para quienes desean la experiencia del cordero patagónico en su expresión más suave y elegante."
+          <div class="speech-box-en">"The lamb loin is the most tender cut, with very fine grain and delicate flavor. Briefly grilled to preserve its natural juiciness. The ideal cut for guests wanting Patagonian lamb in its most subtle and elegant expression."</div>
+        </div>
+        <p class="block-label">Puntos de cocción</p>
+        <p class="block-text">Al ser tan magro y delicado, el lomo se recomienda <strong>a punto sangrante (medium-rare)</strong>. Una cocción excesiva puede secar el corte. Siempre preguntar el punto al tomar el pedido.</p>
+      </div>
+      <div class="inner-panel" id="lomo-cordero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Cuál es la diferencia entre el lomo y la chuleta de cordero?</div>
+          <div class="qa-a">La chuleta incluye el hueso y tiene más grasa, lo que le da más sabor y rusticidad. El lomo es más tierno, más magro y de presentación más refinada. Para quienes prefieren algo más delicado, el lomo es la elección.</div>
+          <div class="qa-a-en">"The chop includes bone and has more fat, giving it more flavor and rusticity. The loin is leaner, more tender, and more refined. For guests preferring something more delicate, the loin is the choice."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="lomo-cordero-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Pinot Noir Montes Alpha · Aconcagua</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Carménère Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Copa:</strong> Tinto de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PECHUGA PAVO -->
+  <div class="dish-card" id="dish-pechuga-pavo">
+    <div class="dish-header" onclick="toggleDish('pechuga-pavo')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pechuga de pavo</div>
+        <div class="dish-name-en">Turkey breast</div>
+        <div class="dish-meta">
+          <span class="price">$28.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pechuga-pavo','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pechuga-pavo','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'pechuga-pavo','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="pechuga-pavo-presentacion">
+        <div class="speech-box">
+          "Pechuga de pavo a la parrilla, una proteína magra y versátil que se beneficia del fuego para desarrollar una costra exterior mientras mantiene la jugosidad interior. Es la opción más liviana del Grill, ideal para comensales que buscan algo sabroso pero menos intenso que la carne roja."
+          <div class="speech-box-en">"Grilled turkey breast — a lean, versatile protein that benefits from the grill to develop a crust while maintaining interior juiciness. The lightest option on the Grill menu, ideal for guests wanting something flavorful but lighter than red meat."</div>
+        </div>
+        <p class="block-label">Punto de cocción — siempre bien cocida</p>
+        <p class="block-text">La pechuga de pavo <strong>debe servirse siempre bien cocida</strong> (temperatura interna mínima 74°C). A diferencia de la carne roja, el pavo no se sirve rosado por razones de seguridad alimentaria. La parrilla asegura una cocción uniforme sin secar en exceso.</p>
+      </div>
+      <div class="inner-panel" id="pechuga-pavo-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El pavo no queda seco a la parrilla?</div>
+          <div class="qa-a">Se controla cuidadosamente el tiempo y temperatura de cocción para evitar que se seque. La pechuga se puede marinar previamente para retener humedad. Si el comensal tiene esa preocupación, podemos asegurarle que queda jugosa.</div>
+          <div class="qa-a-en">"Cooking time and temperature are carefully monitored to prevent dryness. The breast may be pre-marinated for moisture retention. We can assure guests it will be juicy."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="pechuga-pavo-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Pinot Noir Cartagena · Casa Marín</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">El pavo acepta tanto blancos con cuerpo como tintos ligeros. El Chardonnay complementa su sabor delicado; el Pinot Noir si el comensal prefiere tinto.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MERLUZA GRILL -->
+  <div class="dish-card" id="dish-merluza-grill">
+    <div class="dish-header" onclick="toggleDish('merluza-grill')">
+      <div class="dish-header-left">
+        <div class="dish-name">Merluza austral (parrilla)</div>
+        <div class="dish-name-en">Southern hake (from the grill)</div>
+        <div class="dish-meta">
+          <span class="price">$29.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'merluza-grill','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'merluza-grill','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'merluza-grill','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="merluza-grill-presentacion">
+        <div class="speech-box">
+          "Merluza austral de los mares patagónicos, preparada directamente a la parrilla. El fuego directo le da una costra exterior dorada mientras preserva la carne blanca y tierna en el interior. Es la opción de pescado más pura y directa del Grill, sin salsas que distraigan del producto."
+          <div class="speech-box-en">"Southern hake from Patagonian waters, cooked directly on the grill. Direct fire creates a golden crust while preserving the tender white flesh inside. The purest, most direct fish option on the Grill — no sauces to distract from the product."</div>
+        </div>
+        <p class="block-label">Punto de cocción del pescado</p>
+        <p class="block-text">El pescado a la parrilla se sirve <strong>completamente cocido</strong> (centro opaco y firme). El tiempo de cocción depende del grosor del filete. Importante: al ser una carne delicada, la parrilla debe estar limpia para que no se pegue.</p>
+      </div>
+      <div class="inner-panel" id="merluza-grill-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿El pescado a la parrilla queda ahumado?</div>
+          <div class="qa-a">Tiene un leve aroma ahumado de la parrilla a leña, pero no es un sabor dominante. El pescado conserva su sabor limpio y marino, realzado por el fuego.</div>
+          <div class="qa-a-en">"There's a light wood-smoke character from the grill, but it's not dominant. The fish retains its clean, oceanic flavor, enhanced by the fire."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="merluza-grill-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Sauvignon Blanc Kingston CJ's Barrel</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Chardonnay Cordillera · Miguel Torres</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONGRIO GRILL -->
+  <div class="dish-card" id="dish-congrio-grill">
+    <div class="dish-header" onclick="toggleDish('congrio-grill')">
+      <div class="dish-header-left">
+        <div class="dish-name">Congrio dorado (parrilla)</div>
+        <div class="dish-name-en">Chilean cusk-eel (from the grill)</div>
+        <div class="dish-meta">
+          <span class="price">$29.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'congrio-grill','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio-grill','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'congrio-grill','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="congrio-grill-presentacion">
+        <div class="speech-box">
+          "El congrio dorado a la parrilla es uno de los emblemas de la cocina chilena. Su carne firme y de sabor pronunciado soporta perfectamente el fuego directo, desarrollando una costra dorada y jugosa. Es el pescado chileno por excelencia — conocido en todo el país por el caldillo de congrio, aquí en su versión más pura."
+          <div class="speech-box-en">"Grilled cusk-eel is a Chilean culinary emblem. Its firm, flavorful flesh stands up perfectly to direct fire, developing a golden, juicy crust. The quintessential Chilean fish — known nationwide for caldillo de congrio — here in its purest form."</div>
+        </div>
+        <p class="block-label">¿Qué es el congrio dorado?</p>
+        <p class="block-text">El <strong>congrio dorado</strong> es el más apreciado de las tres variedades chilenas (dorado, negro, colorado). Tiene carne firme, blanca y de sabor más pronunciado que otros pescados. Es la base del caldillo de congrio, el plato de pescado más icónico de Chile.</p>
+      </div>
+      <div class="inner-panel" id="congrio-grill-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es el mismo congrio del caldillo?</div>
+          <div class="qa-a">Sí, exactamente. El congrio dorado es el protagonista del caldillo de congrio, el plato nacional de pescado. Aquí lo presentamos a la parrilla en lugar de en caldo, para apreciar la textura de la carne.</div>
+          <div class="qa-a-en">"Exactly right. The golden cusk-eel is the star of caldillo de congrio — the national fish dish. Here we present it grilled instead of in broth, to appreciate the meat's texture."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="congrio-grill-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Sol de Sol · Aquitania</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Sauvignon Blanc Vetas Blancas · Tabalí</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SALMÓN GRILL -->
+  <div class="dish-card" id="dish-salmon-grill">
+    <div class="dish-header" onclick="toggleDish('salmon-grill')">
+      <div class="dish-header-left">
+        <div class="dish-name">Salmón</div>
+        <div class="dish-name-en">Salmon</div>
+        <div class="dish-meta">
+          <span class="price">$29.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-df">Sin lactosa</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'salmon-grill','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'salmon-grill','qa')">Preguntas</button>
+        <button class="inner-tab" onclick="switchTab(this,'salmon-grill','maridaje')">Maridaje</button>
+      </div>
+      <div class="inner-panel active" id="salmon-grill-presentacion">
+        <div class="speech-box">
+          "Salmón a la parrilla con piel crujiente y carne sonrosada. En Chile el salmón del sur es uno de los productos acuícolas más reconocidos. A la parrilla desarrolla una costra en la piel mientras el interior queda jugoso y de color vibrante. Es la opción más accesible y reconocida del Grill para los amantes del pescado."
+          <div class="speech-box-en">"Grilled salmon with crispy skin and rosy flesh. Chilean southern salmon is one of the country's most recognized aquaculture products. The grill develops a crust on the skin while the inside stays juicy and vibrantly colored. The most accessible and well-known fish option on the Grill."</div>
+        </div>
+        <p class="block-label">Punto de cocción del salmón</p>
+        <p class="block-text">El salmón se puede servir <strong>ligeramente rosado en el centro</strong> (equivalente a medium-rare) o completamente cocido. Muchos comensales de alta cocina prefieren el salmón con el centro aún jugoso. Preguntar siempre la preferencia.</p>
+      </div>
+      <div class="inner-panel" id="salmon-grill-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es salmón de cultivo o salvaje?</div>
+          <div class="qa-a">Es salmón de acuicultura chilena, de alta calidad. El salmón salvaje del Pacífico es escaso en Chile; el salmón de cultivo austral tiene excelente sabor y es la opción disponible en nuestra carta.</div>
+          <div class="qa-a-en">"It's Chilean aquaculture salmon, high quality. Wild Pacific salmon is scarce in Chile; our southern farmed salmon has excellent flavor and is the available option."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="salmon-grill-maridaje">
+        <p class="block-label">Maridaje recomendado</p>
+        <div class="wine-pill"><strong>Ideal:</strong> Chardonnay Floresta · Santa Rita</div>
+        <div class="wine-pill"><strong>Alternativa:</strong> Rosé La Piu Belle · Viña Vik</div>
+        <div class="wine-pill"><strong>Copa:</strong> Blanco de la carta · $12.600</div>
+        <p class="block-text" style="margin-top:10px">El salmón es versátil: acepta un Chardonnay con cuerpo, un rosé frutal, o incluso un Pinot Noir ligero si el comensal prefiere tinto.</p>
       </div>
     </div>
   </div>
@@ -1427,6 +2472,590 @@
           <div class="qa-q">¿Contiene gluten?</div>
           <div class="qa-a">No, es naturalmente sin gluten. Contiene huevo y crema, por lo que no es apto para veganos ni intolerantes a la lactosa.</div>
           <div class="qa-a-en">"No gluten. Contains egg and cream — not suitable for vegans or dairy-free guests."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ESFERA CHOCOLATE -->
+  <div class="dish-card" id="dish-esfera-chocolate">
+    <div class="dish-header" onclick="toggleDish('esfera-chocolate')">
+      <div class="dish-header-left">
+        <div class="dish-name">Esfera de chocolate, pistacho y naranja</div>
+        <div class="dish-name-en">Chocolate sphere, pistachio, orange</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'esfera-chocolate','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'esfera-chocolate','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="esfera-chocolate-presentacion">
+        <div class="speech-box">
+          "Una esfera de chocolate oscuro que se vierte con salsa caliente en mesa — el chocolate se derrite revelando un relleno de mousse de pistacho y naranja. Visualmente espectacular y de gran impacto en mesa. El aroma a chocolate caliente invade el comedor."
+          <div class="speech-box-en">"A dark chocolate sphere poured with hot sauce tableside — the chocolate melts to reveal a pistachio and orange mousse filling. Visually spectacular with great tableside impact. The scent of warm chocolate fills the dining room."</div>
+        </div>
+        <p class="block-label">Presentación en mesa</p>
+        <p class="block-text">La esfera se presenta sólida en el plato. El garzón vierte la salsa caliente en frente del comensal para que vea el momento en que el chocolate se derrite. Es un postre de gran impacto que recomendamos describir con anticipación para generar expectativa.</p>
+      </div>
+      <div class="inner-panel" id="esfera-chocolate-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">No, el postre es sin gluten. El chocolate, el pistacho y la naranja son naturalmente sin gluten. Contiene lácteos.</div>
+          <div class="qa-a-en">"No gluten. Chocolate, pistachio, and orange are naturally gluten-free. Contains dairy."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TORTA LÚCUMA -->
+  <div class="dish-card" id="dish-torta-lucuma">
+    <div class="dish-header" onclick="toggleDish('torta-lucuma')">
+      <div class="dish-header-left">
+        <div class="dish-name">Torta de lúcuma y almendras tostadas, chocolate Dulcey y helado de caramelo</div>
+        <div class="dish-name-en">Lucuma and toasted almond cake, Dulcey chocolate, caramel ice cream</div>
+        <div class="dish-meta">
+          <span class="price">$11.000</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'torta-lucuma','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'torta-lucuma','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="torta-lucuma-presentacion">
+        <div class="speech-box">
+          "Torta de lúcuma —el fruto andino de sabor dulce y cremoso— con almendras tostadas que aportan textura y notas tostadas. Se acompaña de chocolate Dulcey, la variedad más suave y caramelizada de Valrhona, y helado de caramelo artesanal. Una combinación muy chilena en un formato de alta pastelería."
+          <div class="speech-box-en">"Lucuma cake — the Andean fruit with a sweet, creamy flavor — with toasted almonds for texture and roasted notes. Served with Dulcey chocolate — Valrhona's softest, most caramelized variety — and house-made caramel ice cream. A very Chilean combination in a fine-pastry format."</div>
+        </div>
+        <p class="block-label">¿Qué es la lúcuma?</p>
+        <p class="block-text">La <strong>lúcuma</strong> es un fruto originario de los Andes peruanos y chilenos. Su pulpa seca y cremosa tiene un sabor único —entre el caramelo, la calabaza y la yema de huevo— y es uno de los sabores más emblemáticos de la repostería sudamericana.</p>
+      </div>
+      <div class="inner-panel" id="torta-lucuma-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué es el chocolate Dulcey?</div>
+          <div class="qa-a">Dulcey es una variedad de chocolate de la casa Valrhona, elaborado a partir de chocolate blanco tostado. Tiene un sabor a caramelo, bizcocho y vainilla, más suave y menos dulce que el chocolate blanco convencional.</div>
+          <div class="qa-a-en">"Dulcey is a Valrhona chocolate made from toasted white chocolate. It has a caramel, biscuit, and vanilla flavor — softer and less sweet than conventional white chocolate."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHEESECAKE FRUTOS ROJOS -->
+  <div class="dish-card" id="dish-cheesecake-frutos">
+    <div class="dish-header" onclick="toggleDish('cheesecake-frutos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Cheesecake de frutos rojos, crocante de quinoa y helado de yogur</div>
+        <div class="dish-name-en">Red berry cheesecake, quinoa crisp, yogurt ice cream</div>
+        <div class="dish-meta">
+          <span class="price">$11.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'cheesecake-frutos','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'cheesecake-frutos','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="cheesecake-frutos-presentacion">
+        <div class="speech-box">
+          "Cheesecake cremoso de queso crema con coulis de frutos rojos patagónicos —frambuesa, calafate, murra— con una base crocante de quinoa tostada en lugar de la galleta tradicional, y helado de yogur para equilibrar la riqueza del queso con frescura ácida. Un postre sin gluten de alta pastelería."
+          <div class="speech-box-en">"Cream cheese cheesecake with Patagonian red berry coulis — raspberry, calafate, maqui — with a toasted quinoa crisp base instead of traditional graham cracker, and yogurt ice cream to balance the richness with fresh acidity. A gluten-free fine-pastry dessert."</div>
+        </div>
+        <p class="block-label">Sin gluten</p>
+        <p class="block-text">La base de quinoa reemplaza la base de galleta tradicional, haciendo este cheesecake apto para intolerantes al gluten. Siempre confirmar con cocina en caso de celiaquía estricta.</p>
+      </div>
+      <div class="inner-panel" id="cheesecake-frutos-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es un cheesecake horneado o frío?</div>
+          <div class="qa-a">Es un cheesecake horneado al baño maría, de textura muy cremosa y firme. Diferente al cheesecake frío de gelatina — más suave y sedoso.</div>
+          <div class="qa-a-en">"It's a baked bain-marie cheesecake — very creamy and firm in texture. Different from a cold gelatin cheesecake — smoother and more silky."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAVLOVA CHIRIMOYA -->
+  <div class="dish-card" id="dish-pavlova-chirimoya">
+    <div class="dish-header" onclick="toggleDish('pavlova-chirimoya')">
+      <div class="dish-header-left">
+        <div class="dish-name">Pavlova de chirimoya y naranja</div>
+        <div class="dish-name-en">Cherimoya and orange pavlova</div>
+        <div class="dish-meta">
+          <span class="price">$11.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'pavlova-chirimoya','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'pavlova-chirimoya','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="pavlova-chirimoya-presentacion">
+        <div class="speech-box">
+          "Pavlova de merengue crujiente por fuera y suave por dentro, coronada con crema batida, chirimoya fresca y gajos de naranja. La chirimoya —la reina de las frutas tropicales— aporta una dulzura exótica que contrasta con la acidez de la naranja. Es el postre más elegante y liviano de la carta."
+          <div class="speech-box-en">"Pavlova meringue — crisp outside, soft inside — topped with whipped cream, fresh cherimoya, and orange segments. The cherimoya — queen of tropical fruits — brings an exotic sweetness that contrasts with the orange's acidity. The most elegant and light dessert on the menu."</div>
+        </div>
+        <p class="block-label">¿Qué es la chirimoya?</p>
+        <p class="block-text">La <strong>chirimoya</strong> (custard apple) es una fruta tropical originaria de los Andes. De pulpa blanca, cremosa y suave, con un sabor que combina piña, papaya, plátano y vainilla. Sin gluten, naturalmente.</p>
+      </div>
+      <div class="inner-panel" id="pavlova-chirimoya-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿La pavlova contiene gluten?</div>
+          <div class="qa-a">No, el merengue es solo claras de huevo y azúcar. Es naturalmente sin gluten. Contiene huevo y crema batida (lácteos), pero no gluten.</div>
+          <div class="qa-a-en">"No, meringue is only egg whites and sugar — naturally gluten-free. Contains egg and whipped cream (dairy), but no gluten."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARTA FLAN -->
+  <div class="dish-card" id="dish-tarta-flan">
+    <div class="dish-header" onclick="toggleDish('tarta-flan')">
+      <div class="dish-header-left">
+        <div class="dish-name">Tarta flan de avellana y chocolate</div>
+        <div class="dish-name-en">Hazelnut and chocolate flan tart</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'tarta-flan','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'tarta-flan','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="tarta-flan-presentacion">
+        <div class="speech-box">
+          "Una tarta de masa crujiente rellena con un flan de avellana y chocolate negro. La textura es a medio camino entre el flan clásico y la ganache de chocolate: sedosa, densa y muy satisfactoria. Para los amantes del chocolate y los frutos secos, es el postre más indulgente de la carta."
+          <div class="speech-box-en">"A crisp pastry shell filled with a hazelnut and dark chocolate flan. The texture is between a classic flan and a chocolate ganache — silky, dense, and deeply satisfying. For chocolate and nut lovers, the most indulgent dessert on the menu."</div>
+        </div>
+        <p class="block-label">Para quién recomendarla</p>
+        <p class="block-text">Para comensales que aman el chocolate intenso y los frutos secos. También para quienes prefieren postres más ricos y saciantes. Si terminaron un plato fuerte, recomendar algo más liviano como la pavlova o el cheesecake.</p>
+      </div>
+      <div class="inner-panel" id="tarta-flan-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene gluten?</div>
+          <div class="qa-a">Sí, la masa de la tarta contiene harina de trigo. No es apto para celíacos o intolerantes al gluten.</div>
+          <div class="qa-a-en">"Yes, the pastry shell contains wheat flour. Not suitable for gluten-free guests."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HELADOS SORBETES -->
+  <div class="dish-card" id="dish-helados-sorbetes">
+    <div class="dish-header" onclick="toggleDish('helados-sorbetes')">
+      <div class="dish-header-left">
+        <div class="dish-name">Helados y sorbetes de la casa</div>
+        <div class="dish-name-en">House-made ice creams and sorbets</div>
+        <div class="dish-meta">
+          <span class="price">$10.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'helados-sorbetes','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'helados-sorbetes','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="helados-sorbetes-presentacion">
+        <div class="speech-box">
+          "Una selección de helados artesanales y sorbetes de la casa, elaborados con ingredientes locales y de temporada. Los helados rotan según disponibilidad; los sorbetes son siempre de fruta. El garzón debe informar al comensal los sabores disponibles del día."
+          <div class="speech-box-en">"A selection of house-made ice creams and sorbets, crafted with local and seasonal ingredients. Ice cream flavors rotate by availability; sorbets are always fruit-based. Inform guests of the day's available flavors."</div>
+        </div>
+        <p class="block-label">Importante: conocer los sabores del día</p>
+        <p class="block-text">Antes del servicio, consultar con pastelería qué sabores de helados y sorbetes están disponibles. Los sabores pueden incluir: lúcuma, calafate, chocolate, vainilla, frambuesa, limón de Pica, entre otros. Los sorbetes son naturalmente veganos.</p>
+      </div>
+      <div class="inner-panel" id="helados-sorbetes-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Cuántas bolas incluye?</div>
+          <div class="qa-a">Generalmente se sirven 2 a 3 porciones (bolas o quenelles). El comensal puede elegir todos de un mismo sabor o combinar helados y sorbetes.</div>
+          <div class="qa-a-en">"Usually 2 to 3 portions (scoops or quenelles). Guests can choose all one flavor or combine ice creams and sorbets."</div>
+        </div>
+        <div class="qa-item">
+          <div class="qa-q">¿Los sorbetes son veganos?</div>
+          <div class="qa-a">Sí, los sorbetes son de fruta y sin lácteos, naturalmente veganos. Los helados de crema contienen lácteos. Confirmar siempre el sabor específico con pastelería.</div>
+          <div class="qa-a-en">"Yes, sorbets are fruit-based and dairy-free — naturally vegan. Cream ice creams contain dairy. Always confirm the specific flavor with the pastry team."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENSALADA FRUTAS -->
+  <div class="dish-card" id="dish-ensalada-frutas">
+    <div class="dish-header" onclick="toggleDish('ensalada-frutas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada de frutas de estación</div>
+        <div class="dish-name-en">Seasonal fruit salad</div>
+        <div class="dish-meta">
+          <span class="price">$11.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'ensalada-frutas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'ensalada-frutas','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="ensalada-frutas-presentacion">
+        <div class="speech-box">
+          "Ensalada de frutas de temporada del sur de Chile: calafate, frambuesa, murra, chirimoya y otras frutas según la estación, levemente aliñadas con miel de abejas locales, menta fresca y un toque de limón. El postre más fresco, liviano y auténticamente patagónico de la carta."
+          <div class="speech-box-en">"Seasonal fruit salad from southern Chile: calafate, raspberry, maqui, cherimoya, and other seasonal fruits, lightly dressed with local honey, fresh mint, and a touch of lemon. The freshest, lightest, and most authentically Patagonian dessert on the menu."</div>
+        </div>
+        <p class="block-label">Para quién recomendarla</p>
+        <p class="block-text">Ideal para comensales que buscan un postre liviano, vegano o sin gluten. También para quienes ya están satisfechos pero quieren terminar con algo fresco y aromático. Mencionar las frutas locales como el <strong>calafate</strong> —una baya silvestre endémica de la Patagonia— genera interés.</p>
+      </div>
+      <div class="inner-panel" id="ensalada-frutas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué frutas incluye?</div>
+          <div class="qa-a">Varía según la temporada. Siempre incluye frutas locales patagónicas cuando están disponibles —calafate, frambuesa, murra— más frutas de temporada del mercado. El garzón debe conocer la composición del día.</div>
+          <div class="qa-a-en">"It varies by season. Always includes local Patagonian fruits when available — calafate, raspberry, maqui — plus seasonal market fruits. Staff should know the day's composition."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ═══════════════ VEGANOS Y ACOMPAÑAMIENTOS ═══════════════ -->
+<div class="section" id="section-veganos">
+  <div class="section-title">Veganos y Acompañamientos</div>
+  <div class="section-desc">Preparaciones vegetales y acompañamientos para complementar los platos del Grill o disfrutar como plato único. · Vegetable preparations and sides to complement Grill dishes or enjoy as a main.</div>
+
+  <!-- HUMMUS -->
+  <div class="dish-card" id="dish-hummus">
+    <div class="dish-header" onclick="toggleDish('hummus')">
+      <div class="dish-header-left">
+        <div class="dish-name">Hummus de garbanzos, verduras a la parrilla</div>
+        <div class="dish-name-en">Chickpea hummus, grilled vegetables</div>
+        <div class="dish-meta">
+          <span class="price">$16.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'hummus','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'hummus','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="hummus-presentacion">
+        <div class="speech-box">
+          "Hummus artesanal de garbanzos con tahini, limón y aceite de oliva, acompañado de una selección de verduras de temporada a la parrilla. Puede servirse como acompañamiento de los platos del Grill o como plato principal para comensales veganos."
+          <div class="speech-box-en">"House-made chickpea hummus with tahini, lemon, and olive oil, accompanied by seasonal grilled vegetables. Can be served as a Grill side or as a main for vegan guests."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="hummus-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Contiene sésamo (alérgeno)?</div>
+          <div class="qa-a">Sí, el hummus tradicional contiene tahini, que es pasta de sésamo. Es un alérgeno declarado. Siempre informar si hay alergia al sésamo.</div>
+          <div class="qa-a-en">"Yes, traditional hummus contains tahini — sesame paste. A declared allergen. Always inform guests with sesame allergies."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LENTEJAS VINO -->
+  <div class="dish-card" id="dish-lentejas-vino">
+    <div class="dish-header" onclick="toggleDish('lentejas-vino')">
+      <div class="dish-header-left">
+        <div class="dish-name">Lentejas al vino tinto, acelga y champiñones</div>
+        <div class="dish-name-en">Red wine lentils, Swiss chard, mushrooms</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'lentejas-vino','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'lentejas-vino','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="lentejas-vino-presentacion">
+        <div class="speech-box">
+          "Lentejas cocidas lentamente con vino tinto, que aporta profundidad y color oscuro a la preparación, con acelga fresca y champiñones salteados. Un acompañamiento contundente y reconfortante, perfecto junto a cualquier proteína del Grill."
+          <div class="speech-box-en">"Lentils slow-cooked with red wine — which adds depth and dark color — with fresh Swiss chard and sautéed mushrooms. A hearty, comforting side, perfect alongside any Grill protein."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="lentejas-vino-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Es un plato o un acompañamiento?</div>
+          <div class="qa-a">Puede ser ambos. Como acompañamiento del Grill es una porción más pequeña. Como plato principal vegano, se sirve en porción completa. Confirmar con el comensal su preferencia.</div>
+          <div class="qa-a-en">"Both. As a Grill side it's a smaller portion; as a vegan main, it's a full portion. Confirm with the guest."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHARQUICÁN -->
+  <div class="dish-card" id="dish-charquican">
+    <div class="dish-header" onclick="toggleDish('charquican')">
+      <div class="dish-header-left">
+        <div class="dish-name">Charquicán de verduras</div>
+        <div class="dish-name-en">Vegetable charquicán</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'charquican','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'charquican','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="charquican-presentacion">
+        <div class="speech-box">
+          "El charquicán es uno de los platos más tradicionales de la cocina chilena — un guiso espeso de zapallo, papa, choclo y verduras. Esta versión vegana prescinde de la carne y el huevo frito clásico, manteniendo la esencia del plato. Un acompañamiento muy chileno y reconfortante."
+          <div class="speech-box-en">"Charquicán is one of Chile's most traditional dishes — a thick stew of squash, potato, corn, and vegetables. This vegan version omits the traditional meat and fried egg, keeping the dish's essence. A very Chilean, comforting side."</div>
+        </div>
+        <p class="block-label">¿Qué es el charquicán?</p>
+        <p class="block-text">El <strong>charquicán</strong> es un plato mapuche y colonial chileno elaborado con zapallo, papa, choclo y verduras. Originalmente llevaba charqui (carne seca). Esta versión es completamente vegana y sin gluten, respetando las raíces del plato.</p>
+      </div>
+      <div class="inner-panel" id="charquican-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Tiene picante?</div>
+          <div class="qa-a">No, el charquicán es un plato suave y sin picante. Su sabor es terroso, dulce por el zapallo y reconfortante. Puede llevar merquén como condimento opcional.</div>
+          <div class="qa-a-en">"No, charquicán is mild and not spicy. Earthy, sweet from the squash, and comforting. May be served with merquén as an optional condiment."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ENSALADA HUERTO -->
+  <div class="dish-card" id="dish-ensalada-huerto">
+    <div class="dish-header" onclick="toggleDish('ensalada-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Ensalada del huerto</div>
+        <div class="dish-name-en">Garden salad</div>
+        <div class="dish-meta">
+          <span class="price">$16.000</span>
+          <span class="tag tag-vegan">Vegano</span>
+          <span class="tag tag-local">Local</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'ensalada-huerto','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'ensalada-huerto','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="ensalada-huerto-presentacion">
+        <div class="speech-box">
+          "Verduras y hojas del huerto del hotel, cosechadas en el día, con un aderezo de la casa. La composición varía según la temporada. Es la ensalada más fresca y honesta de la carta — producto directo del jardín patagónico."
+          <div class="speech-box-en">"Vegetables and leaves from the hotel's garden, harvested that day, with a house dressing. Composition varies by season. The freshest and most honest salad on the menu — direct from the Patagonian garden."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="ensalada-huerto-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué lleva la ensalada?</div>
+          <div class="qa-a">Varía según el día y la temporada. El garzón debe consultar con cocina antes del servicio para conocer la composición exacta. Siempre incluye hojas frescas y verduras del huerto del hotel.</div>
+          <div class="qa-a-en">"It varies by day and season. Staff should check with the kitchen before service for the exact composition. Always includes fresh leaves and vegetables from the hotel's garden."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- POROTOS GRANADOS -->
+  <div class="dish-card" id="dish-porotos">
+    <div class="dish-header" onclick="toggleDish('porotos')">
+      <div class="dish-header-left">
+        <div class="dish-name">Porotos granados</div>
+        <div class="dish-name-en">Chilean cranberry bean stew</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'porotos','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'porotos','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="porotos-presentacion">
+        <div class="speech-box">
+          "Los porotos granados son un plato emblemático del verano chileno —porotos tiernos cocidos con zapallo, choclo y albahaca. La versión de la casa mantiene la receta tradicional, completamente vegana. Un acompañamiento muy chileno y estacional que conecta con la cocina mapuche y colonial."
+          <div class="speech-box-en">"Porotos granados is an iconic Chilean summer dish — fresh cranberry beans cooked with squash, corn, and basil. Our version keeps the traditional recipe, fully vegan. A very Chilean, seasonal side connecting to Mapuche and colonial cooking."</div>
+        </div>
+        <p class="block-label">¿Qué son los porotos granados?</p>
+        <p class="block-text">Los <strong>porotos granados</strong> son porotos (frijoles) tiernos —no secos— que se cosechan en verano. Se cocinan con zapallo, choclo y albahaca en una preparación espesa y cremosa. Es uno de los platos más representativos de la cocina chilena de temporada.</p>
+      </div>
+      <div class="inner-panel" id="porotos-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Son porotos secos o frescos?</div>
+          <div class="qa-a">Son porotos granados —frescos o congelados en temporada— no secos. La textura es más tierna y cremosa que los porotos secos remojados. Es un plato estacional.</div>
+          <div class="qa-a-en">"Fresh or frozen in-season cranberry beans — not dried. Much more tender and creamy than soaked dry beans. A seasonal dish."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- VERDURAS DEL HUERTO -->
+  <div class="dish-card" id="dish-verduras-huerto">
+    <div class="dish-header" onclick="toggleDish('verduras-huerto')">
+      <div class="dish-header-left">
+        <div class="dish-name">Verduras del huerto</div>
+        <div class="dish-name-en">Garden vegetables</div>
+        <div class="dish-meta">
+          <span class="price">$12.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'verduras-huerto','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'verduras-huerto','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="verduras-huerto-presentacion">
+        <div class="speech-box">
+          "Selección de verduras del huerto del hotel preparadas al vapor, salteadas o asadas según la temporada. El acompañamiento más simple y puro de la carta — producto directo, sin interferencias. Varía con lo disponible cada día."
+          <div class="speech-box-en">"A selection of hotel garden vegetables — steamed, sautéed, or roasted according to the season. The simplest and purest side on the menu: direct produce, unadorned. Varies with what's available each day."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="verduras-huerto-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Qué verduras incluye?</div>
+          <div class="qa-a">Varía según la temporada y disponibilidad del huerto. El garzón debe conocer la composición del día. Siempre son verduras frescas y de temporada.</div>
+          <div class="qa-a-en">"Varies by season and garden availability. Staff should know the day's composition. Always fresh, seasonal vegetables."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPAS BRAVAS -->
+  <div class="dish-card" id="dish-papas-bravas">
+    <div class="dish-header" onclick="toggleDish('papas-bravas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas bravas, merquén</div>
+        <div class="dish-name-en">Patatas bravas, merquén</div>
+        <div class="dish-meta">
+          <span class="price">$9.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'papas-bravas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'papas-bravas','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="papas-bravas-presentacion">
+        <div class="speech-box">
+          "Papas bravas al estilo chileno: fritas y crujientes, con merquén —el ají ahumado mapuche— en lugar del tradicional alioli español. El merquén aporta un picor suave y ahumado que las distingue. Perfectas como acompañamiento o para compartir en la mesa."
+          <div class="speech-box-en">"Chilean-style patatas bravas: crispy fried potatoes with merquén — the smoked Mapuche chili — instead of the traditional Spanish aioli. The merquén adds mild heat and smokiness. Perfect as a side or to share at the table."</div>
+        </div>
+        <p class="block-label">¿Qué es el merquén?</p>
+        <p class="block-text">El <strong>merquén</strong> es un condimento mapuche elaborado con ají cacho de cabra ahumado y secado al sol, molido con sal y coriandro. Tiene un sabor ahumado, levemente picante y muy aromático. Es uno de los condimentos más representativos de la cocina del sur de Chile.</p>
+      </div>
+      <div class="inner-panel" id="papas-bravas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Pican mucho?</div>
+          <div class="qa-a">El merquén tiene un picor moderado y ahumado, no es un picante intenso como el ají amarillo. La mayoría de los comensales lo tolera bien. Si alguien es muy sensible al picante, podemos servirlo sin el condimento.</div>
+          <div class="qa-a-en">"Merquén has a moderate, smoky heat — not intensely spicy like yellow chili. Most guests tolerate it well. We can serve without the condiment for very sensitive guests."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPAS FRITAS -->
+  <div class="dish-card" id="dish-papas-fritas">
+    <div class="dish-header" onclick="toggleDish('papas-fritas')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas fritas</div>
+        <div class="dish-name-en">French fries</div>
+        <div class="dish-meta">
+          <span class="price">$9.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'papas-fritas','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'papas-fritas','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="papas-fritas-presentacion">
+        <div class="speech-box">
+          "Papas fritas artesanales, cortadas en casa y fritas en aceite limpio. El acompañamiento clásico para los platos del Grill. Sencillas, perfectas, imprescindibles."
+          <div class="speech-box-en">"House-cut fries, fried in clean oil. The classic companion for Grill dishes. Simple, perfect, essential."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="papas-fritas-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Son papas de verdad o congeladas?</div>
+          <div class="qa-a">Son papas cortadas en casa el mismo día. No son papas precongeladas industriales.</div>
+          <div class="qa-a-en">"Hand-cut in house, same day. Not pre-frozen industrial fries."</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAPAS AL MORTERO -->
+  <div class="dish-card" id="dish-papas-mortero">
+    <div class="dish-header" onclick="toggleDish('papas-mortero')">
+      <div class="dish-header-left">
+        <div class="dish-name">Papas al mortero</div>
+        <div class="dish-name-en">Smashed potatoes</div>
+        <div class="dish-meta">
+          <span class="price">$9.000</span>
+          <span class="tag tag-gf">Sin gluten</span>
+          <span class="tag tag-vegan">Vegano</span>
+        </div>
+      </div>
+      <div class="dish-toggle">+</div>
+    </div>
+    <div class="dish-body">
+      <div class="inner-tabs">
+        <button class="inner-tab active" onclick="switchTab(this,'papas-mortero','presentacion')">Presentación</button>
+        <button class="inner-tab" onclick="switchTab(this,'papas-mortero','qa')">Preguntas</button>
+      </div>
+      <div class="inner-panel active" id="papas-mortero-presentacion">
+        <div class="speech-box">
+          "Papas cocidas y luego aplastadas en el mortero para lograr una textura irregular — partes crujientes y partes blandas— aliñadas con aceite de oliva, ajo y hierbas. Más rústicas y sabrosas que las papas fritas convencionales, con una superficie irregular que maximiza el crujido."
+          <div class="speech-box-en">"Potatoes boiled then smashed for an irregular texture — crispy parts and soft parts — dressed with olive oil, garlic, and herbs. More rustic and flavorful than conventional fries, with an uneven surface that maximizes crunch."</div>
+        </div>
+      </div>
+      <div class="inner-panel" id="papas-mortero-qa">
+        <div class="qa-item">
+          <div class="qa-q">¿Son fritas o al horno?</div>
+          <div class="qa-a">Se cocinan primero en agua y luego van al horno o a la parrilla aplastadas para lograr el crujido. No son fritas en aceite como las papas fritas clásicas.</div>
+          <div class="qa-a-en">"Boiled first then roasted or grilled smashed to get the crunch. Not deep-fried in oil like classic french fries."</div>
         </div>
       </div>
     </div>
