@@ -473,6 +473,16 @@
     margin-bottom: 8px;
   }
 
+  .dish-img {
+    width: 100%;
+    max-height: 240px;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    margin-bottom: 16px;
+    border: 1px solid var(--border);
+  }
+
   /* ── NO RESULTS ── */
   .no-results {
     text-align: center;
@@ -1702,6 +1712,10 @@
         <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','maridaje')">Maridaje</button>
       </div>
       <div class="inner-panel active" id="pappardelle-pato-presentacion">
+        <img src="images/pappardelle-pato.jpeg"
+             alt="Pappardelle relleno de pato confitado"
+             class="dish-img"
+             onerror="this.style.display='none'">
         <div class="speech-box">
           "Pappardelle artesanal relleno de pato confitado —cocido lentamente en su propia grasa hasta quedar tiernísimo— con camote aromatizado con anís, mantequilla de avellana tostada y una salsa demi-glace a la naranja que aporta acidez cítrica. Una pasta de alta cocina que combina técnica francesa con sabores del sur."
           <div class="speech-box-en">"House-made pappardelle filled with confit duck — slow-cooked in its own fat until incredibly tender — with anise-scented sweet potato, toasted hazelnut butter, and an orange demi-glace for citrus acidity. Fine-dining pasta combining French technique with southern flavors."</div>
