@@ -473,14 +473,29 @@
     margin-bottom: 8px;
   }
 
+  .dish-img-frame {
+    margin: 20px 20px 0;
+    border: 1px solid var(--gold-dim);
+    height: 240px;
+    overflow: hidden;
+  }
+
   .dish-img {
     width: 100%;
-    max-height: 240px;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 35%;
     display: block;
-    margin-bottom: 16px;
-    border: 1px solid var(--border);
+  }
+
+  .dish-img-caption {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    padding: 8px 20px 0;
+    letter-spacing: 0.04em;
   }
 
   /* ── NO RESULTS ── */
@@ -1711,11 +1726,11 @@
         <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','qa')">Preguntas</button>
         <button class="inner-tab" onclick="switchTab(this,'pappardelle-pato','maridaje')">Maridaje</button>
       </div>
+      <div class="dish-img-frame">
+        <img src="images/pappardelle-pato.jpeg" alt="Pappardelle relleno de pato confitado" class="dish-img" onerror="this.closest('.dish-img-frame').style.display='none'">
+      </div>
+      <p class="dish-img-caption">Pappardelle relleno de pato confitado · The Singular Patagonia</p>
       <div class="inner-panel active" id="pappardelle-pato-presentacion">
-        <img src="images/pappardelle-pato.jpeg"
-             alt="Pappardelle relleno de pato confitado"
-             class="dish-img"
-             onerror="this.style.display='none'">
         <div class="speech-box">
           "Pappardelle artesanal relleno de pato confitado —cocido lentamente en su propia grasa hasta quedar tiernísimo— con camote aromatizado con anís, mantequilla de avellana tostada y una salsa demi-glace a la naranja que aporta acidez cítrica. Una pasta de alta cocina que combina técnica francesa con sabores del sur."
           <div class="speech-box-en">"House-made pappardelle filled with confit duck — slow-cooked in its own fat until incredibly tender — with anise-scented sweet potato, toasted hazelnut butter, and an orange demi-glace for citrus acidity. Fine-dining pasta combining French technique with southern flavors."</div>
