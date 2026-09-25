@@ -6,37 +6,41 @@
 <title>Guía de Servicio — The Singular</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ── TOKENS: LIGHT (default) ── */
   :root {
-    --bg:                  #F4F0E6;
-    --card:                #EDE9DC;
-    --border:              #D8D2C4;
-    --ink:                 #1A1814;
-    --ink-mid:             #4A4640;
-    --ink-lo:              #756F65;
-    --gold:                #8A6A30;
-    --gold-dim:            #C4A96E;
-    --header-bg:           #1A1814;
-    --header-text:         #F4F0E6;
-    --sidebar-active-bg:   rgba(138,106,48,0.06);
-    --tag-border:          #8A88C8;
-    --tag-color:           #6A68A8;
+    --bg:        #F4F0E6;
+    --card:      #EDE9DC;
+    --border:    #D8D2C4;
+    --ink:       #1A1814;
+    --ink-mid:   #3E3A34;
+    --ink-lo:    #6A6358;
+    --gold:      #8A6A30;
+    --gold-dim:  #C4A96E;
+    --header-bg: #1A1814;
+    --header-text: #F4F0E6;
+    --header-sub:  #5A5650;
+    --sidebar-active-bg: rgba(138,106,48,0.08);
+    --tag-border: #8A88C8;
+    --tag-color:  #5A58A0;
     color-scheme: light;
   }
 
+  /* ── TOKENS: DARK ── */
   :root[data-theme="dark"] {
-    --bg:                  #16130E;
-    --card:                #1E1B14;
-    --border:              #2C2820;
-    --ink:                 #EDE8DE;
-    --ink-mid:             #A09880;
-    --ink-lo:              #7A7060;
-    --gold:                #C8A96E;
-    --gold-dim:            #8A6A30;
-    --header-bg:           #0D0B07;
-    --header-text:         #EDE8DE;
-    --sidebar-active-bg:   rgba(200,169,110,0.08);
-    --tag-border:          #6A68A8;
-    --tag-color:           #9A98D0;
+    --bg:        #16130E;
+    --card:      #1E1B14;
+    --border:    #2C2820;
+    --ink:       #EDE8DE;
+    --ink-mid:   #B0A890;
+    --ink-lo:    #8A8070;
+    --gold:      #C8A96E;
+    --gold-dim:  #8A6A30;
+    --header-bg: #0D0B07;
+    --header-text: #EDE8DE;
+    --header-sub:  #4A4438;
+    --sidebar-active-bg: rgba(200,169,110,0.10);
+    --tag-border: #6A68A8;
+    --tag-color:  #A0A0D8;
     color-scheme: dark;
   }
 
@@ -83,18 +87,6 @@
     letter-spacing: 0.06em;
     margin-top: 4px;
     font-weight: 400;
-  }
-  .badge {
-    background: transparent;
-    border: 1px solid var(--gold-dim);
-    color: var(--gold-dim);
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    padding: 4px 10px;
-    text-transform: uppercase;
-    flex-shrink: 0;
   }
 
   /* ── NAV TABS ── */
@@ -208,7 +200,7 @@
     font-size: 17px;
     font-weight: 400;
     color: var(--ink);
-    line-height: 1.3;
+    line-height: 1.35;
     margin-bottom: 2px;
   }
   .dish-name-en {
@@ -623,61 +615,223 @@
     .nav-tabs { padding: 0 32px; }
   }
 
-  /* ── DARK / LIGHT TOGGLE ── */
-  .theme-toggle {
+  /* ── BURGER BUTTON ── */
+  .burger-btn {
     position: fixed;
-    top: 18px;
-    right: 18px;
+    top: 16px;
+    right: 16px;
     z-index: 200;
     display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 8px;
-    padding: 7px 14px 7px 12px;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
     background: var(--header-bg);
     border: 1px solid var(--border);
-    color: var(--header-text);
     cursor: pointer;
-    font-family: 'Inter', sans-serif;
-    font-size: 10px;
-    font-weight: 500;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    transition: background 0.3s, border-color 0.3s, color 0.3s;
-    user-select: none;
+    padding: 0;
+    transition: background 0.3s, border-color 0.3s, opacity 0.2s;
   }
-  .theme-toggle:hover { opacity: 0.82; }
+  .burger-btn:hover { opacity: 0.8; }
+  .burger-bar {
+    display: block;
+    width: 18px;
+    height: 1.5px;
+    background: var(--gold);
+    transition: background 0.3s;
+  }
 
-  .icon-sun, .icon-moon { flex-shrink: 0; transition: opacity 0.2s; }
-  :root:not([data-theme="dark"]) .icon-sun { display: none; }
-  :root[data-theme="dark"] .icon-moon { display: none; }
+  /* ── BURGER PANEL ── */
+  .burger-panel {
+    position: fixed;
+    top: 0;
+    right: -280px;
+    width: 260px;
+    height: 100%;
+    z-index: 190;
+    background: var(--card);
+    border-left: 1px solid var(--border);
+    padding: 72px 0 32px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.28s cubic-bezier(0.4, 0, 0.2, 1), background 0.3s, border-color 0.3s;
+    overflow-y: auto;
+  }
+  .burger-panel.open { right: 0; }
+
+  .burger-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 180;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.28s;
+  }
+  .burger-overlay.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .burger-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 14px 22px;
+    cursor: pointer;
+  }
+  .burger-toggle-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-mid);
+    transition: color 0.3s;
+  }
+
+  .burger-toggle-switch {
+    width: 34px;
+    height: 18px;
+    border-radius: 9px;
+    border: 1px solid var(--gold-dim);
+    background: transparent;
+    position: relative;
+    transition: background 0.25s, border-color 0.3s;
+    cursor: pointer;
+    outline: none;
+  }
+  .burger-toggle-switch:focus-visible { box-shadow: 0 0 0 2px var(--gold); }
+  .burger-switch-thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gold-dim);
+    transition: left 0.25s, background 0.25s;
+  }
+  :root[data-theme="dark"] .burger-switch-thumb { left: 18px; background: var(--gold); }
+  :root[data-theme="dark"] .burger-toggle-switch { background: rgba(200,169,110,0.15); }
+
+  .burger-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 4px 0 8px;
+    transition: background 0.3s;
+  }
+
+  .burger-section-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--ink-lo);
+    padding: 8px 22px 10px;
+    transition: color 0.3s;
+  }
+
+  .burger-nav-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 11px 22px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    font-weight: 400;
+    color: var(--ink-lo);
+    background: none;
+    border: none;
+    border-left: 2px solid transparent;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+  }
+  .burger-nav-item:hover { color: var(--ink-mid); }
+  .burger-nav-item.active {
+    color: var(--ink);
+    border-left-color: var(--gold);
+    background: var(--sidebar-active-bg);
+  }
+
+  /* ── SIDEBAR ITEMS (for sync) ── */
+  .sidebar-item {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--ink-lo);
+    padding: 9px 18px;
+    border-left: 2px solid transparent;
+    transition: color 0.2s, background 0.2s, border-color 0.2s;
+    line-height: 1.2;
+    cursor: pointer;
+  }
+  .sidebar-item:hover { color: var(--ink-mid); }
+  .sidebar-item.active {
+    color: var(--ink);
+    border-left-color: var(--gold);
+    background: var(--sidebar-active-bg);
+  }
+
+  /* ── EXTRA DISH CLASSES ── */
+  .dish-en {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 13.5px;
+    color: var(--ink-lo);
+    margin-top: 5px;
+    line-height: 1.5;
+    letter-spacing: 0.015em;
+  }
+  .dish-desc {
+    font-family: 'Inter', sans-serif;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-top: 8px;
+    line-height: 1.75;
+  }
+
+  /* ── RESPONSIVE: hide sidebar on mobile ── */
+  @media (max-width: 600px) {
+    .guide-sidebar { display: none; }
+    .guide-body { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<button class="theme-toggle" id="themeBtn" aria-label="Cambiar tema">
-  <svg class="icon-sun" width="15" height="15" viewBox="0 0 16 16" fill="none">
-    <circle cx="8" cy="8" r="3" stroke="currentColor" stroke-width="1.2"/>
-    <line x1="8" y1="1" x2="8" y2="3" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="8" y1="13" x2="8" y2="15" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="1" y1="8" x2="3" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="13" y1="8" x2="15" y2="8" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="2.93" y1="2.93" x2="4.34" y2="4.34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="11.66" y1="11.66" x2="13.07" y2="13.07" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="13.07" y1="2.93" x2="11.66" y2="4.34" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-    <line x1="4.34" y1="11.66" x2="2.93" y2="13.07" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"/>
-  </svg>
-  <svg class="icon-moon" width="15" height="15" viewBox="0 0 16 16" fill="none">
-    <path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-  <span id="toggleLabel">Modo Oscuro</span>
+<button class="burger-btn" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
+  <span class="burger-bar"></span>
+  <span class="burger-bar"></span>
 </button>
+
+<nav class="burger-panel" id="burgerPanel" aria-hidden="true">
+  <div class="burger-toggle-row" id="burgerToggleRow">
+    <span class="burger-toggle-label" id="burgerModeLabel">Modo Oscuro</span>
+    <div class="burger-toggle-switch" id="burgerSwitch" role="switch" aria-checked="false" tabindex="0">
+      <div class="burger-switch-thumb"></div>
+    </div>
+  </div>
+  <div class="burger-divider"></div>
+  <div class="burger-section-label">Carta</div>
+  <button class="burger-nav-item" data-section="entradas">Entradas</button>
+  <button class="burger-nav-item" data-section="sopas">Sopas</button>
+  <button class="burger-nav-item" data-section="fondos">Fondos</button>
+  <button class="burger-nav-item" data-section="grill">Carta Grill</button>
+  <button class="burger-nav-item" data-section="postres">Postres</button>
+  <button class="burger-nav-item" data-section="vinos">Vinos</button>
+</nav>
+
+<div class="burger-overlay" id="burgerOverlay"></div>
 
 <header>
   <div>
     <div class="header-title">Guía de Servicio</div>
     <div class="header-sub">The Singular Patagonia · Restaurante</div>
   </div>
-  <div class="badge">★★ Michelin</div>
 </header>
 
 <div class="nav-scroll">
@@ -4533,32 +4687,95 @@ function resetChecklist() {
 }
 
 (function() {
-  var btn = document.getElementById('themeBtn');
-  var label = document.getElementById('toggleLabel');
-  var root = document.documentElement;
+  var root      = document.documentElement;
+  var btn       = document.getElementById('burgerBtn');
+  var panel     = document.getElementById('burgerPanel');
+  var overlay   = document.getElementById('burgerOverlay');
+  var modeLabel = document.getElementById('burgerModeLabel');
+  var switchEl  = document.getElementById('burgerSwitch');
+
+  // ── TEMA ──
+  function isDark() { return root.getAttribute('data-theme') === 'dark'; }
+
+  function applyDark() {
+    root.setAttribute('data-theme', 'dark');
+    if (modeLabel) modeLabel.textContent = 'Modo Claro';
+    if (switchEl)  switchEl.setAttribute('aria-checked', 'true');
+    try { localStorage.setItem('tsp-theme', 'dark'); } catch(e) {}
+  }
+  function applyLight() {
+    root.removeAttribute('data-theme');
+    if (modeLabel) modeLabel.textContent = 'Modo Oscuro';
+    if (switchEl)  switchEl.setAttribute('aria-checked', 'false');
+    try { localStorage.setItem('tsp-theme', 'light'); } catch(e) {}
+  }
 
   try {
     if (localStorage.getItem('tsp-theme') === 'dark') applyDark();
   } catch(e) {}
 
-  function applyDark() {
-    root.setAttribute('data-theme', 'dark');
-    if (label) label.textContent = 'Modo Claro';
+  var toggleRow = document.getElementById('burgerToggleRow');
+  if (toggleRow) {
+    toggleRow.addEventListener('click', function() {
+      isDark() ? applyLight() : applyDark();
+    });
   }
-  function applyLight() {
-    root.removeAttribute('data-theme');
-    if (label) label.textContent = 'Modo Oscuro';
+  if (switchEl) {
+    switchEl.addEventListener('keydown', function(e) {
+      if (e.key === ' ' || e.key === 'Enter') {
+        e.preventDefault();
+        isDark() ? applyLight() : applyDark();
+      }
+    });
   }
 
-  if (btn) btn.addEventListener('click', function() {
-    var isDark = root.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      applyLight();
-      try { localStorage.setItem('tsp-theme', 'light'); } catch(e) {}
-    } else {
-      applyDark();
-      try { localStorage.setItem('tsp-theme', 'dark'); } catch(e) {}
-    }
+  // ── BURGER MENU ──
+  function openMenu() {
+    panel.classList.add('open');
+    overlay.classList.add('visible');
+    btn.setAttribute('aria-expanded', 'true');
+    panel.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    panel.classList.remove('open');
+    overlay.classList.remove('visible');
+    btn.setAttribute('aria-expanded', 'false');
+    panel.setAttribute('aria-hidden', 'true');
+  }
+
+  if (btn)     btn.addEventListener('click', function() {
+    panel.classList.contains('open') ? closeMenu() : openMenu();
+  });
+  if (overlay) overlay.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  // ── NAVEGACIÓN POR SECCIÓN ──
+  document.querySelectorAll('.burger-nav-item').forEach(function(item) {
+    item.addEventListener('click', function() {
+      document.querySelectorAll('.burger-nav-item').forEach(function(i) { i.classList.remove('active'); });
+      item.classList.add('active');
+
+      var section = item.getAttribute('data-section');
+      if (section) {
+        // Show section (hides others, clears search)
+        var el = document.getElementById('section-' + section);
+        document.querySelectorAll('.section').forEach(function(s) { s.classList.remove('active'); });
+        if (el) el.classList.add('active');
+        document.getElementById('noResults').style.display = 'none';
+        document.getElementById('searchInput').value = '';
+        document.querySelectorAll('.dish-card, .wine-card, .tip-card, .group-header').forEach(function(c) { c.style.display = ''; });
+        // Sync nav tab highlight
+        document.querySelectorAll('.nav-tab').forEach(function(t) {
+          var oc = t.getAttribute('onclick') || '';
+          t.classList.toggle('active', oc.indexOf("'" + section + "'") !== -1);
+        });
+      }
+
+      closeMenu();
+    });
   });
 })();
 </script>
