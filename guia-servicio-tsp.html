@@ -794,6 +794,37 @@
     line-height: 1.75;
   }
 
+  /* ── DESKTOP THEME TOGGLE ── */
+  .theme-toggle {
+    position: fixed;
+    top: 18px;
+    right: 18px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px 6px 10px;
+    background: var(--header-bg);
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: background 0.3s, border-color 0.3s, opacity 0.2s;
+    user-select: none;
+  }
+  .theme-toggle:hover { opacity: 0.85; }
+  .toggle-icon { width: 16px; height: 16px; position: relative; flex-shrink: 0; }
+  .icon-sun, .icon-moon { position: absolute; inset: 0; transition: opacity 0.25s; }
+  :root:not([data-theme="dark"]) .icon-moon { opacity: 0; }
+  :root[data-theme="dark"] .icon-sun { opacity: 0; }
+  .toggle-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--header-text);
+    transition: color 0.3s;
+  }
+
   @media (min-width: 601px) {
     .burger-btn     { display: none; }
     .burger-panel   { display: none; }
@@ -807,6 +838,26 @@
 </style>
 </head>
 <body>
+
+<button class="theme-toggle" id="themeBtn" aria-label="Cambiar tema">
+  <div class="toggle-icon">
+    <svg class="icon-sun" viewBox="0 0 16 16" fill="none">
+      <circle cx="8" cy="8" r="3" stroke="#C8A96E" stroke-width="1.2"/>
+      <line x1="8" y1="1" x2="8" y2="3" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="8" y1="13" x2="8" y2="15" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="1" y1="8" x2="3" y2="8" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="13" y1="8" x2="15" y2="8" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="2.93" y1="2.93" x2="4.34" y2="4.34" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="11.66" y1="11.66" x2="13.07" y2="13.07" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="13.07" y1="2.93" x2="11.66" y2="4.34" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+      <line x1="4.34" y1="11.66" x2="2.93" y2="13.07" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round"/>
+    </svg>
+    <svg class="icon-moon" viewBox="0 0 16 16" fill="none">
+      <path d="M13.5 9.5A6 6 0 0 1 6.5 2.5a6 6 0 1 0 7 7z" stroke="#C8A96E" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <span class="toggle-label" id="toggleLabel">Modo Oscuro</span>
+</button>
 
 <button class="burger-btn" id="burgerBtn" aria-label="Abrir menú" aria-expanded="false">
   <span class="burger-bar"></span>
@@ -827,7 +878,13 @@
   <button class="burger-nav-item" data-section="fondos">Fondos</button>
   <button class="burger-nav-item" data-section="grill">Carta Grill</button>
   <button class="burger-nav-item" data-section="postres">Postres</button>
+  <button class="burger-nav-item" data-section="veganos">Veganos</button>
+  <button class="burger-nav-item" data-section="bar">Bar & Snacks</button>
   <button class="burger-nav-item" data-section="vinos">Vinos</button>
+  <button class="burger-nav-item" data-section="tips">Protocolo</button>
+  <button class="burger-nav-item" data-section="glosario">Glosario</button>
+  <button class="burger-nav-item" data-section="sop">SOP</button>
+  <button class="burger-nav-item" data-section="lqa">LQA</button>
 </nav>
 
 <div class="burger-overlay" id="burgerOverlay"></div>
@@ -4692,32 +4749,42 @@ function resetChecklist() {
 }
 
 (function() {
-  var root      = document.documentElement;
-  var btn       = document.getElementById('burgerBtn');
-  var panel     = document.getElementById('burgerPanel');
-  var overlay   = document.getElementById('burgerOverlay');
-  var modeLabel = document.getElementById('burgerModeLabel');
-  var switchEl  = document.getElementById('burgerSwitch');
+  var root        = document.documentElement;
+  var btn         = document.getElementById('burgerBtn');
+  var panel       = document.getElementById('burgerPanel');
+  var overlay     = document.getElementById('burgerOverlay');
+  var modeLabel   = document.getElementById('burgerModeLabel');
+  var switchEl    = document.getElementById('burgerSwitch');
+  var desktopBtn  = document.getElementById('themeBtn');
+  var desktopLabel = document.getElementById('toggleLabel');
 
   // ── TEMA ──
   function isDark() { return root.getAttribute('data-theme') === 'dark'; }
 
   function applyDark() {
     root.setAttribute('data-theme', 'dark');
-    if (modeLabel) modeLabel.textContent = 'Modo Claro';
-    if (switchEl)  switchEl.setAttribute('aria-checked', 'true');
+    if (modeLabel)    modeLabel.textContent = 'Modo Claro';
+    if (desktopLabel) desktopLabel.textContent = 'Modo Claro';
+    if (switchEl)     switchEl.setAttribute('aria-checked', 'true');
     try { localStorage.setItem('tsp-theme', 'dark'); } catch(e) {}
   }
   function applyLight() {
     root.removeAttribute('data-theme');
-    if (modeLabel) modeLabel.textContent = 'Modo Oscuro';
-    if (switchEl)  switchEl.setAttribute('aria-checked', 'false');
+    if (modeLabel)    modeLabel.textContent = 'Modo Oscuro';
+    if (desktopLabel) desktopLabel.textContent = 'Modo Oscuro';
+    if (switchEl)     switchEl.setAttribute('aria-checked', 'false');
     try { localStorage.setItem('tsp-theme', 'light'); } catch(e) {}
   }
 
   try {
     if (localStorage.getItem('tsp-theme') === 'dark') applyDark();
   } catch(e) {}
+
+  if (desktopBtn) {
+    desktopBtn.addEventListener('click', function() {
+      isDark() ? applyLight() : applyDark();
+    });
+  }
 
   var toggleRow = document.getElementById('burgerToggleRow');
   if (toggleRow) {
