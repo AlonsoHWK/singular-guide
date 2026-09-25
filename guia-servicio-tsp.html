@@ -794,10 +794,15 @@
     line-height: 1.75;
   }
 
-  /* ── RESPONSIVE: hide sidebar on mobile ── */
+  @media (min-width: 601px) {
+    .burger-btn     { display: none; }
+    .burger-panel   { display: none; }
+    .burger-overlay { display: none; }
+  }
   @media (max-width: 600px) {
     .guide-sidebar { display: none; }
-    .guide-body { grid-template-columns: 1fr; }
+    .guide-body    { grid-template-columns: 1fr; }
+    .theme-toggle  { display: none; }
   }
 </style>
 </head>
