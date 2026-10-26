@@ -835,6 +835,501 @@
     .guide-body    { grid-template-columns: 1fr; }
     .theme-toggle  { display: none; }
   }
+
+  /* ── QUIZ ── */
+  .quiz-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold);
+  }
+  .quiz-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink-mid);
+    margin: 0 0 12px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  .quiz-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+
+  .quiz-dash {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--card);
+    border: 1px solid var(--border);
+    margin-bottom: 24px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .quiz-stat { padding: 12px 16px; border-right: 1px solid var(--border); }
+  .quiz-stat:last-child { border-right: none; }
+  .quiz-stat-val {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 400;
+    line-height: 1.1;
+    color: var(--ink);
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .quiz-stat-of { font-size: 15px; color: var(--ink-lo); }
+  .quiz-stat .quiz-label { margin-top: 4px; }
+
+  .quiz-lang { text-align: center; padding: 28px 0 8px; }
+  .quiz-lang-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-top: 10px;
+  }
+  .quiz-lang-sub {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-lo);
+    margin-top: 6px;
+  }
+  .quiz-lang-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    max-width: 440px;
+    margin: 26px auto 0;
+  }
+  .quiz-lang-btn {
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 400;
+    padding: 26px 16px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.3s;
+  }
+  .quiz-lang-btn:hover { border-color: var(--gold-dim); background: var(--sidebar-active-bg); }
+  .quiz-lang-btn span { display: block; margin-top: 6px; }
+
+  .quiz-modes { margin-bottom: 24px; }
+  .quiz-mode {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    width: 100%;
+    text-align: left;
+    background: var(--card);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    padding: 18px 20px;
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.3s;
+  }
+  .quiz-mode + .quiz-mode { border-top: none; }
+  .quiz-mode:hover { border-color: var(--gold-dim); }
+  .quiz-mode-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 300;
+    font-style: italic;
+    color: var(--gold);
+    line-height: 1;
+    min-width: 22px;
+  }
+  .quiz-mode-body { flex: 1; min-width: 0; }
+  .quiz-mode-title {
+    display: block;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 19px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .quiz-mode-desc {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    line-height: 1.6;
+    margin-top: 4px;
+  }
+  .quiz-mode-arrow { color: var(--gold); font-size: 18px; line-height: 1; margin-top: 4px; }
+
+  .quiz-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 24px; }
+  .quiz-chip {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--ink-lo);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 6px 11px;
+    cursor: pointer;
+    transition: color 0.15s, border-color 0.15s, background 0.15s;
+  }
+  .quiz-chip:hover { color: var(--ink); border-color: var(--gold-dim); }
+  .quiz-chip.is-active { color: var(--gold); border-color: var(--gold); background: var(--sidebar-active-bg); }
+
+  .quiz-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+  .quiz-link {
+    background: none;
+    border: none;
+    padding: 4px 0;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lo);
+    transition: color 0.15s;
+  }
+  .quiz-link:hover { color: var(--gold); }
+
+  .quiz-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+  .quiz-count {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-lo);
+    font-variant-numeric: tabular-nums;
+  }
+  .quiz-count strong { color: var(--ink); font-weight: 500; }
+  .quiz-track { height: 2px; background: var(--border); margin-bottom: 18px; }
+  .quiz-track-fill { height: 100%; background: var(--gold); transition: width 0.3s; }
+
+  .quiz-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: 22px 20px;
+    transition: background 0.3s, border-color 0.3s;
+  }
+  .quiz-q-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 400;
+    color: var(--ink);
+    line-height: 1.2;
+    margin-top: 6px;
+  }
+  .quiz-q-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--ink-lo);
+    margin-top: 4px;
+  }
+  .quiz-q-prompt {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    color: var(--ink-mid);
+    margin-top: 16px;
+  }
+  .quiz-clues { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 12px; }
+  .quiz-clue {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--ink);
+    padding: 6px 12px;
+  }
+
+  .quiz-opts { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 16px; }
+  .quiz-opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    text-align: left;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--ink);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    line-height: 1.3;
+    padding: 12px 14px;
+    min-height: 54px;
+    cursor: pointer;
+    transition: border-color 0.15s, background 0.15s, opacity 0.15s;
+  }
+  .quiz-opt:hover:not(:disabled) { border-color: var(--gold-dim); }
+  .quiz-opt:disabled { cursor: default; }
+  .quiz-opt-key {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-top: 4px;
+    min-width: 12px;
+  }
+  .quiz-opt-sub {
+    display: block;
+    font-family: 'Inter', sans-serif;
+    font-size: 10.5px;
+    font-weight: 300;
+    color: var(--ink-lo);
+    margin-top: 3px;
+    letter-spacing: 0.02em;
+  }
+  .quiz-opt.is-correct { border-color: var(--gold); background: var(--sidebar-active-bg); }
+  .quiz-opt.is-correct .quiz-opt-key { color: #6aab7c; }
+  .quiz-opt.is-wrong { border-color: #e08080; background: rgba(220,80,80,0.06); }
+  .quiz-opt.is-wrong .quiz-opt-key { color: #e08080; }
+  .quiz-opt.is-dim { opacity: 0.5; }
+
+  .quiz-fb {
+    margin-top: 16px;
+    padding: 12px 16px;
+    border-left: 2px solid var(--gold);
+    background: var(--sidebar-active-bg);
+  }
+  .quiz-fb.is-wrong { border-left-color: #e08080; background: rgba(220,80,80,0.06); }
+  .quiz-fb-title {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #6aab7c;
+  }
+  .quiz-fb.is-wrong .quiz-fb-title { color: #e08080; }
+  .quiz-fb-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 17px;
+    color: var(--ink);
+    margin-top: 4px;
+    line-height: 1.4;
+  }
+  .quiz-fb-detail {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-top: 6px;
+    line-height: 1.6;
+  }
+  .quiz-fb-detail strong { color: var(--ink); font-weight: 500; }
+
+  .quiz-actions { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+  .quiz-btn {
+    background: var(--gold);
+    border: 1px solid var(--gold);
+    color: var(--bg);
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 11px 20px;
+    cursor: pointer;
+    transition: opacity 0.15s;
+  }
+  .quiz-btn:hover { opacity: 0.88; }
+  .quiz-btn-ghost { background: none; color: var(--gold); border-color: var(--gold-dim); }
+
+  .quiz-result { text-align: center; padding: 30px 20px; }
+  .quiz-result-score {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 64px;
+    font-weight: 300;
+    color: var(--ink);
+    line-height: 1;
+    margin-top: 10px;
+    font-variant-numeric: lining-nums tabular-nums;
+  }
+  .quiz-result-score span { color: var(--ink-lo); font-size: 32px; }
+  .quiz-result-score.is-small { font-size: 44px; margin: 8px 0 6px; }
+  .quiz-result-score.is-small span { font-size: 22px; }
+  .quiz-result-msg {
+    font-family: 'Cormorant Garamond', serif;
+    font-style: italic;
+    font-size: 18px;
+    color: var(--ink-mid);
+    margin-top: 12px;
+  }
+  .quiz-result .quiz-actions { justify-content: center; margin-top: 22px; }
+  .quiz-review { margin-top: 22px; text-align: left; }
+  .quiz-review-item {
+    font-family: 'Inter', sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    line-height: 1.5;
+  }
+  .quiz-review-item strong {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--ink);
+  }
+
+  .quiz-guest {
+    border-left: 2px solid var(--gold);
+    background: var(--sidebar-active-bg);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+  }
+  .quiz-guest-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 21px;
+    color: var(--ink);
+    line-height: 1.25;
+    margin-top: 4px;
+  }
+  .quiz-guest-name em { color: var(--ink-lo); font-size: 15px; }
+  .quiz-traits { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .quiz-trait {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border: 1px solid var(--tag-border);
+    color: var(--tag-color);
+  }
+  .quiz-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; margin-bottom: 16px; }
+  .quiz-step {
+    border-top: 2px solid var(--border);
+    padding-top: 6px;
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-lo);
+  }
+  .quiz-step.is-done { border-top-color: var(--gold-dim); color: var(--ink-mid); }
+  .quiz-step.is-active { border-top-color: var(--gold); color: var(--gold); }
+  .quiz-sum-row {
+    display: grid;
+    grid-template-columns: 96px 1fr;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    text-align: left;
+  }
+  .quiz-sum-row:last-of-type { border-bottom: none; }
+  .quiz-sum-dish {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .quiz-sum-why {
+    font-family: 'Inter', sans-serif;
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--ink-mid);
+    margin-top: 3px;
+    line-height: 1.6;
+  }
+  .quiz-sum-miss {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    font-weight: 300;
+    color: #e08080;
+    margin-top: 4px;
+    line-height: 1.5;
+  }
+  .quiz-mark-ok { color: #6aab7c; }
+  .quiz-mark-no { color: #e08080; }
+
+  .quiz-prog-sec { border: 1px solid var(--border); background: var(--card); transition: background 0.3s; }
+  .quiz-prog-sec + .quiz-prog-sec { border-top: none; }
+  .quiz-prog-sum {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    cursor: pointer;
+    list-style: none;
+  }
+  .quiz-prog-sum::-webkit-details-marker { display: none; }
+  .quiz-prog-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 17px;
+    color: var(--ink);
+    flex: 0 0 130px;
+  }
+  .quiz-meter { display: block; flex: 1; height: 4px; background: var(--border); }
+  .quiz-meter-fill { display: block; height: 100%; background: var(--gold); }
+  .quiz-prog-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 11px;
+    color: var(--ink-lo);
+    font-variant-numeric: tabular-nums;
+    min-width: 48px;
+    text-align: right;
+  }
+  .quiz-prog-chev { color: var(--gold); font-size: 18px; line-height: 1; transition: transform 0.25s; }
+  .quiz-prog-sec[open] .quiz-prog-chev { transform: rotate(45deg); }
+  .quiz-prog-list { padding: 0 18px 10px; border-top: 1px solid var(--border); }
+  .quiz-prog-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .quiz-prog-row:last-child { border-bottom: none; }
+  .quiz-prog-dish {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 15px;
+    color: var(--ink-mid);
+    line-height: 1.3;
+  }
+  .quiz-prog-dish small {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    color: var(--ink-lo);
+    margin-left: 6px;
+  }
+  .quiz-prog-row.is-mastered .quiz-prog-dish { color: var(--ink); }
+  .quiz-pips { display: flex; gap: 4px; flex-shrink: 0; }
+  .quiz-pip { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--gold-dim); }
+  .quiz-pip.is-on { background: var(--gold); border-color: var(--gold); }
+
+  @media (max-width: 600px) {
+    .quiz-dash { grid-template-columns: 1fr 1fr; }
+    .quiz-stat:nth-child(2) { border-right: none; }
+    .quiz-stat:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+    .quiz-opts { grid-template-columns: 1fr; }
+    .quiz-q-name { font-size: 23px; }
+    .quiz-card { padding: 18px 16px; }
+    .quiz-lang-btns { grid-template-columns: 1fr; }
+    .quiz-sum-row { grid-template-columns: 1fr; gap: 4px; }
+    .quiz-prog-sum { gap: 10px; padding: 12px 14px; }
+    .quiz-prog-name { flex-basis: 92px; font-size: 15px; }
+    .quiz-prog-list { padding: 0 14px 8px; }
+    .quiz-steps { gap: 4px; }
+    .quiz-step { font-size: 8px; letter-spacing: 0.08em; }
+  }
 </style>
 </head>
 <body>
@@ -885,6 +1380,7 @@
   <button class="burger-nav-item" data-section="glosario">Glosario</button>
   <button class="burger-nav-item" data-section="sop">SOP</button>
   <button class="burger-nav-item" data-section="lqa">LQA</button>
+  <button class="burger-nav-item" data-section="quiz">Quiz</button>
 </nav>
 
 <div class="burger-overlay" id="burgerOverlay"></div>
@@ -910,6 +1406,7 @@
     <button class="nav-tab" onclick="showSection('glosario')">Glosario</button>
     <button class="nav-tab" onclick="showSection('sop')">SOP</button>
     <button class="nav-tab" onclick="showSection('lqa')">LQA</button>
+    <button class="nav-tab" onclick="showSection('quiz')">Quiz</button>
   </div>
 </div>
 
@@ -4948,6 +5445,12 @@
 
 </div>
 
+<!-- ═══════════════ QUIZ ═══════════════ -->
+<div class="section" id="section-quiz">
+  <div class="section-title">Quiz</div>
+  <div class="quiz-root" id="quizRoot"></div>
+</div>
+
 </main>
 
 <div class="no-results" id="noResults">No se encontraron resultados para esa búsqueda.</div>
@@ -5173,6 +5676,1035 @@ function resetChecklist() {
       closeMenu();
     });
   });
+})();
+</script>
+
+<script>
+/* ═══════════════ QUIZ ═══════════════ */
+(function () {
+  'use strict';
+  var rootEl = document.getElementById('quizRoot');
+  var sectionEl = document.getElementById('section-quiz');
+  if (!rootEl || !sectionEl) return;
+
+  var LS_LANG = 'tsp-quiz-lang';
+  var LS_STATS = 'tsp-quiz-stats';
+  var ROUND = 10;
+
+  /* ── DATA ── Fuente: Carta Restaurant, Carta Bar & Snack, Carta de Vinos 2026-27 y Menú TSP 2026-2027 */
+  var SEC_ORDER = ['entradas', 'sopas', 'fondos', 'grill', 'postres', 'veganos', 'bar', 'cocteles', 'vinos'];
+  var SEC = {
+    entradas: { es: 'Entradas', en: 'Starters', menu: 'r' },
+    sopas:    { es: 'Sopas', en: 'Soups', menu: 'r' },
+    fondos:   { es: 'Fondos', en: 'Main courses', menu: 'r' },
+    grill:    { es: 'Carta Grill', en: 'From the Grill', menu: 'r' },
+    postres:  { es: 'Postres', en: 'Desserts', menu: 'r' },
+    veganos:  { es: 'Veganos', en: 'Vegan dishes', menu: 'r' },
+    bar:      { es: 'Bar & Snacks', en: 'Bar & Snacks', menu: 'b' },
+    cocteles: { es: 'Cócteles', en: 'Cocktails', menu: 'c' },
+    vinos:    { es: 'Vinos', en: 'Wines', menu: 'v' }
+  };
+
+  // c: guest-mode course (s starter · m main · d dessert · x side). Dietary flags: 1 yes, 0 no,
+  // omitted = sources unclear, so the dish is never used to judge that restriction.
+  var DISHES = [
+    { id: 'centolla', s: 'entradas', c: 's', es: 'Centolla magallánica', en: 'Magellanic king crab',
+      fes: 'Centolla magallánica, yogur y limón', fen: 'Magellanic king crab, yogurt, lemon',
+      i: 'Yogur y limón|Yogurt and lemon;Dressing cítrico de mandarina y naranja|Tangerine and orange citrus dressing;Puré de palta|Avocado purée;Algas|Seaweed;Pomelo|Grapefruit;Clorofila de perejil|Parsley chlorophyll',
+      sea: 1, gf: 1, df: 0, local: 1 },
+    { id: 'tartaro', s: 'entradas', c: 's', es: 'Tártaro de guanaco', en: 'Guanaco tartare',
+      fes: 'Tártaro de guanaco de Tierra del Fuego, frutos rojos y tostadas', fen: 'Tierra del Fuego guanaco tartare, red berries, toast',
+      i: 'Frutos rojos|Red berries;Tostadas|Toast;Alcaparra|Caper;Pepinillo|Pickle;Hierbabuena|Peppermint;Sal de naranja|Orange salt;Gel de cassis|Blackcurrant gel',
+      meat: 1, gf: 0, df: 1, local: 1 },
+    { id: 'escabeche', s: 'entradas', c: 's', es: 'Escabeche de liebre salvaje', en: 'Wild hare escabeche',
+      fes: 'Escabeche de liebre salvaje, mayonesa de hierbas, verduras encurtidas y vinagreta de casis', fen: 'Wild hare escabeche, herb mayonnaise, pickled vegetables, blackcurrant vinaigrette',
+      i: 'Mayonesa de hierbas|Herb mayonnaise;Verduras encurtidas|Pickled vegetables;Vinagreta de casis|Blackcurrant vinaigrette;Crutones de brioche|Brioche croutons;Frutilla|Strawberry;Uva|Grapes;Flavedo de naranja|Orange flavedo',
+      meat: 1, gf: 0, df: 1, local: 1 },
+    { id: 'pulpo', s: 'entradas', c: 's', es: 'Pulpo sellado', en: 'Seared octopus',
+      fes: 'Pulpo sellado, mayonesa tibia, migas de pimentón ahumado y emulsión de ajo negro', fen: 'Seared octopus, warm mayonnaise, smoked paprika crumbs, black garlic emulsion',
+      i: 'Mayonesa tibia|Warm mayonnaise;Migas de pimentón ahumado|Smoked paprika crumbs;Emulsión de ajo negro|Black garlic emulsion;Salsa holandesa|Hollandaise sauce;Pan brioche|Brioche bread',
+      sea: 1, gf: 0, local: 0 },
+    { id: 'ceviche', s: 'entradas', c: 's', es: 'Ceviche mixto', en: 'Mixed ceviche',
+      fes: 'Ceviche mixto de ostiones, pulpo, centolla y salmón, leche de tigre y salsa de cilantro', fen: 'Mixed scallop, octopus, king crab and salmon ceviche, leche de tigre, cilantro sauce',
+      i: 'Ostiones|Scallops;Pulpo|Octopus;Centolla|King crab;Salmón|Salmon;Leche de tigre|Leche de tigre;Salsa de cilantro|Cilantro sauce;Rocoto|Rocoto;Ají verde|Green chili',
+      sea: 1, gf: 1, df: 0, local: 1 },
+    { id: 'ostiones', s: 'entradas', c: 's', es: 'Ostiones de fiordos australes', en: 'Southern fjord scallops',
+      fes: 'Ostiones de fiordos australes gratinados, salsa bechamel y queso Grana Padano', fen: 'Southern fjord scallops au gratin, béchamel, Grana Padano',
+      i: 'Salsa bechamel|Béchamel sauce;Queso Grana Padano|Grana Padano cheese;Queso mantecoso|Buttery cheese;Crutones|Croutons;Zestes de limón|Lemon zest',
+      sea: 1, gf: 0, df: 0, local: 1 },
+    { id: 'mollejas', s: 'entradas', c: 's', es: 'Mollejas de cordero laqueadas', en: 'Glazed lamb sweetbreads',
+      fes: 'Mollejas de cordero laqueadas, puré de papa de apio y salsa demi-glace', fen: 'Glazed lamb sweetbreads, celeriac purée, demi-glace',
+      i: 'Puré de papa de apio|Celeriac purée;Salsa demi-glace|Demi-glace sauce;Rösti de papa|Potato rösti;Mantequilla clarificada|Clarified butter;Aceite de tomillo|Thyme oil',
+      meat: 1, lamb: 1, gf: 1, df: 0, local: 1 },
+    { id: 'carpaccio', s: 'entradas', c: 's', es: 'Carpaccio de locos de Calbuco', en: 'Calbuco Chilean abalone carpaccio',
+      fes: 'Carpaccio de locos de Calbuco sobre fina lámina de papa, crema de palta, selección de ajíes y salsa verde', fen: 'Calbuco Chilean abalone carpaccio, thinly sliced potato, avocado cream, assorted chiles, salsa verde',
+      i: 'Fina lámina de papa|Thinly sliced potato;Crema de palta|Avocado cream;Selección de ajíes|Assorted chiles;Salsa verde|Salsa verde;Mayonesa de locos|Abalone mayonnaise;Tomate cherry|Cherry tomato;Rocoto|Rocoto;Ají verde|Green chili;Limón sutil|Lime',
+      sea: 1, gf: 0, df: 0, local: 1 },
+    { id: 'betarragas', s: 'entradas', c: 's', es: 'Ensalada de betarragas asadas', en: 'Roasted beet salad',
+      fes: 'Ensalada de betarragas asadas, peras caramelizadas, queso de cabra y aderezo de miel y limón', fen: 'Roasted beet salad, caramelized pears, goat cheese, honey-lemon dressing',
+      i: 'Peras caramelizadas|Caramelized pears;Queso de cabra|Goat cheese;Aderezo de miel y limón|Honey-lemon dressing;Huesillo|Dried peach;Ciruela|Plum;Uva verde|Green grapes;Vinagreta de zarzaparrilla|Sarsaparilla vinaigrette',
+      v: 1, vg: 0, gf: 1, df: 0, local: 0 },
+    { id: 'camembert', s: 'entradas', c: 's', es: 'Camembert tibio', en: 'Warm Camembert',
+      fes: 'Camembert tibio, manzanas asadas, pistachos tostados, damasco deshidratado, vinagre de higo, mostaza y arrope de chañar', fen: 'Warm Camembert, roasted apples, toasted pistachios, dried apricot, fig vinegar, mustard, chañar syrup',
+      i: 'Manzanas asadas|Roasted apples;Pistachos tostados|Toasted pistachios;Damasco deshidratado|Dried apricot;Vinagre de higo|Fig vinegar;Mostaza antigua|Whole-grain mustard;Arrope de chañar|Chañar syrup',
+      v: 1, vg: 0, df: 0, local: 0 },
+    { id: 'repollo', s: 'entradas', c: 's', es: 'Repollo asado', en: 'Roasted cabbage',
+      fes: 'Repollo asado, puré de palta, frutas encurtidas y vinagreta de apio', fen: 'Roasted cabbage, avocado purée, pickled fruit, celery vinaigrette',
+      i: 'Puré de palta|Avocado purée;Frutas encurtidas|Pickled fruit;Vinagreta de apio|Celery vinaigrette;Manzana encurtida|Pickled apple;Tomillo, romero y ajo|Thyme, rosemary and garlic',
+      v: 1, vg: 1, gf: 1, df: 1, local: 1 },
+    { id: 'tartaleta', s: 'entradas', c: 's', es: 'Tartaleta de champiñones en texturas', en: 'Mushroom tartlet',
+      fen: 'Mushroom tartlet, mushroom textures',
+      i: 'Masa filo|Phyllo dough;Duxelle de champiñón|Mushroom duxelles;Puré de champiñón trufado|Truffled mushroom purée;Variedad de setas|Assorted mushrooms;Cebolla caramelizada|Caramelized onion;Aceite de tomillo|Thyme oil',
+      v: 1, vg: 1, df: 1, local: 0 },
+
+    { id: 'gazpacho', s: 'sopas', c: 's', es: 'Gazpacho', en: 'Gazpacho',
+      fes: 'Gazpacho de tomate, pimiento y frambuesa', fen: 'Tomato, bell pepper and raspberry gazpacho',
+      i: 'Tomate|Tomato;Pimiento|Bell pepper;Frambuesa|Raspberry;Pepino|Cucumber;Vinagre de manzana|Apple cider vinegar;Hierbabuena|Peppermint;Tabasco|Tabasco',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'sopa-huerto', s: 'sopas', c: 's', es: 'Sopa del huerto', en: 'Garden vegetable soup', q: 0,
+      v: 1, gf: 1, local: 0 },
+    { id: 'cazuela', s: 'sopas', c: 's', es: 'Cazuela de cordero', en: 'Lamb cazuela',
+      fes: 'Cazuela de cordero, cochayuyo y luche', fen: 'Lamb cazuela, cochayuyo and luche seaweed',
+      i: 'Cochayuyo|Cochayuyo seaweed;Luche|Luche seaweed;Pimentón rojo|Red bell pepper;Papa|Potato;Hierbabuena|Peppermint;Infusión de ajo|Garlic infusion',
+      meat: 1, lamb: 1, gf: 1, df: 1, local: 1 },
+
+    { id: 'guanaco', s: 'fondos', c: 'm', es: 'Filete de guanaco de Tierra del Fuego', en: 'Tierra del Fuego guanaco tenderloin',
+      fes: 'Filete de guanaco de Tierra del Fuego, pebre de mote y hierbabuena', fen: 'Tierra del Fuego guanaco tenderloin, wheat berry and mint pebre',
+      i: 'Pebre de mote|Mote (wheat berry) pebre;Hierbabuena|Peppermint;Marinado en jugo de naranja|Orange juice marinade;Sal de naranja|Orange salt;Salsa de vino y demi-glace|Wine sauce and demi-glace',
+      meat: 1, df: 1, local: 1 },
+    { id: 'cerdo', s: 'fondos', c: 'm', es: 'Láminas de cerdo de Chillán', en: 'Chillán pork',
+      fes: 'Láminas de cerdo de Chillán con ensalada tibia de repollo morado y manzana, salsa de mostaza antigua', fen: 'Chillán pork, warm red cabbage and apple salad, whole-grain mustard sauce',
+      i: 'Ensalada tibia de repollo morado|Warm red cabbage salad;Manzana caramelizada|Caramelized apple;Salsa de mostaza antigua|Whole-grain mustard sauce;Zestes de mandarina|Tangerine zest;Repollo lactofermentado|Lacto-fermented cabbage;Vinagre de manzana|Apple cider vinegar',
+      meat: 1, gf: 1, df: 1, local: 1 },
+    { id: 'bacalao', s: 'fondos', c: 'm', es: 'Bacalao de profundidad', en: 'Chilean sea bass',
+      fes: 'Bacalao de profundidad, langostinos del Atlántico, puré de zanahoria caramelizada y beurre blanc de lemongrass', fen: 'Chilean sea bass, Atlantic prawns, caramelized carrot purée, lemongrass beurre blanc',
+      i: 'Langostinos del Atlántico|Atlantic prawns;Puré de zanahoria caramelizada|Caramelized carrot purée;Beurre blanc de lemongrass|Lemongrass beurre blanc;Espumante|Sparkling wine;Jugo de naranja|Orange juice',
+      sea: 1, fish: 1, gf: 1, df: 0, local: 0 },
+    { id: 'garron', s: 'fondos', c: 'm', es: 'Garrón de cordero de Puerto Natales', en: 'Puerto Natales lamb shank',
+      fes: 'Garrón de cordero de Puerto Natales asado, arvejas especiadas, menta y salsa demi-glace', fen: 'Roasted Puerto Natales lamb shank, spiced peas, mint, demi-glace',
+      i: 'Arvejas especiadas|Spiced peas;Menta|Mint;Salsa demi-glace|Demi-glace sauce;Ajo y tomillo|Garlic and thyme',
+      meat: 1, lamb: 1, gf: 1, df: 1, local: 1 },
+    { id: 'liebre', s: 'fondos', c: 'm', es: 'Filete de liebre salvaje', en: 'Wild hare tenderloin',
+      fes: 'Filete de liebre salvaje, puré de zapallo butternut con toques de vainilla, pera al azafrán y salsa de vino tinto', fen: 'Wild hare tenderloin, vanilla-scented butternut squash purée, saffron pear, red wine sauce',
+      i: 'Puré de zapallo butternut|Butternut squash purée;Vainilla|Vanilla;Pera al azafrán|Saffron pear;Salsa de vino tinto|Red wine sauce;Dulce de membrillo|Quince paste;Canela y clavo de olor|Cinnamon and clove',
+      meat: 1, gf: 1, df: 1, local: 1 },
+    { id: 'cuadril', s: 'fondos', c: 'm', es: 'Cuadril de cordero de Puerto Natales', en: 'Puerto Natales lamb rump',
+      fes: 'Cuadril de cordero de Puerto Natales a la parrilla, puré de coliflor trufado, papa con aroma a tomillo y salsa demi-glace', fen: 'Grilled Puerto Natales lamb rump, truffled cauliflower purée, thyme potato, demi-glace',
+      i: 'Puré de coliflor trufado|Truffled cauliflower purée;Papa con aroma a tomillo|Thyme-scented potato;Salsa demi-glace|Demi-glace sauce;Ajo y tomillo|Garlic and thyme',
+      meat: 1, lamb: 1, gf: 1, df: 0, local: 1 },
+    { id: 'merluza', s: 'fondos', c: 'm', es: 'Merluza austral', en: 'Southern hake',
+      fes: 'Merluza austral, langostinos cola amarilla, perlas de verduras y crema de hierbas', fen: 'Southern hake, yellowtail prawns, vegetable pearls, herb cream',
+      i: 'Langostinos cola amarilla|Yellowtail prawns;Perlas de verduras|Vegetable pearls;Crema de hierbas|Herb cream',
+      sea: 1, fish: 1, gf: 1, df: 0, local: 1 },
+    { id: 'congrio', s: 'fondos', c: 'm', es: 'Congrio sellado', en: 'Seared Chilean cusk-eel',
+      fes: 'Congrio sellado, calamar antártico, risotto al nero di sepia, tomate y limón', fen: 'Seared Chilean cusk-eel, Antarctic squid, squid ink risotto, tomato, lemon',
+      i: 'Calamar antártico|Antarctic squid;Risotto al nero di sepia|Squid ink risotto;Tomate|Tomato;Limón|Lemon;Fumet|Fish stock (fumet)',
+      sea: 1, fish: 1, gf: 0, df: 0, local: 1 },
+    { id: 'pappardelle', s: 'fondos', c: 'm', es: 'Pappardelle', en: 'Pappardelle',
+      fes: 'Pappardelle relleno de pato confitado, camote anisado, mantequilla de avellana y salsa demi-glace a la naranja', fen: 'Confit duck-filled pappardelle, anise-scented sweet potato, hazelnut butter, orange demi-glace',
+      i: 'Pato confitado|Confit duck;Camote anisado|Anise-scented sweet potato;Mantequilla de avellana|Hazelnut butter;Salsa demi-glace a la naranja|Orange demi-glace;Grand Marnier|Grand Marnier',
+      meat: 1, gf: 0, df: 0, local: 0 },
+    { id: 'vacuno', s: 'fondos', c: 'm', es: 'Filete de vacuno sellado', en: 'Seared beef tenderloin',
+      fes: 'Filete de vacuno sellado, ñoquis con queso azul, champiñones y salsa demi-glace trufada', fen: 'Seared beef tenderloin, blue cheese gnocchi, mushrooms, truffled demi-glace',
+      i: 'Ñoquis con queso azul|Blue cheese gnocchi;Champiñones|Mushrooms;Salsa demi-glace trufada|Truffled demi-glace;Puré de champiñón|Mushroom purée',
+      meat: 1, gf: 0, df: 0, local: 1 },
+    { id: 'chupe', s: 'fondos', c: 'm', es: 'Chupe de centolla magallánica', en: 'Magellanic king crab chupe',
+      i: 'Pan de molde|Sandwich bread;Queso Grana Padano|Grana Padano cheese;Merkén|Merkén;Espumante|Sparkling wine;Orégano|Oregano;Pimentón|Bell pepper;Crema|Cream',
+      sea: 1, gf: 0, df: 0, local: 1 },
+    { id: 'fettuccine', s: 'fondos', c: 'm', es: 'Fettuccine', en: 'Fettuccine',
+      fes: 'Fettuccine, selección de mariscos, perejil y limón', fen: 'Fettuccine, seafood selection, parsley, lemon',
+      i: 'Selección de mariscos|Seafood selection;Perejil|Parsley;Limón|Lemon;Pulpo|Octopus;Ostión|Scallop;Langostino|Prawn;Centolla|King crab;Mantequilla|Butter',
+      sea: 1, gf: 0, df: 0, local: 1 },
+    { id: 'paletilla', s: 'fondos', c: 'm', es: 'Paletilla de cordero (para dos)', en: 'Lamb shoulder (for two)',
+      fes: 'Paletilla de cordero, prensado de papa y salsa de morillas (para dos personas)', fen: 'Lamb shoulder, pressed potato, morel sauce (for two)',
+      i: 'Prensado de papa|Pressed potato;Salsa de morillas|Morel sauce;Salsa de manzana|Apple sauce;Ajo y tomillo|Garlic and thyme',
+      meat: 1, lamb: 1, gf: 1, df: 1, local: 1 },
+    { id: 'curry', s: 'fondos', c: 'm', es: 'Curry de lentejas beluga', en: 'Beluga lentil curry',
+      fes: 'Curry de lentejas beluga, verduras y aire de coco', fen: 'Beluga lentil curry, vegetables, coconut foam',
+      i: 'Aire de coco|Coconut foam;Lemongrass|Lemongrass;Cúrcuma|Turmeric;Jengibre|Ginger;Puré de alcachofa|Artichoke purée;Verduras de temporada|Seasonal vegetables',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'berenjena', s: 'fondos', c: 'm', es: 'Berenjena crocante', en: 'Crispy eggplant',
+      fes: 'Berenjena crocante, puré de tomate confitado, verduras encurtidas', fen: 'Crispy eggplant, confit tomato purée, pickled vegetables',
+      i: 'Puré de tomate confitado|Confit tomato purée;Verduras encurtidas|Pickled vegetables;Panko|Panko;Reducción cítrica de soya|Citrus soy reduction',
+      v: 1, vg: 1, gf: 0, df: 1, local: 1 },
+
+    { id: 'g-vetado', s: 'grill', c: 'm', es: 'Lomo vetado', en: 'Ribeye', q: 0, meat: 1, gf: 1, df: 1, local: 1 },
+    { id: 'g-chuleta', s: 'grill', c: 'm', es: 'Chuleta de cordero', en: 'Lamb chop', q: 0, meat: 1, lamb: 1, gf: 1, df: 1, local: 1 },
+    { id: 'g-lomo-cordero', s: 'grill', c: 'm', es: 'Lomo de cordero', en: 'Lamb loin', q: 0, meat: 1, lamb: 1, gf: 1, df: 1, local: 1 },
+    { id: 'g-pavo', s: 'grill', c: 'm', es: 'Pechuga de pavo', en: 'Turkey breast', q: 0, meat: 1, gf: 1, df: 1, local: 0 },
+    { id: 'g-merluza', s: 'grill', c: 'm', es: 'Merluza austral a la parrilla', en: 'Grilled southern hake', q: 0, sea: 1, fish: 1, gf: 1, df: 1, local: 1 },
+    { id: 'g-congrio', s: 'grill', c: 'm', es: 'Congrio dorado', en: 'Chilean cusk-eel', q: 0, sea: 1, fish: 1, gf: 1, df: 1, local: 1 },
+    { id: 'g-salmon', s: 'grill', c: 'm', es: 'Salmón', en: 'Salmon', q: 0, sea: 1, fish: 1, gf: 1, df: 1, local: 0 },
+
+    { id: 'milhojas', s: 'postres', c: 'd', es: 'Milhojas', en: 'Mille-feuille',
+      fes: 'Milhojas de manjar y crema de vainilla', fen: 'Dulce de leche mille-feuille, vanilla cream',
+      i: 'Manjar|Dulce de leche (manjar);Crema de vainilla|Vanilla cream;Masa de hoja|Puff pastry;Frutilla|Strawberry;Zarzaparrilla|Sarsaparilla',
+      v: 1, vg: 0, gf: 0, df: 0, choc: 0, fruit: 0 },
+    { id: 'tatin', s: 'postres', c: 'd', es: 'Tatin de manzana', en: 'Apple tarte Tatin',
+      fes: 'Nuestro tatin de manzana con helado de canela', fen: 'Our apple tarte Tatin, cinnamon ice cream',
+      i: 'Helado de canela|Cinnamon ice cream;Compota de manzana y ruibarbo|Apple and rhubarb compote;Salsa de toffee|Toffee sauce;Manzana confitada|Confit apple',
+      v: 1, vg: 0, gf: 0, df: 0, choc: 0, fruit: 1 },
+    { id: 'semiesfera', s: 'postres', c: 'd', es: 'Semiesfera', en: 'Dome',
+      fes: 'Semiesfera de frambuesa, ruibarbo y yuzu', fen: 'Raspberry, rhubarb and yuzu dome',
+      i: 'Frambuesa|Raspberry;Ruibarbo|Rhubarb;Yuzu|Yuzu',
+      v: 1, vg: 1, gf: 1, df: 1, fruit: 1 },
+    { id: 'esfera', s: 'postres', c: 'd', es: 'Esfera de chocolate', en: 'Chocolate sphere',
+      fes: 'Esfera de chocolate, pistacho y naranja', fen: 'Chocolate sphere, pistachio, orange',
+      i: 'Pistacho|Pistachio;Naranja|Orange;Sorbet de naranja|Orange sorbet;Confitura de naranja|Orange marmalade',
+      v: 1, gf: 1, choc: 1 },
+    { id: 'lucuma', s: 'postres', c: 'd', es: 'Torta de lúcuma', en: 'Lucuma cake',
+      fes: 'Torta de lúcuma y almendras tostadas, chocolate Dulcey y helado de caramelo', fen: 'Lucuma and toasted almond cake, Dulcey chocolate, caramel ice cream',
+      i: 'Almendras tostadas|Toasted almonds;Chocolate Dulcey|Dulcey chocolate;Helado de caramelo|Caramel ice cream;Barquillo molido|Crushed wafer',
+      v: 1, vg: 0, gf: 0, df: 0, choc: 1, fruit: 0 },
+    { id: 'cheesecake', s: 'postres', c: 'd', es: 'Cheesecake', en: 'Cheesecake',
+      fes: 'Cheesecake de frutos rojos, crocante de quinoa y helado de yogur', fen: 'Red berry cheesecake, quinoa crisp, yogurt ice cream',
+      i: 'Frutos rojos|Red berries;Crocante de quinoa|Quinoa crisp;Helado de yogur|Yogurt ice cream',
+      v: 1, vg: 0, df: 0, choc: 0, fruit: 1 },
+    { id: 'pavlova', s: 'postres', c: 'd', es: 'Pavlova', en: 'Pavlova',
+      fes: 'Pavlova de chirimoya y naranja', fen: 'Cherimoya and orange pavlova',
+      i: 'Chirimoya|Cherimoya;Naranja|Orange',
+      v: 1, vg: 0, gf: 1, choc: 0, fruit: 1 },
+    { id: 'tarta-flan', s: 'postres', c: 'd', es: 'Tarta flan', en: 'Flan tart',
+      fes: 'Tarta flan de avellana y chocolate', fen: 'Hazelnut and chocolate flan tart',
+      i: 'Avellana|Hazelnut;Chocolate|Chocolate',
+      v: 1, vg: 0, gf: 0, df: 0, choc: 1, fruit: 0 },
+    { id: 'creme-brulee', s: 'postres', c: 'd', es: 'Crème brûlée', en: 'Crème brûlée',
+      fes: 'Crème brûlée de vainilla', fen: 'Vanilla crème brûlée',
+      i: 'Vainilla|Vanilla;Gel de cassis|Blackcurrant gel;Bizcocho sin gluten|Gluten-free sponge',
+      v: 1, vg: 0, gf: 1, choc: 0, fruit: 0 },
+    { id: 'helados', s: 'postres', c: 'd', es: 'Helados y sorbetes de la casa', en: 'House-made ice creams and sorbets', q: 0,
+      v: 1, gf: 1 },
+    { id: 'frutas', s: 'postres', c: 'd', es: 'Ensalada de frutas de estación', en: 'Seasonal fruit salad', q: 0,
+      v: 1, vg: 1, gf: 1, df: 1, choc: 0, fruit: 1 },
+
+    { id: 'hummus', s: 'veganos', c: 'm', es: 'Hummus de garbanzos', en: 'Chickpea hummus',
+      fes: 'Hummus de garbanzos, verduras a la parrilla', fen: 'Chickpea hummus, grilled vegetables',
+      i: 'Verduras a la parrilla|Grilled vegetables;Aceite de sésamo|Sesame oil;Zanahoria|Carrot;Apio|Celery;Ajo|Garlic',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'lentejas', s: 'veganos', c: 'm', es: 'Lentejas al vino tinto', en: 'Red wine lentils',
+      fes: 'Lentejas al vino tinto, acelga y champiñones', fen: 'Red wine lentils, Swiss chard, mushrooms',
+      i: 'Acelga|Swiss chard;Champiñones|Mushrooms;Aceite de albahaca|Basil oil;Zanahoria|Carrot;Apio|Celery',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'charquican', s: 'veganos', c: 'm', es: 'Charquicán de verduras', en: 'Vegetable charquicán',
+      i: 'Zapallo|Squash;Choclo|Corn;Papa|Potato;Arveja|Peas;Acelga o espinaca|Chard or spinach;Albahaca|Basil;Pimentón|Bell pepper',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'ensalada-huerto', s: 'veganos', c: 'x', es: 'Ensalada del huerto', en: 'Garden salad',
+      i: 'Lechuga|Lettuce;Palta|Avocado;Betarraga|Beetroot;Uva|Grapes;Tomate cherry|Cherry tomato;Pepino|Cucumber',
+      v: 1, vg: 1, gf: 1, df: 1, local: 1 },
+    { id: 'porotos', s: 'veganos', c: 'm', es: 'Porotos granados', en: 'Chilean cranberry bean stew',
+      i: 'Choclo|Corn;Zapallo|Squash;Albahaca|Basil;Tomate|Tomato;Ajo|Garlic',
+      v: 1, vg: 1, gf: 1, df: 1, local: 0 },
+    { id: 'verduras-huerto', s: 'veganos', c: 'x', es: 'Verduras del huerto', en: 'Garden vegetables',
+      i: 'Zucchini|Zucchini;Brócoli|Broccoli;Camote|Sweet potato;Champiñones|Mushrooms;Zanahoria|Carrot',
+      v: 1, vg: 1, gf: 1, df: 1 },
+    { id: 'papas-bravas', s: 'veganos', c: 'x', es: 'Papas bravas', en: 'Patatas bravas',
+      i: 'Merquén|Merquén;Papas fritas|French fries', v: 1, vg: 1, gf: 1, df: 1 },
+    { id: 'papas-mortero', s: 'veganos', c: 'x', es: 'Papas al mortero', en: 'Smashed potatoes',
+      i: 'Papa cocida y machacada|Boiled and smashed potato;Albahaca|Basil;Sal de limón|Lemon salt', v: 1, vg: 1, gf: 1, df: 1 },
+
+    { id: 'tabla', s: 'bar', es: 'Tabla de quesos y charcutería', en: 'Cheese and charcuterie board',
+      fes: 'Tabla de quesos y charcutería Tierra del Fuego', fen: 'Tierra del Fuego cheese and charcuterie board',
+      i: 'Queso mantecoso|Buttery cheese;Brie|Brie;Queso de cabra ahumado|Smoked goat cheese;Jamón serrano|Serrano ham;Noisette de cordero|Lamb noisette;Lomo caña|Cured pork loin;Damasco turco|Dried apricot;Tostadas|Toast' },
+    { id: 'cesar-salmon', s: 'bar', es: 'Ensalada César de salmón ahumado en casa', en: 'House-smoked salmon Caesar salad',
+      i: 'Salmón ahumado|Smoked salmon;Queso Grana Padano|Grana Padano cheese;Tostadas|Toast;Rabanitos|Radishes;Salsa césar con yogur|Caesar sauce with yogurt;Alcaparra|Caper;Tomate cherry|Cherry tomato' },
+    { id: 'cesar-pavo', s: 'bar', es: 'Ensalada César de pavo', en: 'Turkey Caesar salad',
+      i: 'Pavo grillado|Grilled turkey;Queso Grana Padano|Grana Padano cheese;Tostadas|Toast;Rabanitos|Radishes;Salsa césar con yogur|Caesar sauce with yogurt;Alcaparra|Caper;Tomate cherry|Cherry tomato' },
+    { id: 'sandwich-salmon', s: 'bar', es: 'Sándwich de salmón ahumado', en: 'Smoked salmon sandwich',
+      fes: 'Sándwich de salmón ahumado, queso crema, alcaparras y hojas verdes', fen: 'Smoked salmon sandwich, cream cheese, capers, mixed greens',
+      i: 'Queso crema|Cream cheese;Alcaparras|Capers;Hojas verdes|Mixed greens;Pepino|Cucumber;Baguette|Baguette' },
+    { id: 'sandwich-vegetariano', s: 'bar', es: 'Sándwich vegetariano', en: 'Vegetarian sandwich',
+      fes: 'Sándwich vegetariano: láminas de vegetales, hummus, pasta de aceituna y hojas verdes', fen: 'Vegetarian sandwich: sliced vegetables, hummus, olive tapenade, mixed greens',
+      i: 'Láminas de vegetales|Sliced vegetables;Hummus|Hummus;Pasta de aceituna|Olive tapenade;Hojas verdes|Mixed greens;Tomate sechi|Secchi tomato;Zucchini y berenjena|Zucchini and eggplant' },
+    { id: 'sandwich-serrano', s: 'bar', es: 'Sándwich de jamón serrano', en: 'Serrano ham sandwich',
+      fes: 'Sándwich de jamón serrano, queso de cabra, tomate, pasta de aceituna y hojas verdes', fen: 'Serrano ham sandwich, goat cheese, tomato, olive tapenade, mixed greens',
+      i: 'Queso de cabra|Goat cheese;Tomate sechi|Secchi tomato;Pasta de aceituna|Olive tapenade;Hojas verdes|Mixed greens' },
+    { id: 'club-centolla', s: 'bar', es: 'Club sándwich de centolla', en: 'King crab club sandwich',
+      fes: 'Club sándwich de centolla, huevo duro, tocino, mayonesa, mostaza y hojas verdes', fen: 'King crab club sandwich, hard-boiled egg, bacon, mayonnaise, mustard, mixed greens',
+      i: 'Huevo duro|Hard-boiled egg;Tocino|Bacon;Mayonesa|Mayonnaise;Mostaza dijon|Dijon mustard;Hojas verdes|Mixed greens;Yogur y limón|Yogurt and lemon' },
+    { id: 'club-pavo', s: 'bar', es: 'Club sándwich de pavo', en: 'Turkey club sandwich',
+      fes: 'Club sándwich de pavo, huevo duro, tocino, mayonesa, mostaza y hojas verdes', fen: 'Turkey club sandwich, hard-boiled egg, bacon, mayonnaise, mustard, mixed greens',
+      i: 'Huevo duro|Hard-boiled egg;Tocino|Bacon;Mayonesa|Mayonnaise;Mostaza dijon|Dijon mustard;Hojas verdes|Mixed greens;Yogur y limón|Yogurt and lemon' },
+    { id: 'milanesa-guanaco', s: 'bar', es: 'Sándwich de mini milanesa de guanaco', en: 'Mini guanaco Milanese sandwich',
+      fes: 'Sándwich de mini milanesa de guanaco, mayonesa de menta, hojas verdes y tomate', fen: 'Mini guanaco Milanese sandwich, mint mayonnaise, mixed greens, tomato',
+      i: 'Mayonesa de menta|Mint mayonnaise;Hojas verdes|Mixed greens;Tomate|Tomato;Panko|Panko;Aceite de hierbabuena|Peppermint oil' },
+    { id: 'tabule', s: 'bar', es: 'Tabulé de quinoa', en: 'Quinoa tabbouleh',
+      i: 'Quínoa tricolor|Tri-colour quinoa;Hierbabuena|Peppermint;Kumquat|Kumquat;Palta|Avocado;Pepino|Cucumber;Frutilla|Strawberry;Pimentones|Bell peppers' },
+    { id: 'laminas-salmon', s: 'bar', es: 'Láminas de salmón ahumado', en: 'Smoked salmon slices',
+      fes: 'Láminas de salmón ahumado, tostadas y crema ácida', fen: 'Smoked salmon, toast, sour cream',
+      i: 'Tostadas|Toast;Crema ácida|Sour cream;Alcaparra|Caper;Rabanito|Radish;Tabasco|Tabasco;Uva verde|Green grapes' },
+    { id: 'tarta-ruibarbo', s: 'bar', es: 'Tarta de ruibarbo y frambuesa', en: 'Rhubarb and raspberry tart',
+      i: 'Dulce de ruibarbo|Rhubarb jam;Compota de frambuesa|Raspberry compote;Crocante de frambuesa|Raspberry crisp' }
+  ];
+
+  var COCKTAILS = [
+    { id: 'singular-sour', es: 'The Singular Sour', base: 'pisco',
+      i: 'Pisco macerado con cacho de cabra|Smoked Chilean chili-infused pisco;Pimentón verde|Green pepper;Ají verde|Green chili;Cilantro|Cilantro;Pimienta negra|Black pepper;Jugo de limón|Lemon juice;Albúmina|Egg white' },
+    { id: 'ginquen', es: 'Ginquen', base: 'gin',
+      i: 'Gin macerado con manzana verde|Gin infused with green apple;St-Germain|St-Germain;Limón|Lemon;Angostura|Angostura;Sirope|Syrup' },
+    { id: 'engine-house', es: 'Engine House', base: 'pisco',
+      i: 'Pisco Black Heron|Black Heron Pisco;Vermouth Cocchi di Torino|Vermouth Cocchi di Torino;Angostura|Angostura;Ahumado de tierra cítrica|Smoked citrus earth' },
+    { id: 'lady-florence', es: 'Lady Florence', base: 'jerez',
+      i: 'Jerez Fino Quinta|Fino Quinta Sherry;Sirope de frutilla|Strawberry syrup;Limón|Lemon;Licor de naranja|Orange liqueur' },
+    { id: 'la-guacolda', es: 'La Guacolda', base: 'gin',
+      i: 'Gin Bombay|Bombay Gin;Jengibre|Ginger;Sirope de miel y romero|Honey and rosemary syrup;Limón|Lemon' },
+    { id: 'estancia', es: 'Estancia', base: 'tequila',
+      i: 'Tequila Silver|Silver tequila;Kombucha|Kombucha;Maracuyá|Passion fruit;Jengibre|Ginger;Limón|Lime' },
+    { id: 'el-calafate', es: 'El Calafate', base: 'pisco',
+      i: 'Pisco|Pisco;Calafate|Calafate;Limón|Lemon;Sirope|Syrup;Tónica|Tonic' },
+    { id: 'extranjero', es: 'Extranjero', base: 'whisky',
+      i: 'Piña|Pineapple;Whisky ahumado|Smoked whisky;Merquén|Merquén;Notas cítricas|Citrus notes' },
+    { id: 'puerto-bories', es: 'Puerto Bories Mocktail', t: 'mocktail',
+      i: 'Frambuesa|Raspberry;Jengibre|Ginger;Limón|Lemon;Tónica|Tonic;Sirope|Syrup' },
+    { id: 'dorotea', es: 'Dorotea Mocktail', t: 'mocktail',
+      i: 'Pepino|Cucumber;Apio|Celery;Jugo de pomelo|Grapefruit juice;Tónica|Tonic;Limón|Lemon;Sirope|Syrup' }
+  ];
+
+  // [nombre, cepa, viña, valle, tipo, 0 = sólo para comensal simulado]
+  var WINES = [
+    ['Vetas Blancas', 'Sauvignon Blanc', 'Viña Tabalí', 'Limarí', 'blanco'],
+    ['Kingston CJ’s Barrel', 'Sauvignon Blanc', 'Viña Kingston', 'Casablanca', 'blanco'],
+    ['Terrunyo', 'Sauvignon Blanc', 'Viña Concha y Toro', 'Casablanca', 'blanco'],
+    ['Kuda', 'Chardonnay', 'Viña Kalfu', 'Leyda', 'blanco'],
+    ['Floresta', 'Chardonnay', 'Viña Santa Rita', 'Limarí', 'blanco'],
+    ['Talinay', 'Chardonnay', 'Viña Tabalí', 'Limarí', 'blanco'],
+    ['Cordillera', 'Chardonnay', 'Viña Miguel Torres', 'Limarí', 'blanco'],
+    ['Sol de Sol', 'Chardonnay', 'Viña Aquitania', 'Malleco', 'blanco'],
+    ['Casona', 'Gewürztraminer', 'Viña Casa Marín', 'San Antonio', 'blanco'],
+    ['Corralillo', 'Riesling', 'Viña Matetic', 'Itata', 'blanco'],
+    ['Gran Calyptra', 'Sauvignon Blanc', 'Viña Calyptra', 'Cachapoal', 'blanco'],
+    ['Amelia', 'Chardonnay', 'Viña Concha y Toro', 'Limarí', 'blanco'],
+    ['Tara', 'Chardonnay', 'Viña Ventisquero', 'Atacama', 'blanco'],
+    ['Las Pizarras', 'Chardonnay', 'Viña Errázuriz', 'Aconcagua', 'blanco'],
+    ['Le Rosé', '', 'Viña Lapostolle', 'Colchagua', 'rose'],
+    ['La Piu Belle', '', 'Viña Vik', 'Cachapoal', 'rose'],
+    ['Estelado Rosé Brut', '', 'Viña Miguel Torres', 'Maule', 'espumante'],
+    ['Azur Extra Brut', '', 'Viña Emiliana', 'Limarí', 'espumante'],
+    ['Tatié Brut', '', 'Viña Tabalí', 'Limarí', 'espumante'],
+    ['Sparkling Angel Brut', '', 'Viña Montes', 'Zapallar', 'espumante'],
+    ['Cordillera Extra Brut', '', 'Viña Miguel Torres', 'Empedrado', 'espumante'],
+    ['Pol Roger Brut Reserve', '', 'Pol Roger', 'Champagne, Francia', 'espumante', 0],
+    ['Pommery Brut Royal', '', 'Pommery', 'Champagne, Francia', 'espumante', 0],
+    ['Moët & Chandon Brut Imperial', '', 'Moët & Chandon', 'Champagne, Francia', 'espumante', 0],
+    ['Veuve Clicquot Brut', '', 'Veuve Clicquot', 'Champagne, Francia', 'espumante', 0],
+    ['Dom Pérignon Blanc de Blancs', '', 'Dom Pérignon', 'Champagne, Francia', 'espumante', 0],
+    ['Krug Brut', '', 'Krug', 'Champagne, Francia', 'espumante', 0],
+    ['Grey', 'Cabernet Sauvignon', 'Viña Ventisquero', 'Maipo', 'tinto'],
+    ['Cota 500', 'Cabernet Sauvignon', 'Viña Andes Plateau', 'Maipo', 'tinto'],
+    ['Montes Alpha', 'Cabernet Sauvignon', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Cuvée Alexandre', 'Cabernet Sauvignon', 'Viña Lapostolle', 'Colchagua', 'tinto'],
+    ['Terrunyo', 'Cabernet Sauvignon', 'Viña Concha y Toro', 'Maipo', 'tinto'],
+    ['Cordillera', 'Cabernet Sauvignon', 'Viña Miguel Torres', 'Maipo', 'tinto'],
+    ['Montes Alpha', 'Carménère', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Floresta', 'Carménère', 'Viña Santa Rita', 'Apalta', 'tinto'],
+    ['Terrunyo', 'Carménère', 'Viña Concha y Toro', 'Peumo', 'tinto'],
+    ['Cordillera', 'Carménère', 'Viña Miguel Torres', 'Peumo', 'tinto'],
+    ['Montes Alpha', 'Merlot', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Cuvée Alexandre', 'Merlot', 'Viña Lapostolle', 'Colchagua', 'tinto'],
+    ['Polkura', 'Syrah', 'Viña Polkura', 'Colchagua', 'tinto'],
+    ['Marginado', 'Syrah', 'Viña Calyptra', 'Cachapoal', 'tinto'],
+    ['Tara', 'Syrah', 'Viña Ventisquero', 'Atacama', 'tinto'],
+    ['Montes Alpha', 'Malbec', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Cot', 'Malbec', 'Viña Pérez Cruz', 'Maipo', 'tinto'],
+    ['Duette', 'Pinot Noir', 'Viña Indómita', 'Casablanca', 'tinto'],
+    ['Cartagena', 'Pinot Noir', 'Viña Casa Marín', 'San Antonio', 'tinto'],
+    ['Montes Alpha', 'Pinot Noir', 'Viña Montes', 'Aconcagua', 'tinto'],
+    ['Maquis', 'Cabernet Franc', 'Viña Maquis', 'Colchagua', 'tinto'],
+    ['Imaginador', 'Cinsault', 'Viña Pedro Parra', 'Itata', 'tinto'],
+    ['Milla Cala', 'Ensamblaje', 'Viña VIK', 'Millahue', 'tinto'],
+    ['Special Cuvée', 'Carménère', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Incidente', '', 'Viña Viu Manent', 'Colchagua', 'tinto'],
+    ['Chaski', 'Petit Verdot', 'Viña Pérez Cruz', 'Maipo', 'tinto'],
+    ['Tococo', 'Syrah', 'Viñedos de Alcohuaz', 'Elqui', 'tinto'],
+    ['Manso de Velasco', 'Cabernet Sauvignon', 'Viña Miguel Torres', 'Maipo', 'tinto'],
+    ['Payen', 'Syrah', 'Viña Tabalí', 'Limarí', 'tinto'],
+    ['Wings', 'Carménère', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Ocio', 'Pinot Noir', 'Viña Cono Sur', 'Casablanca', 'tinto'],
+    ['Viola', 'Carménère', 'Viña Maquis', 'Cachapoal', 'tinto'],
+    ['Roca Madre', 'Malbec', 'Viña Tabalí', 'Río Hurtado', 'tinto'],
+    ['Kosten', 'Pinot Noir', 'Viña Ventisquero', 'Chile Chico', 'tinto'],
+    ['Carmín de Peumo', 'Carménère', 'Viña Concha y Toro', 'Peumo', 'tinto'],
+    ['Don Melchor', 'Cabernet Sauvignon', 'Viña Concha y Toro', 'Maipo', 'tinto'],
+    ['Purple Angel', 'Carménère', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Folly', 'Syrah', 'Viña Montes', 'Colchagua', 'tinto'],
+    ['Domus Aurea', 'Cabernet Sauvignon', 'Viña Quebrada de Macul', 'Maipo', 'tinto'],
+    ['Chadwick', 'Cabernet Sauvignon', 'Viña Chadwick', 'Maipo Alto', 'tinto'],
+    ['Acróbata', 'Ensamblaje', 'Viña Acróbata', 'Entre Cordilleras', 'tinto'],
+    ['Altazor', 'Ensamblaje', 'Viña Undurraga', 'Maipo', 'tinto'],
+    ['Lahuen', 'Ensamblaje', 'Viña Terranoble', 'Maule', 'tinto'],
+    ['Neyen Espíritu de Apalta', 'Ensamblaje', 'Viña Neyen', 'Apalta', 'tinto'],
+    ['Gê', 'Ensamblaje', 'Viña Emiliana', 'Colchagua', 'tinto'],
+    ['Don Maximiano', 'Ensamblaje', 'Viña Errázuriz', 'Aconcagua', 'tinto'],
+    ['Viu 1', 'Ensamblaje', 'Viña Viu Manent', 'Colchagua', 'tinto'],
+    ['VIK', 'Ensamblaje', 'Viña VIK', 'Millahue', 'tinto'],
+    ['Clos Apalta', 'Ensamblaje', 'Viña Clos Apalta', 'Apalta', 'tinto'],
+    ['Seña', 'Ensamblaje', 'Viña Seña', 'Aconcagua', 'tinto'],
+    ['Almaviva', 'Ensamblaje', 'Viña Almaviva', 'Maipo', 'tinto'],
+    ['Fort', '', 'Viña Calyptra', 'Cachapoal', 'fortificado']
+  ];
+  var WT = {
+    blanco: { es: 'Vino blanco', en: 'White wine' },
+    tinto: { es: 'Vino tinto', en: 'Red wine' },
+    rose: { es: 'Rosé', en: 'Rosé' },
+    espumante: { es: 'Espumante', en: 'Sparkling wine' },
+    fortificado: { es: 'Fortificado', en: 'Fortified wine' }
+  };
+  var CEPA_EN = { 'Ensamblaje': 'Blend' };
+  var VALLE_EN = { 'Champagne, Francia': 'Champagne, France' };
+  // Sub-zones count as their valley so they are never offered as a "wrong" valley.
+  var PARENT = { 'Apalta': 'Colchagua', 'Peumo': 'Cachapoal', 'Millahue': 'Cachapoal', 'Río Hurtado': 'Limarí',
+    'Empedrado': 'Maule', 'Leyda': 'San Antonio', 'Zapallar': 'Aconcagua', 'Maipo Alto': 'Maipo' };
+
+  var COURSES = ['s', 'm', 'd', 'b'];
+  var COURSE = {
+    s: { es: 'Entrada', en: 'Starter' }, m: { es: 'Fondo', en: 'Main' },
+    d: { es: 'Postre', en: 'Dessert' }, b: { es: 'Bebida', en: 'Drink' }
+  };
+
+  function L2(es, en) { return { es: es, en: en }; }
+  var COND = {
+    veg:      { f: function (x) { return x.v; }, ok: L2('Vegetariano', 'Vegetarian'), no: L2('Lleva carne o pescado', 'Contains meat or fish') },
+    vegan:    { f: function (x) { return x.vg; }, ok: L2('Vegano', 'Vegan'), no: L2('No es vegano', 'Not vegan') },
+    gf:       { f: function (x) { return x.gf; }, ok: L2('Sin gluten', 'Gluten-free'), no: L2('Contiene gluten', 'Contains gluten') },
+    df:       { f: function (x) { return x.df; }, ok: L2('Sin lactosa', 'Dairy-free'), no: L2('Contiene lactosa', 'Contains dairy') },
+    sea:      { f: function (x) { return x.sea; }, ok: L2('Pescados y mariscos', 'Fish & seafood'), no: L2('No es pescado ni marisco', 'Not fish or seafood') },
+    fish:     { f: function (x) { return x.fish; }, ok: L2('Pescado', 'Fish'), no: L2('No es pescado', 'Not fish') },
+    meat:     { f: function (x) { return x.meat; }, ok: L2('Carne', 'Meat'), no: L2('No es carne', 'Not meat') },
+    lamb:     { f: function (x) { return x.lamb; }, ok: L2('Cordero', 'Lamb'), no: L2('No es cordero', 'Not lamb') },
+    nomeat:   { f: function (x) { return !x.meat; }, ok: L2('Sin carne', 'No meat'), no: L2('Lleva carne', 'Contains meat') },
+    local:    { f: function (x) { return x.local; }, ok: L2('Origen local, sustentable', 'Locally sourced, sustainable'), no: L2('No es de origen local', 'Not locally sourced') },
+    choc:     { f: function (x) { return x.choc; }, ok: L2('Con chocolate', 'With chocolate'), no: L2('No lleva chocolate', 'No chocolate') },
+    nochoc:   { f: function (x) { return x.choc === null ? null : !x.choc; }, ok: L2('Sin chocolate', 'No chocolate'), no: L2('Lleva chocolate', 'Contains chocolate') },
+    fruit:    { f: function (x) { return x.fruit; }, ok: L2('Postre frutal', 'Fruit-forward dessert'), no: L2('No es frutal', 'Not fruit-forward') },
+    blanco:   { f: function (x) { return x.t === 'blanco'; }, ok: L2('Vino blanco', 'White wine'), no: L2('No es vino blanco', 'Not a white wine') },
+    tinto:    { f: function (x) { return x.t === 'tinto'; }, ok: L2('Vino tinto', 'Red wine'), no: L2('No es vino tinto', 'Not a red wine') },
+    rose:     { f: function (x) { return x.t === 'rose'; }, ok: L2('Rosé', 'Rosé'), no: L2('No es rosé', 'Not a rosé') },
+    espumante:{ f: function (x) { return x.t === 'espumante'; }, ok: L2('Espumante', 'Sparkling wine'), no: L2('No es espumante', 'Not sparkling') },
+    mocktail: { f: function (x) { return x.t === 'mocktail'; }, ok: L2('Sin alcohol', 'Alcohol-free'), no: L2('Contiene alcohol', 'Contains alcohol') },
+    pisco:    { f: function (x) { return x.base === 'pisco'; }, ok: L2('Cóctel de autor con pisco', 'Signature pisco cocktail'), no: L2('No es un cóctel de autor con pisco', 'Not a signature pisco cocktail') },
+    gin:      { f: function (x) { return x.base === 'gin'; }, ok: L2('Cóctel de autor con gin', 'Signature gin cocktail'), no: L2('No es un cóctel de autor con gin', 'Not a signature gin cocktail') },
+    sauv:     { f: function (x) { return x.cepa === 'Sauvignon Blanc'; }, ok: L2('Sauvignon Blanc', 'Sauvignon Blanc'), no: L2('No es Sauvignon Blanc', 'Not Sauvignon Blanc') },
+    chard:    { f: function (x) { return x.cepa === 'Chardonnay'; }, ok: L2('Chardonnay', 'Chardonnay'), no: L2('No es Chardonnay', 'Not Chardonnay') }
+  };
+
+  var PROFILES = [
+    { es: 'Vegetariano · Prefiere vino blanco · Ama el chocolate', en: 'Vegetarian · Prefers white wine · Loves chocolate',
+      s: ['veg'], m: ['veg'], d: ['choc'], b: ['blanco'] },
+    { es: 'Vegano · Celíaco (sin gluten) · No bebe alcohol', en: 'Vegan · Coeliac (gluten-free) · Does not drink alcohol',
+      s: ['vegan', 'gf'], m: ['vegan', 'gf'], d: ['vegan', 'gf'], b: ['mocktail'] },
+    { es: 'Celíaco (sin gluten) · Amante del cordero · Prefiere vino tinto', en: 'Coeliac (gluten-free) · Lamb lover · Prefers red wine',
+      s: ['gf'], m: ['gf', 'lamb'], d: ['gf'], b: ['tinto'] },
+    { es: 'Amante de pescados y mariscos · Postre frutal · Celebra con espumante', en: 'Seafood lover · Fruity dessert · Celebrating with sparkling wine',
+      s: ['sea'], m: ['sea'], d: ['fruit'], b: ['espumante'] },
+    { es: 'Amante de las carnes · Fanático del chocolate · Pide vino tinto', en: 'Meat lover · Chocolate fan · Orders red wine',
+      s: ['meat'], m: ['meat'], d: ['choc'], b: ['tinto'] },
+    { es: 'Enfocado en el maridaje · Empieza con algo local · Pescado con Chardonnay', en: 'Wine-pairing focus · Starts with something local · Fish with Chardonnay',
+      s: ['local'], m: ['fish'], d: ['fruit'], b: ['chard'] },
+    { es: 'Intolerante a la lactosa · Quiere un cóctel de autor con pisco', en: 'Lactose intolerant · Wants a signature pisco cocktail',
+      s: ['df'], m: ['df'], d: ['df'], b: ['pisco'] },
+    { es: 'Omnívoro · Busca productos locales de la Patagonia · Le gusta el gin', en: 'Omnivore · Looking for local Patagonian produce · Likes gin',
+      s: ['local'], m: ['local'], d: ['fruit'], b: ['gin'] },
+    { es: 'Sin gluten · Sin lactosa · Prefiere un rosé', en: 'Gluten-free · Dairy-free · Prefers a rosé',
+      s: ['gf', 'df'], m: ['gf', 'df'], d: ['gf', 'df'], b: ['rose'] },
+    { es: 'Pescetariano (no come carne) · Evita el chocolate · Prefiere Sauvignon Blanc', en: 'Pescatarian (no meat) · Avoids chocolate · Prefers Sauvignon Blanc',
+      s: ['nomeat'], m: ['nomeat'], d: ['nochoc'], b: ['sauv'] }
+  ];
+  var GUESTS = [
+    ['Anna', 'Alemania', 'Germany'], ['James', 'Reino Unido', 'United Kingdom'], ['Sofía', 'Chile', 'Chile'],
+    ['Kenji', 'Japón', 'Japan'], ['Claire', 'Francia', 'France'], ['Michael', 'Estados Unidos', 'United States'],
+    ['Lucía', 'Argentina', 'Argentina'], ['Lars', 'Suecia', 'Sweden'], ['Giulia', 'Italia', 'Italy'], ['Daniel', 'Brasil', 'Brazil']
+  ];
+
+  var TX = {
+    es: {
+      accuracy: 'Precisión', streak: 'Racha', mastered: 'Dominados', session: 'Sesión',
+      modesTitle: 'Elige un modo',
+      m1: '¿Qué lleva este plato?', m1d: 'Ves el nombre de un plato, cóctel o vino y eliges la respuesta correcta entre cuatro opciones.',
+      m2: '¿Cuál es este plato?', m2d: 'Ves 3–4 ingredientes clave y reconoces de qué plato, cóctel o vino se trata.',
+      m3: 'Comensal simulado', m3d: 'Un comensal con restricciones y gustos. Guíalo paso a paso: entrada, fondo, postre y bebida.',
+      catLabel: 'Categoría · modos 1 y 2', all: 'Todo',
+      progress: 'Ver progreso', otherLang: 'English', reset: 'Reiniciar progreso',
+      resetConfirm: '¿Borrar todo tu progreso del quiz? Esta acción no se puede deshacer.',
+      back: '← Modos', question: 'Pregunta', score: 'Puntaje',
+      correct: 'Correcto', wrong: 'Incorrecto', answerWas: 'La respuesta correcta es',
+      ingredients: 'Lleva', next: 'Siguiente', finish: 'Ver resultado',
+      resultTitle: 'Resultado de la ronda', playAgain: 'Jugar otra vez', chooseMode: 'Elegir modo',
+      rGreat: '¡Excelente! Dominas la carta.', rGood: 'Buen trabajo. Repasa los que fallaste.', rLow: 'Sigue practicando: repasa estas secciones en la guía.',
+      missed: 'Para repasar',
+      guestTitle: 'Tu comensal', step: 'Paso', of: 'de', guestAsk: '¿Qué le recomiendas?',
+      goodRec: 'Buena recomendación', badRec: 'No corresponde al perfil', bestWas: 'La opción adecuada era',
+      summaryTitle: 'Resumen de la recomendación', whyMatch: 'Por qué encaja', youChose: 'Elegiste',
+      newGuest: 'Nuevo comensal', signature: 'Cóctel de autor',
+      progTitle: 'Tu progreso', progHint: 'Un plato, cóctel o vino queda dominado al acertarlo 3 veces. Toca una sección para ver el detalle.',
+      noData: 'No hay suficientes preguntas en esta categoría. Prueba con otra.'
+    },
+    en: {
+      accuracy: 'Accuracy', streak: 'Streak', mastered: 'Mastered', session: 'Session',
+      modesTitle: 'Choose a mode',
+      m1: 'What’s in this dish?', m1d: 'See the name of a dish, cocktail or wine and pick the right answer from four options.',
+      m2: 'Name this dish', m2d: 'See 3–4 key ingredients and identify the dish, cocktail or wine.',
+      m3: 'Simulated guest', m3d: 'A guest with restrictions and preferences. Guide them step by step: starter, main, dessert and drink.',
+      catLabel: 'Category · modes 1 & 2', all: 'All',
+      progress: 'View progress', otherLang: 'Español', reset: 'Reset progress',
+      resetConfirm: 'Erase all your quiz progress? This cannot be undone.',
+      back: '← Modes', question: 'Question', score: 'Score',
+      correct: 'Correct', wrong: 'Incorrect', answerWas: 'The correct answer is',
+      ingredients: 'Contains', next: 'Next', finish: 'See result',
+      resultTitle: 'Round result', playAgain: 'Play again', chooseMode: 'Choose mode',
+      rGreat: 'Excellent! You know the menu.', rGood: 'Good work. Review the ones you missed.', rLow: 'Keep practicing — review these sections in the guide.',
+      missed: 'To review',
+      guestTitle: 'Your guest', step: 'Step', of: 'of', guestAsk: 'What do you recommend?',
+      goodRec: 'Good recommendation', badRec: 'Doesn’t fit the profile', bestWas: 'The right choice was',
+      summaryTitle: 'Recommendation summary', whyMatch: 'Why it fits', youChose: 'You chose',
+      newGuest: 'New guest', signature: 'Signature cocktail',
+      progTitle: 'Your progress', progHint: 'A dish, cocktail or wine is mastered after 3 correct answers. Tap a section to see the detail.',
+      noData: 'Not enough questions in this category. Try another one.'
+    }
+  };
+  var PROMPTS = {
+    1: { dish: L2('¿Qué ingrediente lleva este plato?', 'Which of these is in the dish?'),
+         cocktail: L2('¿Qué lleva este cóctel?', 'What goes into this cocktail?'),
+         wine: L2('¿De qué valle es este vino?', 'Which valley is this wine from?') },
+    2: { dish: L2('¿Cuál es este plato?', 'Which dish is this?'),
+         cocktail: L2('¿Qué cóctel es?', 'Which cocktail is this?'),
+         wine: L2('¿Qué vino es?', 'Which wine is this?') }
+  };
+
+  /* ── HELPERS ── */
+  var S = { lang: null, view: 'lang', cat: 'all', round: null, guest: null, sess: { c: 0, t: 0 }, lastProfile: -1 };
+  function L() { return S.lang || 'es'; }
+  function tx(k) { return TX[L()][k]; }
+  function lx(o) { return o[L()]; }
+  function lp(p) { return p[L() === 'es' ? 0 : 1]; }
+  function esc(s) {
+    return String(s).replace(/[&<>"']/g, function (c) {
+      return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+    });
+  }
+  function shuffle(a) {
+    a = a.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a;
+  }
+  function pick(a) { return a[Math.floor(Math.random() * a.length)]; }
+  function weighted(a, w) {
+    var ws = a.map(w), tot = ws.reduce(function (s, v) { return s + v; }, 0), r = Math.random() * tot;
+    for (var i = 0; i < a.length; i++) { r -= ws[i]; if (r <= 0) return a[i]; }
+    return a[a.length - 1];
+  }
+
+  // Word matching keeps a distractor from accidentally being something the dish really contains.
+  var STOP = {};
+  'del las los con para sin the and with mix vina'.split(' ').forEach(function (w) { STOP[w] = 1; });
+  function nrm(s) {
+    return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+      .replace(/cassis/g, 'casis').replace(/merquen/g, 'merken').replace(/[^a-z0-9]+/g, ' ').trim();
+  }
+  function words(s) {
+    var set = {};
+    nrm(s).split(' ').forEach(function (w) {
+      if (w.length < 3 || STOP[w]) return;
+      set[w] = 1;
+      if (w.length >= 4 && w.slice(-1) === 's') set[w.slice(0, -1)] = 1;
+      if (w.length >= 5 && w.slice(-2) === 'es') set[w.slice(0, -2)] = 1;
+    });
+    return set;
+  }
+  function pw(p) { return p.w || (p.w = words(p[0] + ' ' + p[1])); }
+  function hit(a, b) { for (var k in a) if (b[k]) return true; return false; }
+  function overlapsAny(p, list) {
+    var a = pw(p);
+    for (var i = 0; i < list.length; i++) if (hit(a, pw(list[i]))) return true;
+    return false;
+  }
+  function region(v) { return PARENT[v] || v; }
+
+  /* ── BUILD ITEMS ── */
+  function parseIng(s) {
+    if (!s) return [];
+    return s.split(';').map(function (part) { var a = part.split('|'); return [a[0].trim(), (a[1] || a[0]).trim()]; });
+  }
+  function tri(v) { return v === undefined ? null : !!v; }
+  var ITEMS = [];
+  DISHES.forEach(function (r) {
+    var meat = !!r.meat, sea = !!r.sea;
+    var v = r.v !== undefined ? !!r.v : (meat || sea ? false : null);
+    var ing = parseIng(r.i);
+    ITEMS.push({
+      id: r.id, s: r.s, c: r.c || null, kind: 'dish',
+      es: r.es, en: r.en, fes: r.fes || r.es, fen: r.fen || r.en,
+      ing: ing, q: r.q !== 0 && ing.length > 0,
+      v: v, vg: r.vg !== undefined ? !!r.vg : (v === false ? false : null),
+      gf: tri(r.gf), df: tri(r.df), sea: sea, fish: !!r.fish, meat: meat, lamb: !!r.lamb,
+      local: !!r.local, choc: tri(r.choc), fruit: tri(r.fruit)
+    });
+  });
+  COCKTAILS.forEach(function (r) {
+    ITEMS.push({ id: r.id, s: 'cocteles', c: 'b', kind: 'cocktail', es: r.es, en: r.es, fes: r.es, fen: r.es,
+      ing: parseIng(r.i), q: true, t: r.t || 'coctel', base: r.base || null });
+  });
+  WINES.forEach(function (w) {
+    var cepa = w[1] || null, valle = [w[3], VALLE_EN[w[3]] || w[3]];
+    ITEMS.push({
+      id: 'w-' + nrm(w[0] + ' ' + (cepa || w[4])).replace(/ /g, '-'),
+      s: 'vinos', c: 'b', kind: 'wine', es: w[0], en: w[0], fes: w[0], fen: w[0],
+      cepa: cepa, vina: w[2], valle: w[3], t: w[4], ing: [valle],
+      clues: [cepa ? [cepa, CEPA_EN[cepa] || cepa] : [WT[w[4]].es, WT[w[4]].en], [w[2], w[2]], valle],
+      q: w[5] !== 0
+    });
+  });
+  var POOL = ITEMS.filter(function (it) { return it.q || (it.c && it.c !== 'x'); });
+  var FREQ = {};
+  ITEMS.forEach(function (it) {
+    if (it.kind !== 'wine') it.ing.forEach(function (p) { var k = nrm(p[0]); FREQ[k] = (FREQ[k] || 0) + 1; });
+  });
+
+  function nm(it) { return lx(it); }
+  function full(it) { return L() === 'es' ? it.fes : it.fen; }
+  function cepaTxt(it) { return it.cepa ? (L() === 'es' ? it.cepa : (CEPA_EN[it.cepa] || it.cepa)) : lx(WT[it.t]); }
+  function wineSub(it) { return cepaTxt(it) + ' · ' + it.vina; }
+  function itemSub(it) {
+    if (it.kind === 'wine') return wineSub(it);
+    if (it.kind === 'cocktail') return it.t === 'mocktail' ? 'Mocktail' : tx('signature');
+    return lx(SEC[it.s]);
+  }
+
+  /* ── STATS ── */
+  function blank() { return { answered: 0, correct: 0, streak: 0, best: 0, mastered: 0, dishes: {} }; }
+  function loadStats() {
+    try {
+      var s = JSON.parse(localStorage.getItem(LS_STATS) || 'null');
+      if (s && typeof s === 'object') {
+        return { answered: +s.answered || 0, correct: +s.correct || 0, streak: +s.streak || 0, best: +s.best || 0,
+          mastered: +s.mastered || 0, dishes: (s.dishes && typeof s.dishes === 'object') ? s.dishes : {} };
+      }
+    } catch (e) {}
+    return blank();
+  }
+  var ST = loadStats();
+  function isMastered(it) { return (ST.dishes[it.id] || 0) >= 3; }
+  function saveStats() {
+    ST.mastered = POOL.filter(isMastered).length;
+    try { localStorage.setItem(LS_STATS, JSON.stringify(ST)); } catch (e) {}
+  }
+  function record(ok, id) {
+    ST.answered++; S.sess.t++;
+    if (ok) {
+      ST.correct++; S.sess.c++; ST.streak++;
+      if (ST.streak > ST.best) ST.best = ST.streak;
+      if (id) ST.dishes[id] = (ST.dishes[id] || 0) + 1;
+    } else {
+      ST.streak = 0;
+    }
+    saveStats();
+  }
+  try {
+    var savedLang = localStorage.getItem(LS_LANG);
+    if (savedLang === 'es' || savedLang === 'en') { S.lang = savedLang; S.view = 'home'; }
+  } catch (e) {}
+
+  /* ── MODES 1 & 2 ── */
+  function eligible(mode, cat) {
+    return ITEMS.filter(function (it) {
+      if (!it.q || (cat !== 'all' && it.s !== cat)) return false;
+      return mode === 1 ? it.ing.length > 0 : (it.clues || it.ing).length >= 3;
+    });
+  }
+  function cats() {
+    return ['all'].concat(SEC_ORDER.filter(function (s) { return eligible(1, s).length >= 4; }));
+  }
+
+  function build1(it) {
+    var ans, picked = [];
+    if (it.kind === 'wine') {
+      ans = it.ing[0];
+      var seen = {}, valleys = [];
+      seen[region(it.valle)] = 1;
+      shuffle(ITEMS).forEach(function (x) {
+        if (x.kind !== 'wine' || !x.q || seen[region(x.valle)]) return;
+        seen[region(x.valle)] = 1;
+        valleys.push(x.ing[0]);
+      });
+      picked = valleys.slice(0, 3);
+      return picked.length < 3 ? null : { it: it, ans: ans, opts: shuffle([ans].concat(picked)) };
+    }
+    var nameW = words(it.es + ' ' + it.en);
+    var cands = it.ing.filter(function (p) { return !hit(pw(p), nameW); });
+    if (!cands.length) cands = it.ing;
+    ans = weighted(cands, function (p) { return 1 / (FREQ[nrm(p[0])] || 1); });
+    var menu = SEC[it.s].menu;
+    var tiers = [
+      function (x) { return x.s === it.s; },
+      function (x) { return SEC[x.s].menu === menu; },
+      function (x) { return x.kind === it.kind; }
+    ];
+    for (var t = 0; t < tiers.length && picked.length < 3; t++) {
+      var pool = [];
+      ITEMS.forEach(function (x) {
+        if (x !== it && x.kind !== 'wine' && tiers[t](x)) pool = pool.concat(x.ing);
+      });
+      shuffle(pool).forEach(function (p) {
+        if (picked.length >= 3 || overlapsAny(p, it.ing) || overlapsAny(p, picked)) return;
+        picked.push(p);
+      });
+    }
+    return picked.length < 3 ? null : { it: it, ans: ans, opts: shuffle([ans].concat(picked)) };
+  }
+
+  function build2(it) {
+    var src = it.clues || it.ing;
+    if (src.length < 3) return null;
+    var clues = it.clues;
+    if (!clues) {
+      var nameW = words(it.es + ' ' + it.en);
+      var a = shuffle(src.filter(function (p) { return !hit(pw(p), nameW); }));
+      var b = shuffle(src.filter(function (p) { return hit(pw(p), nameW); }));
+      clues = a.concat(b).slice(0, src.length >= 4 ? 4 : 3);
+    }
+    var names = {}, picked = [], menu = SEC[it.s].menu;
+    names[nrm(it.es)] = 1;
+    [function (x) { return x.s === it.s; }, function (x) { return SEC[x.s].menu === menu; }].forEach(function (f) {
+      shuffle(ITEMS).forEach(function (x) {
+        if (picked.length >= 3 || x === it || !x.q || x.kind !== it.kind || !f(x) || names[nrm(x.es)]) return;
+        var xs = x.clues || x.ing;
+        if (clues.every(function (c) { return overlapsAny(c, xs); })) return;
+        names[nrm(x.es)] = 1;
+        picked.push(x);
+      });
+    });
+    return picked.length < 3 ? null : { it: it, clues: clues, ans: it, opts: shuffle([it].concat(picked)) };
+  }
+
+  function startRound(mode) {
+    var pool = eligible(mode, S.cat), qs = [], used = {};
+    while (qs.length < ROUND) {
+      var left = pool.filter(function (it) { return !used[it.id]; });
+      if (!left.length) break;
+      var it = weighted(left, function (x) { return 1 / (1 + Math.min(ST.dishes[x.id] || 0, 3)); });
+      used[it.id] = 1;
+      var q = mode === 1 ? build1(it) : build2(it);
+      if (q) qs.push(q);
+    }
+    S.round = { mode: mode, qs: qs, i: 0, score: 0, missed: [] };
+    S.view = qs.length >= 3 ? 'play' : 'empty';
+    render(true);
+  }
+  function answer(idx) {
+    var R = S.round, q = R.qs[R.i];
+    if (q.chosen !== undefined) return;
+    q.chosen = idx;
+    q.ok = q.opts[idx] === q.ans;
+    if (q.ok) R.score++; else R.missed.push(q);
+    record(q.ok, q.ok ? q.it.id : null);
+    render();
+  }
+  function nextQ() {
+    var R = S.round;
+    if (R.i + 1 < R.qs.length) { R.i++; render(); }
+    else { S.view = 'result'; render(true); }
+  }
+
+  /* ── MODE 3 ── */
+  function evalItem(x, keys) {
+    var anyNull = false, anyFalse = false, ok = [], fail = [];
+    keys.forEach(function (k) {
+      var c = COND[k], r = c.f(x);
+      if (r === true) ok.push(lx(c.ok));
+      else if (r === false) { anyFalse = true; fail.push(lx(c.no)); }
+      else anyNull = true;
+    });
+    return { v: anyFalse ? false : (anyNull ? null : true), ok: ok, fail: fail };
+  }
+  function startGuest() {
+    var idx;
+    do { idx = Math.floor(Math.random() * PROFILES.length); } while (PROFILES.length > 1 && idx === S.lastProfile);
+    S.lastProfile = idx;
+    var p = PROFILES[idx], steps = [];
+    COURSES.forEach(function (c) {
+      var valid = [], invalid = [];
+      ITEMS.forEach(function (x) {
+        if (x.c !== c) return;
+        var v = evalItem(x, p[c]).v;
+        if (v === true) valid.push(x); else if (v === false) invalid.push(x);
+      });
+      if (!valid.length || !invalid.length) return;
+      var good = pick(valid), opts = [good], names = {};
+      names[nrm(good.es)] = 1;
+      shuffle(invalid).forEach(function (x) {
+        if (opts.length >= 4 || names[nrm(x.es)]) return;
+        names[nrm(x.es)] = 1;
+        opts.push(x);
+      });
+      steps.push({ c: c, keys: p[c], good: good, opts: shuffle(opts), chosen: null, ok: false });
+    });
+    S.guest = { p: p, g: pick(GUESTS), steps: steps, i: 0 };
+    S.view = 'guest';
+    render(true);
+  }
+  function guestPick(idx) {
+    var st = S.guest.steps[S.guest.i];
+    if (st.chosen) return;
+    st.chosen = st.opts[idx];
+    st.ok = st.chosen === st.good;
+    record(st.ok, st.ok ? st.chosen.id : null);
+    render();
+  }
+  function guestNext() {
+    var G = S.guest;
+    if (G.i + 1 < G.steps.length) { G.i++; render(); }
+    else { S.view = 'guestEnd'; render(true); }
+  }
+
+  /* ── VIEWS ── */
+  function stat(v, l) {
+    return '<div class="quiz-stat"><div class="quiz-stat-val">' + v + '</div><div class="quiz-label">' + esc(l) + '</div></div>';
+  }
+  function dash() {
+    var acc = ST.answered ? Math.round(ST.correct * 100 / ST.answered) + '%' : '—';
+    return '<div class="quiz-dash">' +
+      stat(acc, tx('accuracy')) +
+      stat(String(ST.streak), tx('streak')) +
+      stat(POOL.filter(isMastered).length + '<span class="quiz-stat-of"> / ' + POOL.length + '</span>', tx('mastered')) +
+      stat(S.sess.c + '<span class="quiz-stat-of"> / ' + S.sess.t + '</span>', tx('session')) +
+      '</div>';
+  }
+  function backBar(right) {
+    return '<div class="quiz-bar"><button type="button" class="quiz-link" data-act="home">' + esc(tx('back')) + '</button>' +
+      (right ? '<span class="quiz-count">' + right + '</span>' : '') + '</div>';
+  }
+  function optBtn(act, i, cls, key, label, sub) {
+    var done = cls !== 'quiz-opt';
+    return '<button type="button" class="' + cls + '" data-act="' + act + '" data-arg="' + i + '"' + (done ? ' disabled' : '') + '>' +
+      '<span class="quiz-opt-key">' + key + '</span><span>' + esc(label) +
+      (sub ? '<span class="quiz-opt-sub">' + esc(sub) + '</span>' : '') + '</span></button>';
+  }
+  function optState(o, i, good, chosen, done) {
+    if (!done) return ['quiz-opt', 'ABCD'.charAt(i)];
+    if (o === good) return ['quiz-opt is-correct', '✓'];
+    if (o === chosen) return ['quiz-opt is-wrong', '✗'];
+    return ['quiz-opt is-dim', 'ABCD'.charAt(i)];
+  }
+
+  function vLang() {
+    return '<div class="quiz-lang">' +
+      '<div class="quiz-label">Quiz · The Singular Patagonia</div>' +
+      '<div class="quiz-lang-title">Elige tu idioma · Choose your language</div>' +
+      '<div class="quiz-lang-sub">Puedes cambiarlo cuando quieras · You can change it anytime</div>' +
+      '<div class="quiz-lang-btns">' +
+      '<button type="button" class="quiz-lang-btn" data-act="lang" data-arg="es">Español<span class="quiz-label">Comenzar</span></button>' +
+      '<button type="button" class="quiz-lang-btn" data-act="lang" data-arg="en">English<span class="quiz-label">Start</span></button>' +
+      '</div></div>';
+  }
+
+  function vHome() {
+    var h = dash() + '<div class="quiz-heading">' + esc(tx('modesTitle')) + '</div><div class="quiz-modes">';
+    [1, 2, 3].forEach(function (m) {
+      h += '<button type="button" class="quiz-mode" data-act="mode" data-arg="' + m + '">' +
+        '<span class="quiz-mode-num">' + m + '</span>' +
+        '<span class="quiz-mode-body"><span class="quiz-mode-title">' + esc(tx('m' + m)) + '</span>' +
+        '<span class="quiz-mode-desc">' + esc(tx('m' + m + 'd')) + '</span></span>' +
+        '<span class="quiz-mode-arrow">→</span></button>';
+    });
+    h += '</div><div class="quiz-label">' + esc(tx('catLabel')) + '</div><div class="quiz-chips">';
+    cats().forEach(function (c) {
+      h += '<button type="button" class="quiz-chip' + (S.cat === c ? ' is-active' : '') + '" data-act="cat" data-arg="' + c + '">' +
+        esc(c === 'all' ? tx('all') : lx(SEC[c])) + '</button>';
+    });
+    h += '</div><div class="quiz-links">' +
+      '<button type="button" class="quiz-link" data-act="progress">' + esc(tx('progress')) + '</button>' +
+      '<button type="button" class="quiz-link" data-act="lang" data-arg="' + (L() === 'es' ? 'en' : 'es') + '">' + esc(tx('otherLang')) + '</button>' +
+      '<button type="button" class="quiz-link" data-act="reset">' + esc(tx('reset')) + '</button>' +
+      '</div>';
+    return h;
+  }
+
+  function vEmpty() {
+    return dash() + backBar() + '<div class="quiz-card"><p class="quiz-note">' + esc(tx('noData')) + '</p></div>';
+  }
+
+  function vPlay() {
+    var R = S.round, q = R.qs[R.i], it = q.it, done = q.chosen !== undefined;
+    var h = dash() + backBar(esc(tx('question')) + ' <strong>' + (R.i + 1) + '</strong> / ' + R.qs.length +
+      ' · ' + esc(tx('score')) + ' <strong>' + R.score + '</strong>');
+    h += '<div class="quiz-track"><div class="quiz-track-fill" style="width:' +
+      Math.round((R.i + (done ? 1 : 0)) * 100 / R.qs.length) + '%"></div></div>';
+    h += '<div class="quiz-card"><div class="quiz-label">' + esc(lx(SEC[it.s])) + '</div>';
+    if (R.mode === 1) {
+      h += '<div class="quiz-q-name">' + esc(nm(it)) + '</div>';
+      if (it.kind === 'wine') h += '<div class="quiz-q-sub">' + esc(wineSub(it)) + '</div>';
+    } else {
+      h += '<div class="quiz-clues">' + q.clues.map(function (c) { return '<span class="quiz-clue">' + esc(lp(c)) + '</span>'; }).join('') + '</div>';
+    }
+    h += '<div class="quiz-q-prompt">' + esc(lx(PROMPTS[R.mode][it.kind])) + '</div><div class="quiz-opts">';
+    q.opts.forEach(function (o, i) {
+      var st = optState(o, i, q.ans, q.opts[q.chosen], done);
+      h += optBtn('ans', i, st[0], st[1], R.mode === 1 ? lp(o) : nm(o));
+    });
+    h += '</div>';
+    if (done) {
+      h += '<div class="quiz-fb' + (q.ok ? '' : ' is-wrong') + '" role="status">' +
+        '<div class="quiz-fb-title">' + (q.ok ? '✓ ' + esc(tx('correct')) : '✗ ' + esc(tx('wrong'))) + '</div>';
+      if (!q.ok) h += '<div class="quiz-fb-main">' + esc(tx('answerWas')) + ': ' + esc(R.mode === 1 ? lp(q.ans) : nm(q.ans)) + '</div>';
+      h += '<div class="quiz-fb-detail">' + detail(it) + '</div></div>' +
+        '<div class="quiz-actions"><button type="button" class="quiz-btn" data-act="next" data-focus>' +
+        esc(R.i + 1 < R.qs.length ? tx('next') : tx('finish')) + '</button></div>';
+    }
+    return h + '</div>';
+  }
+  function detail(it) {
+    if (it.kind === 'wine') {
+      return '<strong>' + esc(it.es) + '</strong> · ' + esc(cepaTxt(it)) + ' · ' + esc(it.vina) + ' · ' + esc(lp(it.ing[0]));
+    }
+    return '<strong>' + esc(full(it)) + '</strong><br>' + esc(tx('ingredients')) + ': ' + esc(it.ing.map(lp).join(', '));
+  }
+
+  function vResult() {
+    var R = S.round, n = R.qs.length, pct = R.score / n;
+    var h = dash() + '<div class="quiz-card quiz-result"><div class="quiz-label">' + esc(tx('resultTitle')) + '</div>' +
+      '<div class="quiz-result-score">' + R.score + '<span> / ' + n + '</span></div>' +
+      '<div class="quiz-result-msg">' + esc(pct >= 0.8 ? tx('rGreat') : pct >= 0.5 ? tx('rGood') : tx('rLow')) + '</div>';
+    if (R.missed.length) {
+      h += '<div class="quiz-review"><div class="quiz-label">' + esc(tx('missed')) + '</div>';
+      R.missed.forEach(function (q) {
+        var why = R.mode === 1 ? lp(q.ans) : q.clues.map(lp).join(' · ');
+        h += '<div class="quiz-review-item"><strong>' + esc(nm(q.it)) + '</strong> — ' + esc(why) + '</div>';
+      });
+      h += '</div>';
+    }
+    return h + '<div class="quiz-actions">' +
+      '<button type="button" class="quiz-btn" data-act="again" data-focus>' + esc(tx('playAgain')) + '</button>' +
+      '<button type="button" class="quiz-btn quiz-btn-ghost" data-act="home">' + esc(tx('chooseMode')) + '</button></div></div>';
+  }
+
+  function guestCard(G) {
+    return '<div class="quiz-guest"><div class="quiz-label">' + esc(tx('guestTitle')) + '</div>' +
+      '<div class="quiz-guest-name">' + esc(G.g[0]) + ' <em>· ' + esc(L() === 'es' ? G.g[1] : G.g[2]) + '</em></div>' +
+      '<div class="quiz-traits">' + lx(G.p).split(' · ').map(function (t) { return '<span class="quiz-trait">' + esc(t) + '</span>'; }).join('') +
+      '</div></div>';
+  }
+  function vGuest() {
+    var G = S.guest, st = G.steps[G.i], done = !!st.chosen;
+    var h = dash() + backBar(esc(tx('step')) + ' <strong>' + (G.i + 1) + '</strong> ' + esc(tx('of')) + ' ' + G.steps.length) + guestCard(G);
+    h += '<div class="quiz-steps">' + G.steps.map(function (s, i) {
+      var cls = 'quiz-step' + (i < G.i || (i === G.i && done) ? ' is-done' : '') + (i === G.i ? ' is-active' : '');
+      return '<div class="' + cls + '">' + esc(lx(COURSE[s.c])) + '</div>';
+    }).join('') + '</div>';
+    h += '<div class="quiz-card"><div class="quiz-label">' + esc(lx(COURSE[st.c])) + '</div>' +
+      '<div class="quiz-q-name">' + esc(tx('guestAsk')) + '</div><div class="quiz-opts">';
+    st.opts.forEach(function (o, i) {
+      var s2 = optState(o, i, st.good, st.chosen, done);
+      h += optBtn('gpick', i, s2[0], s2[1], nm(o), itemSub(o));
+    });
+    h += '</div>';
+    if (done) {
+      var eg = evalItem(st.good, st.keys);
+      if (st.ok) {
+        h += '<div class="quiz-fb" role="status"><div class="quiz-fb-title">✓ ' + esc(tx('goodRec')) + '</div>' +
+          '<div class="quiz-fb-main">' + esc(nm(st.good)) + '</div>' +
+          '<div class="quiz-fb-detail">' + esc(eg.ok.join(' · ')) + '</div></div>';
+      } else {
+        h += '<div class="quiz-fb is-wrong" role="status"><div class="quiz-fb-title">✗ ' + esc(tx('badRec')) + '</div>' +
+          '<div class="quiz-fb-main">' + esc(nm(st.chosen)) + ': ' + esc(evalItem(st.chosen, st.keys).fail.join(' · ')) + '</div>' +
+          '<div class="quiz-fb-detail">' + esc(tx('bestWas')) + ' <strong>' + esc(nm(st.good)) + '</strong> — ' + esc(eg.ok.join(' · ')) + '</div></div>';
+      }
+      h += '<div class="quiz-actions"><button type="button" class="quiz-btn" data-act="gnext" data-focus>' +
+        esc(G.i + 1 < G.steps.length ? tx('next') : tx('finish')) + '</button></div>';
+    }
+    return h + '</div>';
+  }
+  function vGuestEnd() {
+    var G = S.guest, score = G.steps.filter(function (s) { return s.ok; }).length;
+    var h = dash() + backBar() + guestCard(G) + '<div class="quiz-card"><div class="quiz-label">' + esc(tx('summaryTitle')) + '</div>' +
+      '<div class="quiz-result-score is-small">' + score + '<span> / ' + G.steps.length + '</span></div>';
+    G.steps.forEach(function (st) {
+      var eg = evalItem(st.good, st.keys);
+      h += '<div class="quiz-sum-row"><div class="quiz-label">' + esc(lx(COURSE[st.c])) + '</div><div>' +
+        '<div class="quiz-sum-dish">' + (st.ok ? '<span class="quiz-mark-ok">✓</span> ' : '') + esc(nm(st.good)) + '</div>' +
+        '<div class="quiz-sum-why">' + esc(itemSub(st.good)) + ' — ' + esc(tx('whyMatch')) + ': ' + esc(eg.ok.join(' · ')) + '</div>' +
+        (st.ok ? '' : '<div class="quiz-sum-miss">✗ ' + esc(tx('youChose')) + ': ' + esc(nm(st.chosen)) + ' — ' +
+          esc(evalItem(st.chosen, st.keys).fail.join(' · ')) + '</div>') +
+        '</div></div>';
+    });
+    return h + '<div class="quiz-actions">' +
+      '<button type="button" class="quiz-btn" data-act="gnew" data-focus>' + esc(tx('newGuest')) + '</button>' +
+      '<button type="button" class="quiz-btn quiz-btn-ghost" data-act="home">' + esc(tx('chooseMode')) + '</button></div></div>';
+  }
+
+  function vProgress() {
+    var h = dash() + backBar() + '<div class="quiz-heading">' + esc(tx('progTitle')) + '</div><p class="quiz-note">' + esc(tx('progHint')) + '</p>';
+    SEC_ORDER.forEach(function (s) {
+      var items = POOL.filter(function (it) { return it.s === s; });
+      if (!items.length) return;
+      var m = items.filter(isMastered).length;
+      h += '<details class="quiz-prog-sec"><summary class="quiz-prog-sum">' +
+        '<span class="quiz-prog-name">' + esc(lx(SEC[s])) + '</span>' +
+        '<span class="quiz-meter"><span class="quiz-meter-fill" style="width:' + Math.round(m * 100 / items.length) + '%"></span></span>' +
+        '<span class="quiz-prog-num">' + m + ' / ' + items.length + '</span><span class="quiz-prog-chev">+</span></summary>' +
+        '<div class="quiz-prog-list">';
+      items.forEach(function (it) {
+        var n = Math.min(ST.dishes[it.id] || 0, 3);
+        h += '<div class="quiz-prog-row' + (n >= 3 ? ' is-mastered' : '') + '"><span class="quiz-prog-dish">' + esc(nm(it)) +
+          (it.kind === 'wine' ? '<small>' + esc(cepaTxt(it)) + '</small>' : '') + '</span>' +
+          '<span class="quiz-pips" title="' + n + ' / 3">' +
+          [0, 1, 2].map(function (k) { return '<span class="quiz-pip' + (k < n ? ' is-on' : '') + '"></span>'; }).join('') +
+          '</span></div>';
+      });
+      h += '</div></details>';
+    });
+    return h;
+  }
+
+  var VIEWS = { lang: vLang, home: vHome, empty: vEmpty, play: vPlay, result: vResult,
+    guest: vGuest, guestEnd: vGuestEnd, progress: vProgress };
+  function render(scrollUp) {
+    rootEl.innerHTML = (S.lang ? VIEWS[S.view] : vLang)();
+    var f = rootEl.querySelector('[data-focus]');
+    if (f) { try { f.focus({ preventScroll: true }); } catch (e) {} }
+    if (scrollUp && sectionEl.classList.contains('active')) {
+      var hdr = document.querySelector('header'), off = hdr ? hdr.offsetHeight : 0;
+      var top = rootEl.getBoundingClientRect().top;
+      if (top < off) window.scrollTo(0, window.pageYOffset + top - off - 12);
+    }
+  }
+
+  rootEl.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-act]');
+    if (!b || !rootEl.contains(b)) return;
+    var arg = b.getAttribute('data-arg');
+    switch (b.getAttribute('data-act')) {
+      case 'lang':
+        S.lang = arg;
+        try { localStorage.setItem(LS_LANG, arg); } catch (er) {}
+        if (S.view === 'lang') S.view = 'home';
+        render();
+        break;
+      case 'mode': if (arg === '3') startGuest(); else startRound(+arg); break;
+      case 'cat': S.cat = arg; render(); break;
+      case 'ans': answer(+arg); break;
+      case 'next': nextQ(); break;
+      case 'again': startRound(S.round.mode); break;
+      case 'home': S.view = 'home'; render(true); break;
+      case 'progress': S.view = 'progress'; render(true); break;
+      case 'gpick': guestPick(+arg); break;
+      case 'gnext': guestNext(); break;
+      case 'gnew': startGuest(); break;
+      case 'reset':
+        if (window.confirm(tx('resetConfirm'))) {
+          ST = blank(); saveStats();
+          S.sess = { c: 0, t: 0 }; S.lang = null; S.view = 'lang';
+          try { localStorage.removeItem(LS_LANG); } catch (er) {}
+          render(true);
+        }
+        break;
+    }
+  });
+
+  // The guide's search shows every section at once; keep the quiz out of search results.
+  var searchEl = document.getElementById('searchInput');
+  function syncSearch() { sectionEl.style.display = searchEl && searchEl.value.trim() ? 'none' : ''; }
+  if (searchEl) searchEl.addEventListener('input', syncSearch);
+  new MutationObserver(syncSearch).observe(sectionEl, { attributes: true, attributeFilter: ['class'] });
+
+  render();
 })();
 </script>
 </body>
